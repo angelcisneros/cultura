@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package mx.ipn.escom.repositorios.impl;
 
 import java.util.List;
-import mx.ipn.escom.entidades.Encargado;
-import mx.ipn.escom.repositorios.EncargadoRepositorio;
+import mx.ipn.escom.entidades.CategoriaEvento;
+import mx.ipn.escom.repositorios.CategoriaEventoRepositorio;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -17,21 +18,23 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
- * @author Lap_christo
+ * @author angel
  */
+
 
 @Transactional
 @Repository
-public class EncargadoRepositorioImpl implements EncargadoRepositorio{
+public class CategoriaEventoRepositorioImpl implements CategoriaEventoRepositorio{
+    
     
     @Autowired
     SessionFactory sessionFactory;
 
     @Override
-    public Boolean agregar(Encargado encargado) {
+    public Boolean agregar(CategoriaEvento categoriaEvento) {
         Boolean guardado = null;
         try {
-            sessionFactory.getCurrentSession().save(encargado);
+            sessionFactory.getCurrentSession().save(categoriaEvento);
             guardado = true;
         } catch (HibernateException he) {
             he.printStackTrace();
@@ -40,10 +43,10 @@ public class EncargadoRepositorioImpl implements EncargadoRepositorio{
     }
 
     @Override
-    public Boolean actualizar(Encargado encargado) {
+    public Boolean actualizar(CategoriaEvento categoriaEvento) {
         Boolean guardado = null;
         try {
-            sessionFactory.getCurrentSession().update(encargado);
+            sessionFactory.getCurrentSession().update(categoriaEvento);
             guardado = true;
         } catch (HibernateException he) {
             he.printStackTrace();
@@ -52,13 +55,14 @@ public class EncargadoRepositorioImpl implements EncargadoRepositorio{
     }
 
     @Override
-    public Boolean eliminar(Encargado encargado) {
+    public Boolean eliminar(CategoriaEvento categoriaEvento) {
         Boolean guardado = null;
         try {
-            sessionFactory.getCurrentSession().delete(encargado);
+            sessionFactory.getCurrentSession().delete(categoriaEvento);
             guardado = true;
         } catch (HibernateException he) {
             he.printStackTrace();
+            guardado = false;
         }
         return guardado;
     }
@@ -69,18 +73,15 @@ public class EncargadoRepositorioImpl implements EncargadoRepositorio{
     }
 
     @Override
-    public Encargado buscarPorId(Integer id) {
-        return (Encargado) sessionFactory.getCurrentSession().createCriteria(Encargado.class)
+    public CategoriaEvento buscarPorId(Integer id) {
+        return (CategoriaEvento) sessionFactory.getCurrentSession().createCriteria(CategoriaEvento.class)
                 .add(Restrictions.eq("id", id))
                 .uniqueResult();
     }
 
     @Override
-    public List<Encargado> buscarTodos() {
-        return (List<Encargado>) sessionFactory.getCurrentSession().createCriteria(Encargado.class)
+    public List<CategoriaEvento> buscarTodos() {
+        return (List<CategoriaEvento>) sessionFactory.getCurrentSession().createCriteria(CategoriaEvento.class)
                 .list();
     }
-    
-    
-    
 }

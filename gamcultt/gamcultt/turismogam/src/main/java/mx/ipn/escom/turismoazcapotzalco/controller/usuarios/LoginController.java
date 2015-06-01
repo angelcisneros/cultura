@@ -55,7 +55,7 @@ public class LoginController {
         if ((Usuario) session.getAttribute(USUARIO) == null) {
             return "templates/login";
         }
-        return "templates/404admin";
+        return "templates/404";
     }
 
     @RequestMapping(value = "cerrarSesion")

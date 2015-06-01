@@ -1,0 +1,899 @@
+@startuml
+annotation java.lang.Override
+annotation javax.persistence.AttributeOverride
+annotation javax.persistence.AttributeOverrides
+annotation javax.persistence.Column
+annotation javax.persistence.Embeddable
+annotation javax.persistence.EmbeddedId
+annotation javax.persistence.Entity
+annotation javax.persistence.GeneratedValue
+annotation javax.persistence.Id
+annotation javax.persistence.JoinColumn
+annotation javax.persistence.JoinColumns
+annotation javax.persistence.ManyToOne
+annotation javax.persistence.OneToMany
+annotation javax.persistence.Table
+annotation javax.persistence.Temporal
+annotation javax.validation.Valid
+annotation lombok.Getter
+annotation lombok.Setter
+annotation org.springframework.beans.factory.annotation.Autowired
+annotation org.springframework.stereotype.Controller
+annotation org.springframework.stereotype.Repository
+annotation org.springframework.stereotype.Service
+annotation org.springframework.transaction.annotation.Transactional
+annotation org.springframework.web.bind.annotation.ModelAttribute
+annotation org.springframework.web.bind.annotation.RequestMapping
+annotation org.springframework.web.bind.annotation.ResponseBody
+class java.io.BufferedReader
+class java.io.BufferedWriter
+class java.io.ByteArrayOutputStream
+class java.io.File
+class java.io.FileInputStream
+class java.io.FileNotFoundException
+class java.io.FileOutputStream
+class java.io.FileWriter
+class java.io.IOException
+class java.io.InputStream
+class java.io.InputStreamReader
+class java.io.OutputStream
+class java.io.PrintWriter
+class java.io.Reader
+class java.io.StringWriter
+class java.io.Writer
+class java.math.BigDecimal
+class java.util.Date
+class java.util.HashSet
+class java.util.List
+class java.util.Set
+class java.util.logging.Level
+class java.util.logging.Logger
+class java.util.regex.Pattern
+class javax.persistence.FetchType
+class javax.persistence.GenerationType
+class javax.persistence.TemporalType
+class javax.servlet.http.HttpSession
+class mx.ipn.escom.entidades.Alumno
+class mx.ipn.escom.entidades.AlumnoClase
+class mx.ipn.escom.entidades.AlumnoClaseId
+class mx.ipn.escom.entidades.Casa
+class mx.ipn.escom.entidades.CategoriaEvento
+class mx.ipn.escom.entidades.CategoriaTaller
+class mx.ipn.escom.entidades.Clase
+class mx.ipn.escom.entidades.ClaseId
+class mx.ipn.escom.entidades.Evento
+class mx.ipn.escom.entidades.GaleriaCasa
+class mx.ipn.escom.entidades.GaleriaEvento
+class mx.ipn.escom.entidades.GaleriaTaller
+class mx.ipn.escom.entidades.Profesor
+class mx.ipn.escom.entidades.Propuesta
+class mx.ipn.escom.entidades.Sala
+class mx.ipn.escom.entidades.Taller
+class mx.ipn.escom.entidades.Usuario
+class mx.ipn.escom.entidades.Visitante
+class mx.ipn.escom.entidades.VisitanteEvento
+class mx.ipn.escom.entidades.VisitanteEventoId
+class mx.ipn.escom.repositorios.impl.AlumnoClaseRepositorioImpl
+class mx.ipn.escom.repositorios.impl.AlumnoRepositorioImpl
+class mx.ipn.escom.repositorios.impl.CasaRepositorioImpl
+class mx.ipn.escom.repositorios.impl.ClaseRepositorioImpl
+class mx.ipn.escom.repositorios.impl.EventoRepositorioImpl
+class mx.ipn.escom.repositorios.impl.GaleriaCasaRepositorioImpl
+class mx.ipn.escom.repositorios.impl.GaleriaEventoRepositorioImpl
+class mx.ipn.escom.repositorios.impl.GaleriaTallerRepositorioImpl
+class mx.ipn.escom.repositorios.impl.ProfesorRepositorioImpl
+class mx.ipn.escom.repositorios.impl.PropuestaRepositorioImpl
+class mx.ipn.escom.repositorios.impl.SalaRepositorioImpl
+class mx.ipn.escom.repositorios.impl.TallerRepositorioImpl
+class mx.ipn.escom.repositorios.impl.UsuarioRepositorioImpl
+class mx.ipn.escom.servicios.impl.AlumnoClaseServicioImpl1
+class mx.ipn.escom.servicios.impl.AlumnoServicioImpl
+class mx.ipn.escom.servicios.impl.CasaServicioImpl
+class mx.ipn.escom.servicios.impl.ClaseServicioImpl
+class mx.ipn.escom.servicios.impl.EventoServicioImpl
+class mx.ipn.escom.servicios.impl.GaleriaCasaServicioImpl
+class mx.ipn.escom.servicios.impl.GaleriaEventoServicioImpl
+class mx.ipn.escom.servicios.impl.GaleriaTallerServicioImpl
+class mx.ipn.escom.servicios.impl.ProfesorServicioImpl
+class mx.ipn.escom.servicios.impl.PropuestaServicioImpl
+class mx.ipn.escom.servicios.impl.SalaServicioImpl
+class mx.ipn.escom.servicios.impl.TallerServicioImpl
+class mx.ipn.escom.servicios.impl.UsuarioServicioImpl
+class mx.ipn.escom.servicios.util.CarpetaArchivos
+class mx.ipn.escom.servicios.util.GeneradorPassword
+class mx.ipn.escom.servicios.util.Llave
+class mx.ipn.escom.servicios.util.ManejadorArchivos
+class mx.ipn.escom.servicios.util.MensajesCrud
+class mx.ipn.escom.servicios.util.Rutas
+class mx.ipn.escom.servicios.util.Validaciones
+class mx.ipn.escom.turismoazcapotzalco.controller.HomeController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController
+class mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController
+class mx.ipn.escom.turismoazcapotzalco.controller.usuarios.LoginController
+class org.hibernate.HibernateException
+class org.hibernate.SessionFactory
+class org.hibernate.criterion.Restrictions
+class org.hibernate.sql.JoinType
+class org.springframework.ui.Model
+class org.springframework.validation.BindingResult
+class org.springframework.validation.ObjectError
+class org.springframework.web.bind.annotation.RequestMethod
+class org.springframework.web.multipart.MultipartFile
+interface java.io.Serializable
+interface mx.ipn.escom.repositorios.AlumnoClaseRepositorio
+interface mx.ipn.escom.repositorios.AlumnoRepositorio
+interface mx.ipn.escom.repositorios.CasaRepositorio
+interface mx.ipn.escom.repositorios.ClaseRepositorio
+interface mx.ipn.escom.repositorios.EventoRepositorio
+interface mx.ipn.escom.repositorios.GaleriaCasaRepositorio
+interface mx.ipn.escom.repositorios.GaleriaEventoRepositorio
+interface mx.ipn.escom.repositorios.GaleriaTallerRepositorio
+interface mx.ipn.escom.repositorios.ProfesorRepositorio
+interface mx.ipn.escom.repositorios.PropuestaRepositorio
+interface mx.ipn.escom.repositorios.SalaRepositorio
+interface mx.ipn.escom.repositorios.TallerRepositorio
+interface mx.ipn.escom.repositorios.UsuarioRepositorio
+interface mx.ipn.escom.servicios.AlumnoClaseServicio
+interface mx.ipn.escom.servicios.AlumnoServicio
+interface mx.ipn.escom.servicios.CasaServicio
+interface mx.ipn.escom.servicios.ClaseServicio
+interface mx.ipn.escom.servicios.EventoServicio
+interface mx.ipn.escom.servicios.GaleriaCasaServicio
+interface mx.ipn.escom.servicios.GaleriaEventoServicio
+interface mx.ipn.escom.servicios.GaleriaTallerServicio
+interface mx.ipn.escom.servicios.ProfesorServicio
+interface mx.ipn.escom.servicios.PropuestaServicio
+interface mx.ipn.escom.servicios.SalaServicio
+interface mx.ipn.escom.servicios.TallerServicio
+interface mx.ipn.escom.servicios.UsuarioServicio
+mx.ipn.escom.entidades.Alumno ..> javax.persistence.Column
+mx.ipn.escom.entidades.Alumno ..> javax.persistence.Entity
+mx.ipn.escom.entidades.Alumno ..> javax.persistence.GeneratedValue
+mx.ipn.escom.entidades.Alumno ..> javax.persistence.Id
+mx.ipn.escom.entidades.Alumno ..> javax.persistence.OneToMany
+mx.ipn.escom.entidades.Alumno ..> javax.persistence.Table
+mx.ipn.escom.entidades.Alumno ..> lombok.Getter
+mx.ipn.escom.entidades.Alumno ..> lombok.Setter
+mx.ipn.escom.entidades.Alumno ..> java.util.List
+mx.ipn.escom.entidades.Alumno ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.Alumno ..> javax.persistence.GenerationType
+mx.ipn.escom.entidades.Alumno --|> java.io.Serializable
+mx.ipn.escom.entidades.AlumnoClase ..> javax.persistence.AttributeOverride
+mx.ipn.escom.entidades.AlumnoClase ..> javax.persistence.AttributeOverrides
+mx.ipn.escom.entidades.AlumnoClase ..> javax.persistence.Column
+mx.ipn.escom.entidades.AlumnoClase ..> javax.persistence.EmbeddedId
+mx.ipn.escom.entidades.AlumnoClase ..> javax.persistence.Entity
+mx.ipn.escom.entidades.AlumnoClase ..> javax.persistence.JoinColumn
+mx.ipn.escom.entidades.AlumnoClase ..> javax.persistence.JoinColumns
+mx.ipn.escom.entidades.AlumnoClase ..> javax.persistence.ManyToOne
+mx.ipn.escom.entidades.AlumnoClase ..> javax.persistence.Table
+mx.ipn.escom.entidades.AlumnoClase ..> lombok.Getter
+mx.ipn.escom.entidades.AlumnoClase ..> lombok.Setter
+mx.ipn.escom.entidades.AlumnoClase ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.AlumnoClase --|> java.io.Serializable
+mx.ipn.escom.entidades.AlumnoClaseId ..> javax.persistence.Column
+mx.ipn.escom.entidades.AlumnoClaseId ..> javax.persistence.Embeddable
+mx.ipn.escom.entidades.AlumnoClaseId ..> lombok.Getter
+mx.ipn.escom.entidades.AlumnoClaseId ..> lombok.Setter
+mx.ipn.escom.entidades.AlumnoClaseId --|> java.io.Serializable
+mx.ipn.escom.entidades.Casa ..> javax.persistence.Column
+mx.ipn.escom.entidades.Casa ..> javax.persistence.Entity
+mx.ipn.escom.entidades.Casa ..> javax.persistence.GeneratedValue
+mx.ipn.escom.entidades.Casa ..> javax.persistence.Id
+mx.ipn.escom.entidades.Casa ..> javax.persistence.OneToMany
+mx.ipn.escom.entidades.Casa ..> javax.persistence.Table
+mx.ipn.escom.entidades.Casa ..> lombok.Getter
+mx.ipn.escom.entidades.Casa ..> lombok.Setter
+mx.ipn.escom.entidades.Casa ..> java.util.List
+mx.ipn.escom.entidades.Casa ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.Casa ..> javax.persistence.GenerationType
+mx.ipn.escom.entidades.Casa --|> java.io.Serializable
+mx.ipn.escom.entidades.CategoriaEvento ..> javax.persistence.Column
+mx.ipn.escom.entidades.CategoriaEvento ..> javax.persistence.Entity
+mx.ipn.escom.entidades.CategoriaEvento ..> javax.persistence.Id
+mx.ipn.escom.entidades.CategoriaEvento ..> javax.persistence.OneToMany
+mx.ipn.escom.entidades.CategoriaEvento ..> javax.persistence.Table
+mx.ipn.escom.entidades.CategoriaEvento ..> lombok.Getter
+mx.ipn.escom.entidades.CategoriaEvento ..> lombok.Setter
+mx.ipn.escom.entidades.CategoriaEvento ..> java.util.HashSet
+mx.ipn.escom.entidades.CategoriaEvento ..> java.util.List
+mx.ipn.escom.entidades.CategoriaEvento ..> java.util.Set
+mx.ipn.escom.entidades.CategoriaEvento ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.CategoriaEvento --|> java.io.Serializable
+mx.ipn.escom.entidades.CategoriaTaller ..> javax.persistence.Column
+mx.ipn.escom.entidades.CategoriaTaller ..> javax.persistence.Entity
+mx.ipn.escom.entidades.CategoriaTaller ..> javax.persistence.Id
+mx.ipn.escom.entidades.CategoriaTaller ..> javax.persistence.OneToMany
+mx.ipn.escom.entidades.CategoriaTaller ..> javax.persistence.Table
+mx.ipn.escom.entidades.CategoriaTaller ..> lombok.Getter
+mx.ipn.escom.entidades.CategoriaTaller ..> lombok.Setter
+mx.ipn.escom.entidades.CategoriaTaller ..> java.util.HashSet
+mx.ipn.escom.entidades.CategoriaTaller ..> java.util.List
+mx.ipn.escom.entidades.CategoriaTaller ..> java.util.Set
+mx.ipn.escom.entidades.CategoriaTaller ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.CategoriaTaller --|> java.io.Serializable
+mx.ipn.escom.entidades.Clase ..> javax.persistence.AttributeOverride
+mx.ipn.escom.entidades.Clase ..> javax.persistence.AttributeOverrides
+mx.ipn.escom.entidades.Clase ..> javax.persistence.Column
+mx.ipn.escom.entidades.Clase ..> javax.persistence.EmbeddedId
+mx.ipn.escom.entidades.Clase ..> javax.persistence.Entity
+mx.ipn.escom.entidades.Clase ..> javax.persistence.JoinColumn
+mx.ipn.escom.entidades.Clase ..> javax.persistence.ManyToOne
+mx.ipn.escom.entidades.Clase ..> javax.persistence.OneToMany
+mx.ipn.escom.entidades.Clase ..> javax.persistence.Table
+mx.ipn.escom.entidades.Clase ..> lombok.Getter
+mx.ipn.escom.entidades.Clase ..> lombok.Setter
+mx.ipn.escom.entidades.Clase ..> java.math.BigDecimal
+mx.ipn.escom.entidades.Clase ..> java.util.HashSet
+mx.ipn.escom.entidades.Clase ..> java.util.List
+mx.ipn.escom.entidades.Clase ..> java.util.Set
+mx.ipn.escom.entidades.Clase ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.Clase --|> java.io.Serializable
+mx.ipn.escom.entidades.ClaseId ..> javax.persistence.Column
+mx.ipn.escom.entidades.ClaseId ..> javax.persistence.Embeddable
+mx.ipn.escom.entidades.ClaseId ..> lombok.Getter
+mx.ipn.escom.entidades.ClaseId ..> lombok.Setter
+mx.ipn.escom.entidades.ClaseId --|> java.io.Serializable
+mx.ipn.escom.entidades.Evento ..> javax.persistence.Column
+mx.ipn.escom.entidades.Evento ..> javax.persistence.Entity
+mx.ipn.escom.entidades.Evento ..> javax.persistence.GeneratedValue
+mx.ipn.escom.entidades.Evento ..> javax.persistence.Id
+mx.ipn.escom.entidades.Evento ..> javax.persistence.JoinColumn
+mx.ipn.escom.entidades.Evento ..> javax.persistence.ManyToOne
+mx.ipn.escom.entidades.Evento ..> javax.persistence.OneToMany
+mx.ipn.escom.entidades.Evento ..> javax.persistence.Table
+mx.ipn.escom.entidades.Evento ..> javax.persistence.Temporal
+mx.ipn.escom.entidades.Evento ..> lombok.Getter
+mx.ipn.escom.entidades.Evento ..> lombok.Setter
+mx.ipn.escom.entidades.Evento ..> java.util.Date
+mx.ipn.escom.entidades.Evento ..> java.util.List
+mx.ipn.escom.entidades.Evento ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.Evento ..> javax.persistence.GenerationType
+mx.ipn.escom.entidades.Evento ..> javax.persistence.TemporalType
+mx.ipn.escom.entidades.Evento --|> java.io.Serializable
+mx.ipn.escom.entidades.GaleriaCasa ..> javax.persistence.Column
+mx.ipn.escom.entidades.GaleriaCasa ..> javax.persistence.Entity
+mx.ipn.escom.entidades.GaleriaCasa ..> javax.persistence.GeneratedValue
+mx.ipn.escom.entidades.GaleriaCasa ..> javax.persistence.Id
+mx.ipn.escom.entidades.GaleriaCasa ..> javax.persistence.JoinColumn
+mx.ipn.escom.entidades.GaleriaCasa ..> javax.persistence.ManyToOne
+mx.ipn.escom.entidades.GaleriaCasa ..> javax.persistence.Table
+mx.ipn.escom.entidades.GaleriaCasa ..> lombok.Getter
+mx.ipn.escom.entidades.GaleriaCasa ..> lombok.Setter
+mx.ipn.escom.entidades.GaleriaCasa ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.GaleriaCasa ..> javax.persistence.GenerationType
+mx.ipn.escom.entidades.GaleriaCasa --|> java.io.Serializable
+mx.ipn.escom.entidades.GaleriaEvento ..> javax.persistence.Column
+mx.ipn.escom.entidades.GaleriaEvento ..> javax.persistence.Entity
+mx.ipn.escom.entidades.GaleriaEvento ..> javax.persistence.GeneratedValue
+mx.ipn.escom.entidades.GaleriaEvento ..> javax.persistence.Id
+mx.ipn.escom.entidades.GaleriaEvento ..> javax.persistence.JoinColumn
+mx.ipn.escom.entidades.GaleriaEvento ..> javax.persistence.ManyToOne
+mx.ipn.escom.entidades.GaleriaEvento ..> javax.persistence.Table
+mx.ipn.escom.entidades.GaleriaEvento ..> lombok.Getter
+mx.ipn.escom.entidades.GaleriaEvento ..> lombok.Setter
+mx.ipn.escom.entidades.GaleriaEvento ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.GaleriaEvento ..> javax.persistence.GenerationType
+mx.ipn.escom.entidades.GaleriaEvento --|> java.io.Serializable
+mx.ipn.escom.entidades.GaleriaTaller ..> javax.persistence.Column
+mx.ipn.escom.entidades.GaleriaTaller ..> javax.persistence.Entity
+mx.ipn.escom.entidades.GaleriaTaller ..> javax.persistence.GeneratedValue
+mx.ipn.escom.entidades.GaleriaTaller ..> javax.persistence.Id
+mx.ipn.escom.entidades.GaleriaTaller ..> javax.persistence.JoinColumn
+mx.ipn.escom.entidades.GaleriaTaller ..> javax.persistence.ManyToOne
+mx.ipn.escom.entidades.GaleriaTaller ..> javax.persistence.Table
+mx.ipn.escom.entidades.GaleriaTaller ..> lombok.Getter
+mx.ipn.escom.entidades.GaleriaTaller ..> lombok.Setter
+mx.ipn.escom.entidades.GaleriaTaller ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.GaleriaTaller ..> javax.persistence.GenerationType
+mx.ipn.escom.entidades.GaleriaTaller --|> java.io.Serializable
+mx.ipn.escom.entidades.Profesor ..> javax.persistence.Column
+mx.ipn.escom.entidades.Profesor ..> javax.persistence.Entity
+mx.ipn.escom.entidades.Profesor ..> javax.persistence.GeneratedValue
+mx.ipn.escom.entidades.Profesor ..> javax.persistence.Id
+mx.ipn.escom.entidades.Profesor ..> javax.persistence.OneToMany
+mx.ipn.escom.entidades.Profesor ..> javax.persistence.Table
+mx.ipn.escom.entidades.Profesor ..> lombok.Getter
+mx.ipn.escom.entidades.Profesor ..> lombok.Setter
+mx.ipn.escom.entidades.Profesor ..> java.util.HashSet
+mx.ipn.escom.entidades.Profesor ..> java.util.List
+mx.ipn.escom.entidades.Profesor ..> java.util.Set
+mx.ipn.escom.entidades.Profesor ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.Profesor ..> javax.persistence.GenerationType
+mx.ipn.escom.entidades.Profesor --|> java.io.Serializable
+mx.ipn.escom.entidades.Propuesta ..> javax.persistence.Column
+mx.ipn.escom.entidades.Propuesta ..> javax.persistence.Entity
+mx.ipn.escom.entidades.Propuesta ..> javax.persistence.GeneratedValue
+mx.ipn.escom.entidades.Propuesta ..> javax.persistence.Id
+mx.ipn.escom.entidades.Propuesta ..> javax.persistence.JoinColumn
+mx.ipn.escom.entidades.Propuesta ..> javax.persistence.ManyToOne
+mx.ipn.escom.entidades.Propuesta ..> javax.persistence.Table
+mx.ipn.escom.entidades.Propuesta ..> lombok.Getter
+mx.ipn.escom.entidades.Propuesta ..> lombok.Setter
+mx.ipn.escom.entidades.Propuesta ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.Propuesta ..> javax.persistence.GenerationType
+mx.ipn.escom.entidades.Propuesta --|> java.io.Serializable
+mx.ipn.escom.entidades.Sala ..> javax.persistence.Column
+mx.ipn.escom.entidades.Sala ..> javax.persistence.Entity
+mx.ipn.escom.entidades.Sala ..> javax.persistence.GeneratedValue
+mx.ipn.escom.entidades.Sala ..> javax.persistence.Id
+mx.ipn.escom.entidades.Sala ..> javax.persistence.JoinColumn
+mx.ipn.escom.entidades.Sala ..> javax.persistence.ManyToOne
+mx.ipn.escom.entidades.Sala ..> javax.persistence.OneToMany
+mx.ipn.escom.entidades.Sala ..> javax.persistence.Table
+mx.ipn.escom.entidades.Sala ..> lombok.Getter
+mx.ipn.escom.entidades.Sala ..> lombok.Setter
+mx.ipn.escom.entidades.Sala ..> java.util.List
+mx.ipn.escom.entidades.Sala ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.Sala ..> javax.persistence.GenerationType
+mx.ipn.escom.entidades.Sala --|> java.io.Serializable
+mx.ipn.escom.entidades.Taller ..> javax.persistence.Column
+mx.ipn.escom.entidades.Taller ..> javax.persistence.Entity
+mx.ipn.escom.entidades.Taller ..> javax.persistence.GeneratedValue
+mx.ipn.escom.entidades.Taller ..> javax.persistence.Id
+mx.ipn.escom.entidades.Taller ..> javax.persistence.JoinColumn
+mx.ipn.escom.entidades.Taller ..> javax.persistence.ManyToOne
+mx.ipn.escom.entidades.Taller ..> javax.persistence.OneToMany
+mx.ipn.escom.entidades.Taller ..> javax.persistence.Table
+mx.ipn.escom.entidades.Taller ..> lombok.Getter
+mx.ipn.escom.entidades.Taller ..> lombok.Setter
+mx.ipn.escom.entidades.Taller ..> java.util.HashSet
+mx.ipn.escom.entidades.Taller ..> java.util.List
+mx.ipn.escom.entidades.Taller ..> java.util.Set
+mx.ipn.escom.entidades.Taller ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.Taller ..> javax.persistence.GenerationType
+mx.ipn.escom.entidades.Taller --|> java.io.Serializable
+mx.ipn.escom.entidades.Usuario ..> javax.persistence.Column
+mx.ipn.escom.entidades.Usuario ..> javax.persistence.Entity
+mx.ipn.escom.entidades.Usuario ..> javax.persistence.GeneratedValue
+mx.ipn.escom.entidades.Usuario ..> javax.persistence.Id
+mx.ipn.escom.entidades.Usuario ..> javax.persistence.JoinColumn
+mx.ipn.escom.entidades.Usuario ..> javax.persistence.ManyToOne
+mx.ipn.escom.entidades.Usuario ..> javax.persistence.Table
+mx.ipn.escom.entidades.Usuario ..> lombok.Getter
+mx.ipn.escom.entidades.Usuario ..> lombok.Setter
+mx.ipn.escom.entidades.Usuario ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.Usuario ..> javax.persistence.GenerationType
+mx.ipn.escom.entidades.Usuario --|> java.io.Serializable
+mx.ipn.escom.entidades.Visitante ..> javax.persistence.Column
+mx.ipn.escom.entidades.Visitante ..> javax.persistence.Entity
+mx.ipn.escom.entidades.Visitante ..> javax.persistence.Id
+mx.ipn.escom.entidades.Visitante ..> javax.persistence.OneToMany
+mx.ipn.escom.entidades.Visitante ..> javax.persistence.Table
+mx.ipn.escom.entidades.Visitante ..> lombok.Getter
+mx.ipn.escom.entidades.Visitante ..> lombok.Setter
+mx.ipn.escom.entidades.Visitante ..> java.util.HashSet
+mx.ipn.escom.entidades.Visitante ..> java.util.List
+mx.ipn.escom.entidades.Visitante ..> java.util.Set
+mx.ipn.escom.entidades.Visitante ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.Visitante --|> java.io.Serializable
+mx.ipn.escom.entidades.VisitanteEvento ..> javax.persistence.AttributeOverride
+mx.ipn.escom.entidades.VisitanteEvento ..> javax.persistence.AttributeOverrides
+mx.ipn.escom.entidades.VisitanteEvento ..> javax.persistence.Column
+mx.ipn.escom.entidades.VisitanteEvento ..> javax.persistence.EmbeddedId
+mx.ipn.escom.entidades.VisitanteEvento ..> javax.persistence.Entity
+mx.ipn.escom.entidades.VisitanteEvento ..> javax.persistence.JoinColumn
+mx.ipn.escom.entidades.VisitanteEvento ..> javax.persistence.ManyToOne
+mx.ipn.escom.entidades.VisitanteEvento ..> javax.persistence.Table
+mx.ipn.escom.entidades.VisitanteEvento ..> lombok.Getter
+mx.ipn.escom.entidades.VisitanteEvento ..> lombok.Setter
+mx.ipn.escom.entidades.VisitanteEvento ..> javax.persistence.FetchType
+mx.ipn.escom.entidades.VisitanteEvento --|> java.io.Serializable
+mx.ipn.escom.entidades.VisitanteEventoId ..> javax.persistence.Column
+mx.ipn.escom.entidades.VisitanteEventoId ..> javax.persistence.Embeddable
+mx.ipn.escom.entidades.VisitanteEventoId ..> lombok.Getter
+mx.ipn.escom.entidades.VisitanteEventoId ..> lombok.Setter
+mx.ipn.escom.entidades.VisitanteEventoId --|> java.io.Serializable
+mx.ipn.escom.repositorios.impl.AlumnoClaseRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.AlumnoClaseRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.AlumnoClaseRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.AlumnoClaseRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.AlumnoClaseRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.AlumnoClaseRepositorioImpl ..> mx.ipn.escom.entidades.AlumnoClase
+mx.ipn.escom.repositorios.impl.AlumnoClaseRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.AlumnoClaseRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.AlumnoClaseRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.AlumnoClaseRepositorioImpl --|> mx.ipn.escom.repositorios.AlumnoClaseRepositorio
+mx.ipn.escom.repositorios.impl.AlumnoRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.AlumnoRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.AlumnoRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.AlumnoRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.AlumnoRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.AlumnoRepositorioImpl ..> mx.ipn.escom.entidades.Alumno
+mx.ipn.escom.repositorios.impl.AlumnoRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.AlumnoRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.AlumnoRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.AlumnoRepositorioImpl --|> mx.ipn.escom.repositorios.AlumnoRepositorio
+mx.ipn.escom.repositorios.impl.CasaRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.CasaRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.CasaRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.CasaRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.CasaRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.CasaRepositorioImpl ..> mx.ipn.escom.entidades.Casa
+mx.ipn.escom.repositorios.impl.CasaRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.CasaRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.CasaRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.CasaRepositorioImpl --|> mx.ipn.escom.repositorios.CasaRepositorio
+mx.ipn.escom.repositorios.impl.ClaseRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.ClaseRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.ClaseRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.ClaseRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.ClaseRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.ClaseRepositorioImpl ..> mx.ipn.escom.entidades.Clase
+mx.ipn.escom.repositorios.impl.ClaseRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.ClaseRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.ClaseRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.ClaseRepositorioImpl --|> mx.ipn.escom.repositorios.ClaseRepositorio
+mx.ipn.escom.repositorios.impl.EventoRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.EventoRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.EventoRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.EventoRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.EventoRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.EventoRepositorioImpl ..> mx.ipn.escom.entidades.Evento
+mx.ipn.escom.repositorios.impl.EventoRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.EventoRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.EventoRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.EventoRepositorioImpl --|> mx.ipn.escom.repositorios.EventoRepositorio
+mx.ipn.escom.repositorios.impl.GaleriaCasaRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.GaleriaCasaRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.GaleriaCasaRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.GaleriaCasaRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.GaleriaCasaRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.GaleriaCasaRepositorioImpl ..> mx.ipn.escom.entidades.GaleriaCasa
+mx.ipn.escom.repositorios.impl.GaleriaCasaRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.GaleriaCasaRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.GaleriaCasaRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.GaleriaCasaRepositorioImpl --|> mx.ipn.escom.repositorios.GaleriaCasaRepositorio
+mx.ipn.escom.repositorios.impl.GaleriaEventoRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.GaleriaEventoRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.GaleriaEventoRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.GaleriaEventoRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.GaleriaEventoRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.GaleriaEventoRepositorioImpl ..> mx.ipn.escom.entidades.GaleriaEvento
+mx.ipn.escom.repositorios.impl.GaleriaEventoRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.GaleriaEventoRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.GaleriaEventoRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.GaleriaEventoRepositorioImpl --|> mx.ipn.escom.repositorios.GaleriaEventoRepositorio
+mx.ipn.escom.repositorios.impl.GaleriaTallerRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.GaleriaTallerRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.GaleriaTallerRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.GaleriaTallerRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.GaleriaTallerRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.GaleriaTallerRepositorioImpl ..> mx.ipn.escom.entidades.GaleriaTaller
+mx.ipn.escom.repositorios.impl.GaleriaTallerRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.GaleriaTallerRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.GaleriaTallerRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.GaleriaTallerRepositorioImpl --|> mx.ipn.escom.repositorios.GaleriaTallerRepositorio
+mx.ipn.escom.repositorios.impl.ProfesorRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.ProfesorRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.ProfesorRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.ProfesorRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.ProfesorRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.ProfesorRepositorioImpl ..> mx.ipn.escom.entidades.Profesor
+mx.ipn.escom.repositorios.impl.ProfesorRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.ProfesorRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.ProfesorRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.ProfesorRepositorioImpl --|> mx.ipn.escom.repositorios.ProfesorRepositorio
+mx.ipn.escom.repositorios.impl.PropuestaRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.PropuestaRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.PropuestaRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.PropuestaRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.PropuestaRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.PropuestaRepositorioImpl ..> mx.ipn.escom.entidades.Propuesta
+mx.ipn.escom.repositorios.impl.PropuestaRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.PropuestaRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.PropuestaRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.PropuestaRepositorioImpl --|> mx.ipn.escom.repositorios.PropuestaRepositorio
+mx.ipn.escom.repositorios.impl.SalaRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.SalaRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.SalaRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.SalaRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.SalaRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.SalaRepositorioImpl ..> mx.ipn.escom.entidades.Sala
+mx.ipn.escom.repositorios.impl.SalaRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.SalaRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.SalaRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.SalaRepositorioImpl ..> org.hibernate.sql.JoinType
+mx.ipn.escom.repositorios.impl.SalaRepositorioImpl --|> mx.ipn.escom.repositorios.SalaRepositorio
+mx.ipn.escom.repositorios.impl.TallerRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.TallerRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.TallerRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.TallerRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.TallerRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.TallerRepositorioImpl ..> mx.ipn.escom.entidades.Taller
+mx.ipn.escom.repositorios.impl.TallerRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.TallerRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.TallerRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.TallerRepositorioImpl --|> mx.ipn.escom.repositorios.TallerRepositorio
+mx.ipn.escom.repositorios.impl.UsuarioRepositorioImpl ..> java.lang.Override
+mx.ipn.escom.repositorios.impl.UsuarioRepositorioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.repositorios.impl.UsuarioRepositorioImpl ..> org.springframework.stereotype.Repository
+mx.ipn.escom.repositorios.impl.UsuarioRepositorioImpl ..> org.springframework.transaction.annotation.Transactional
+mx.ipn.escom.repositorios.impl.UsuarioRepositorioImpl ..> java.util.List
+mx.ipn.escom.repositorios.impl.UsuarioRepositorioImpl ..> mx.ipn.escom.entidades.Usuario
+mx.ipn.escom.repositorios.impl.UsuarioRepositorioImpl ..> org.hibernate.HibernateException
+mx.ipn.escom.repositorios.impl.UsuarioRepositorioImpl ..> org.hibernate.SessionFactory
+mx.ipn.escom.repositorios.impl.UsuarioRepositorioImpl ..> org.hibernate.criterion.Restrictions
+mx.ipn.escom.repositorios.impl.UsuarioRepositorioImpl --|> mx.ipn.escom.repositorios.UsuarioRepositorio
+mx.ipn.escom.servicios.impl.AlumnoClaseServicioImpl1 ..> java.lang.Override
+mx.ipn.escom.servicios.impl.AlumnoClaseServicioImpl1 ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.AlumnoClaseServicioImpl1 ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.AlumnoClaseServicioImpl1 ..> java.util.List
+mx.ipn.escom.servicios.impl.AlumnoClaseServicioImpl1 ..> mx.ipn.escom.entidades.AlumnoClase
+mx.ipn.escom.servicios.impl.AlumnoClaseServicioImpl1 ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.AlumnoClaseServicioImpl1 ..> mx.ipn.escom.repositorios.AlumnoClaseRepositorio
+mx.ipn.escom.servicios.impl.AlumnoClaseServicioImpl1 --|> mx.ipn.escom.servicios.AlumnoClaseServicio
+mx.ipn.escom.servicios.impl.AlumnoServicioImpl ..> java.lang.Override
+mx.ipn.escom.servicios.impl.AlumnoServicioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.AlumnoServicioImpl ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.AlumnoServicioImpl ..> java.util.List
+mx.ipn.escom.servicios.impl.AlumnoServicioImpl ..> mx.ipn.escom.entidades.Alumno
+mx.ipn.escom.servicios.impl.AlumnoServicioImpl ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.AlumnoServicioImpl ..> mx.ipn.escom.repositorios.AlumnoRepositorio
+mx.ipn.escom.servicios.impl.AlumnoServicioImpl --|> mx.ipn.escom.servicios.AlumnoServicio
+mx.ipn.escom.servicios.impl.CasaServicioImpl ..> java.lang.Override
+mx.ipn.escom.servicios.impl.CasaServicioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.CasaServicioImpl ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.CasaServicioImpl ..> java.util.List
+mx.ipn.escom.servicios.impl.CasaServicioImpl ..> mx.ipn.escom.entidades.Casa
+mx.ipn.escom.servicios.impl.CasaServicioImpl ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.CasaServicioImpl ..> mx.ipn.escom.repositorios.CasaRepositorio
+mx.ipn.escom.servicios.impl.CasaServicioImpl --|> mx.ipn.escom.servicios.CasaServicio
+mx.ipn.escom.servicios.impl.ClaseServicioImpl ..> java.lang.Override
+mx.ipn.escom.servicios.impl.ClaseServicioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.ClaseServicioImpl ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.ClaseServicioImpl ..> java.util.List
+mx.ipn.escom.servicios.impl.ClaseServicioImpl ..> mx.ipn.escom.entidades.Clase
+mx.ipn.escom.servicios.impl.ClaseServicioImpl ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.ClaseServicioImpl ..> mx.ipn.escom.repositorios.ClaseRepositorio
+mx.ipn.escom.servicios.impl.ClaseServicioImpl --|> mx.ipn.escom.servicios.ClaseServicio
+mx.ipn.escom.servicios.impl.EventoServicioImpl ..> java.lang.Override
+mx.ipn.escom.servicios.impl.EventoServicioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.EventoServicioImpl ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.EventoServicioImpl ..> java.util.List
+mx.ipn.escom.servicios.impl.EventoServicioImpl ..> mx.ipn.escom.entidades.Evento
+mx.ipn.escom.servicios.impl.EventoServicioImpl ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.EventoServicioImpl ..> mx.ipn.escom.repositorios.EventoRepositorio
+mx.ipn.escom.servicios.impl.EventoServicioImpl --|> mx.ipn.escom.servicios.EventoServicio
+mx.ipn.escom.servicios.impl.GaleriaCasaServicioImpl ..> java.lang.Override
+mx.ipn.escom.servicios.impl.GaleriaCasaServicioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.GaleriaCasaServicioImpl ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.GaleriaCasaServicioImpl ..> java.util.List
+mx.ipn.escom.servicios.impl.GaleriaCasaServicioImpl ..> mx.ipn.escom.entidades.GaleriaCasa
+mx.ipn.escom.servicios.impl.GaleriaCasaServicioImpl ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.GaleriaCasaServicioImpl ..> mx.ipn.escom.repositorios.GaleriaCasaRepositorio
+mx.ipn.escom.servicios.impl.GaleriaCasaServicioImpl --|> mx.ipn.escom.servicios.GaleriaCasaServicio
+mx.ipn.escom.servicios.impl.GaleriaEventoServicioImpl ..> java.lang.Override
+mx.ipn.escom.servicios.impl.GaleriaEventoServicioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.GaleriaEventoServicioImpl ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.GaleriaEventoServicioImpl ..> java.util.List
+mx.ipn.escom.servicios.impl.GaleriaEventoServicioImpl ..> mx.ipn.escom.entidades.GaleriaEvento
+mx.ipn.escom.servicios.impl.GaleriaEventoServicioImpl ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.GaleriaEventoServicioImpl ..> mx.ipn.escom.repositorios.GaleriaEventoRepositorio
+mx.ipn.escom.servicios.impl.GaleriaEventoServicioImpl --|> mx.ipn.escom.servicios.GaleriaEventoServicio
+mx.ipn.escom.servicios.impl.GaleriaTallerServicioImpl ..> java.lang.Override
+mx.ipn.escom.servicios.impl.GaleriaTallerServicioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.GaleriaTallerServicioImpl ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.GaleriaTallerServicioImpl ..> java.util.List
+mx.ipn.escom.servicios.impl.GaleriaTallerServicioImpl ..> mx.ipn.escom.entidades.GaleriaTaller
+mx.ipn.escom.servicios.impl.GaleriaTallerServicioImpl ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.GaleriaTallerServicioImpl ..> mx.ipn.escom.repositorios.GaleriaTallerRepositorio
+mx.ipn.escom.servicios.impl.GaleriaTallerServicioImpl --|> mx.ipn.escom.servicios.GaleriaTallerServicio
+mx.ipn.escom.servicios.impl.ProfesorServicioImpl ..> java.lang.Override
+mx.ipn.escom.servicios.impl.ProfesorServicioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.ProfesorServicioImpl ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.ProfesorServicioImpl ..> java.util.List
+mx.ipn.escom.servicios.impl.ProfesorServicioImpl ..> mx.ipn.escom.entidades.Profesor
+mx.ipn.escom.servicios.impl.ProfesorServicioImpl ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.ProfesorServicioImpl ..> mx.ipn.escom.repositorios.ProfesorRepositorio
+mx.ipn.escom.servicios.impl.ProfesorServicioImpl --|> mx.ipn.escom.servicios.ProfesorServicio
+mx.ipn.escom.servicios.impl.PropuestaServicioImpl ..> java.lang.Override
+mx.ipn.escom.servicios.impl.PropuestaServicioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.PropuestaServicioImpl ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.PropuestaServicioImpl ..> java.util.List
+mx.ipn.escom.servicios.impl.PropuestaServicioImpl ..> mx.ipn.escom.entidades.Propuesta
+mx.ipn.escom.servicios.impl.PropuestaServicioImpl ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.PropuestaServicioImpl ..> mx.ipn.escom.repositorios.PropuestaRepositorio
+mx.ipn.escom.servicios.impl.PropuestaServicioImpl --|> mx.ipn.escom.servicios.PropuestaServicio
+mx.ipn.escom.servicios.impl.SalaServicioImpl ..> java.lang.Override
+mx.ipn.escom.servicios.impl.SalaServicioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.SalaServicioImpl ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.SalaServicioImpl ..> java.util.List
+mx.ipn.escom.servicios.impl.SalaServicioImpl ..> mx.ipn.escom.entidades.Sala
+mx.ipn.escom.servicios.impl.SalaServicioImpl ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.SalaServicioImpl ..> mx.ipn.escom.repositorios.SalaRepositorio
+mx.ipn.escom.servicios.impl.SalaServicioImpl --|> mx.ipn.escom.servicios.SalaServicio
+mx.ipn.escom.servicios.impl.TallerServicioImpl ..> java.lang.Override
+mx.ipn.escom.servicios.impl.TallerServicioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.TallerServicioImpl ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.TallerServicioImpl ..> java.util.List
+mx.ipn.escom.servicios.impl.TallerServicioImpl ..> mx.ipn.escom.entidades.Taller
+mx.ipn.escom.servicios.impl.TallerServicioImpl ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.TallerServicioImpl ..> mx.ipn.escom.repositorios.TallerRepositorio
+mx.ipn.escom.servicios.impl.TallerServicioImpl --|> mx.ipn.escom.servicios.TallerServicio
+mx.ipn.escom.servicios.impl.UsuarioServicioImpl ..> java.lang.Override
+mx.ipn.escom.servicios.impl.UsuarioServicioImpl ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.servicios.impl.UsuarioServicioImpl ..> org.springframework.stereotype.Service
+mx.ipn.escom.servicios.impl.UsuarioServicioImpl ..> java.util.List
+mx.ipn.escom.servicios.impl.UsuarioServicioImpl ..> mx.ipn.escom.entidades.Usuario
+mx.ipn.escom.servicios.impl.UsuarioServicioImpl ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.servicios.impl.UsuarioServicioImpl ..> mx.ipn.escom.repositorios.UsuarioRepositorio
+mx.ipn.escom.servicios.impl.UsuarioServicioImpl --|> mx.ipn.escom.servicios.UsuarioServicio
+mx.ipn.escom.servicios.util.CarpetaArchivos ..> java.io.File
+mx.ipn.escom.servicios.util.CarpetaArchivos ..> mx.ipn.escom.servicios.util.Rutas
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.BufferedReader
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.BufferedWriter
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.ByteArrayOutputStream
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.File
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.FileInputStream
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.FileNotFoundException
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.FileOutputStream
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.FileWriter
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.IOException
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.InputStream
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.InputStreamReader
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.OutputStream
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.PrintWriter
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.Reader
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.StringWriter
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.io.Writer
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.util.logging.Level
+mx.ipn.escom.servicios.util.ManejadorArchivos ..> java.util.logging.Logger
+mx.ipn.escom.servicios.util.Validaciones ..> java.util.regex.Pattern
+mx.ipn.escom.turismoazcapotzalco.controller.HomeController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.HomeController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.HomeController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> mx.ipn.escom.entidades.AlumnoClase
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> org.springframework.web.multipart.MultipartFile
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoClaseController ..> mx.ipn.escom.servicios.AlumnoClaseServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> mx.ipn.escom.entidades.Alumno
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> mx.ipn.escom.servicios.util.Llave
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> org.springframework.ui.Model
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.AlumnoController ..> mx.ipn.escom.servicios.AlumnoServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> mx.ipn.escom.entidades.Casa
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> mx.ipn.escom.servicios.util.Llave
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> org.springframework.ui.Model
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.CasaController ..> mx.ipn.escom.servicios.CasaServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> mx.ipn.escom.entidades.Clase
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> org.springframework.ui.Model
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> org.springframework.web.multipart.MultipartFile
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> mx.ipn.escom.servicios.ClaseServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> mx.ipn.escom.servicios.ProfesorServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> mx.ipn.escom.servicios.SalaServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ClaseController ..> mx.ipn.escom.servicios.TallerServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> mx.ipn.escom.entidades.Evento
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> org.springframework.web.multipart.MultipartFile
+mx.ipn.escom.turismoazcapotzalco.controller.crud.EventoController ..> mx.ipn.escom.servicios.EventoServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> mx.ipn.escom.entidades.GaleriaCasa
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> org.springframework.web.multipart.MultipartFile
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaCasaController ..> mx.ipn.escom.servicios.GaleriaCasaServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> mx.ipn.escom.entidades.GaleriaEvento
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> org.springframework.web.multipart.MultipartFile
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaEventoController ..> mx.ipn.escom.servicios.GaleriaEventoServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> mx.ipn.escom.entidades.GaleriaTaller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> org.springframework.web.multipart.MultipartFile
+mx.ipn.escom.turismoazcapotzalco.controller.crud.GaleriaTallerController ..> mx.ipn.escom.servicios.GaleriaTallerServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> mx.ipn.escom.entidades.Profesor
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> org.springframework.ui.Model
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.ProfesorController ..> mx.ipn.escom.servicios.ProfesorServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> mx.ipn.escom.entidades.Propuesta
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> org.springframework.web.multipart.MultipartFile
+mx.ipn.escom.turismoazcapotzalco.controller.crud.PropuestaController ..> mx.ipn.escom.servicios.PropuestaServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> mx.ipn.escom.entidades.Sala
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> mx.ipn.escom.servicios.util.Llave
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> org.springframework.ui.Model
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> mx.ipn.escom.servicios.CasaServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.SalaController ..> mx.ipn.escom.servicios.SalaServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> mx.ipn.escom.entidades.Taller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> org.springframework.ui.Model
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.TallerController ..> mx.ipn.escom.servicios.TallerServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> javax.validation.Valid
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> org.springframework.web.bind.annotation.ModelAttribute
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> org.springframework.web.bind.annotation.ResponseBody
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> mx.ipn.escom.entidades.Usuario
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> mx.ipn.escom.servicios.util.Llave
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> mx.ipn.escom.servicios.util.MensajesCrud
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> org.springframework.ui.Model
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> org.springframework.validation.BindingResult
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> org.springframework.validation.ObjectError
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> org.springframework.web.multipart.MultipartFile
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> mx.ipn.escom.servicios.CasaServicio
+mx.ipn.escom.turismoazcapotzalco.controller.crud.UsuarioController ..> mx.ipn.escom.servicios.UsuarioServicio
+mx.ipn.escom.turismoazcapotzalco.controller.usuarios.LoginController ..> org.springframework.beans.factory.annotation.Autowired
+mx.ipn.escom.turismoazcapotzalco.controller.usuarios.LoginController ..> org.springframework.stereotype.Controller
+mx.ipn.escom.turismoazcapotzalco.controller.usuarios.LoginController ..> org.springframework.web.bind.annotation.RequestMapping
+mx.ipn.escom.turismoazcapotzalco.controller.usuarios.LoginController ..> javax.servlet.http.HttpSession
+mx.ipn.escom.turismoazcapotzalco.controller.usuarios.LoginController ..> mx.ipn.escom.entidades.Usuario
+mx.ipn.escom.turismoazcapotzalco.controller.usuarios.LoginController ..> mx.ipn.escom.servicios.util.Llave
+mx.ipn.escom.turismoazcapotzalco.controller.usuarios.LoginController ..> org.springframework.ui.Model
+mx.ipn.escom.turismoazcapotzalco.controller.usuarios.LoginController ..> org.springframework.web.bind.annotation.RequestMethod
+mx.ipn.escom.turismoazcapotzalco.controller.usuarios.LoginController ..> mx.ipn.escom.servicios.UsuarioServicio
+mx.ipn.escom.repositorios.AlumnoClaseRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.AlumnoClaseRepositorio ..> mx.ipn.escom.entidades.AlumnoClase
+mx.ipn.escom.repositorios.AlumnoRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.AlumnoRepositorio ..> mx.ipn.escom.entidades.Alumno
+mx.ipn.escom.repositorios.CasaRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.CasaRepositorio ..> mx.ipn.escom.entidades.Casa
+mx.ipn.escom.repositorios.ClaseRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.ClaseRepositorio ..> mx.ipn.escom.entidades.Clase
+mx.ipn.escom.repositorios.EventoRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.EventoRepositorio ..> mx.ipn.escom.entidades.Evento
+mx.ipn.escom.repositorios.GaleriaCasaRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.GaleriaCasaRepositorio ..> mx.ipn.escom.entidades.GaleriaCasa
+mx.ipn.escom.repositorios.GaleriaEventoRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.GaleriaEventoRepositorio ..> mx.ipn.escom.entidades.GaleriaEvento
+mx.ipn.escom.repositorios.GaleriaTallerRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.GaleriaTallerRepositorio ..> mx.ipn.escom.entidades.GaleriaTaller
+mx.ipn.escom.repositorios.ProfesorRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.ProfesorRepositorio ..> mx.ipn.escom.entidades.Profesor
+mx.ipn.escom.repositorios.PropuestaRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.PropuestaRepositorio ..> mx.ipn.escom.entidades.Propuesta
+mx.ipn.escom.repositorios.SalaRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.SalaRepositorio ..> mx.ipn.escom.entidades.Sala
+mx.ipn.escom.repositorios.TallerRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.TallerRepositorio ..> mx.ipn.escom.entidades.Taller
+mx.ipn.escom.repositorios.UsuarioRepositorio ..> java.util.List
+mx.ipn.escom.repositorios.UsuarioRepositorio ..> mx.ipn.escom.entidades.Usuario
+mx.ipn.escom.servicios.AlumnoClaseServicio ..> java.util.List
+mx.ipn.escom.servicios.AlumnoClaseServicio ..> mx.ipn.escom.entidades.AlumnoClase
+mx.ipn.escom.servicios.AlumnoServicio ..> java.util.List
+mx.ipn.escom.servicios.AlumnoServicio ..> mx.ipn.escom.entidades.Alumno
+mx.ipn.escom.servicios.CasaServicio ..> java.util.List
+mx.ipn.escom.servicios.CasaServicio ..> mx.ipn.escom.entidades.Casa
+mx.ipn.escom.servicios.ClaseServicio ..> java.util.List
+mx.ipn.escom.servicios.ClaseServicio ..> mx.ipn.escom.entidades.Clase
+mx.ipn.escom.servicios.EventoServicio ..> java.util.List
+mx.ipn.escom.servicios.EventoServicio ..> mx.ipn.escom.entidades.Evento
+mx.ipn.escom.servicios.GaleriaCasaServicio ..> java.util.List
+mx.ipn.escom.servicios.GaleriaCasaServicio ..> mx.ipn.escom.entidades.GaleriaCasa
+mx.ipn.escom.servicios.GaleriaEventoServicio ..> java.util.List
+mx.ipn.escom.servicios.GaleriaEventoServicio ..> mx.ipn.escom.entidades.GaleriaEvento
+mx.ipn.escom.servicios.GaleriaTallerServicio ..> java.util.List
+mx.ipn.escom.servicios.GaleriaTallerServicio ..> mx.ipn.escom.entidades.GaleriaTaller
+mx.ipn.escom.servicios.ProfesorServicio ..> java.util.List
+mx.ipn.escom.servicios.ProfesorServicio ..> mx.ipn.escom.entidades.Profesor
+mx.ipn.escom.servicios.PropuestaServicio ..> java.util.List
+mx.ipn.escom.servicios.PropuestaServicio ..> mx.ipn.escom.entidades.Propuesta
+mx.ipn.escom.servicios.SalaServicio ..> java.util.List
+mx.ipn.escom.servicios.SalaServicio ..> mx.ipn.escom.entidades.Sala
+mx.ipn.escom.servicios.TallerServicio ..> java.util.List
+mx.ipn.escom.servicios.TallerServicio ..> mx.ipn.escom.entidades.Taller
+mx.ipn.escom.servicios.UsuarioServicio ..> java.util.List
+mx.ipn.escom.servicios.UsuarioServicio ..> mx.ipn.escom.entidades.Usuario
+@enduml

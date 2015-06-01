@@ -1,12 +1,12 @@
 package mx.ipn.escom.entidades;
 // Generated 29/05/2015 09:21:20 AM by Hibernate Tools 3.6.0
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -22,6 +22,7 @@ import lombok.Setter;
 public class CategoriaEvento implements java.io.Serializable {
 
     @Id
+    @GeneratedValue(strategy = IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
     @Getter @Setter private Integer id;
 

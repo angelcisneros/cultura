@@ -27,8 +27,8 @@ public class Propuesta implements java.io.Serializable {
     @Getter @Setter private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "encargado_id", nullable = false)
-    @Getter @Setter private Encargado encargado;
+    @JoinColumn(name = "usuario", nullable = false)
+    @Getter @Setter private Usuario usuario;
 
     @Column(name = "representante", nullable = false, length = 105)
     @Getter @Setter private String representante;
@@ -54,8 +54,8 @@ public class Propuesta implements java.io.Serializable {
     public Propuesta() {
     }
 
-    public Propuesta(Encargado encargado, String representante, String objetivo, String descripcion, String correo, Integer asistenciaEstimada) {
-        this.encargado = encargado;
+    public Propuesta(Usuario usuario, String representante, String objetivo, String descripcion, String correo, Integer asistenciaEstimada) {
+        this.usuario = usuario;
         this.representante = representante;
         this.objetivo = objetivo;
         this.descripcion = descripcion;
@@ -63,8 +63,8 @@ public class Propuesta implements java.io.Serializable {
         this.asistenciaEstimada = asistenciaEstimada;
     }
 
-    public Propuesta(Encargado encargado, String representante, String objetivo, Integer personas, String descripcion, String correo, String telefono, Integer asistenciaEstimada) {
-        this.encargado = encargado;
+    public Propuesta(Usuario usuario, String representante, String objetivo, Integer personas, String descripcion, String correo, String telefono, Integer asistenciaEstimada) {
+        this.usuario = usuario;
         this.representante = representante;
         this.objetivo = objetivo;
         this.personas = personas;

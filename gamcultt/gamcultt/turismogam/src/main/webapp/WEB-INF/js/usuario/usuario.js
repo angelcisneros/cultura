@@ -8,28 +8,61 @@ var trClick;
 $(document).on('ready', function() {
 
     //POPUP AGREGAR
-    $('#addEncargadoButton').on('click', function() {
+    $('#addUsuarioButton').on('click', function() {
         limpiarInputs();
-        $('#popUpEncargadoAdd').modal('show');
+        $('#popUpUsuarioAdd').modal('show');
     });
 
     //POPUP EDITAR
-    $('.encargadoUpdateButton').on('click', function() {
+    $('.usuarioUpdateButton').on('click', function() {
         limpiarInputs();
         rellenaPopUpUpdate(this);
     });
 
     //POPUP ELIMINAR
-    $('.encargadoDeleteButton').on('click', function() {
+    $('.usuarioDeleteButton').on('click', function() {
         rellenaPopUpsDelete(this);
     });
+
+    //Radios
+    $('#activadaUpdate').on('click', function() {
+        if ($('#activadaUpdate').select()) {
+            radios($('#activadaUpdate'), $('#desactivadaUpdate'));
+        } else {
+            radios($('#desactivadaUpdate'), $('#activadaUpdate'));
+        }
+    });
+    $('#desactivadaUpdate').on('click', function() {
+        if (!$('#desactivadaUpdate').select()) {
+            radios($('#activadaUpdate'), $('#desactivadaUpdate'));
+        } else {
+            radios($('#desactivadaUpdate'), $('#activadaUpdate'));
+        }
+    });
+
+    $('#activadaAdd').on('click', function() {
+        if ($('#activadaAdd').select()) {
+            radios($('#activadaAdd'), $('#desactivadaAdd'));
+        } else {
+            radios($('#desactivadaAdd'), $('#activadaAdd'));
+        }
+    });
+    $('#desactivadaAdd').on('click', function() {
+        if (!$('#desactivadaAdd').select()) {
+            radios($('#activadaAdd'), $('#desactivadaAdd'));
+        } else {
+            radios($('#desactivadaAdd'), $('#activadaAdd'));
+        }
+    });
+
+
 });
 
 //PETICIONES AJAX AL SERVIDOR
 $(document).on('ready', function() {
 
     //AGREGAR EN BASE
-    $('#addEncargado').on('click', function() {
+    $('#addUsuario').on('click', function() {
         $('#nombreAdd').removeAttr('style');
         var requisitos = 0;
         var nombre = $('#nombreAdd').val();
@@ -37,6 +70,8 @@ $(document).on('ready', function() {
         var materno = $('#maternoAdd').val();
         var telefono = $('#telefonoAdd').val();
         var casa = $('#casaAdd').val();
+        var estado = $('#activadaAdd').prop('checked');
+        var correo = $('#correoAdd').val();
 
         if (nombre === '') {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
@@ -77,26 +112,39 @@ $(document).on('ready', function() {
         } else {
             $('#casaAdd').removeAttr('style');
             casa = $('#casaAdd option:selected').text();
-            cierraPopUpChiquito($('$casaAdd'));
+            cierraPopUpChiquito($('#casaAdd'));
             requisitos++;
         }
-        if (requisitos === 5) {
+        if (!validarEmail(correo)) {
+            muestraPopUpCampoNoVacio($('#correoAdd'));
+            $('#correoAdd').css("border", "1px solid red");
+        } else {
+            $('#correoAdd').removeAttr('style');
+            requisitos++;
+        }
+        if (estado === 'true' || estado === true) {
+            estado = 'activada';
+            //imagen = 'palomita.png';
+        } else {
+            estado = 'desactivada';
+        }
+        if (requisitos === 6) {
 
             $.ajax({
                 type: 'POST',
-                url: "agregarEncargado/",
+                url: "agregarUsuario/",
                 dataType: 'text',
-                data: $('#encargadoAddForm').serialize(),
+                data: $('#usuarioAddForm').serialize(),
                 success: function(respuesta) {
                     var respuesta = respuesta.split('#');
                     if (respuesta[0] === 'Correcto...') {
                         $('#tituloPopUp').text(respuesta[0]);
                         $('#contenidoPopUp').text(respuesta[1]);
-                        $('#popUpEncargadoAdd').modal('hide');
+                        $('#popUpUsuarioAdd').modal('hide');
                         $('#popUpRespuesta').modal('show');
-                        $('.nuevoEncargado').removeClass();
-                        $("#encargadoTbody").prepend(
-                                '<tr valign="top" class="nuevoEncargado success">' +
+                        $('.nuevoUsuario').removeClass();
+                        $("#usuarioTbody").prepend(
+                                '<tr valign="top" class="nuevoUsuario success">' +
                                 '<td class="id">' +
                                 '<label class="nombre">' + nombre + '</label>&#32;' +
                                 '<label class="paterno">' + paterno + '</label>&#32;' +
@@ -111,8 +159,8 @@ $(document).on('ready', function() {
                                 '</td>' +
                                 '<td>' +
                                 '<div class="btn-group" role="group" aria-label="">' +
-                                '<button class="btn btn-primary encargadoUpdateButton">Editar</button>' +
-                                '<button class="btn btn-danger encargadoDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-primary usuarioUpdateButton">Editar</button>' +
+                                '<button class="btn btn-danger usuarioDeleteButton">Eliminar</button>' +
                                 '</div>' +
                                 '</td>' +
                                 '</tr>'
@@ -131,13 +179,15 @@ $(document).on('ready', function() {
     });
 
     //ACTUALIZAR BASE
-    $('#updateEncargado').on('click', function() {
+    $('#updateUsuario').on('click', function() {
         var requisitos = 0;
         var nombre = $('#nombreUpdate').val();
         var paterno = $('#paternoUpdate').val();
         var materno = $('#maternoUpdate').val();
         var telefono = $('#telefonoUpdate').val();
         var casa = $('#casaUpdate').val();
+        var estado = $('#activadaAdd').prop('checked');
+        var correo = $('#correoAdd').val();
 
         if (nombre === '') {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
@@ -181,21 +231,34 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('$casaUpdate'));
             requisitos++;
         }
-        if (requisitos === 5) {
+        if (!validarEmail(correo)) {
+            muestraPopUpCampoNoVacio($('#correoAdd'));
+            $('#correoAdd').css("border", "1px solid red");
+        } else {
+            $('#correoAdd').removeAttr('style');
+            requisitos++;
+        }
+        if (estado === 'true' || estado === true) {
+            estado = 'activada';
+            //imagen = 'palomita.png';
+        } else {
+            estado = 'desactivada';
+        }
+        if (requisitos === 6) {
             $.ajax({
                 type: 'POST',
-                url: "editarEncargado/",
+                url: "editarUsuario/",
                 dataType: 'text',
-                data: $('#encargadoUpdateForm').serialize(),
+                data: $('#usuarioUpdateForm').serialize(),
                 success: function(respuesta) {
                     var respuesta = respuesta.split('#');
                     if (respuesta[0] === 'Correcto...') {
                         $('#tituloPopUp').text(respuesta[0]);
                         $('#contenidoPopUp').text(respuesta[1]);
-                        $('#popUpEncargadoUpdate').modal('hide');
+                        $('#popUpUsuarioUpdate').modal('hide');
                         $('#popUpRespuesta').modal('show');
-                        $('.nuevoEncargado').removeClass();
-                        $(trClick).attr('class', 'success nuevoEncargado');
+                        $('.nuevoUsuario').removeClass();
+                        $(trClick).attr('class', 'success nuevoUsuario');
                         $(trClick).html(
                                 '<td class="id">' +
                                 '<label class="nombre">' + nombre + '</label>&#32;' +
@@ -212,8 +275,8 @@ $(document).on('ready', function() {
                                 '</td>' +
                                 '<td>' +
                                 '<div class="btn-group" role="group" aria-label="">' +
-                                '<button class="btn btn-primary encargadoUpdateButton">Editar</button>' +
-                                '<button class="btn btn-danger encargadoDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-primary usuarioUpdateButton">Editar</button>' +
+                                '<button class="btn btn-danger usuarioDeleteButton">Eliminar</button>' +
                                 '</div>' +
                                 '</td>'
                                 );
@@ -227,18 +290,18 @@ $(document).on('ready', function() {
 
     });
 
-    $('#deleteEncargado').on('click', function() {
+    $('#deleteUsuario').on('click', function() {
         $.ajax({
             type: 'POST',
-            url: "eliminarEncargado/",
+            url: "eliminarUsuario/",
             dataType: 'text',
-            data: $('#encargadoDeleteForm').serialize(),
+            data: $('#usuarioDeleteForm').serialize(),
             success: function(respuesta) {
                 var respuesta = respuesta.split('#');
                 if (respuesta[0] === 'Correcto...') {
                     $('#tituloPopUp').text(respuesta[0]);
                     $('#contenidoPopUp').text(respuesta[1]);
-                    $('#popUpEncargadoDelete').modal('hide');
+                    $('#popUpUsuarioDelete').modal('hide');
                     $('#popUpRespuesta').modal('show');
                     $(trClick).remove();
                 }
@@ -252,11 +315,11 @@ $(document).on('ready', function() {
 });
 
 
-$('#encargadoTbody').on('click', '.encargadoUpdateButton', function() {
+$('#usuarioTbody').on('click', '.usuarioUpdateButton', function() {
     rellenaPopUpUpdate(this);
 });
 
-$('#encargadoTbody').on('click', '.encargadoDeleteButton', function() {
+$('#usuarioTbody').on('click', '.usuarioDeleteButton', function() {
     rellenaPopUpsDelete(this);
 });
 
@@ -277,7 +340,7 @@ function rellenaPopUpsDelete(selector) {
     $('#edadDelete').text(edad);
     $('#nombreTutorDelete').text(nombreTutor);
 
-    $('#popUpEncargadoDelete').modal('show');
+    $('#popUpUsuarioDelete').modal('show');
 }
 
 function rellenaPopUpUpdate(selector) {
@@ -288,20 +351,24 @@ function rellenaPopUpUpdate(selector) {
     var materno = $(tr).find('td.id label.materno').text();
     var telefono = $(tr).find('td label.telefono').text();
     var casa = $(tr).find('td label.casa').text();
-    var telefono = $(tr).find('td label.telefono').text();
-    var correo = $(tr).find('td label.correo').text();
-    var celular = $(tr).find('td label.celular').text();
     trClick = $(tr);
 
     $('#idUpdate').val(id);
     $('#nombreUpdate').val(nombre);
     $('#paternoUpdate').val(paterno);
     $('#maternoUpdate').val(materno);
-    $('#edadUpdate').val(edad);
-    $('#nombreTutorUpdate').val(nombreTutor);
-    $('#correoUpdate').val(correo);
     $('#telefonoUpdate').val(telefono);
-    $('#celularUpdate').val(celular);
+    setOption($('#casaUpdate').children('option'), casa);
 
-    $('#popUpEncargadoUpdate').modal('show');
+    $('#popUpUsuarioUpdate').modal('show');
+}
+//CONTRO DE RADIOS
+function radios(activar, desactivar) {
+    $(activar).val('true');
+    $(activar).attr('name', 'estado');
+    $(activar).prop('checked', true);
+
+    $(desactivar).val('false');
+    $(desactivar).removeAttr('name');
+    $(desactivar).prop('checked', false);
 }

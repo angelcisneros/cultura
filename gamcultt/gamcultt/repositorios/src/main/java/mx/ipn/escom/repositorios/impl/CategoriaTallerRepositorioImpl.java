@@ -3,36 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package mx.ipn.escom.repositorios.impl;
 
 import java.util.List;
-import mx.ipn.escom.entidades.Usuario;
-import mx.ipn.escom.repositorios.UsuarioRepositorio;
+import mx.ipn.escom.entidades.CategoriaTaller;
+import mx.ipn.escom.repositorios.CategoriaTallerRepositorio;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
-import org.hibernate.sql.JoinType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
- * @author Lap_christo
+ * @author angel
  */
+
 
 @Transactional
 @Repository
-public class UsuarioRepositorioImpl implements UsuarioRepositorio{
+public class CategoriaTallerRepositorioImpl implements CategoriaTallerRepositorio{
+    
     
     @Autowired
     SessionFactory sessionFactory;
 
     @Override
-    public Boolean agregar(Usuario usuario) {
+    public Boolean agregar(CategoriaTaller categoriaTaller) {
         Boolean guardado = null;
         try {
-            sessionFactory.getCurrentSession().save(usuario);
+            sessionFactory.getCurrentSession().save(categoriaTaller);
             guardado = true;
         } catch (HibernateException he) {
             he.printStackTrace();
@@ -41,10 +43,10 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio{
     }
 
     @Override
-    public Boolean actualizar(Usuario usuario) {
+    public Boolean actualizar(CategoriaTaller categoriaTaller) {
         Boolean guardado = null;
         try {
-            sessionFactory.getCurrentSession().update(usuario);
+            sessionFactory.getCurrentSession().update(categoriaTaller);
             guardado = true;
         } catch (HibernateException he) {
             he.printStackTrace();
@@ -53,13 +55,14 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio{
     }
 
     @Override
-    public Boolean eliminar(Usuario usuario) {
+    public Boolean eliminar(CategoriaTaller categoriaTaller) {
         Boolean guardado = null;
         try {
-            sessionFactory.getCurrentSession().delete(usuario);
+            sessionFactory.getCurrentSession().delete(categoriaTaller);
             guardado = true;
         } catch (HibernateException he) {
             he.printStackTrace();
+            guardado = false;
         }
         return guardado;
     }
@@ -70,30 +73,15 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio{
     }
 
     @Override
-    public Usuario buscarPorId(Integer id) {
-        return (Usuario) sessionFactory.getCurrentSession().createCriteria(Usuario.class)
+    public CategoriaTaller buscarPorId(Integer id) {
+        return (CategoriaTaller) sessionFactory.getCurrentSession().createCriteria(CategoriaTaller.class)
                 .add(Restrictions.eq("id", id))
                 .uniqueResult();
     }
 
     @Override
-    public List<Usuario> buscarTodos() {
-        return (List<Usuario>) sessionFactory.getCurrentSession().createCriteria(Usuario.class)
-                .createAlias("casa", "c", JoinType.INNER_JOIN)
+    public List<CategoriaTaller> buscarTodos() {
+        return (List<CategoriaTaller>) sessionFactory.getCurrentSession().createCriteria(CategoriaTaller.class)
                 .list();
     }
-
-    @Override
-    public Usuario puedeEntrar(String correo, String password) {
-        return (Usuario) sessionFactory.getCurrentSession().createCriteria(Usuario.class)
-                //.createAlias("encargado", "e", JoinType.INNER_JOIN)
-                .add(Restrictions.eq("correo", correo))
-                .add(Restrictions.eq("password", password))
-                .add(Restrictions.eq("estado", Boolean.TRUE))
-                .uniqueResult();
-                
-    }
-    
-    
-    
 }

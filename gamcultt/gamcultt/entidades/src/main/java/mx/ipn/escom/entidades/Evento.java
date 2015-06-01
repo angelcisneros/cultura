@@ -2,9 +2,7 @@ package mx.ipn.escom.entidades;
 // Generated 29/05/2015 09:21:20 AM by Hibernate Tools 3.6.0
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

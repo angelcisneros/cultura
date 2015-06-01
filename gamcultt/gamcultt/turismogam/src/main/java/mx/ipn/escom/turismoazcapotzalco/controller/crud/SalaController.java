@@ -10,6 +10,7 @@ import javax.validation.Valid;
 import mx.ipn.escom.entidades.Sala;
 import mx.ipn.escom.servicios.CasaServicio;
 import mx.ipn.escom.servicios.SalaServicio;
+import static mx.ipn.escom.servicios.util.Llave.USUARIO;
 import static mx.ipn.escom.servicios.util.MensajesCrud.ERROR_DATOS;
 import static mx.ipn.escom.servicios.util.MensajesCrud.SESION_CADUCA;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,21 +32,25 @@ public class SalaController {
 
     @Autowired
     SalaServicio salaServicio;
-    
+
     @Autowired
     CasaServicio casaServicio;
 
     @RequestMapping(value = "salas", method = RequestMethod.GET)
     public String salas(Model model, HttpSession session) {
+        if (session.getAttribute(USUARIO) == null) {
+            return "templates/login";
+        }
+
         model.addAttribute("salas", salaServicio.buscarTodos());
         model.addAttribute("casas", casaServicio.buscarTodos());
         return "crud/sala";
     }
-    
+
     @ResponseBody
     @RequestMapping(value = "agregarSala", method = RequestMethod.POST)
     public String agregarSala(@Valid @ModelAttribute("sala") Sala sala, BindingResult bindingResult, HttpSession session) {
-        if (session.getAttribute("usuario") == null){
+        if (session.getAttribute("usuario") == null) {
             return SESION_CADUCA;
         }
         if (bindingResult.hasErrors()) {

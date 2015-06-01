@@ -7,7 +7,7 @@
             <div class="col-md-12">
                 <div class="jumbotron">
                     <h1>!Bienvenido!</h1>
-                    <h2>${usuario.nombre} ${usuario.apellidoPaterno} ${usuario.apellidoMaterno} </h2>
+                    <h2>${usuario.nombre} ${usuario.paterno} ${usuario.materno  } </h2>
                     <p>Este es su perfil para la administración de eventos.</p>
                 </div>
             </div>

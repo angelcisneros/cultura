@@ -51,7 +51,7 @@ public class Casa implements java.io.Serializable {
     @Getter @Setter private List<Sala> salas;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "casa")
-    @Getter @Setter private List<Encargado> encargados;
+    @Getter @Setter private List<Usuario> usuarios;
 
     public Casa() {
     }
@@ -64,7 +64,7 @@ public class Casa implements java.io.Serializable {
         this.informacion = informacion;
     }
 
-    public Casa(String nombre, String direccion, String telefono, String horario, String informacion, String liknMaps, List<GaleriaCasa> galeriaCasas, List<Sala> salas, List<Encargado> encargados) {
+    public Casa(String nombre, String direccion, String telefono, String horario, String informacion, String liknMaps, List<GaleriaCasa> galeriaCasas, List<Sala> salas, List<Usuario> usuarios) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -73,7 +73,7 @@ public class Casa implements java.io.Serializable {
         this.liknMaps = liknMaps;
         this.galeriaCasas = galeriaCasas;
         this.salas = salas;
-        this.encargados = encargados;
+        this.usuarios = usuarios;
     }
 
 }

@@ -19,6 +19,8 @@
                 <li><a href="profesors">Profesores</a></li>
                 <li><a href="salas">Salas</a></li>
                 <li><a href="tallers">Talleres</a></li>
+                <li><a href="usuarios">Usuarios</a></li>
+                <li><a href="categorias">Categorias</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="cerrarSesion">Cerrar Sesión</a></li>
