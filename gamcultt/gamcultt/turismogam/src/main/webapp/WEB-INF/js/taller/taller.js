@@ -31,21 +31,11 @@ $(document).on('ready', function() {
     //AGREGAR EN BASE
     $('#addTaller').on('click', function() {
         $('#nombreAdd').removeAttr('style');
-        var requisitos = 3;
+        var requisitos = 0;
         var categoria = $('#categoriaAdd').val();
         var nombre = $('#nombreAdd').val();
         var descripcion = $('#descripcionAdd').val();
 
-
-
-        if (categoria === '') {
-            muestraPopUpCampoNoVacio($('#categoriaAdd'));
-            $('#categoriaAdd').css("border", "1px solid red");
-        } else {
-            $('#categoriaAdd').removeAttr('style');
-            cierraPopUpChiquito($('#categoriaAdd'));
-            requisitos++;
-        }
 
         if (nombre === '') {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
@@ -53,6 +43,14 @@ $(document).on('ready', function() {
         } else {
             $('#nombreAdd').removeAttr('style');
             cierraPopUpChiquito($('#nombreAdd'));
+            requisitos++;
+        }
+        if (categoria === '0' || categoria === 0) {
+            muestraPopUpCampoNoVacio($('#categoriaAdd'));
+            $('#categoriaAdd').css("border", "1px solid red");
+        } else {
+            $('#categoriaAdd').removeAttr('style');
+            cierraPopUpChiquito($('#categoriaAdd'));
             requisitos++;
         }
 
@@ -84,16 +82,15 @@ $(document).on('ready', function() {
                         $("#tallerTbody").prepend(
                                 '<tr valign="top" class="nuevoTaller success">' +
                                 '<td class="id">' +
-                                '<label class="categoria">' +categoria+ '</label>&#32;' +
-                                '<label id="'+respuesta[2]+'" class="ocultar">'+respuesta[2]+'</label>' +
+                                '<label class="nombre">' + nombre + '</label>' +
+                                '<label class="ocultar">' + respuesta[2] + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="nombre">'+nombre+'</label>&#32;' +
+                                '<label class="categoria">' + $('#categoriaAdd :selected').text() + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="descripcion">'+descripcion+'</label>' +
+                                '<label class="descripcion">' + descripcion + '</label>' +
                                 '</td>' +
-                               
                                 '<td>' +
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary tallerUpdateButton">Editar</button>' +
@@ -115,70 +112,39 @@ $(document).on('ready', function() {
 
     //ACTUALIZAR BASE
     $('#updateTaller').on('click', function() {
+        $('#nombreUpdate').removeAttr('style');
         var requisitos = 0;
+        var categoria = $('#categoriaUpdate').val();
         var nombre = $('#nombreUpdate').val();
-        var paterno = $('#paternoUpdate').val();
-        var materno = $('#maternoUpdate').val();
-        var empresa = $('#empresaUpdate').val();
-        var grado = $('#gradoUpdate').val();
-        var mail = $('#correoUpdate').val();
-        var telefono1 = $('#telefono1Update').val();
-        var telefono2 = $('#telefono2Update').val();
-        var direccion = $('#direccionUpdate').val();
-
+        var descripcion = $('#descripcionUpdate').val();
+        
         if (nombre === '') {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
             $('#nombreUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#nombreUpdate'));
+            requisitos++;
+        }
+        if (categoria === '0' || categoria === 0) {
+            muestraPopUpCampoNoVacio($('#categoriaUpdate'));
+            $('#categoriaUpdate').css("border", "1px solid red");
+        } else {
+            $('#categoriaUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#categoriaUpdate'));
+            requisitos++;
+        }
+        if (descripcion === '') {
+            muestraPopUpCampoNoVacio($('#descripcionUpdate'));
+            $('#descripcionUpdate').css("border", "1px solid red");
+        } else {
+            $('#descripcionUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#descripcionUpdate'));
             requisitos++;
         }
 
-        if (paterno === '') {
-            muestraPopUpCampoNoVacio($('#paternoUpdate'));
-            $('#paternoUpdate').css("border", "1px solid red");
-        } else {
-            $('#paternoUpdate').removeAttr('style');
-            requisitos++;
-        }
-        if (materno === '') {
-            muestraPopUpCampoNoVacio($('#maternoUpdate'));
-            $('#maternoUpdate').css("border", "1px solid red");
-        } else {
-            $('#maternoUpdate').removeAttr('style');
-            requisitos++;
-        }
-        if (mail === '') {
-            muestraPopUpCampoNoVacio($('#correoUpdate'));
-            $('#correoUpdate').css("border", "1px solid red");
-        } else {
-            $('#correoUpdate').removeAttr('style');
-            requisitos++;
-        }
-        if (empresa === '0' || empresa === 0) {
-            muestraPopUpCampoNoVacio($('#empresaUpdate'));
-            $('#empresaUpdate').css("border", "1px solid red");
-        } else {
-            $('#empresaUpdate').removeAttr('style');
-            requisitos++;
-        }
 
-        if (grado === '0' || grado === 0) {
-            muestraPopUpCampoNoVacio($('#gradoUpdate'));
-            $('#gradoUpdate').css("border", "1px solid red");
-        } else {
-            $('#gradoUpdate').removeAttr('style');
-            requisitos++;
-        }
-        if (telefono1 === '') {
-            muestraPopUpCampoNoVacio($('#telefono1Update'));
-            $('#telefono1Update').css("border", "1px solid red");
-        } else {
-            $('#telefono1Update').removeAttr('style');
-            requisitos++;
-        }
-
-        if (requisitos === 7) {
+        if (requisitos === 3) {
             $.ajax({
                 type: 'POST',
                 url: "editarTaller/",
@@ -194,27 +160,22 @@ $(document).on('ready', function() {
                         $('.nuevoTaller').removeClass();
                         $(trClick).attr('class', 'success nuevoTaller');
                         $(trClick).html(
-                                '<td class="id" >' +
-                                '<label class="grado">' + $('#gradoUpdate option:selected').text() + '</label>&#32;' +
-                                '<label class="nombre">' + nombre + '</label>&#32;' +
-                                '<label class="paterno">' + paterno + '</label>&#32;' +
-                                '<label class="materno">' + materno + '</label>' +
-                                '<label id="' + $('#idUpdate').val() + '" class="ocultar">' + $('#idUpdate').val() + '</label>' +
-                                '</td>' +
-                                ' <td>' +
-                                '<label>' + $('#empresaUpdate option:selected').text() + '</label>' +
+                                '<td class="id">' +
+                                '<label class="nombre">' + nombre + '</label>' +
+                                '<label class="ocultar">' + $('#idUpdate').val() + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="telefono1">' + telefono1 + '</label> y ' +
-                                '<label class="telefono2">' + telefono2 + '</label>' +
+                                '<label class="categoria">' + $('#categoriaUpdate :selected').text() + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label>' + direccion + '</label>' +
+                                '<label class="descripcion">' + descripcion + '</label>' +
                                 '</td>' +
                                 '<td>' +
+                                '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary tallerUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger tallerDeleteButton">Eliminar</button>' +
-                                ' </td>'
+                                '</div>' +
+                                '</td>'
                                 );
                     }
                 },
@@ -260,53 +221,31 @@ $('#tallerTbody').on('click', '.tallerDeleteButton', function() {
 });
 
 function rellenaPopUpsDelete(selector) {
-    var tds = $($(selector).parent()).siblings('td');
-    var id = $($($($(selector).parent()).siblings('td.id')).children('label.ocultar')).text();
-    var nombre = $($(tds[0]).children('label.nombre')).text();
-    var paterno = $($(tds[0]).children('label.paterno')).text();
-    var materno = $($(tds[0]).children('label.materno')).text();
-    var grado = $($(tds[0]).children('label.grado')).text();
-    var mail = $($(tds[1]).children('label')).text();
-    var empresa = $($(tds[2]).children('label')).text();
-    var telefono1 = $($(tds[3]).children('label.telefono1')).text();
-    var telefono2 = $($(tds[3]).children('label.telefono2')).text();
-    var direccion = $(tds[4]).children('label.telefono2').text();
-    trClick = $($(selector).parent()).parent();
+    var tr = $($($($(selector).parent())).parent()).parent();
+    var id = $(tr).find('td.id label.ocultar').text();
+    var nombre = $(tr).find('td.id label.nombre').text();
+    var categoria = $(tr).find('td label.categoria').text();
+    var descripcion = $(tr).find('td label.descripcion').text();
+    trClick = tr;
 
     $('#idDelete').val(id);
-    $('#nombreDelete').text(grado + ' ' + nombre + ' ' + paterno + ' ' + materno);
-    $('#empresaDelete').text(empresa);
-    $('#telefonoDelete').text(telefono1 + ' y ' + telefono2);
-    $('#direccionDelete').text(direccion);
-    $('#correoDelete').text(mail);
-
+    $('#nombreDelete').text(nombre);
+    $('#descripcionDelete').text(descripcion);
+    $('#categoriaDelete').text(categoria);
     $('#popUpTallerDelete').modal('show');
 }
 
 function rellenaPopUpUpdate(selector) {
-    var tds = $($(selector).parent()).siblings('td');
-    var id = $($($($(selector).parent()).siblings('td.id')).children('label.ocultar')).text();
-    var nombre = $($(tds[0]).children('label.nombre')).text();
-    var paterno = $($(tds[0]).children('label.paterno')).text();
-    var materno = $($(tds[0]).children('label.materno')).text();
-    var grado = $($(tds[0]).children('label.grado')).text();
-    var mail = $($(tds[1]).children('label')).text();
-    var empresa = $($(tds[2]).children('label')).text();
-    var telefono1 = $($(tds[3]).children('label.telefono1')).text();
-    var telefono2 = $($(tds[3]).children('label.telefono2')).text();
-    var direccion = $(tds[4]).children('label.telefono2').text();
-    trClick = $($(selector).parent()).parent();
+    var tr = $($($($(selector).parent())).parent()).parent();
+    var id = $(tr).find('td.id label.ocultar').text();
+    var nombre = $(tr).find('td.id label.nombre').text();
+    var categoria = $(tr).find('td label.categoria').text();
+    var descripcion = $(tr).find('td label.descripcion').text();
+    trClick = tr;
 
     $('#idUpdate').val(id);
     $('#nombreUpdate').val(nombre);
-    $('#paternoUpdate').val(paterno);
-    $('#maternoUpdate').val(materno);
-    setOption($('#gradoUpdate').children('option'), grado);
-    setOption($('#empresaUpdate').children('option'), empresa);
-    $('#telefono1Update').val(telefono1);
-    $('#telefono2Update').val(telefono2);
-    $('#direccionUpdate').val(direccion);
-    $('#mailUpdate').val(mail);
-
+    $('#descripcionUpdate').val(descripcion);
+    setOption($('#categoriaUpdate').children('option'), categoria);
     $('#popUpTallerUpdate').modal('show');
 }

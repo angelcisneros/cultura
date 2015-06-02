@@ -6,7 +6,6 @@
 var trClick;
 //MUESTRA LOS POPUPS CON SUS VALORES
 $(document).on('ready', function() {
-
     //POPUP AGREGAR
     $('#addSalaButton').on('click', function() {
         limpiarInputs();

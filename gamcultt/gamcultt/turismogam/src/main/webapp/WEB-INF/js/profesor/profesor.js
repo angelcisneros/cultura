@@ -262,8 +262,8 @@ function rellenaPopUpsDelete(selector) {
     var tr = $($($($(selector).parent())).parent()).parent();
     var id = $(tr).find('td.id label.ocultar').text();
     var nombre = $(tr).find('td.id label.nombre').text();
-    var paterno = $(tr).find('td.id label.nombre').text();
-    var materno = $(tr).find('td.id label.nombre').text();
+    var paterno = $(tr).find('td.id label.paterno').text();
+    var materno = $(tr).find('td.id label.materno').text();
     var correo = $(tr).find('td label.correo').text();
     var telefono = $(tr).find('td label.telefono').text();
     var celular = $(tr).find('td label.celular').text();

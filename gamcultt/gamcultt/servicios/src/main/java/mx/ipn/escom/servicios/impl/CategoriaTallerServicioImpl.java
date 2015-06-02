@@ -47,9 +47,7 @@ public class CategoriaTallerServicioImpl implements CategoriaTallerServicio{
 
     @Override
     public String eliminar(CategoriaTaller categoriaTaller) {
-        boolean a = categoriaTallerRepositorio.eliminar(categoriaTaller);
-        System.out.println(a);
-        if (a) {
+        if (categoriaTallerRepositorio.eliminar(categoriaTaller)) {
             return DELETE_CORRECT + CATEGORIA_TALLER;
         }
         return ERROR_HIBERNATE;

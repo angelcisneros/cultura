@@ -62,9 +62,9 @@ public class SalaController {
     @ResponseBody
     @RequestMapping(value = "editarSala", method = RequestMethod.POST)
     public String editarSala(@Valid @ModelAttribute("sala") Sala sala, BindingResult bindingResult, HttpSession session) {
-//        if (session.getAttribute("usuario") == null){
-//            return SESION_CADUCA;
-//        }
+        if (session.getAttribute("usuario") == null){
+            return SESION_CADUCA;
+        }
         if (bindingResult.hasErrors()) {
             return ERROR_DATOS;
         }
@@ -74,9 +74,9 @@ public class SalaController {
     @ResponseBody
     @RequestMapping(value = "eliminarSala", method = RequestMethod.POST)
     public String eliminarSala(Sala sala, BindingResult bindingResult, HttpSession session) {
-//        if (session.getAttribute("usuario") == null){
-//            return SESION_CADUCA;
-//        }
+        if (session.getAttribute("usuario") == null){
+            return SESION_CADUCA;
+        }
         return salaServicio.eliminar(sala);
     }
 }

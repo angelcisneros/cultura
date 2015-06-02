@@ -32,7 +32,7 @@ public class TallerServicioImpl implements TallerServicio{
      @Override
     public String agregar(Taller taller) {
         if (tallerRepositorio.agregar(taller)) {
-            return ADD_CORRECT + TALLER;
+            return ADD_CORRECT + TALLER + taller.getId();
         }
         return ERROR_HIBERNATE;
     }

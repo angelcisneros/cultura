@@ -8,6 +8,7 @@ package mx.ipn.escom.turismoazcapotzalco.controller.crud;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import mx.ipn.escom.entidades.Taller;
+import mx.ipn.escom.servicios.CategoriaTallerServicio;
 import mx.ipn.escom.servicios.TallerServicio;
 import static mx.ipn.escom.servicios.util.MensajesCrud.ERROR_DATOS;
 import static mx.ipn.escom.servicios.util.MensajesCrud.SESION_CADUCA;
@@ -31,18 +32,22 @@ public class TallerController {
     @Autowired
     TallerServicio tallerServicio;
     
+    @Autowired
+    CategoriaTallerServicio categoriaTallerServicio;
+    
     @RequestMapping(value = "tallers", method = RequestMethod.GET)
     public String alumnos(Model model, HttpSession session) {
         model.addAttribute("tallers", tallerServicio.buscarTodos());
+        model.addAttribute("categorias", categoriaTallerServicio.buscarTodos());
         return "crud/taller";
     }
 
     @ResponseBody
     @RequestMapping(value = "agregarTaller", method = RequestMethod.POST)
-    public String agregarTaller(@Valid @ModelAttribute("taller") Taller taller,  BindingResult bindingResult, HttpSession session) {
-//        if (session.getAttribute("usuario") == null){
-//            return SESION_CADUCA;
-//        }
+    public String agregarTaller(@Valid @ModelAttribute("taller") Taller taller,  BindingResult bindingResult, HttpSession session, Model model) {
+        if (session.getAttribute("usuario") == null){
+            return SESION_CADUCA;
+        }
         if (bindingResult.hasErrors()) {
             return ERROR_DATOS;
         }

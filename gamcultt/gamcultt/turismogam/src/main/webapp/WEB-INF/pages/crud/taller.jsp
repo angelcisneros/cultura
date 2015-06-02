@@ -23,8 +23,8 @@
                 <table id="tallerTable" class="table table-striped table-bordered table-hover">
                     <thead id="tallerThead" class="text-center">
                         <tr>
-                            <th>Categoria</th>
                             <th>Nombre</th>
+                            <th>Categoria</th>
                             <th>Descripcion</th>
                             <th>Opciones</th>
                         </tr>
@@ -34,20 +34,15 @@
                         <c:forEach items="${tallers}" var="t" varStatus="status">
                             <tr valign="top">
                                 <td class="id">
-                                    <label class="categoria">${t.categoria}</label>&#32;
-
-                                    <label id="${t.id}" class="ocultar">${t.id}</label>
+                                    <label class="nombre">${t.nombre}</label>
+                                    <label class="ocultar">${t.id}</label>
                                 </td>
                                 <td>
-                                    <label class="nombre">${t.nombre}</label>&#32;
-
+                                    <label class="categoria">${t.categoriaTaller.nombre}</label>
                                 </td>
                                 <td>
                                     <label class="descripcion">${t.descripcion}</label>
-
                                 </td>
-
-                                
                                 <td>
                                     <div class="btn-group" role="group" aria-label="">
                                         <button class="btn btn-primary tallerUpdateButton">Editar</button>
@@ -76,17 +71,20 @@
             </div>
             <div class="modal-body">
                 <form id="tallerAddForm">
-                    <label>Categoria:</label>
-                    <input id="categoriaAdd" name="categoria" class="form-control" type="text" placeholder="Ingrese la categoria">
-                    <br>
                     <label>Nombre:</label>
                     <input id="nombreAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre del Taller">
+                    <br>
+                    <label>Categoria:</label>
+                    <select id="categoriaAdd" name="categoriaTaller.id" class="form-control">
+                        <option value="0" label="Seleccione...">Seleccione...</option>
+                        <c:forEach items="${categorias}" var="c" varStatus="status">
+                            <option value="${c.id}" label="${c.nombre}">${c.nombre}</option>
+                        </c:forEach>
+                    </select>
                     <br>
                     <label>Descripcion:</label>
                     <input id="descripcionAdd" name="descripcion" class="form-control" type="text" placeholder="Ingrese el Apellino Materno del Taller">
                     <br>
-                    
-                    
                 </form>
             </div>
             <div class="modal-footer amarillo">
@@ -111,44 +109,20 @@
             </div>
             <div class="modal-body">
                 <form id="tallerUpdateForm">
-                    <label>Nombre(s):</label>
+                    <label>Nombre:</label>
                     <input id="nombreUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre del Taller">
                     <br>
-                    <label>Apellido Paterno:</label>
-                    <input id="paternoUpdate" name="paterno" class="form-control" type="text" placeholder="Ingrese el Apellido Paterno del Taller">
-                    <br>
-                    <label>Apellido Materno:</label>
-                    <input id="maternoUpdate" name="materno" class="form-control" type="text" placeholder="Ingrese el Apellino Materno del Taller">
-                    <br>
-                    <label>Correo:</label>
-                    <input id="correoUpdate" name="mail" class="form-control" type="email" placeholder="Ingrese el Correo">
-                    <br>
-                    <label>Grado:</label>
-                    <select id="gradoUpdate" name="grado.id" class="form-control">
+                    <label>Categoria:</label>
+                    <select id="categoriaUpdate" name="categoriaTaller.id" class="form-control">
                         <option value="0" label="Seleccione...">Seleccione...</option>
-                        <c:forEach items="${grado}" var="g" varStatus="status">
-                            <option value="${g.id}" label="${g.nombre}">${g.nombre}</option>
+                        <c:forEach items="${categorias}" var="c" varStatus="status">
+                            <option value="${c.id}" label="${c.nombre}">${c.nombre}</option>
                         </c:forEach>
                     </select>
                     <br>
-                    <label>Empresa</label>
-                    <select id="empresaUpdate" name="empresa.id" class="form-control">
-                        <option value="0" label="Seleccione...">Seleccione...</option>
-                        <c:forEach items="${empresa}" var="e" varStatus="status">
-                            <option value="${e.id}" label="${e.razonSocial}">${e.razonSocial}</option>
-                        </c:forEach>
-                    </select>
-                    <br>
-                    <label>Teléfono 1:</label>
-                    <input id="telefono1Update" name="telefono1" class="form-control" type="text" placeholder="Ingrese el Teléfono del Taller">
-                    <br>
-                    <label>Teléfono 2:</label>
-                    <input id="telefono2Update" name="telefono2" class="form-control" type="text" placeholder="Ingrese el Teléfono del Taller">
-                    <br>
-                    <label>Dirección</label>
-                    <textarea id="direccionUpdate" name="direccion" class="form-control"></textarea>
-
-                    <input id="idUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombre del Grado">
+                    <label>Descripcion:</label>
+                    <input id="descripcionUpdate" name="descripcion" class="form-control" type="text" placeholder="Ingrese el Apellino Materno del Taller">
+                    <input id="idUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombre del Taller">
                 </form>
             </div>
             <div class="modal-footer amarillo">
@@ -173,21 +147,13 @@
             </div>
             <div class="modal-body">
                 <form id="tallerDeleteForm">
-                    <strong><label>Nombre:</label></strong>
-                    <label id="nombreDelete"></label>
+                    <label>Nombre:</label><label id="nombreDelete"></label>
                     <br>
-                    <strong><label>Empresa</label></strong>
-                    <label id="empresaDelete"></label>
+                    <label>Categoria:</label><label id="categoriaDelete"></label>
                     <br>
-                    <strong><label>Correo</label></strong>
-                    <label id="correoDelete"></label>
-                    <br>
-                    <strong><label>Télefonos:</label></strong>
-                    <label id="telefonoDelete"></label>
-                    <br>
-                    <strong><label>Dirección:</label></strong>
-                    <label id="direccionDelete"></label>
+                    <label>Descripcion:</label><label id="descripcionDelete"></label>
                     <input id="idDelete" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombre del Taller">
+                    <br>
                 </form>
             </div>
             <div class="modal-footer amarillo">

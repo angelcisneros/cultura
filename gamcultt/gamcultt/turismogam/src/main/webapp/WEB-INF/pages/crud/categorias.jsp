@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-                    <a id="addCategoriaTallerButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva +</a>
+                    <a id="addCategoriaTallerButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Categoria Taller</a>
                 </div>
             </div>
             <hr />
@@ -34,7 +34,7 @@
                         <table id="categoriaTallerTable" class="table table-striped table-bordered table-hover">
                             <thead id="categoriaTallerThead" class="text-center">
                                 <tr>
-                                    <th>nombreTaller</th>
+                                    <th>Nombre Taller</th>
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
@@ -48,7 +48,7 @@
                                         <td>
                                             <div class="btn-group" role="group" aria-label="">
                                                 <button class="btn btn-primary categoriaTallerUpdateButton">Editar</button>
-                                                <button class="btn btn-danger categoriaTallerButton">Eliminar</button>
+                                                <button class="btn btn-danger categoriaTallerDeleteButton">Eliminar</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -71,7 +71,7 @@
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-                    <a id="addCategoriaEventoButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva +</a>
+                    <a id="addCategoriaEventoButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Categoria Evento</a>
                 </div>
             </div>
             <hr />

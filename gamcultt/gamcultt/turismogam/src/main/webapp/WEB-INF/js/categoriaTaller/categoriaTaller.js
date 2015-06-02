@@ -16,12 +16,12 @@ $(document).on('ready', function() {
     //POPUP EDITAR
     $('.categoriaTallerUpdateButton').on('click', function() {
         limpiarInputs();
-        rellenaPopUpUpdate(this);
+        rellenaPopUpUpdateTaller(this);
     });
 
     //POPUP ELIMINAR
     $('.categoriaTallerDeleteButton').on('click', function() {
-        rellenaPopUpsDelete(this);
+        rellenaPopUpsDeleteTaller(this);
     });
 });
 
@@ -168,24 +168,24 @@ $(document).on('ready', function() {
 
 
 $('#categoriaTallerTbody').on('click', '.categoriaTallerUpdateButton', function() {
-    rellenaPopUpUpdate(this);
+    rellenaPopUpUpdateTaller(this);
 });
 
 $('#categoriaTallerTbody').on('click', '.categoriaTallerDeleteButton', function() {
-    rellenaPopUpsDelete(this);
+    rellenaPopUpsDeleteTaller(this);
 });
 
-function rellenaPopUpsDelete(selector) {
+function rellenaPopUpsDeleteTaller(selector) {
     var tr = $($($($(selector).parent())).parent()).parent();
     var id = $(tr).find('td.id label.ocultar').text();
     var nombreTaller = $(tr).find('td.id label.nombreTaller').text();
     trClick = $(tr);
-    $('#idTalleDelete').val(id);
+    $('#idTallerDelete').val(id);
     $('#nombreTallerDelete').text(nombreTaller);
     $('#popUpCategoriaTallerDelete').modal('show');
 }
 
-function rellenaPopUpUpdate(selector) {
+function rellenaPopUpUpdateTaller(selector) {
     var tr = $($($($(selector).parent())).parent()).parent();
     var id = $(tr).find('td.id label.ocultar').text();
     var nombreTaller = $(tr).find('td.id label.nombreTaller').text();
