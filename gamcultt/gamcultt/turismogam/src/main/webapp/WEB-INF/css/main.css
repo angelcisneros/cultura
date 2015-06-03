@@ -154,12 +154,12 @@ ul#foot{
     color: #000;
 }
 .retraso-2{
-	animation-delay:2s;
-	-webkit-animation-delay:2s;
-	-moz-animation-delay:2s;
+        animation-delay:2s;
+        -webkit-animation-delay:2s;
+        -moz-animation-delay:2s;
 }
 .font-pacific{
-	font-family: 'Pacifico', cursive;
+        font-family: 'Pacifico', cursive;
         
 }
 #efecto-quadrum{
@@ -185,4 +185,13 @@ ul#foot{
 }
 body{
     padding-top: 70px;
+}
+#popUpGaleria .modal-dialog  {width:75%;}
+
+.modal-body .row .galerias{
+    border: 1px solid pink;
+}
+
+.modal-body .row .galerias div{
+    overflow-y: hidden;
 }

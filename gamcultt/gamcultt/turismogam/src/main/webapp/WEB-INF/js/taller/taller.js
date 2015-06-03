@@ -95,6 +95,7 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary tallerUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger tallerDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-success galeriaButton">Galeria</button>' +
                                 '</div>' +
                                 '</td>' +
                                 '</tr>'
@@ -174,6 +175,7 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary tallerUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger tallerDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-success galeriaButton">Galeria</button>' +
                                 '</div>' +
                                 '</td>'
                                 );
@@ -218,6 +220,10 @@ $('#tallerTbody').on('click', '.tallerUpdateButton', function() {
 
 $('#tallerTbody').on('click', '.tallerDeleteButton', function() {
     rellenaPopUpsDelete(this);
+});
+
+$('#tallerTbody').on('click', '.galeriaButton', function() {
+    $('#popUpGaleria').modal('show');
 });
 
 function rellenaPopUpsDelete(selector) {

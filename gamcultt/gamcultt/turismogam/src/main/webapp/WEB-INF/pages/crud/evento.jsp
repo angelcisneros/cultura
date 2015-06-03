@@ -47,7 +47,6 @@
                                     <div class="btn-group" role="group" aria-label="">
                                         <button class="btn btn-primary tallerUpdateButton">Editar</button>
                                         <button class="btn btn-danger tallerDeleteButton">Eliminar</button>
-                                        <button class="btn btn-success galeriaButton">Galeria</button>
                                     </div>
                                 </td>
                             </tr>
@@ -167,7 +166,6 @@
     <!-- /.modal-dialog -->
 </div>
 
-<%@ include file="/WEB-INF/pages/crud/galeriaTaller.jsp"%>
 <%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>
 <script src="../js/taller/taller.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>
