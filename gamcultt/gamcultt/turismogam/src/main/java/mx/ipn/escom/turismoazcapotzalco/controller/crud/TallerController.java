@@ -90,7 +90,6 @@ public class TallerController {
             MultipartFile mpf = request.getFile(itr.next());
             tallerServicio.subirImagen(mpf, id);
         }
-
         return "hola";
     }
 }
