@@ -7,7 +7,7 @@
         <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
         rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="PrincipalCSS.css">
+        <link rel="stylesheet" href="../css/Pag_prin/PrincipalCSS.css">
 
     </head>
     
