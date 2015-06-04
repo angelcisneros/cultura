@@ -7,19 +7,22 @@
 
 $('#subirImagenTaller').on('click', function() {
     var imagenes = $('.galerias input');
-    var data = new FormData();
+
     $.each(imagenes, function(indice, valor) {
+        var data = new FormData();
         data.append('file', valor.files[0]);
+        $.ajax({
+            url: 'subirGaleriaTaller/3',
+            data: data,
+            async: true,
+            dataType: 'text',
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function(data) {
+                alert(data);
+            }
+        });
     });
-    $.ajax({
-        url: 'subirGaleriaTaller/4',
-        data: data,
-        dataType: 'text',
-        processData: false,
-        contentType: false,
-        type: 'POST',
-        success: function(data) {
-            alert('ya llegue');
-        }
-    });
+
 });

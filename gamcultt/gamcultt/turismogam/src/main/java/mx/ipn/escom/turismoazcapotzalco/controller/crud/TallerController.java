@@ -6,6 +6,7 @@
 package mx.ipn.escom.turismoazcapotzalco.controller.crud;
 
 import java.util.Iterator;
+import java.util.Map;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import mx.ipn.escom.entidades.Taller;
@@ -32,20 +33,20 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 @Controller
 @RequestMapping("administrador/")
 public class TallerController {
-
+    
     @Autowired
     TallerServicio tallerServicio;
-
+    
     @Autowired
     CategoriaTallerServicio categoriaTallerServicio;
-
+    
     @RequestMapping(value = "tallers", method = RequestMethod.GET)
     public String alumnos(Model model, HttpSession session) {
         model.addAttribute("tallers", tallerServicio.buscarTodos());
         model.addAttribute("categorias", categoriaTallerServicio.buscarTodos());
         return "crud/taller";
     }
-
+    
     @ResponseBody
     @RequestMapping(value = "agregarTaller", method = RequestMethod.POST)
     public String agregarTaller(@Valid @ModelAttribute("taller") Taller taller, BindingResult bindingResult, HttpSession session, Model model) {
@@ -57,7 +58,7 @@ public class TallerController {
         }
         return tallerServicio.agregar(taller);
     }
-
+    
     @ResponseBody
     @RequestMapping(value = "editarTaller", method = RequestMethod.POST)
     public String editarTaller(@Valid @ModelAttribute("taller") Taller taller, BindingResult bindingResult, HttpSession session) {
@@ -69,7 +70,7 @@ public class TallerController {
         }
         return tallerServicio.actualizar(taller);
     }
-
+    
     @ResponseBody
     @RequestMapping(value = "eliminarTaller", method = RequestMethod.POST)
     public String eliminarTaller(Taller taller, BindingResult bindingResult, HttpSession session) {
@@ -78,20 +79,20 @@ public class TallerController {
         }
         return tallerServicio.eliminar(taller);
     }
-
+    
     @ResponseBody
     @RequestMapping(value = "subirGaleriaTaller/{id}", method = RequestMethod.POST)
     public String subirGaleriaTaller(MultipartHttpServletRequest request, @PathVariable Integer id, HttpSession session) {
         if (session.getAttribute("usuario") == null) {
             return SESION_CADUCA;
         }
-        Iterator<String> itr = request.getFileNames();
-
-        MultipartFile mpf = request.getFile(itr.next());
+        Map<String, MultipartFile> files = request.getFileMap();
+        MultipartFile mpf = files.get("file");
+        System.out.println(mpf);
         System.out.println(mpf.getOriginalFilename() + " uploaded!" + id);
-
+        
         tallerServicio.subirImagen(mpf, id);
-
+        
         return "hola";
     }
 }
