@@ -37,14 +37,5 @@ public @Data class VisitanteEvento implements java.io.Serializable {
     @JoinColumn(name = "visitante", nullable = false, insertable = false, updatable = false)
     private Visitante visitante;
 
-    @Column(name = "visitante_eventocol", length = 45)
-    private String visitanteEventocol;
-
-    public VisitanteEvento(VisitanteEventoId id, Evento evento, Visitante visitante) {
-        this.id = id;
-        this.evento = evento;
-        this.visitante = visitante;
-    }
-
 
 }

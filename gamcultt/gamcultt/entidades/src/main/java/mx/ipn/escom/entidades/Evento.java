@@ -39,7 +39,7 @@ public @Data class Evento implements java.io.Serializable {
     private Sala sala;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "categoria_evento", nullable = false)
+    @JoinColumn(name = "categoriaEvento", nullable = false)
     private CategoriaEvento categoriaEvento;
 
     @Column(name = "nombre", nullable = false, length = 45)

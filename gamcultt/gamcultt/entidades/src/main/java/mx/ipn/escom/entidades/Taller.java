@@ -31,7 +31,7 @@ public @Data class Taller implements java.io.Serializable {
     private Integer id;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "categoria_taller", nullable = false)
+    @JoinColumn(name = "categoriaTaller", nullable = false)
     private CategoriaTaller categoriaTaller;
 
     @Column(name = "nombre", nullable = false, length = 45)

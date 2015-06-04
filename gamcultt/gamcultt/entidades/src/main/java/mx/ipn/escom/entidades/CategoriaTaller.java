@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
@@ -20,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "categoria_taller", catalog = "gamcultt")
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoriaTaller implements java.io.Serializable {
+public @Data class CategoriaTaller implements java.io.Serializable {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)

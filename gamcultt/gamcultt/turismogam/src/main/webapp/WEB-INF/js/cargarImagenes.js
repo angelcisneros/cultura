@@ -33,19 +33,17 @@ function addGaleria(row) {
     console.log(classesGalerias);
     if (classesGalerias % 3 === 0) {
         var renglonNuevo = 
-            '<div class="row">' +
+            '<br/><div class="row">' +
                 '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 galerias" >' +
-                    '<div><div>' +
+                    '<div></div>' +
                     '<input type="file" class="filestyle form-control" data-buttonText=" Seleccione" data-buttonName="btn-primary" data-iconName="glyphicon-folder-open" />' +
                 '</div>' +
             '</div>';
         $('.modal-body').append(renglonNuevo);
     }else{
-        console.log('soy yo');
-        console.log($(row).attr('class'));
         $(row).append(
           '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 galerias">' +
-                    '<div><div>' +
+                    '<div></div>' +
                     '<input type="file" class="filestyle form-control" data-buttonText=" Seleccione" data-buttonName="btn-primary" data-iconName="glyphicon-folder-open" />' +
             '</div>'      
         );

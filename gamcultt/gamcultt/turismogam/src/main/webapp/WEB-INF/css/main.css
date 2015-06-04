@@ -188,10 +188,6 @@ body{
 }
 #popUpGaleria .modal-dialog  {width:75%;}
 
-.modal-body .row .galerias{
-    border: 1px solid pink;
-}
-
 .modal-body .row .galerias div{
     overflow-y: hidden;
 }
