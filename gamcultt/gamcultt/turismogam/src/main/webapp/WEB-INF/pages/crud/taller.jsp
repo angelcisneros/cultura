@@ -169,5 +169,8 @@
 
 <%@ include file="/WEB-INF/pages/crud/galeriaTaller.jsp"%>
 <%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>
+<script src="../js/inputFile.js" charset="UTF-8"></script>
 <script src="../js/taller/taller.js" charset="UTF-8"></script>
+<script src="../js/cargarImagenes.js" charset="UTF-8"></script>
+<script src="../js/taller/galeriaTaller.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>

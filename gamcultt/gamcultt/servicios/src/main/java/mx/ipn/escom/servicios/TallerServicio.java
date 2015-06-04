@@ -5,6 +5,7 @@
  */
 package mx.ipn.escom.servicios;
 
+import java.io.File;
 import java.util.List;
 import mx.ipn.escom.entidades.Taller;
 import org.springframework.web.multipart.MultipartFile;
@@ -23,4 +24,6 @@ public interface TallerServicio {
     List<Taller> buscarTodos();
     
     String subirImagen(MultipartFile contenido, Integer id);
+    Integer cuentaImagenes(Integer id);
+    File regresaArchivo(Integer id, Integer i);
 }

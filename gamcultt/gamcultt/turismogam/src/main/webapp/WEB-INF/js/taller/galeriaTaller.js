@@ -13,7 +13,7 @@ $('#subirImagenTaller').on('click', function() {
         var data = new FormData();
         data.append('file' + indice, valor.files[0]);
         $.ajax({
-            url: 'subirGaleriaTaller/3',
+            url: 'subirGaleriaTaller/' + identificador,
             data: data,
             async: true,
             dataType: 'text',
@@ -21,7 +21,11 @@ $('#subirImagenTaller').on('click', function() {
             contentType: false,
             type: 'POST',
             success: function(data) {
-                alert(data);
+                if(data === '1'){
+                    var div = $(valor).siblings('div');
+                    var estilo = $(div).attr('style') + ' opacity: 0.4; filter: alpha(opacity=40);';
+                    $(div).attr('style', estilo);
+                }
             }
         });
     });
