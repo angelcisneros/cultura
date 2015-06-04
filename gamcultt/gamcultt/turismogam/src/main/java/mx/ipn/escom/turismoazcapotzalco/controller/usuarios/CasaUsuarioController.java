@@ -18,7 +18,7 @@ public class CasaUsuarioController {
     
     @RequestMapping(value = "casas")
     public String casasController() {
-        return "usuarios/casas/casas";
+        return "usuarios/casas";
     }
     
 }
