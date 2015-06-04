@@ -26,10 +26,10 @@
                 <div class="collapse navbar-collapse" id="navbar-ex-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active">
-                            <a href="..\..\CUltural\Principal\Plantilla.html">Home</a>
+                            <a href="/turismogam/">Home</a>
                         </li>
                         <li>
-                            <a href="..\..\CUltural\Casas de Cultura\Tcasas.html">Casas de Cultura</a>
+                            <a href="usuarios/casas/casas">Casas de Cultura</a>
                         </li>
                         <li>
                             <a href="..\..\CUltural\Talleres\TallerHome\TalleresH.html">Talleres</a>
