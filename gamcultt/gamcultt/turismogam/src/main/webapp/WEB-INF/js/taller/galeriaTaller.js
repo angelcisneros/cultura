@@ -8,9 +8,10 @@
 $('#subirImagenTaller').on('click', function() {
     var imagenes = $('.galerias input');
 
+    console.log(imagenes);
     $.each(imagenes, function(indice, valor) {
         var data = new FormData();
-        data.append('file', valor.files[0]);
+        data.append('file' + indice, valor.files[0]);
         $.ajax({
             url: 'subirGaleriaTaller/3',
             data: data,

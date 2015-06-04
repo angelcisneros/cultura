@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  * @author Lap_christo
  */
+
 @Controller
 public class CasaUsuarioController {
     
     @RequestMapping(value = "casas")
     public String casasController() {
-        return "usuario/casas/casas";
+        return "usuarios/casas/casas";
     }
     
 }

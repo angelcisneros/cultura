@@ -29,7 +29,7 @@
                             <a href="/turismogam/">Home</a>
                         </li>
                         <li>
-                            <a href="/casas/">Casas de Cultura</a>
+                            <a href="casas">Casas de Cultura</a>
                         </li>
                         <li>
                             <a href="..\..\CUltural\Talleres\TallerHome\TalleresH.html">Talleres</a>
