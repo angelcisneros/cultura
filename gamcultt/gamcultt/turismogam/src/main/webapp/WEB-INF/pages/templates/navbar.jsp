@@ -8,8 +8,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="inicio">
-                <img alt="GAM" src="../images/logo.png">
+            <a class="navbar-brand" href="inicio">GAM
+               <!-- <img alt="GAM" src="../images/logo.png">-->
             </a>
         </div>
 
