@@ -176,8 +176,8 @@ ul#foot{
     padding-left: 30px;
 }*/
 
-.amarillo{
-    background-color: #AA2024;
+.amarillo, #navbar-admin{
+    background-color: #e80c7a;
     color: #fff;
 }
 .ocultar{

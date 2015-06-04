@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cover-image" style="background-image : url('https://unsplash.imgix.net/reserve/N13RIliTTASBbuYyszgq_P9020914-54.jpg?q=75&amp;fm=jpg&amp;s=9c914a5c9288fc66860fde2c45521ff4')"></div>
+            <div class="cover-image" style="background-image : url('../images/futurama.jpg')"></div>
             <div class="container">
                 <div class="panel panel-quadrum inicio animated bounceInDown">
                     <div class="panel-body">
