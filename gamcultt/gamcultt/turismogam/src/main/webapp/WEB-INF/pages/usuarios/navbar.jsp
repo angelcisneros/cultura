@@ -18,7 +18,7 @@
                     <a href="casas">Casas de Cultura</a>
                 </li>
                 <li>
-                    <a href="..\..\..\CUltural\Talleres\TallerHome\TalleresH.html">Talleres</a>
+                    <a href="tallerprincipal">Talleres</a>
                 </li>
                 <li>
                     <a href="..\..\CUltural\Eventos\EventoGeneral\EventosG.html">Eventos</a>

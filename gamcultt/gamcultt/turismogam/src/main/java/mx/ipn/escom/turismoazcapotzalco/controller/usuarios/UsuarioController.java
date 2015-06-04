@@ -14,11 +14,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
-public class CasaUsuarioController {
+public class UsuarioController {
     
-    @RequestMapping(value = "casas")
+    @RequestMapping(value ="casas")
     public String casasController() {
         return "usuarios/casas";
+    }
+
+    /**
+     *
+     * @return
+     */
+    @RequestMapping(value ="tallerprincipal")
+    public String tallerController() {
+        return "usuarios/taller";
     }
     
 }
