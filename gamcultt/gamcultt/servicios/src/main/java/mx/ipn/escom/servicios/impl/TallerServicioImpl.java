@@ -40,7 +40,7 @@ public class TallerServicioImpl implements TallerServicio{
      @Override
     public String agregar(Taller taller) {
         if (tallerRepositorio.agregar(taller)) {
-            File file = new File(TALLERES + taller.getNombre());
+            File file = new File(TALLERES + taller.getId());
             file.mkdir();
             return ADD_CORRECT + TALLER + taller.getId();
         }
@@ -86,9 +86,8 @@ public class TallerServicioImpl implements TallerServicio{
     public String subirImagen(MultipartFile contenido, Integer id) {
         try {
             Taller taller = tallerRepositorio.buscarPorId(id);
-            String path = TALLERES + taller.getNombre() + "/" + contenido.getOriginalFilename();
+            String path = TALLERES + taller.getId()+ "/" + contenido.getOriginalFilename();
             crearArchivoContenido(path, contenido.getBytes());
-            
         } catch (IOException ex) {
             Logger.getLogger(TallerServicioImpl.class.getName()).log(Level.SEVERE, null, ex);
         }

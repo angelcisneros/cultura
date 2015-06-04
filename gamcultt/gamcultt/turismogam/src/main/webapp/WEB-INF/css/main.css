@@ -186,7 +186,7 @@ ul#foot{
 body{
     padding-top: 70px;
 }
-#popUpGaleria .modal-dialog  {width:75%;}
+#popUpGaleriaTaller .modal-dialog  {width:75%;}
 
 .modal-body .row .galerias div{
     overflow-y: hidden;

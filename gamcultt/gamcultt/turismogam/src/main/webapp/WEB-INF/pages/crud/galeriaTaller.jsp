@@ -1,6 +1,6 @@
 
-<!-- POPUP AGREGAR GALERIA ALUMNO -->
-<div class="modal fade" id="popUpGaleria" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- POPUP AGREGAR GALERIA TALLER    -->
+<div class="modal fade" id="popUpGaleriaTaller" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

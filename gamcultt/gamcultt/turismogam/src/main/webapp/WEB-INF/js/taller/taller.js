@@ -77,7 +77,8 @@ $(document).on('ready', function() {
                         $('#tituloPopUp').text(respuesta[0]);
                         $('#contenidoPopUp').text(respuesta[1]);
                         $('#popUpTallerAdd').modal('hide');
-                        $('#popUpRespuesta').modal('show');
+                        //$('#popUpRespuesta').modal('show');
+                        $('#popUpGaleriaTaller').modal('show');
                         $('.nuevoTaller').removeClass();
                         $("#tallerTbody").prepend(
                                 '<tr valign="top" class="nuevoTaller success">' +
@@ -223,7 +224,7 @@ $('#tallerTbody').on('click', '.tallerDeleteButton', function() {
 });
 
 $('#tallerTbody').on('click', '.galeriaButton', function() {
-    $('#popUpGaleria').modal('show');
+    $('#popUpGaleriaTaller').modal('show');
 });
 
 function rellenaPopUpsDelete(selector) {
