@@ -21,13 +21,13 @@
                     <a href="tallerprincipal">Talleres</a>
                 </li>
                 <li>
-                    <a href="..\..\CUltural\Eventos\EventoGeneral\EventosG.html">Eventos</a>
+                    <a href="eventoprincipal">Eventos</a>
                 </li>
                 <li>
-                    <a href="..\..\CUltural\Mis_Vis_Rep\MVR.html">Quienes Somos</a>
+                    <a href="misionvision">Quienes Somos</a>
                 </li>
                 <li>
-                    <a href="..\..\CUltural\Contacto\Contacto.html">Contacto</a>
+                    <a href="contacto">Contacto</a>
                 </li>
             </ul>
         </div>

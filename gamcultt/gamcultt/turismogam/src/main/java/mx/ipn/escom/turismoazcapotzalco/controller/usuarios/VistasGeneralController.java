@@ -26,4 +26,17 @@ public class VistasGeneralController {
         return "usuarios/taller";
     }
     
+    @RequestMapping(value ="eventoprincipal")
+    public String eventoController() {
+        return "usuarios/evento";
+    }
+    
+     @RequestMapping(value ="misionvision")
+    public String misvisController() {
+        return "usuarios/misionvision";
+    }
+     @RequestMapping(value ="contacto")
+    public String contactoController() {
+        return "usuarios/contacto";
+    }
 }
