@@ -5,7 +5,10 @@
  */
 package mx.ipn.escom.turismoazcapotzalco.controller.usuarios;
 
+import mx.ipn.escom.servicios.CategoriaTallerServicio;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -16,13 +19,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class VistasGeneralController {
     
+    @Autowired
+    CategoriaTallerServicio categoriaTallerServicio;
+    
     @RequestMapping(value ="casas")
     public String casasController() {
         return "usuarios/casas";
     }
     
     @RequestMapping(value ="tallerprincipal")
-    public String tallerController() {
+    public String tallerController(Model model) {
+        model.addAttribute("categoriasTaller", categoriaTallerServicio.buscarTodos());
         return "usuarios/taller";
     }
     

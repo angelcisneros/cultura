@@ -31,6 +31,9 @@ public @Data class CategoriaTaller implements java.io.Serializable {
     @Column(name = "nombre", nullable = false, length = 45)
     private String nombre;
 
+    @Column(name = "descripcion", nullable = false, length = 1000)
+    private String descripcion;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "categoriaTaller")
     private List<Taller> tallers;
 
