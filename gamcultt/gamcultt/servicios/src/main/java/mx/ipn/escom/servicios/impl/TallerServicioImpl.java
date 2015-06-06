@@ -86,11 +86,28 @@ public class TallerServicioImpl implements TallerServicio{
     public String subirImagen(MultipartFile contenido, Integer id) {
         try {
             Taller taller = tallerRepositorio.buscarPorId(id);
-            String path = TALLERES + taller.getId()+ "/" + contenido.getOriginalFilename();
+            String path = TALLERES + taller.getId()+ "\\" + contenido.getOriginalFilename();
             crearArchivoContenido(path, contenido.getBytes());
+            return "1";
         } catch (IOException ex) {
             Logger.getLogger(TallerServicioImpl.class.getName()).log(Level.SEVERE, null, ex);
+            return "-1";
         }
-        return "";
+    }
+
+    @Override
+    public Integer cuentaImagenes(Integer id) {
+        Taller taller = tallerRepositorio.buscarPorId(id);
+        String path = TALLERES + taller.getId();
+        File file = new File(path);
+        return file.list().length;
+    }
+
+    @Override
+    public File regresaArchivo(Integer id, Integer i) {
+        Taller taller = tallerRepositorio.buscarPorId(id);
+        String path = TALLERES + taller.getId();
+        File file = new File(path);
+        return file.listFiles()[i];
     }
 }

@@ -26,7 +26,3 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
-<script src="../js/inputFile.js" charset="UTF-8"></script>
-<script src="../js/taller/galeriaTaller.js" charset="UTF-8"></script>
-<script src="../js/cargarImagenes.js" charset="UTF-8"></script>
-

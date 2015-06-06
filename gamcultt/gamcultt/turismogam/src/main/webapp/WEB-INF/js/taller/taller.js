@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 var trClick;
+var identificador;
 //MUESTRA LOS POPUPS CON SUS VALORES
 $(document).on('ready', function() {
 
@@ -80,6 +81,7 @@ $(document).on('ready', function() {
                         //$('#popUpRespuesta').modal('show');
                         $('#popUpGaleriaTaller').modal('show');
                         $('.nuevoTaller').removeClass();
+                        identificador = respuesta[2];
                         $("#tallerTbody").prepend(
                                 '<tr valign="top" class="nuevoTaller success">' +
                                 '<td class="id">' +
@@ -119,7 +121,7 @@ $(document).on('ready', function() {
         var categoria = $('#categoriaUpdate').val();
         var nombre = $('#nombreUpdate').val();
         var descripcion = $('#descripcionUpdate').val();
-        
+
         if (nombre === '') {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
@@ -224,7 +226,41 @@ $('#tallerTbody').on('click', '.tallerDeleteButton', function() {
 });
 
 $('#tallerTbody').on('click', '.galeriaButton', function() {
+    var tr = $($($($(this).parent())).parent()).parent();
+    identificador = $(tr).find('td.id label.ocultar').text();
+    $.ajax({
+        url: 'cuentaImagenes/' + identificador,
+        dataType: 'text',
+        contentType: false,
+        type: 'POST',
+        success: function(data) {
+            var i;
+            var fileDisplayArea = $('#popUpGaleriaTaller .modal-body .row .galerias div:first');
+            $(fileDisplayArea).append('<object type="image/png" data="galeriaTaller/' + identificador + '/' + 0 + '"></object>');
+            var row = $($(fileDisplayArea).parent()).parent();
+            for (i = 1; i < parseInt(data); i++) {
+                if (i % 3 === 0) {
+                    var renglonNuevo =
+                            '<br/><div class="row">' +
+                            '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 galerias" >' +
+                            '<div>' + '<object type="image/png" data="galeriaTaller/' + identificador +'/' + i + '"></object>' +'</div>' +
+                            '<input type="file" class="filestyle form-control" data-buttonText=" Seleccione" data-buttonName="btn-primary" data-iconName="glyphicon-folder-open" />' +
+                            '</div>' +
+                            '</div>';
+                    $($(row).parent()).append(renglonNuevo);
+                } else {
+                    $(row).append(
+                            '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 galerias">' +
+                            '<div>' + '<object type="image/png" data="galeriaTaller/' + identificador +'/' + i + '"></object>' +'</div>' +
+                            '<input type="file" class="filestyle form-control" data-buttonText=" Seleccione" data-buttonName="btn-primary" data-iconName="glyphicon-folder-open" />' +
+                            '</div>'
+                            );
+                }
+            }
+        }
+    });
     $('#popUpGaleriaTaller').modal('show');
+
 });
 
 function rellenaPopUpsDelete(selector) {

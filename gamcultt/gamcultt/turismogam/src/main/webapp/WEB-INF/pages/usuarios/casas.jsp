@@ -17,9 +17,9 @@
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
         rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/principal/principal.css">
-        <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="js/jquery.easing.min.js"></script>
-        <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+        <script src="js/casascultural/jquery-1.10.2.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/casascultural/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="js/casascultural/jquery.mixitup.min.js"></script>
         <script type="text/javascript">
             $(function() {
             
@@ -135,7 +135,7 @@
                 <div class="portfolio Casa" data-cat="Casa">
                     <div class="portfolio-wrapper">
                         <div class="fancyDemo">
-                            <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//ALI CHUMACERO.JPG" alt="" class="img-responsive"></a>
+                            <a rel="group" href="single.html"><img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" alt="" class="img-responsive"></a>
                         </div>
                         <div class="label">
                             <div class="label-text">

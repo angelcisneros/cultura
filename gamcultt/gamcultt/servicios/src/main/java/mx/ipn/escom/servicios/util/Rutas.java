@@ -12,10 +12,10 @@ package mx.ipn.escom.servicios.util;
  */
 public class Rutas {
     //public static final String JASPER = "C:/Users/vcisneros/Documents/NetBeansProjects/Repositorio/Nomifast/src/main/webapp/WEB-INF/jasper/mainNomina.jasper";  ;
-    public static final String SERVER = System.getProperty("user.dir") + "/Cultura/";
-    public static final String TALLERES = SERVER + "/talleres/";
-    public static final String EVENTOS = SERVER + "/eventos/";
-    public static final String USUARIOS = SERVER + "/usuarios/";
+    public static final String SERVER = System.getProperty("user.dir") + "\\Cultura\\";
+    public static final String TALLERES = SERVER + "talleres\\";
+    public static final String EVENTOS = SERVER + "eventos\\";
+    public static final String USUARIOS = SERVER + "usuarios\\";
     
     public static final String ASUNTO_MAIL_TIMBRADO = "Timbrado de Recibo de Nómina";
     public static final String MENSAJE_MAIL_TIMBRADO = "Estimado usuario, a continuación se anexan sus recibos de nómina (Representación Impresa y XML ), Gracias por utilizar nuestro servicio.";
