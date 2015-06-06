@@ -35,6 +35,7 @@
                             <thead id="categoriaTallerThead" class="text-center">
                                 <tr>
                                     <th>Nombre Taller</th>
+                                    <th>descripción</th>
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
@@ -44,6 +45,9 @@
                                         <td class="id">
                                             <label class="nombreTaller">${ct.nombre}</label>
                                             <label id="${ct.id}" class="ocultar">${ct.id}</label>
+                                        </td>
+                                        <td>
+                                            <label class="descripcionTaller">${ct.descripcion}</label>
                                         </td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="">

@@ -13,6 +13,9 @@
                     <label>Nombre:</label>
                     <input id="nombreTallerAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombreTaller de la CategoriaTaller">
                     <br>
+                    <label>Descripción:</label>
+                    <input id="descripcionTallerAdd" name="descripcion" class="form-control" type="text" placeholder="Ingrese el nombreTaller de la CategoriaTaller">
+                    <br>
                 </form>
             </div>
             <div class="modal-footer amarillo">
@@ -39,6 +42,9 @@
                 <form id="categoriaTallerUpdateForm">
                     <label>Nombre:</label>
                     <input id="nombreTallerUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombreTaller de la CategoriaTaller">
+                    <br>
+                    <label>Descripción:</label>
+                    <input id="descripcionTallerUpdate" name="descripcion" class="form-control" type="text" placeholder="Ingrese el nombreTaller de la CategoriaTaller">
                     <input id="idTallerUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombreTaller del Grado">
                 </form>
             </div>
@@ -66,6 +72,8 @@
                 <form id="categoriaTallerDeleteForm">
                     <strong><label>Nombre:</label></strong>
                     <label id="nombreTallerDelete"></label>
+                    <strong><label>Descripción:</label></strong>
+                    <label id="descripcionTallerDelete"></label>
                     <input id="idTallerDelete" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombreTaller del CategoriaTaller">
                 </form>
             </div>
