@@ -7,12 +7,17 @@ package mx.ipn.escom.turismoazcapotzalco.controller.crud;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import mx.ipn.escom.entidades.CategoriaEvento;
 import mx.ipn.escom.entidades.Evento;
+import mx.ipn.escom.servicios.CategoriaEventoServicio;
+import mx.ipn.escom.servicios.CategoriaTallerServicio;
 import mx.ipn.escom.servicios.EventoServicio;
+import mx.ipn.escom.servicios.SalaServicio;
 import static mx.ipn.escom.servicios.util.MensajesCrud.ERROR_DATOS;
 import static mx.ipn.escom.servicios.util.MensajesCrud.SESION_CADUCA;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +35,22 @@ public class EventoController {
 
     @Autowired
     EventoServicio eventoServicio;
+    @Autowired
+    SalaServicio salaServicio;
+    @Autowired 
+    CategoriaEventoServicio CategoriaEventoServicio;
+    
+    
 
+    @RequestMapping(value = "eventos", method = RequestMethod.GET)
+    public String eventosController(Model model){
+        model.addAttribute("eventos", eventoServicio.buscarTodos());
+        model.addAttribute("salas", salaServicio.buscarTodos());
+        model.addAttribute("categoriaEvento", CategoriaEventoServicio.buscarTodos());
+
+        return "crud/evento";
+    }
+    
     @ResponseBody
     @RequestMapping(value = "agregarEvento", method = RequestMethod.POST)
     public String agregarEvento(@Valid @ModelAttribute("evento") Evento evento, MultipartFile formato, BindingResult bindingResult, HttpSession session) {

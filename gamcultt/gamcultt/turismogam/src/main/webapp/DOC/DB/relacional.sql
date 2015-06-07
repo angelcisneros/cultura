@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `gamcultt`.`alumno` (
   `nombre_tutor` VARCHAR(100) NOT NULL,
   `Correo` VARCHAR(45) NOT NULL,
   `Telefono` VARCHAR(20) NOT NULL,
-  `Celular` VARCHAR(20) NULL DEFAULT NULL,
+  `Celular` VARCHAR(20          ) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
