@@ -17,6 +17,7 @@
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
         rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/principal/principal.css">
+        <link href="css/sticky-footer.css" rel="stylesheet">
         <script src="js/casascultural/jquery-1.10.2.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="js/casascultural/jquery.easing.min.js"></script>
         <script type="text/javascript" src="js/casascultural/jquery.mixitup.min.js"></script>
