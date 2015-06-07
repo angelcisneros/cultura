@@ -23,4 +23,5 @@ public interface CasaRepositorio {
     Casa buscarPorId(Integer id);
     List<Casa> buscarTodos();
     
+    List<Casa> buscarPorCategoriaTaller(Integer categoriaTaller);
 }

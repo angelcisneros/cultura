@@ -11,6 +11,7 @@ import mx.ipn.escom.repositorios.CasaRepositorio;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.sql.JoinType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -80,6 +81,14 @@ public class CasaRepositorioImpl implements CasaRepositorio{
     public List<Casa> buscarTodos() {
         return (List<Casa>) sessionFactory.getCurrentSession().createCriteria(Casa.class)
                 .list();
+    }
+
+    @Override
+    public List<Casa> buscarPorCategoriaTaller(Integer categoriaTaller) {
+        String query = "SELECT c.nombre, t.nombre FROM gamcultt.casa as c, gamcultt.sala s, gamcultt.clase as cl, gamcultt.taller as t, gamcultt.categoria_taller as cat where c.id = s.casa and s.id = cl.sala and cl.taller= t.id and t.categoriaTaller = cat.id";
+        return (List<Casa>) sessionFactory.getCurrentSession().createSQLQuery(query).list();
+                
+                
     }
     
     

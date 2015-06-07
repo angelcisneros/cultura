@@ -5,45 +5,57 @@
  */
 package mx.ipn.escom.turismoazcapotzalco.controller.usuarios;
 
+import mx.ipn.escom.servicios.CasaServicio;
 import mx.ipn.escom.servicios.CategoriaTallerServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  *
  * @author Lap_christo
  */
-
 @Controller
 public class VistasGeneralController {
-    
+
     @Autowired
     CategoriaTallerServicio categoriaTallerServicio;
     
-    @RequestMapping(value ="casas")
+    @Autowired
+    CasaServicio casaServicio;
+
+    @RequestMapping(value = "casas")
     public String casasController() {
         return "usuarios/casas";
     }
-    
-    @RequestMapping(value ="tallerprincipal")
+
+    @RequestMapping(value = "tallerprincipal")
     public String tallerController(Model model) {
         model.addAttribute("categoriasTaller", categoriaTallerServicio.buscarTodos());
         return "usuarios/taller";
     }
-    
-    @RequestMapping(value ="eventoprincipal")
+
+    @RequestMapping(value = "eventoprincipal")
     public String eventoController() {
         return "usuarios/evento";
     }
-    
-     @RequestMapping(value ="misionvision")
+
+    @RequestMapping(value = "misionvision")
     public String misvisController() {
         return "usuarios/misionvision";
     }
-     @RequestMapping(value ="contacto")
+
+    @RequestMapping(value = "contacto")
     public String contactoController() {
         return "usuarios/contacto";
     }
+
+    @RequestMapping(value = "buscarPorCategoriaTaller/{idCategoria}")
+    public String buscarPorCategoriaTaller(@PathVariable Integer idCategoria, Model model) {
+        model.addAttribute("casasImparte", casaServicio.buscarPorCategoriaTaller(idCategoria));
+        return "usuarios/casasImpartenTaller";
+    }
+
 }

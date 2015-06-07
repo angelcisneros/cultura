@@ -35,7 +35,6 @@
         </div>
         <c:forEach items="${categoriasTaller}" var="ct" varStatus="status">
             <c:set var="par" value="section"/>
-
             <c:choose>
                 <c:when test="${status.count % 2 eq 0}">
 
@@ -48,13 +47,12 @@
                                 <div class="col-md-6">
                                     <h1 class="text-danger">${ct.nombre}</h1>
                                     <p class="text-danger">${ct.descripcion}</p>
-                                    <a class="btn btn-danger">Ver mas ....</a>
+                                    <a class="btn btn-danger verMas" alt="${ct.id}">Ver mas ....</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </c:when>
-
                 <c:otherwise>
                     <div class="section section-danger">
                         <div class="container">
@@ -62,7 +60,7 @@
                                 <div class="col-md-6">
                                     <h1 class="text-inverse">${ct.nombre}</h1>
                                     <p class="text-inverse text-justify">${ct.descripcion}</p>
-                                    <a class="btn btn-primary">Ver mas ....</a>
+                                    <a class="btn btn-danger verMas" alt="${ct.id}">Ver mas ....</a>
                                 </div>
                                 <div class="col-md-6">
                                     <img src="C:\Users\Lap_christo\Desktop\imagenes gam\artes.jpg" class="center-block img-responsive img-thumbnail">
@@ -70,12 +68,30 @@
                             </div>
                         </div>
                     </div>
-
-
                 </c:otherwise>
             </c:choose>
         </c:forEach>
+        <!-- POPUP DIRIGE -->
+        <div class="modal fade" id="popUpMandaCasas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header amarillo">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                        </button>
+                        <h2 class="modal-title"><strong id="tituloPopUp">Casas deonde se imparte</strong></h2>
+                    </div>
+                    <div class="modal-body" id="contenidoCasasImpartenTaller">
+                        <%@ include file="/WEB-INF/pages/usuarios/casasImpartenTaller.jsp"%>
+                    </div>
+                    <div class="modal-footer amarillo">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
         <%@ include file="/WEB-INF/pages/usuarios/fooder.jsp"%>
     </body>
-
 </html>

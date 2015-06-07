@@ -73,4 +73,9 @@ public class CasaServicioImpl implements CasaServicio{
     public Casa buscarPorId(Integer id) {
        return casaRepositorio.buscarPorId(id);
     }
+
+    @Override
+    public List<Casa> buscarPorCategoriaTaller(Integer categoriaTaller) {
+        return casaRepositorio.buscarPorCategoriaTaller(categoriaTaller);
+    }
 }
