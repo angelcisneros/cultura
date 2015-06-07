@@ -10,6 +10,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -30,6 +31,7 @@ public @Data class CategoriaEvento implements java.io.Serializable {
     @Column(name = "id", unique = true, nullable = false)
     private Integer id;
 
+    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el nombre")
     @Column(name = "nombre", nullable = false, length = 45)
     private String nombre;
 

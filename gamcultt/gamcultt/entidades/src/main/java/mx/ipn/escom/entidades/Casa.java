@@ -10,9 +10,12 @@ import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.URL;
 
 
 /**
@@ -29,21 +32,27 @@ public @Data class Casa implements java.io.Serializable {
     @Column(name = "id", unique = true, nullable = false)
     private Integer id;
 
+    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el nombre")
     @Column(name = "nombre", nullable = false, length = 85)
     private String nombre;
 
+    @NotBlank(message = "Debe Ingresar una Dirección")
     @Column(name = "direccion", nullable = false, length = 105)
     private String direccion;
 
+    @Pattern(regexp = "^[1-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}$", message="Verifique el Teléfono")
     @Column(name = "telefono", nullable = false, length = 20)
     private String telefono;
 
+    //ESTA PENDIENTE LA VALIDACION
     @Column(name = "horario", nullable = false, length = 45)
     private String horario;
 
+    @NotBlank(message = "Debe de Ingresar Información")
     @Column(name = "informacion", nullable = false, length = 65535)
     private String informacion;
 
+    @URL(message = "URL Invalida")
     @Column(name = "likn_maps", length = 100)
     private String liknMaps;
 

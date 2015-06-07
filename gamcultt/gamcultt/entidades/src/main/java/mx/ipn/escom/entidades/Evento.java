@@ -15,9 +15,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.URL;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 /**
@@ -34,37 +39,46 @@ public @Data class Evento implements java.io.Serializable {
     @Column(name = "id", unique = true, nullable = false)
     private Integer id;
 
+    @NotBlank(message = "Seleccione una Sala")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sala", nullable = false)
     private Sala sala;
 
+    @NotBlank(message = "Seleccione una Categoria Evento")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoriaEvento", nullable = false)
     private CategoriaEvento categoriaEvento;
 
+    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el nombre")
     @Column(name = "nombre", nullable = false, length = 45)
     private String nombre;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_inicio", nullable = false, length = 10)
     private Date fechaInicio;
-
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_fin", nullable = false, length = 10)
     private Date fechaFin;
 
+    @NotBlank(message = "Ingrese la Información")
     @Column(name = "informacion", nullable = false, length = 65535)
     private String informacion;
 
     @Column(name = "horario", nullable = false, length = 45)
     private String horario;
 
+    @NotBlank(message = "Debe Ingresar una Dirección")
     @Column(name = "direccion", nullable = false, length = 105)
     private String direccion;
 
+    @Min(value=1, message = "Asistencia Estimada Incorrecta")
     @Column(name = "asistencia_estimada", nullable = false)
     private Integer asistenciaEstimada;
 
+    @URL(message = "URL Invalida")
     @Column(name = "link_maps", nullable = false, length = 100)
     private String linkMaps;
 

@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -48,6 +49,9 @@ public class AlumnoController {
             return SESION_CADUCA;
         }
         if (bindingResult.hasErrors()) {
+            for (ObjectError col : bindingResult.getAllErrors()) {
+                System.out.println(col.getObjectName() + "   " + col.getDefaultMessage());
+            }
             return ERROR_DATOS;
         }
         return alumnoServicio.agregar(alumno);
@@ -60,6 +64,9 @@ public class AlumnoController {
             return SESION_CADUCA;
         }
         if (bindingResult.hasErrors()) {
+            for (ObjectError col : bindingResult.getAllErrors()) {
+                System.out.println(col.getObjectName() + "   " + col.getDefaultMessage());
+            }
             return ERROR_DATOS;
         }
         return alumnoServicio.actualizar(alumno);
