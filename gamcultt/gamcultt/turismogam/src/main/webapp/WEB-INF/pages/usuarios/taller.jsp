@@ -75,6 +75,7 @@
                 </c:otherwise>
             </c:choose>
         </c:forEach>
+        <%@ include file="/WEB-INF/pages/usuarios/fooder.jsp"%>
     </body>
 
 </html>
