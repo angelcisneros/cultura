@@ -5,6 +5,7 @@
  */
 package mx.ipn.escom.turismoazcapotzalco.controller.usuarios;
 
+import mx.ipn.escom.entidades.Casa;
 import mx.ipn.escom.servicios.CasaServicio;
 import mx.ipn.escom.servicios.CategoriaTallerServicio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,10 @@ public class VistasGeneralController {
 
     @RequestMapping(value = "buscarPorCategoriaTaller/{idCategoria}")
     public String buscarPorCategoriaTaller(@PathVariable Integer idCategoria, Model model) {
+        System.out.println("ENtrooooooooo");
+        for(Casa c : casaServicio.buscarPorCategoriaTaller(idCategoria)){
+            System.out.println(c.getNombre());
+        }
         model.addAttribute("casasImparte", casaServicio.buscarPorCategoriaTaller(idCategoria));
         return "usuarios/casasImpartenTaller";
     }

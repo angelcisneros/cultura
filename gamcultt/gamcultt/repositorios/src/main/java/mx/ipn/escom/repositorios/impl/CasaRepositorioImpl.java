@@ -85,8 +85,8 @@ public class CasaRepositorioImpl implements CasaRepositorio{
 
     @Override
     public List<Casa> buscarPorCategoriaTaller(Integer categoriaTaller) {
-        String query = "SELECT c.nombre, t.nombre FROM gamcultt.casa as c, gamcultt.sala s, gamcultt.clase as cl, gamcultt.taller as t, gamcultt.categoria_taller as cat where c.id = s.casa and s.id = cl.sala and cl.taller= t.id and t.categoriaTaller = cat.id";
-        return (List<Casa>) sessionFactory.getCurrentSession().createSQLQuery(query).list();
+        String query = "SELECT * FROM Casa as c, Sala s, Clase as cl, Taller as t, Categoria_Taller as cat where c.id = s.casa and s.id = cl.sala and cl.taller= t.id and t.categoriaTaller = cat.id and cat.id=" + categoriaTaller;
+        return (List<Casa>) sessionFactory.getCurrentSession().createSQLQuery(query).addEntity(Casa.class).list();
                 
                 
     }

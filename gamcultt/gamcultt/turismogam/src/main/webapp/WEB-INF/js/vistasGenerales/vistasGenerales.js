@@ -6,6 +6,7 @@
 
 
 $('.verMas').on('click', function() {
+    $('#popUpMandaCasas').modal('show');
     var id = $(this).attr('alt');
     $('#contenidoCasasImpartenTaller').load("buscarPorCategoriaTaller/" + id, function(response, status, xhr) {
         if (status === "error") {

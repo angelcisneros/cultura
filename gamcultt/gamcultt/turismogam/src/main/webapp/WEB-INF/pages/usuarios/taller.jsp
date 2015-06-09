@@ -21,7 +21,6 @@
 
     <body>
         <%@ include file="/WEB-INF/pages/usuarios/navbar.jsp"%>
-
         <div class="section">
             <div class="container">
                 <div class="row">
@@ -34,10 +33,8 @@
             </div>
         </div>
         <c:forEach items="${categoriasTaller}" var="ct" varStatus="status">
-            <c:set var="par" value="section"/>
             <c:choose>
                 <c:when test="${status.count % 2 eq 0}">
-
                     <div class="section">
                         <div class="container">
                             <div class="row">
@@ -87,11 +84,11 @@
                     <div class="modal-footer amarillo">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
                     </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
+                </div> <!-- /.modal-content -->
+            </div> <!-- /.modal-dialog -->
         </div>
+        <script src="js/main.js" charset="UTF-8"></script>
+        <script src="js/vistasGenerales/vistasGenerales.js"></script>
         <%@ include file="/WEB-INF/pages/usuarios/fooder.jsp"%>
     </body>
 </html>
