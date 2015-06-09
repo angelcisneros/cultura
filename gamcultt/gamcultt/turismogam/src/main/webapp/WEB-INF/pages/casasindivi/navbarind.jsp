@@ -15,19 +15,19 @@
                     <a href="/turismogam/">Home</a>
                 </li>
                 <li>
-                    <a href="casasgeneal">Casas de Cultura</a>
+                    <a href="casasgeneral">Casas de Cultura</a>
                 </li>
                 <li>
-                    <a href="tallerindividual">Talleres</a>
+                    <a href="tallertodos">Talleres</a>
                 </li>
                 <li>
-                    <a href="eventoindividual">Eventos</a>
+                    <a href="eventostodos">Eventos</a>
                 </li>
                 <li>
-                    <a href="PropuestasCulturales">Propuestas</a>
+                    <a href="pro_cul">Propuestas Culturales</a>
                 </li>
                 <li>
-                    <a href="contactoindividual">Contacto</a>
+                    <a href="contactocasa">Contacto</a>
                 </li>
             </ul>
         </div>

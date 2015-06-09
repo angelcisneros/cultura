@@ -28,33 +28,33 @@ public class VistaIndividualController {
     @Autowired
     CasaServicio casaServicio;
     
-    @RequestMapping(value ="casasgeneal/{idCasa}")
+    @RequestMapping(value ="casasgeneral/{idCasa}")
     public String casasgenealController(@PathVariable Integer idCasa, Model model) {
         Casa casa=casaServicio.buscarPorId(idCasa);
         if(casa == null) {
             return "templates/404";
         }
         model.addAttribute("casa", casa);
-        return "casasindividual/casaindividual";
+        return "casasindivi/casaindividual";
     }
     
-    @RequestMapping(value ="tallerindividual")
+    @RequestMapping(value ="casasgeneral/tallertodos")
     public String tallerindController(Model model) {
         model.addAttribute("categoriasTaller", categoriaTallerServicio.buscarTodos());
-        return "casasindividual/taller";
+        return "casasindivi/tallertodos";
     }
     
-    @RequestMapping(value ="eventoindividual")
+    @RequestMapping(value ="casasgeneral/eventostodos")
         public String eventoindController() {
-        return "casasindividual/evento";
+        return "casasindivi/eventostodos";
     }
     
-     @RequestMapping(value ="PropuestasCulturales")
+     @RequestMapping(value ="casasgeneral/pro_cul")
         public String Pro_culController() {
-        return "casasindividual/pro_cul";
+        return "casasindivi/pro_cul";
     }
-     @RequestMapping(value ="contactoindividual")
+     @RequestMapping(value ="casasgeneral/contactocasa")
         public String contactoindController() {
-        return "casasindividual/contactoind";
+        return "casasindivi/contactocasa";
     }
 }
