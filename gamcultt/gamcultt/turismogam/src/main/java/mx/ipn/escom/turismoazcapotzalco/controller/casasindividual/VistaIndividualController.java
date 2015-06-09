@@ -39,18 +39,31 @@ public class VistaIndividualController {
     }
     
     @RequestMapping(value ="casasgeneral/tallertodos")
-    public String tallerindController(Model model) {
+    public String tallertodController(Model model) {
         model.addAttribute("categoriasTaller", categoriaTallerServicio.buscarTodos());
         return "casasindivi/tallertodos";
     }
     
-    @RequestMapping(value ="casasgeneral/eventostodos")
-        public String eventoindController() {
-        return "casasindivi/eventostodos";
+    @RequestMapping(value ="casasgeneral/tallertodos/tallerind")
+    public String tallerindController(Model model) {
+        model.addAttribute("categoriasTaller", categoriaTallerServicio.buscarTodos());
+        return "casasindivi/tallerind";
     }
     
+    @RequestMapping(value ="casasgeneral/eventostodos")
+        public String eventotodosController() {
+        return "casasindivi/eventostodos";
+    }
+    @RequestMapping(value ="casasgeneral/eventostodos/eventoind")
+        public String eventoindController() {
+        return "casasindivi/eventoind";
+    }
+     @RequestMapping(value ="casasgeneral/eventostodos/registroevento")
+        public String registroeventoController() {
+        return "casasindivi/registroevento";
+    }    
      @RequestMapping(value ="casasgeneral/pro_cul")
-        public String Pro_culController() {
+        public String proculController() {
         return "casasindivi/pro_cul";
     }
      @RequestMapping(value ="casasgeneral/contactocasa")

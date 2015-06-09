@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand"><img height="40" src="file:///C:/Users/Lap_christo/Desktop/imagenes gam/gam.png" class="img-circle" alt="Brand"></a>
+            <a class="navbar-brand"><img height="40" src="/images/gam.png" class="img-circle" alt="GAM"></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
             <ul class="nav navbar-nav navbar-right">
