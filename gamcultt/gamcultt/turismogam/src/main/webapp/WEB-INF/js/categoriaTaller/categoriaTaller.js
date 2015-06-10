@@ -69,6 +69,7 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary categoriaTallerUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger categoriaTallerDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-warning categoriaTallerImagenButton">Imagen</button>' +
                                 '</div>' +
                                 '</td>' +
                                 '</tr>'
@@ -128,6 +129,7 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary categoriaTallerUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger categoriaTallerDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-warning categoriaTallerImagenButton">Imagen</button>' +
                                 '</div>' +
                                 '</td>'
                                 //'</tr>'
@@ -179,9 +181,11 @@ function rellenaPopUpsDeleteTaller(selector) {
     var tr = $($($($(selector).parent())).parent()).parent();
     var id = $(tr).find('td.id label.ocultar').text();
     var nombreTaller = $(tr).find('td.id label.nombreTaller').text();
+    var descripcion = $(tr).find('td.id label.descripcionTaller').text();
     trClick = $(tr);
     $('#idTallerDelete').val(id);
     $('#nombreTallerDelete').text(nombreTaller);
+    $('#descripcionTallerDelete').text(descripcion);
     $('#popUpCategoriaTallerDelete').modal('show');
 }
 
@@ -189,9 +193,16 @@ function rellenaPopUpUpdateTaller(selector) {
     var tr = $($($($(selector).parent())).parent()).parent();
     var id = $(tr).find('td.id label.ocultar').text();
     var nombreTaller = $(tr).find('td.id label.nombreTaller').text();
+    var descripcion = $(tr).find('td.id label.descripcionTaller').text();
     trClick = $(tr);
 
     $('#idTallerUpdate').val(id);
     $('#nombreTallerUpdate').val(nombreTaller);
+    $('#descripcionTallerUpdate').val(descripcion);
     $('#popUpCategoriaTallerUpdate').modal('show');
 }
+
+
+$('#categoriaTallerTbody').on('click', '.categoriaTallerImagenButton', function() {
+    
+});

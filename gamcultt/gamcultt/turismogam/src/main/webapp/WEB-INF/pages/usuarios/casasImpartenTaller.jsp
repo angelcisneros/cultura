@@ -3,6 +3,6 @@
 <h3 id="contenidoPopUp">Casas</h3>
 <c:forEach items="${casasImparte}" var="ci" varStatus="status">
     <ul>
-        <li><a href="">${ci.nombre}</a></li>
+        <li><a href="casasgeneal/${ci.id}">${ci.nombre}</a></li>
     </ul>
 </c:forEach>

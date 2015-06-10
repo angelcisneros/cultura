@@ -53,6 +53,7 @@
                                             <div class="btn-group" role="group" aria-label="">
                                                 <button class="btn btn-primary categoriaTallerUpdateButton">Editar</button>
                                                 <button class="btn btn-danger categoriaTallerDeleteButton">Eliminar</button>
+                                                <button class="btn btn-warning categoriaTallerImagenButton">Imagen</button>
                                             </div>
                                         </td>
                                     </tr>
