@@ -41,9 +41,6 @@ public class CategoriaTallerusuarioController {
     
     @RequestMapping(value = "buscarPorCategoriaTaller/{idCategoria}")
     public String buscarPorCategoriaTaller(@PathVariable Integer idCategoria, Model model) {
-        for(Casa c : casaServicio.buscarPorCategoriaTaller(idCategoria)){
-            System.out.println(c.getNombre());
-        }
         model.addAttribute("casasImparte", casaServicio.buscarPorCategoriaTaller(idCategoria));
         return "usuarios/casasImpartenTaller";
     }
