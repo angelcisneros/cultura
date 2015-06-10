@@ -21,22 +21,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class VistasGeneralController {
 
-    @Autowired
-    CategoriaTallerServicio categoriaTallerServicio;
-    
-    @Autowired
-    CasaServicio casaServicio;
-
-    @RequestMapping(value = "casas")
+   @RequestMapping(value = "casas")
     public String casasController() {
         return "usuarios/casas";
     }
 
-    @RequestMapping(value = "tallerprincipal")
-    public String tallerController(Model model) {
-        model.addAttribute("categoriasTaller", categoriaTallerServicio.buscarTodos());
-        return "usuarios/taller";
-    }
 
     @RequestMapping(value = "eventoprincipal")
     public String eventoController() {
@@ -54,14 +43,5 @@ public class VistasGeneralController {
     }
     
     
-    @RequestMapping(value = "buscarPorCategoriaTaller/{idCategoria}")
-    public String buscarPorCategoriaTaller(@PathVariable Integer idCategoria, Model model) {
-        System.out.println("ENtrooooooooo");
-        for(Casa c : casaServicio.buscarPorCategoriaTaller(idCategoria)){
-            System.out.println(c.getNombre());
-        }
-        model.addAttribute("casasImparte", casaServicio.buscarPorCategoriaTaller(idCategoria));
-        return "usuarios/casasImpartenTaller";
-    }
 
 }

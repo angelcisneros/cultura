@@ -257,6 +257,7 @@ $('#tallerTbody').on('click', '.galeriaButton', function() {
                             );
                 }
             }
+            
         }
     });
     $('#popUpGaleriaTaller').modal('show');

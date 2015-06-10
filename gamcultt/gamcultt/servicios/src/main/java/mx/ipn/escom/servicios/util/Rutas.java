@@ -13,6 +13,7 @@ package mx.ipn.escom.servicios.util;
 public class Rutas {
     //public static final String JASPER = "C:/Users/vcisneros/Documents/NetBeansProjects/Repositorio/Nomifast/src/main/webapp/WEB-INF/jasper/mainNomina.jasper";  ;
     public static final String SERVER = System.getProperty("user.dir") + "\\Cultura\\";
+    public static final String CATEGORIA_TALLER = SERVER + "categoriaTaleller\\";
     public static final String TALLERES = SERVER + "talleres\\";
     public static final String EVENTOS = SERVER + "eventos\\";
     public static final String USUARIOS = SERVER + "usuarios\\";

@@ -39,7 +39,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6 text-center">
-                                    <img src="C:\Users\Lap_christo\Desktop\imagenes gam\danza.jpg" class="img-responsive img-thumbnail">
+                                    <img src="${pageContext.request.contextPath}/categoriaTaller/1" class="img-responsive img-thumbnail">
                                 </div>
                                 <div class="col-md-6">
                                     <h1 class="text-danger">${ct.nombre}</h1>
@@ -60,7 +60,7 @@
                                     <a class="btn btn-danger verMas" alt="${ct.id}">Ver mas ....</a>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="C:\Users\Lap_christo\Desktop\imagenes gam\artes.jpg" class="center-block img-responsive img-thumbnail">
+                                    <img src="${pageContext.request.contextPath}/categoriaTaller/1" class="img-responsive img-thumbnail">
                                 </div>
                             </div>
                         </div>
