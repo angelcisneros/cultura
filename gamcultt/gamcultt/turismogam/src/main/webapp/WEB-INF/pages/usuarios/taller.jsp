@@ -87,7 +87,7 @@
                 </div> <!-- /.modal-content -->
             </div> <!-- /.modal-dialog -->
         </div>
-        <div class="fade modal text-justify">
+      <div class="fade modal text-justify">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
