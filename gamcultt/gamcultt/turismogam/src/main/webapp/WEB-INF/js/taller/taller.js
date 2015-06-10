@@ -216,7 +216,6 @@ $(document).on('ready', function() {
 
 });
 
-
 $('#tallerTbody').on('click', '.tallerUpdateButton', function() {
     rellenaPopUpUpdate(this);
 });
