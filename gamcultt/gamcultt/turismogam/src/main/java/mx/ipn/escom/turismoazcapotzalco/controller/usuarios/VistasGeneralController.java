@@ -52,7 +52,8 @@ public class VistasGeneralController {
     public String contactoController() {
         return "usuarios/contacto";
     }
-
+    
+    
     @RequestMapping(value = "buscarPorCategoriaTaller/{idCategoria}")
     public String buscarPorCategoriaTaller(@PathVariable Integer idCategoria, Model model) {
         System.out.println("ENtrooooooooo");
