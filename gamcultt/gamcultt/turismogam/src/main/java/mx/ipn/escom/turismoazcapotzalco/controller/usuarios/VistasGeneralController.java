@@ -15,11 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class VistasGeneralController {
 
-   @RequestMapping(value = "casas")
-    public String casasController() {
-        return "usuarios/casas";
-    }
-
+   
 
     @RequestMapping(value = "eventoprincipal")
     public String eventoController() {

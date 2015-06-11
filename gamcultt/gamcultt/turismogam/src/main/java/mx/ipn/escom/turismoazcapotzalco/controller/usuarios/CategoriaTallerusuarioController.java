@@ -48,7 +48,7 @@ public class CategoriaTallerusuarioController {
     @ResponseBody
     @RequestMapping(value = "categoriaTaller/{idCategoria}")
     public byte[] categoriaTaller(@PathVariable Integer idCategoria) {
-        String path = CATEGORIA_TALLER + "1.jpg";
+        String path = CATEGORIA_TALLER + idCategoria +".jpg";
         return convierteArchivoToArregloBytes(new File(path));
     }
     

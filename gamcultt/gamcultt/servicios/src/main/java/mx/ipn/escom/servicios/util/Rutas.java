@@ -18,7 +18,7 @@ public class Rutas {
     public static final String EVENTOS = SERVER + "eventos\\";
     public static final String HOME_USUARIO = SERVER + "principal\\";
     public static final String USUARIOS = SERVER + "usuarios\\";
-    
+    public static final String CASAS = SERVER + "casas\\";
     public static final String ASUNTO_MAIL_TIMBRADO = "Timbrado de Recibo de Nómina";
     public static final String MENSAJE_MAIL_TIMBRADO = "Estimado usuario, a continuación se anexan sus recibos de nómina (Representación Impresa y XML ), Gracias por utilizar nuestro servicio.";
     public static final String ASUNTO_MAIL_CANCELADO = "Cancelación de Recibo de Nómina";

@@ -30,229 +30,45 @@
                                         </li>
                                     </ul>
                                     <div id="portfoliolist">
-                                        <div class="portfolio Casa" data-cat="Casa">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">Ali Chumacero</span>
+                                    <c:forEach items="${casas}" var="c" varStatus="status">
+                                        <c:choose>
+                                            <c:when test="${c.esCentro eq 'true'}">
+                                                
+                                                    <div class="portfolio Centro" data-cat="Centro">
+                                                        <div class="portfolio-wrapper">
+                                                            <div class="fancyDemo">
+                                                                <a rel="group" href="casasgeneral/${c.id}"><img src="${pageContext.request.contextPath}/casasimagen/${c.id}" class="img-responsive img-thumbnail"></a>
+                                                            </div>
+                                                            <div class="label">
+                                                                <div class="label-text">
+                                                                    <span class="text-category">${c.nombre}</span>
+                                                                </div>>
+                                                                <div class="label-bg"></div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Centro" data-cat="Centro">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//NERVO.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">Amado Nervo</span>
+                                                
+                                            </c:when>
+                                            <c:otherwise>
+                                               
+                                                <div class="portfolio Casa" data-cat="Casa">
+                                                    <div class="portfolio-wrapper">
+                                                        <div class="fancyDemo">
+                                                            <a rel="group" href="casasgeneral/${c.id}"><img src="${pageContext.request.contextPath}/casasimagen/${c.id}" class="img-responsive img-thumbnail"></a>
+                                                        </div>
+                                                        <div class="label">
+                                                            <div class="label-text">
+                                                                <span class="text-category">${c.nombre}</span>
+                                                            </div>
+                                                            <div class="label-bg"></div>
+                                                        </div>
                                                     </div>
-                                                    <div class="label-bg"></div>
                                                 </div>
-                                            </div>
+                                                                                                          
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:forEach>
                                         </div>
-                                        <div class="portfolio Centro" data-cat="Centro">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//ARON GORDIAN.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">Aaron Gordian</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Casa" data-cat="Casa">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//CARLOS MONSIVAIS.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">Carlos Monsiváis</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Casa" data-cat="Casa">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//CASA DE CULTURA BENITA GALEANA.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">Benita Galeana</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Casa" data-cat="Casa">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//JOSE-MARTI.jpg" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">José Martí</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Casa" data-cat="Casa">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//HUGO.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">Hugo Gutierrez Vega</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Centro" data-cat="Centro">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//PALMATITLA-1.jpg" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">Palmatitla</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Centro" data-cat="Centro">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//ARISTEGUI.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">Carmen Aristegui</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Casa" data-cat="Casa">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//CASILDA.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">La Casilda</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Centro" data-cat="Centro">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//TAIBO.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">Paco Taibo II</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Centro" data-cat="Centro">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//PRIMAVERA.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">PRIMAVERA</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Centro" data-cat="Centro">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//WAGNER.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">Richard Wagner</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Casa" data-cat="Casa">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//RULFO.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">Juan Rulfo</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Casa" data-cat="Casa">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//PACHECO.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">José Emilio Pacheco</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Centro" data-cat="Centro">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//FUTURAMA.JPG" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">Futurama</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio Casa" data-cat="Casa">
-                                            <div class="portfolio-wrapper">
-                                                <div class="fancyDemo">
-                                                    <a rel="group" href="single.html"><img src="file:///C:/Users/Lap_christo/Desktop/imagenes gam//JOSE-Ma-VELAZCO.jpg" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="label">
-                                                    <div class="label-text">
-                                                        <span class="text-category">José María Velazco</span>
-                                                    </div>
-                                                    <div class="label-bg"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -278,10 +94,10 @@
 <script type="text/javascript" src="js/casascultural/jquery.easing.min.js"></script>
 <script type="text/javascript" src="js/casascultural/jquery.mixitup.min.js"></script>
 <script type="text/javascript">
-    $(function() {
+    $(function () {
 
         var filterList = {
-            init: function() {
+            init: function () {
 
                 // MixItUp plugin
                 // http://mixitup.io
@@ -295,17 +111,17 @@
                 });
 
             },
-            hoverEffect: function() {
+            hoverEffect: function () {
 
                 // Simple parallax effect
-                $('#portfoliolist .portfolio').hover(function() {
+                $('#portfoliolist .portfolio').hover(function () {
                     $(this).find('.label').stop().animate({
                         bottom: 0
                     }, 200, 'easeOutQuad');
                     $(this).find('img').stop().animate({
                         top: -30
                     }, 500, 'easeOutQuad');
-                }, function() {
+                }, function () {
                     $(this).find('.label').stop().animate({
                         bottom: -40
                     }, 200, 'easeInQuad');
