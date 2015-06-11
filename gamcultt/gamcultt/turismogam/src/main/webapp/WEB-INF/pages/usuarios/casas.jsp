@@ -3,31 +3,11 @@
 <%@ include file="/WEB-INF/pages/usuarios/navbar.jsp"%>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-danger">Bienvenido a Nuestras Casas de Cultura&nbsp;</h1>
-        </div>
-    </div>
-</div>
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
-                    <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-                    <br>Ut enim ad minim veniam, quis nostrud</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 contenteditable="true" class="text-danger">Seleccione &nbsp;la Casa de Cultura o Centro de Desarrollo &nbsp;</h2>
-            </div>
-        </div>
-    </div>
+    <h1 class="text-danger">Bienvenido a Nuestras Casas de Cultura&nbsp;</h1>
+    <hr>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+        <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+        <br>Ut enim ad minim veniam, quis nostrud</p>
 </div>
 <div class="section">
     <div class="container">

@@ -32,7 +32,7 @@
         <div class="col-md-6">
             <div class="embed-responsive embed-responsive-16by9">
                 <img src="${pageContext.request.contextPath}/sliderHome/${home.hrefRed}" class="img-responsive">
-            </div>
+            </div>  
         </div>
     </div>
     <br>
