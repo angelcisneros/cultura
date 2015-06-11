@@ -13,9 +13,10 @@ package mx.ipn.escom.servicios.util;
 public class Rutas {
     //public static final String JASPER = "C:/Users/vcisneros/Documents/NetBeansProjects/Repositorio/Nomifast/src/main/webapp/WEB-INF/jasper/mainNomina.jasper";  ;
     public static final String SERVER = System.getProperty("user.dir") + "\\Cultura\\";
-    public static final String CATEGORIA_TALLER = SERVER + "categoriaTaleller\\";
+    public static final String CATEGORIA_TALLER = SERVER + "categoriaTaller\\";
     public static final String TALLERES = SERVER + "talleres\\";
     public static final String EVENTOS = SERVER + "eventos\\";
+    public static final String HOME_USUARIO = SERVER + "principal\\";
     public static final String USUARIOS = SERVER + "usuarios\\";
     
     public static final String ASUNTO_MAIL_TIMBRADO = "Timbrado de Recibo de Nómina";
@@ -25,4 +26,12 @@ public class Rutas {
     
     
     public static final String ACCESO_SISTEMA = "Credenciales del sistema Quadrum Contratos";
+    
+    public static void main(String[] args) {
+        for(int i = 1; i < 11; i++){
+            System.out.println("href"+ i+ "=1.jpg");
+            System.out.println("descripcion"+ i+ "=descripcion bla bla bla");
+            System.out.println("alt"+ i+ "=titulo :D");
+        }
+    }
 }
