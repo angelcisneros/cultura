@@ -78,7 +78,7 @@ ument   : pruebachristo
                     return;
                 js = d.createElement(s);
                 js.id = id;
-                js.src = "//connect.facebook.net/es_LA/sdk.js";
+                js.src = "https://youtu.be/yAkk3MqxOY8";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
         </script> 
@@ -94,14 +94,18 @@ ument   : pruebachristo
             }
         </script>
         <a href="#" id="publicar-btn">Publicar  Facebook</a>
+        
         <script>
-        document.getElementById('publicar-btn').onclick = function () {
+        var hola = "Este es la Prueba convariable"
+            document.getElementById('publicar-btn').onclick = function () {
             FB.login(function (response) {
             }, {scope: 'publish_actions'});
             FB.login(function () {
-                FB.api('/me/feed', 'post', {message: '@Alvaro Prueba de Mensaje a Face'});
+                FB.api('/me/feed', 'post', {message: hola});
             }, {scope: 'publish_actions'});
         }
         </script> 
+        
+        
     </body>
 </html>

@@ -45,7 +45,7 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h2 class="modal-title"><strong id="tituloPopUp">Casas deonde se imparte</strong></h2>
+                <h2 class="modal-title"><strong id="tituloPopUp">Casas donde se imparte</strong></h2>
             </div>
             <div class="modal-body" id="contenidoCasasImpartenTaller">
                 <%@ include file="/WEB-INF/pages/usuarios/casasImpartenTaller.jsp"%>
