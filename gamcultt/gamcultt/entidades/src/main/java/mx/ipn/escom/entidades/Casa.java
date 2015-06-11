@@ -55,6 +55,9 @@ public @Data class Casa implements java.io.Serializable {
     @URL(message = "URL Invalida")
     @Column(name = "likn_maps", length = 100)
     private String liknMaps;
+    
+    @Column(name = "esCentro", nullable = false)
+    private boolean esCentro;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "casa")
     private List<GaleriaCasa> galeriaCasas;

@@ -24,6 +24,7 @@
                 <li><a href="eventos">Eventos</a></li>
                 <li><a href="usuarios">Usuarios</a></li>
                 <li><a href="categorias">Categorias</a></li>
+                <li><a href="homeAdmin">Vista</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="cerrarSesion">Cerrar Sesión</a></li>

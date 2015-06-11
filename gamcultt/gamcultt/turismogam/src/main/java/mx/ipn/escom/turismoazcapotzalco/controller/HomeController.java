@@ -9,7 +9,6 @@ import java.io.File;
 import javax.servlet.http.HttpSession;
 import mx.ipn.escom.servicios.HomeUsuarioServicio;
 import static mx.ipn.escom.servicios.util.ManejadorArchivos.convierteArchivoToArregloBytes;
-import static mx.ipn.escom.servicios.util.Rutas.CATEGORIA_TALLER;
 import static mx.ipn.escom.servicios.util.Rutas.HOME_USUARIO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,11 +26,17 @@ public class HomeController {
 
     @Autowired
     HomeUsuarioServicio hus;
-    
+
     @RequestMapping(value = "/")
     public String homeController(Model model) {
         model.addAttribute("home", hus.home());
         return "templates/index";
+    }
+
+    @RequestMapping(value = "administrador/homeAdmin")
+    public String homeAdmin(Model model) {
+        model.addAttribute("home", hus.home());
+        return "crud/modificaHome";
     }
 
     @ResponseBody
@@ -40,7 +45,7 @@ public class HomeController {
         String path = HOME_USUARIO + href + ".jpg";
         return convierteArchivoToArregloBytes(new File(path));
     }
-    
+
     @RequestMapping(value = "*")
     public String error404(HttpSession session) {
         return "templates/404";
