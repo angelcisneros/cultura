@@ -5,28 +5,32 @@
     <c:choose>
         <c:when test="${status.count % 2 eq 0}">
             <div class="section">
-                <div class="row">
-                    <div class="col-md-6 text-center">
-                        <img src="${pageContext.request.contextPath}/categoriaTaller/1" class="img-responsive img-thumbnail">
-                    </div>
-                    <div class="col-md-6">
-                        <h1 class="text-danger">${ct.nombre}</h1>
-                        <p class="text-danger">${ct.descripcion}</p>
-                        <a class="btn btn-danger verMas" alt="${ct.id}">Ver mas ....</a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <img src="${pageContext.request.contextPath}/categoriaTaller/1" class="img-responsive img-thumbnail">
+                        </div>
+                        <div class="col-md-6">
+                            <h1 class="text-danger">${ct.nombre}</h1>
+                            <p class="text-danger">${ct.descripcion}</p>
+                            <a class="btn btn-danger verMas" alt="${ct.id}">Ver mas ....</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </c:when>
         <c:otherwise>
             <div class="section section-danger">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1 class="text-inverse">${ct.nombre}</h1>
-                        <p class="text-inverse text-justify">${ct.descripcion}</p>
-                        <a class="btn btn-danger verMas" alt="${ct.id}">Ver mas ....</a>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="${pageContext.request.contextPath}/categoriaTaller/1" class="img-responsive img-thumbnail">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1 class="text-inverse">${ct.nombre}</h1>
+                            <p class="text-inverse text-justify">${ct.descripcion}</p>
+                            <a class="btn btn-danger verMas" alt="${ct.id}">Ver mas ....</a>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="${pageContext.request.contextPath}/categoriaTaller/1" class="img-responsive img-thumbnail">
+                        </div>
                     </div>
                 </div>
             </div>

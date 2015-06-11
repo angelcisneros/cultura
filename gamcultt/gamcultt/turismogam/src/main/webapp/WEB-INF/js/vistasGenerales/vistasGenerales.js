@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 $(document).on('ready', function() {
-    console.log('hola :D');
-    
-    $('#popUpMandaCasas').modal('show');
-    console.log($('#mmmm').html());
+//    console.log('hola :D');
+//    
+//    $('#popUpMandaCasas').modal('show');
+//    console.log($('#mmmm').html());
 });
 
 $('.verMas').on('click', function() {
