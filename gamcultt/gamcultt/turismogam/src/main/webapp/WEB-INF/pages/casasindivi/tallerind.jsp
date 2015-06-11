@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                         </div>
-                        <table class="table">
+                        <table class="table responsive">
                             <thead>
                                 <tr>
                                     <th class="danger">Lunes</th>
