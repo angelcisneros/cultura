@@ -216,7 +216,6 @@ $(document).on('ready', function() {
 
 });
 
-
 $('#tallerTbody').on('click', '.tallerUpdateButton', function() {
     rellenaPopUpUpdate(this);
 });
@@ -239,7 +238,7 @@ $('#tallerTbody').on('click', '.galeriaButton', function() {
             $(fileDisplayArea).append('<object type="image/png" data="galeriaTaller/' + identificador + '/' + 0 + '"></object>');
             var row = $($(fileDisplayArea).parent()).parent();
             for (i = 1; i < parseInt(data); i++) {
-                if (i % 3 === 0) {
+                if ((i+1) % 3 === 0) {
                     var renglonNuevo =
                             '<br/><div class="row">' +
                             '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 galerias" >' +
@@ -248,6 +247,7 @@ $('#tallerTbody').on('click', '.galeriaButton', function() {
                             '</div>' +
                             '</div>';
                     $($(row).parent()).append(renglonNuevo);
+                    console.log($($(row).parent()).html());
                 } else {
                     $(row).append(
                             '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 galerias">' +
@@ -257,6 +257,7 @@ $('#tallerTbody').on('click', '.galeriaButton', function() {
                             );
                 }
             }
+            
         }
     });
     $('#popUpGaleriaTaller').modal('show');
