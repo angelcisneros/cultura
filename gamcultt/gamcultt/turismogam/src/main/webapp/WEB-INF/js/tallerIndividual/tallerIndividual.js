@@ -9,14 +9,14 @@ $('.talleres').on('click', function () {
     var id = $($(this).children('p.ocultar')).text();
 //    window.location.href  = '../../www';
     
-    $.get( "../../buscaTallerPorId/" + id, function(taller){
-        alert(taller);
-        $('#nombre').text(taller.nombre);
-            $('#descripcion').text(taller.descripcion);
-            $('#costo').text(taller.costo);
-            $('#horario').text(taller.horario);
-        
-    });
+//    $.post( "../../buscaTallerPorId/" + id, function(taller){
+//        alert(taller);
+//        $('#nombre').text(taller.nombre);
+//            $('#descripcion').text(taller.descripcion);
+//            $('#costo').text(taller.costo);
+//            $('#horario').text(taller.horario);
+//        
+//    });
 //    $.get( "../../buscaTallerPorId/"+id, function(taller){
 //        alert(taller);
 //        $('#nombre').text(taller.nombre);
@@ -27,18 +27,24 @@ $('.talleres').on('click', function () {
 //    });
 //    
 //    
-//    $.ajax({
-//        type: 'POST',
-//        url: "../../buscaTallerPorId/"+id,
-//        dataType: false,
-//        success: function (taller) {
-//            $('#nombre').text(taller.nombre);
-//            $('#descripcion').text(taller.descripcion);
-//            $('#costo').text(taller.costo);
-//            $('#horario').text(taller.horario);
-//        },
-//        error: function (jqXHR, textStatus, errorThrown) {
-//            alert('error');
-//        }
-//    });
+    $.ajax({
+        type: 'POST',
+        url: "../../buscaTallerPorId/"+id,
+        
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
+        },
+        success: function (taller) {
+            $('#nombre').text(taller.nombre);
+            $('#descripcion').text(taller.descripcion);
+            $('#costo').text(taller.costo);
+            $('#horario').text(taller.horario);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert(jqXHR.nombre);
+            alert(textStatus);
+            alert(errorThrown);
+        }
+    });
 });

@@ -1,6 +1,7 @@
 package mx.ipn.escom.entidades;
 // Generated 29/05/2015 09:21:20 AM by Hibernate Tools 3.6.0
 
+import java.math.BigDecimal;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -51,10 +52,19 @@ public @Data class Taller implements java.io.Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "taller")
     private List<Clase> clases;
+    
+    @Min(value=1, message = "El costo es incorrecto")
+    @Column(name = "costo", nullable = false, precision = 6)
+    private BigDecimal costo;
 
-    public Taller(CategoriaTaller categoriaTaller, String nombre, String descripcion) {
+    @Column(name = "horario", nullable = false, length = 45)
+    private String horario;
+
+    public Taller(CategoriaTaller categoriaTaller, String nombre, String descripcion, BigDecimal costo, String horario) {
         this.categoriaTaller = categoriaTaller;
         this.nombre = nombre;
+        this.costo = costo;
+        this.horario = horario;
         this.descripcion = descripcion;
     }
 }

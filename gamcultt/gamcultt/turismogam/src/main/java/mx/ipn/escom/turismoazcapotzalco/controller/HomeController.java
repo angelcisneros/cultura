@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import mx.ipn.escom.entidades.Taller;
 import mx.ipn.escom.servicios.HomeUsuarioServicio;
 import mx.ipn.escom.servicios.TallerServicio;
+import mx.ipn.escom.servicios.auxiliares.NewClass;
 import static mx.ipn.escom.servicios.util.ManejadorArchivos.convierteArchivoToArregloBytes;
 import static mx.ipn.escom.servicios.util.Rutas.HOME_USUARIO;
 import static mx.ipn.escom.servicios.util.Validaciones.esEntero;
@@ -59,12 +60,18 @@ public class HomeController {
     @Autowired
     // Esto es Una Interfaz Tiene los metodos a Utilizar
     TallerServicio tallerServicio;
-    @ResponseBody
+    
     @RequestMapping(value = "buscaTallerPorId/{idTaller}", method = {RequestMethod.GET, RequestMethod.POST})
-    public Taller buscaTallerPorId(@PathVariable String idTaller, Model model) {
+    public @ResponseBody Taller buscaTallerPorId(@PathVariable String idTaller, Model model) {
+        
         if (esEntero(idTaller)) {
-            return tallerServicio.buscarPorId(Integer.parseInt(idTaller));
-//            return "puto";
+            Taller taller = tallerServicio.buscarPorId(Integer.parseInt(idTaller));
+            taller.getCategoriaTaller().setTallers(null);
+            taller.setGaleriaTallers(null);
+            taller.setCategoriaTaller(null);
+            taller.setClases(null);
+            return taller;
+
         }
         return null;
 //    }

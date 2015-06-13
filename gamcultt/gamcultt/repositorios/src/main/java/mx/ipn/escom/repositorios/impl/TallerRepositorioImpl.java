@@ -74,6 +74,7 @@ public class TallerRepositorioImpl implements TallerRepositorio{
     public Taller buscarPorId(Integer id) {
         return (Taller) sessionFactory.getCurrentSession().createCriteria(Taller.class)
                 .add(Restrictions.eq("id", id))
+                .createAlias("categoriaTaller", "c", JoinType.INNER_JOIN)
                 .uniqueResult();
     }
 

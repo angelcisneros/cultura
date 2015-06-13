@@ -49,12 +49,6 @@ public @Data class Clase implements java.io.Serializable {
     @JoinColumn(name = "taller", nullable = false, insertable = false, updatable = false)
     private Taller taller;
 
-    @Min(value=1, message = "El costo es incorrecto")
-    @Column(name = "costo", nullable = false, precision = 6)
-    private BigDecimal costo;
-
-    @Column(name = "horario", nullable = false, length = 45)
-    private String horario;
 
     @Column(name = "status", nullable = false)
     private boolean status;
@@ -62,13 +56,11 @@ public @Data class Clase implements java.io.Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "clase")
     private List<AlumnoClase> alumnoClases;
 
-    public Clase(ClaseId id, Profesor profesor, Sala sala, Taller taller, BigDecimal costo, String horario, boolean status) {
+    public Clase(ClaseId id, Profesor profesor, Sala sala, Taller taller, boolean status) {
         this.id = id;
         this.profesor = profesor;
         this.sala = sala;
-        this.taller = taller;
-        this.costo = costo;
-        this.horario = horario;
+        this.taller = taller;        
         this.status = status;
     }
 
