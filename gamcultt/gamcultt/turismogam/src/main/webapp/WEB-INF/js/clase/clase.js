@@ -41,7 +41,7 @@ $(document).on('ready', function() {
         var horario = $('#horarioAdd').val();
         var status = $('#statusAdd').val();
 
-        if (nombre === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
             $('#nombreAdd').css("border", "1px solid red");
         } else {
@@ -50,7 +50,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (paterno === '') {
+        if (!validarPaterno( paterno )) {
             muestraPopUpCampoNoVacio($('#paternoAdd'));
             $('#paternoAdd').css("border", "1px solid red");
         } else {
@@ -58,7 +58,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#paternoAdd'));
             requisitos++;
         }
-        if (materno === '') {
+        if (!validarMaterno( materno )) {
             muestraPopUpCampoNoVacio($('#maternoAdd'));
             $('#maternoAdd').css("border", "1px solid red");
         } else {
@@ -66,7 +66,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#maternoAdd'));
             requisitos++;
         }
-        if (sala === '') {
+        if (!validarSala( sala )) {
             muestraPopUpCampoNoVacio($('#salaAdd'));
             $('#salaAdd').css("border", "1px solid red");
         } else {
@@ -74,7 +74,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#salaAdd'));
             requisitos++;
         }
-        if (taller === '') {
+        if (!validarTaller( taller )) {
             muestraPopUpCampoNoVacio($('#tallerAdd'));
             $('#tallerAdd').css("border", "1px solid red");
         } else {
@@ -172,7 +172,7 @@ $(document).on('ready', function() {
         var telefono2 = $('#telefono2Update').val();
         var direccion = $('#direccionUpdate').val();
 
-        if (nombre === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
@@ -180,21 +180,21 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (paterno === '') {
+        if (!validarPaterno( paterno )) {
             muestraPopUpCampoNoVacio($('#paternoUpdate'));
             $('#paternoUpdate').css("border", "1px solid red");
         } else {
             $('#paternoUpdate').removeAttr('style');
             requisitos++;
         }
-        if (materno === '') {
+        if (!validarMaterno( materno )) {
             muestraPopUpCampoNoVacio($('#maternoUpdate'));
             $('#maternoUpdate').css("border", "1px solid red");
         } else {
             $('#maternoUpdate').removeAttr('style');
             requisitos++;
         }
-        if (mail === '') {
+        if (!validarEmail( email )) {
             muestraPopUpCampoNoVacio($('#correoUpdate'));
             $('#correoUpdate').css("border", "1px solid red");
         } else {
@@ -216,7 +216,7 @@ $(document).on('ready', function() {
             $('#gradoUpdate').removeAttr('style');
             requisitos++;
         }
-        if (telefono1 === '') {
+        if (validarTelefono(telefono)) {
             muestraPopUpCampoNoVacio($('#telefono1Update'));
             $('#telefono1Update').css("border", "1px solid red");
         } else {

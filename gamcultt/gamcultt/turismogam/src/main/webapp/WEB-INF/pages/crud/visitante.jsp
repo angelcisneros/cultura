@@ -89,8 +89,8 @@
                     <label>Correo:</label>
                     <input id="correoAdd" name="correo" class="form-control" type="email" placeholder="Ingrese el Correo">
                     <br>
-                    <label>Telefono:</label>
-                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el Telefono">
+                    <label>Teléfono:</label>
+                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono">
                     <br>
                     <label>Celular:</label>
                     <input id="celularAdd" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular">
@@ -130,8 +130,8 @@
                     <label>Correo:</label>
                     <input id="correoUpdate" name="correo" class="form-control" type="email" placeholder="Ingrese el Correo">
                     <br>
-                    <label>Telefono:</label>
-                    <input id="telefonoUpdate" name="telefono" class="form-control" type="text" placeholder="Ingrese el Telefono">
+                    <label>Teléfono:</label>
+                    <input id="telefonoUpdate" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono">
                     <br>
                     <label>Celular:</label>
                     <input id="celularUpdate" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular">

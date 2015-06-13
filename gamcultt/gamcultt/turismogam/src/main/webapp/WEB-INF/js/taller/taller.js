@@ -38,7 +38,7 @@ $(document).on('ready', function() {
         var descripcion = $('#descripcionAdd').val();
 
 
-        if (nombre === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
             $('#nombreAdd').css("border", "1px solid red");
         } else {
@@ -55,7 +55,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (descripcion === '') {
+        if (!validarDescripcion( descripcion )) {
             muestraPopUpCampoNoVacio($('#descripcionAdd'));
             $('#descripcionAdd').css("border", "1px solid red");
         } else {
@@ -122,7 +122,7 @@ $(document).on('ready', function() {
         var nombre = $('#nombreUpdate').val();
         var descripcion = $('#descripcionUpdate').val();
 
-        if (nombre === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
@@ -138,7 +138,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#categoriaUpdate'));
             requisitos++;
         }
-        if (descripcion === '') {
+        if (!validarDescripcion( descripcion )) {
             muestraPopUpCampoNoVacio($('#descripcionUpdate'));
             $('#descripcionUpdate').css("border", "1px solid red");
         } else {

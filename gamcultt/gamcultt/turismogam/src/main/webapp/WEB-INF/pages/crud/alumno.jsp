@@ -27,7 +27,7 @@
                             <th>Edad</th>
                             <th>Nombre Tutor</th>
                             <th>Correo</th>
-                            <th>Télefono</th>
+                            <th>Telefono</th>
                             <th>Celular</th>
                             <th>Opciones</th>
                         </tr>
@@ -81,7 +81,7 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title"><strong>Agregar Nueva Alumno</strong></h4>
+                <h4 class="modal-title"><strong>Agregar Nuevo Alumno</strong></h4>
             </div>
             <div class="modal-body">
                 <form id="alumnoAddForm">
@@ -101,13 +101,13 @@
                     <input id="nombreTutorAdd" name="nombreTutor" class="form-control" type="text" placeholder="Ingrese el Nombre del tutor">
                     <br>
                     <label>Correo:</label>
-                    <input id="correoAdd" name="correo" class="form-control" type="text" placeholder="Ingrese el Nombre del tutor">
+                    <input id="correoAdd" name="correo" class="form-control" type="text" placeholder="Ingrese el Correo">
                     <br>
-                    <label>Telefono:</label>
-                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el Nombre del tutor">
+                    <label>Teléfono:</label>
+                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono">
                     <br>
-                    <label>Telefono:</label>
-                    <input id="celularAdd" name="celular" class="form-control" type="text" placeholder="Ingrese el Nombre del tutor">                    
+                    <label>Celular:</label>
+                    <input id="celularAdd" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular">                    
                 </form>
             </div>
             <div class="modal-footer amarillo">
@@ -150,11 +150,11 @@
                     <label>Correo:</label>
                     <input id="correoUpdate" name="correo" class="form-control" type="text" placeholder="Ingrese el Nombre del tutor">
                     <br>
-                    <label>Télefono:</label>
-                    <input id="telefonoUpdate" name="telefono" class="form-control" type="text" placeholder="Ingrese el Nombre del tutor">
+                    <label>Teléfono:</label>
+                    <input id="telefonoUpdate" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono">
                     <br>
                     <label>Celular:</label>
-                    <input id="celularUpdate" name="celular" class="form-control" type="text" placeholder="Ingrese el Nombre del tutor">
+                    <input id="celularUpdate" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular">
                     <input id="idUpdate" name="id" class="ocultar">
                 </form>
             </div>

@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 ">
-            <h2><strong>Tallers</strong></h2>
+            <h2><strong>Talleres</strong></h2>
         </div>
     </div>
     <hr />
@@ -75,7 +75,7 @@
                     <label>Nombre:</label>
                     <input id="nombreAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre del Taller">
                     <br>
-                    <label>Categoria:</label>
+                    <label>Categoría:</label>
                     <select id="categoriaAdd" name="categoriaTaller.id" class="form-control">
                         <option value="0" label="Seleccione...">Seleccione...</option>
                         <c:forEach items="${categorias}" var="c" varStatus="status">
@@ -83,8 +83,8 @@
                         </c:forEach>
                     </select>
                     <br>
-                    <label>Descripcion:</label>
-                    <input id="descripcionAdd" name="descripcion" class="form-control" type="text" placeholder="Ingrese el Apellino Materno del Taller">
+                    <label>Descripción:</label>
+                    <input id="descripcionAdd" name="descripcion" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">
                     <br>
                 </form>
             </div>
@@ -113,7 +113,7 @@
                     <label>Nombre:</label>
                     <input id="nombreUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre del Taller">
                     <br>
-                    <label>Categoria:</label>
+                    <label>Categoría:</label>
                     <select id="categoriaUpdate" name="categoriaTaller.id" class="form-control">
                         <option value="0" label="Seleccione...">Seleccione...</option>
                         <c:forEach items="${categorias}" var="c" varStatus="status">
@@ -121,8 +121,8 @@
                         </c:forEach>
                     </select>
                     <br>
-                    <label>Descripcion:</label>
-                    <input id="descripcionUpdate" name="descripcion" class="form-control" type="text" placeholder="Ingrese el Apellino Materno del Taller">
+                    <label>Descripción:</label>
+                    <input id="descripcionUpdate" name="descripcion" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">
                     <input id="idUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombre del Taller">
                 </form>
             </div>

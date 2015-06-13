@@ -72,12 +72,12 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title"><strong>Agregar Nueva Usuario</strong></h4>
+                <h4 class="modal-title"><strong>Agregar Nuevo Usuario</strong></h4>
             </div>
             <div class="modal-body">
                 <form id="usuarioAddForm">
                     <label>Nombre(s):</label>
-                    <input id="nombreAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre del Usuario">
+                    <input id="nombreAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre del Usuario">
                     <br>
                     <label>Apellido Paterno:</label>
                     <input id="paternoAdd" name="paterno" class="form-control" type="text" placeholder="Ingrese el Apellido Paterno del Usuario">
@@ -92,12 +92,12 @@
                             <option value="${c.id}" label="${c.nombre}">${c.nombre}</option>
                         </c:forEach>
                     </select>
-                    <label>Télefono:</label>
-                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el telefono">
-                    <label>*Correo:</label>
-                    <input id="correoAdd" name="correo" class="form-control" type="text" placeholder="Ingrese el Apellino Materno del Empleado">
+                    <label>Teléfono:</label>
+                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el teléfono">
+                    <label>Correo:</label>
+                    <input id="correoAdd" name="correo" class="form-control" type="text" placeholder="Ingrese el Apellino Correo">
                     <br>
-                    <label>*Cuenta:</label>
+                    <label>Cuenta:</label>
                     <br>
                     <input id="activadaAdd" type="radio" value="true" checked="true" name="estado">Activada.
                     <br> 
@@ -136,8 +136,8 @@
                     <label>Apellido Materno:</label>
                     <input id="maternoUpdate" name="materno" class="form-control" type="text" placeholder="Ingrese el Apellino Materno del Usuario">
                     <br>
-                    <label>Télefono:</label>
-                    <input id="telefonoUpdate" name="telefono" class="form-control" type="email" placeholder="Ingrese el Edad">
+                    <label>Teléfono:</label>
+                    <input id="telefonoUpdate" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono del Usuario">
                     <br>
                     <label>Casa:</label>
                     <select id="casaUpdate" name="casa.id" class="form-control">
@@ -146,10 +146,10 @@
                             <option value="${c.id}" label="${c.nombre}">${c.nombre}</option>
                         </c:forEach>
                     </select>
-                    <label>*Correo:</label>
-                    <input id="correoUpdate" name="correo" class="form-control" type="text" placeholder="Ingrese el Apellino Materno del Empleado">
+                    <label>Correo:</label>
+                    <input id="correoUpdate" name="correo" class="form-control" type="email" placeholder="Ingrese el Correo del Usuario">
                     <br>
-                    <label>*Cuenta:</label>
+                    <label>Cuenta:</label>
                     <br>
                     <input id="activadaAdd" type="radio" value="true" checked="true" name="estado">Activada.
                     <br> 

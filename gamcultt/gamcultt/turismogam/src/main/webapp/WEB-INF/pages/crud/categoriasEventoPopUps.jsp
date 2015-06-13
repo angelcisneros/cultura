@@ -6,12 +6,12 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title"><strong>Agregar Nueva CategoriaEvento</strong></h4>
+                <h4 class="modal-title"><strong>Agregar Nueva Categoría de Evento</strong></h4>
             </div>
             <div class="modal-body">
                 <form id="categoriaEventoAddForm">
                     <label>Nombre:</label>
-                    <input id="nombreAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre de la CategoriaEvento">
+                    <input id="nombreAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre de la Categoría del Evento">
                     <br>
                 </form>
             </div>
@@ -33,13 +33,13 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title"><strong>Actualizar CategoriaEvento</strong></h4>
+                <h4 class="modal-title"><strong>Actualizar Categoría de Evento</strong></h4>
             </div>
             <div class="modal-body">
                 <form id="categoriaEventoUpdateForm">
                     <label>Nombre:</label>
-                    <input id="nombreUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre de la CategoriaEvento">
-                    <input id="idUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombre del Grado">
+                    <input id="nombreUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre de la Categoría del Evento">
+                    <input id="idUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el Nombre del Grado">
                 </form>
             </div>
             <div class="modal-footer amarillo">
@@ -60,13 +60,13 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title"><strong>Eliminar CategoriaEvento</strong></h4>
+                <h4 class="modal-title"><strong>Eliminar Categoría Evento</strong></h4>
             </div>
             <div class="modal-body">
                 <form id="categoriaEventoDeleteForm">
                     <strong><label>Nombre:</label></strong>
                     <label id="nombreDelete"></label>
-                    <input id="idDelete" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombre del CategoriaEvento">
+                    <input id="idDelete" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombre del Categoría del Evento">
                 </form>
             </div>
             <div class="modal-footer amarillo">

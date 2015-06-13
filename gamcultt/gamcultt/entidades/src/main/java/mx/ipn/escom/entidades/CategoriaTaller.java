@@ -30,7 +30,7 @@ public @Data class CategoriaTaller implements java.io.Serializable {
     @Column(name = "id", unique = true, nullable = false)
     private Integer id;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el nombre")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ\\s]{2,}$", message="Verifique el nombre")
     @Column(name = "nombre", nullable = false, length = 45)
     private String nombre;
 

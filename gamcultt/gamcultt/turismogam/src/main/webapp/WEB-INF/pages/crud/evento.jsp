@@ -109,7 +109,7 @@
             <div class="modal-body">
                 <form id="eventoAddForm">
                     <label>Nombre:</label>
-                    <input id="nombreAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre del Evento">
+                    <input id="nombreAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre del Evento">
                     <br>
                     
                     
@@ -122,7 +122,7 @@
                     </select>
                     <br>
                     
-                    <label>Categoria:</label>
+                    <label>Categoría:</label>
                     <select id="categoriaAdd" name="categoriaEvento.id" class="form-control">
                         <option value="0" label="Seleccione...">Seleccione...</option>
                         <c:forEach items="${categoriaEvento}" var="c" varStatus="status">
@@ -131,7 +131,7 @@
                     </select>
                     <br>
                     <label>Información:</label>
-                    <input id="informacionAdd" name="informacion" class="form-control" type="text" placeholder="Ingrese Informacíon del Evento">
+                    <input id="informacionAdd" name="informacion" class="form-control" type="text" placeholder="Ingrese Informacíón del Evento">
                     <br>
                     
                     <br>
@@ -141,33 +141,33 @@
                     
                     <br>
                     <label>Fecha Inicio:</label>
-                    <input type="date" id="fechainicioAdd" name="fechaInicio" class="form-control" type="text" placeholder="Ingrese la fecha de inicio  del Evento">
+                    <input type="date" id="fechainicioAdd" name="fechaInicio" class="form-control" type="text" placeholder="Ingrese la fecha de Inicio  del Evento">
                     <br>
                     
                     <br>
                     <label>Fecha Fin:</label>
-                    <input type="date" id="fechafinAdd" name="fechaFin" class="form-control" type="text" placeholder="Ingrese la fecha de fin del Evento">
+                    <input type="date" id="fechafinAdd" name="fechaFin" class="form-control" type="text" placeholder="Ingrese la Fecha de Fin del Evento">
                     <br>
                     
                     <br>
                     <label>Asistencia Estimada:</label>
-                    <input id="asistenciaAdd" name="asistencia" class="form-control" type="text" placeholder="Ingrese la fecha de fin del Evento">
+                    <input id="asistenciaAdd" name="asistencia" class="form-control" type="text" placeholder="Ingrese la Asistencia Estimada del Evento">
                     <br>
                     
                     <br>
                     <label>Horario:</label>
-                    <input id="horarioAdd" name="horario" class="form-control" type="text" placeholder="Ingrese la fecha de fin del Evento">
+                    <input id="horarioAdd" name="horario" class="form-control" type="text" placeholder="Ingrese Horario del Evento">
                     <br>
                     
                     <br>
                     <label>Link:</label>
-                    <input id="linkAdd" name="link" class="form-control" type="text" placeholder="Ingrese la fecha de fin del Evento">
+                    <input id="linkAdd" name="link" class="form-control" type="text" placeholder="Ingrese link del Mapa del Evento">
                     <br>
                 </form>
             </div>
             <div class="modal-footer amarillo">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button id="addEvento" type="button" class="btn btn-primary">Siguiente >></button>
+                <button id="addEvento" type="button" class="btn btn-primary">Agregar >></button>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -175,7 +175,7 @@
     <!-- /.modal-dialog -->
 </div>
 
-<!-- POPUP ACTUALIZAR TALLER -->
+<!-- POPUP ACTUALIZAR EVENTO -->
 <div class="modal fade" id="popUpEventoUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -190,7 +190,7 @@
                     <label>Nombre:</label>
                     <input id="nombreUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre del Evento">
                     <br>
-                    <label>Categoria:</label>
+                    <label>Categoría:</label>
                     <select id="categoriaUpdate" name="categoriaEvento.id" class="form-control">
                         <option value="0" label="Seleccione...">Seleccione...</option>
                         <c:forEach items="${categorias}" var="c" varStatus="status">
@@ -198,9 +198,9 @@
                         </c:forEach>
                     </select>
                     <br>
-                    <label>Descripcion:</label>
-                    <input id="descripcionUpdate" name="descripcion" class="form-control" type="text" placeholder="Ingrese el Apellino Materno del Evento">
-                    <input id="idUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombre del Evento">
+                    <label>Descripción:</label>
+                    <input id="descripcionUpdate" name="descripcion" class="form-control" type="text" placeholder="Ingrese la Descripción del Evento">
+                    <input id="idUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese la Descripción del Evento">
                 </form>
             </div>
             <div class="modal-footer amarillo">

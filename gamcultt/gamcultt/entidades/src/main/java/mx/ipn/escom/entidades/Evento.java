@@ -44,12 +44,12 @@ public @Data class Evento implements java.io.Serializable {
     @JoinColumn(name = "sala", nullable = false)
     private Sala sala;
 
-    @NotBlank(message = "Seleccione una Categoria Evento")
+    @NotBlank(message = "Seleccione una Categoría Evento")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoriaEvento", nullable = false)
     private CategoriaEvento categoriaEvento;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el nombre")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ\\s]{2,}$", message="Verifique el nombre")
     @Column(name = "nombre", nullable = false, length = 45)
     private String nombre;
 
@@ -78,7 +78,7 @@ public @Data class Evento implements java.io.Serializable {
     @Column(name = "asistencia_estimada", nullable = false)
     private Integer asistenciaEstimada;
 
-    @URL(message = "URL Invalida")
+    @URL(message = "URL Inválida")
     @Column(name = "link_maps", nullable = false, length = 100)
     private String linkMaps;
 

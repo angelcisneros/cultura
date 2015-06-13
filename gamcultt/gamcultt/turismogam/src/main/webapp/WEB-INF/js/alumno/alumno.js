@@ -41,7 +41,7 @@ $(document).on('ready', function() {
         var telefono = $('#telefonoAdd').val();
         var celular = $('#celularAdd').val();
 
-        if (nombre === '') {
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
             $('#nombreAdd').css("border", "1px solid red");
         } else {
@@ -50,7 +50,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (paterno === '') {
+        if (!validarPaterno(paterno)) {
             muestraPopUpCampoNoVacio($('#paternoAdd'));
             $('#paternoAdd').css("border", "1px solid red");
         } else {
@@ -58,7 +58,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#paternoAdd'));
             requisitos++;
         }
-        if (materno === '') {
+        if (!validarMaterno( materno )) {
             muestraPopUpCampoNoVacio($('#maternoAdd'));
             $('#maternoAdd').css("border", "1px solid red");
         } else {
@@ -77,7 +77,7 @@ $(document).on('ready', function() {
         }
 
 
-        if (nombreTutor === '') {
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreTutorAdd'));
             $('#nombreTutorAdd').css("border", "1px solid red");
         } else {
@@ -85,9 +85,35 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#nombreTutorAdd'));
             requisitos++;
         }
+        
+        if (!validarEmail( correo ) ) {
+            muestraPopUpCampoNoVacio($('#correoAdd'));
+            $('#correoAdd').css("border", "1px solid red");
+        } else {
+            $('#correoAdd').removeAttr('style');
+            cierraPopUpChiquito($('#correoAdd'));
+            requisitos++;
+        }
+        
+        if (!validarTelefono(telefono)) {
+            muestraPopUpCampoNoVacio($('#telefonoAdd'));
+            $('#telefonoAdd').css("border", "1px solid red");
+        } else {
+            $('#telefonoAdd').removeAttr('style');
+            cierraPopUpChiquito($('#telefonoAdd'));
+            requisitos++;
+        }
+        
+        if (!validarCeleular(celular)) {
+            muestraPopUpCampoNoVacio($('#celularAdd'));
+            $('#celularAdd').css("border", "1px solid red");
+        } else {
+            $('#celularAdd').removeAttr('style');
+            cierraPopUpChiquito($('#celularAdd'));
+            requisitos++;
+        }
 
-        requisitos += 2;
-        if (requisitos === 7) {
+        if (requisitos === 8) {
 
             $.ajax({
                 type: 'POST',
@@ -158,7 +184,7 @@ $(document).on('ready', function() {
         var telefono = $('#telefonoUpdate').val();
         var celular = $('#celularUpdate').val();
 
-        if (nombre === '') {
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
@@ -167,7 +193,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (paterno === '') {
+        if (!validarPaterno( paterno )) {
             muestraPopUpCampoNoVacio($('#paternoUpdate'));
             $('#paternoUpdate').css("border", "1px solid red");
         } else {
@@ -175,7 +201,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#paternoUpdate'));
             requisitos++;
         }
-        if (materno === '') {
+        if (!validarMaterno( materno )) {
             muestraPopUpCampoNoVacio($('#maternoUpdate'));
             $('#maternoUpdate').css("border", "1px solid red");
         } else {
@@ -191,7 +217,7 @@ $(document).on('ready', function() {
             $('#edadUpdate').css("border", "1px solid red");
             muestraPopUpCampoNumerico($('#edadUpdate'));
         }
-        if (nombreTutor === '') {
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreTutorUpdate'));
             $('#nombreTutorUpdate').css("border", "1px solid red");
         } else {
@@ -199,8 +225,31 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#nombreTutorUpdate'));
             requisitos++;
         }
-        requisitos += 2;
-        if (requisitos === 7) {
+         if (!validarEmail(correo) ) {
+            muestraPopUpCampoNoVacio($('#correoUpdate'));
+            $('#correoUpdate').css("border", "1px solid red");
+        } else {
+            $('#correoUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#correoUpdate'));
+            requisitos++;
+        }
+        if (!validarTelefono(telefono) ) {
+            muestraPopUpCampoNoVacio($('#telefonoUpdate'));
+            $('#telefonoUpdate').css("border", "1px solid red");
+        } else {
+            $('#telefonoUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#telefonoUpdate'));
+            requisitos++;
+        }
+         if (!validarCeleular(celular) ) {
+            muestraPopUpCampoNoVacio($('#celularUpdate'));
+            $('#celularUpdate').css("border", "1px solid red");
+        } else {
+            $('#celularUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#celularUpdate'));
+            requisitos++;
+        }
+        if (requisitos === 8) {
             $.ajax({
                 type: 'POST',
                 url: "editarAlumno/",

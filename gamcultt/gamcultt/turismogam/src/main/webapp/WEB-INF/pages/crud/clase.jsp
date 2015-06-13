@@ -12,7 +12,7 @@
      <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-            <a id="addClaseButton" class="btn btn-primary btn-lg" role="button">Agregar Nuevo Clase +</a>
+            <a id="addClaseButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Clase +</a>
         </div>
     </div>
     <hr />
@@ -129,7 +129,7 @@
     <!-- /.modal-dialog -->
 </div>
 
-<!-- POPUP ACTUALIZAR ALUMNO -->
+<!-- POPUP ACTUALIZAR CLASE -->
 <div class="modal fade" id="popUpClaseUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -141,42 +141,41 @@
             </div>
             <div class="modal-body">
                 <form id="claseUpdateForm">
-                    <label>Nombre(s):</label>
-                    <input id="nombreUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre del Clase">
+                    <label>Profesor:</label>
+                        <select id="profesorUpdate" name="profesor.id" class="form-control">
+                            <option value="0" label="Seleccione...">Seleccione...</option>
+                            <c:forEach items="${profesores}" var="p" varStatus="status">
+                                <option value="${p.id}" label="${p.nombre} ${p.paterno} ${p.materno}">${p.nombre} ${p.paterno} ${p.materno}</option>
+                            </c:forEach>
+                        </select>
                     <br>
-                    <label>Apellido Paterno:</label>
-                    <input id="paternoUpdate" name="paterno" class="form-control" type="text" placeholder="Ingrese el Apellido Paterno del Clase">
+                    <label>Sala:</label>
+                        <select id="salaUpdate" name="sala.id" class="form-control">
+                            <option value="0" label="Seleccione...">Seleccione...</option>
+                            <c:forEach items="${salas}" var="s" varStatus="status">
+                                <option value="${s.id}" label="${s.nombre}">${s.nombre}</option>
+                            </c:forEach>
+                        </select>
                     <br>
-                    <label>Apellido Materno:</label>
-                    <input id="maternoUpdate" name="materno" class="form-control" type="text" placeholder="Ingrese el Apellino Materno del Clase">
+                    <label>Taller:</label>
+                        <select id="talleUpdate" name="taller.id" class="form-control">
+                            <option value="0" label="Seleccione...">Seleccione...</option>
+                            <c:forEach items="${talleres}" var="t" varStatus="status">
+                                <option value="${t.id}" label="${t.nombre}">${t.nombre}</option>
+                            </c:forEach>
+                        </select>
                     <br>
-                    <label>Correo:</label>
-                    <input id="correoUpdate" name="mail" class="form-control" type="email" placeholder="Ingrese el Correo">
+                    <label>Costo:</label>
+                    <input id="costoUpdate" name="costo" class="form-control" type="number" placeholder="Ingrese el Costo de la Clase">
                     <br>
-                    <label>Grado:</label>
-                    <select id="gradoUpdate" name="grado.id" class="form-control">
-                        <option value="0" label="Seleccione...">Seleccione...</option>
-                        <c:forEach items="${grado}" var="g" varStatus="status">
-                            <option value="${g.id}" label="${g.nombre}">${g.nombre}</option>
-                        </c:forEach>
-                    </select>
+                    <label>Horario:</label>
+                    <input id="horarioUpdate" name="horario" class="form-control" type="text" placeholder="Ingrese el Horario de la Clase">
                     <br>
-                    <label>Empresa</label>
-                    <select id="empresaUpdate" name="empresa.id" class="form-control">
-                        <option value="0" label="Seleccione...">Seleccione...</option>
-                        <c:forEach items="${empresa}" var="e" varStatus="status">
-                            <option value="${e.id}" label="${e.razonSocial}">${e.razonSocial}</option>
-                        </c:forEach>
-                    </select>
+                    <label>Status:</label>
+                    <input id="statusUpdate" name="status" class="form-control" type="text" placeholder="Ingrese el Status de la Clase">
                     <br>
-                    <label>Teléfono 1:</label>
-                    <input id="telefono1Update" name="telefono1" class="form-control" type="text" placeholder="Ingrese el Teléfono del Clase">
-                    <br>
-                    <label>Teléfono 2:</label>
-                    <input id="telefono2Update" name="telefono2" class="form-control" type="text" placeholder="Ingrese el Teléfono del Clase">
-                    <br>
-                    <label>Dirección</label>
-                    <textarea id="direccionUpdate" name="direccion" class="form-control"></textarea>
+                    
+                    
                     
                     <input id="idUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombre del Grado">
                 </form>

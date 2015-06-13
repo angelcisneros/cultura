@@ -36,11 +36,11 @@ public @Data class GaleriaCasa implements java.io.Serializable {
     @JoinColumn(name = "casa", nullable = false)
     private Casa casa;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el nombre")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ\\s]{2,}$", message="Verifique el nombre")
     @Column(name = "nombre", nullable = false, length = 45)
     private String nombre;
 
-    @Pattern(regexp = "^(.jpg|.png)$", message="Verifique la extensión")
+    @Pattern(regexp = "^(.jpg|.png)$", message="Verifique la extensión")  //revisar que funcione
     @Column(name = "extencion", nullable = false, length = 5)
     private String extencion;
 

@@ -39,7 +39,7 @@ $(document).on('ready', function() {
         var informacion = $('#informacionAdd').val();
         var link = $('#liknMapsAdd').val();
 
-        if (nombre === '') {
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
             $('#nombreAdd').css("border", "1px solid red");
         } else {
@@ -47,7 +47,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#nombreAdd'));
             requisitos++;
         }
-        if (direccion === '') {
+        if (!validarDireccion( direccion )) {
             muestraPopUpCampoNoVacio($('#direccionAdd'));
             $('#direccionAdd').css("border", "1px solid red");
         } else {
@@ -55,7 +55,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#direccionAdd'));
             requisitos++;
         }
-        if (telefono === '') {
+        if (!validarTelefono( telefono )) {
             muestraPopUpCampoNoVacio($('#telefonoAdd'));
             $('#telefonoAdd').css("border", "1px solid red");
         } else {
@@ -71,7 +71,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#horarioAdd'));
             requisitos++;
         }
-        if (informacion === '') {
+        if (!validarInformacion( informacion )) {
             muestraPopUpCampoNoVacio($('#informacionAdd'));
             $('#informacionAdd').css("border", "1px solid red");
         } else {
@@ -79,7 +79,15 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#informacionAdd'));
             requisitos++;
         }
-        if (requisitos === 5) {
+        if (!validarLink(link )) {
+            muestraPopUpCampoNoVacio($('#liknMapsAdd'));
+            $('#liknMapsAdd').css("border", "1px solid red");
+        } else {
+            $('#liknMapsAdd').removeAttr('style');
+            cierraPopUpChiquito($('#liknMapsAdd'));
+            requisitos++;
+        }
+        if (requisitos === 6) {
 
             $.ajax({
                 type: 'POST',
@@ -143,7 +151,7 @@ $(document).on('ready', function() {
         var horario = $('#horarioUpdate').val();
         var informacion = $('#informacionUpdate').val();
         var link = $('#liknMapsUpdate').val();
-        if (nombre === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
@@ -151,7 +159,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#nombreUpdate'));
             requisitos++;
         }
-        if (direccion === '') {
+        if (!validarDireccion( direccion )) {
             muestraPopUpCampoNoVacio($('#direccionUpdate'));
             $('#direccionUpdate').css("border", "1px solid red");
         } else {
@@ -159,7 +167,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#direccionUpdate'));
             requisitos++;
         }
-        if (telefono === '') {
+        if (!validarTelefono( telefono )) {
             muestraPopUpCampoNoVacio($('#telefonoUpdate'));
             $('#telefonoUpdate').css("border", "1px solid red");
         } else {
@@ -175,7 +183,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#horarioUpdate'));
             requisitos++;
         }
-        if (informacion === '') {
+        if (!validarInformacion( informacion )) {
             muestraPopUpCampoNoVacio($('#informacionUpdate'));
             $('#informacionUpdate').css("border", "1px solid red");
         } else {
@@ -183,7 +191,15 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#informacionUpdate'));
             requisitos++;
         }
-        if (requisitos === 5) {
+        if (!validarLink( link )) {
+            muestraPopUpCampoNoVacio($('#liknMapsUpdate'));
+            $('#liknMapsUpdate').css("border", "1px solid red");
+        } else {
+            $('#liknMapsUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#liknMapsUpdate'));
+            requisitos++;
+        }
+        if (requisitos === 6) {
             $.ajax({
                 type: 'POST',
                 url: "editarCasa/",

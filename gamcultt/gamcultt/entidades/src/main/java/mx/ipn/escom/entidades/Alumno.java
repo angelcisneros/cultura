@@ -35,7 +35,7 @@ public @Data class Alumno implements java.io.Serializable {
     @Column(name = "id", unique = true, nullable = false)
     private Integer id;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el nombre")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ\\s]{2,}$", message="Verifique el nombre")
     @Column(name = "nombre", nullable = false, length = 45)
     private String nombre;
 
@@ -52,11 +52,11 @@ public @Data class Alumno implements java.io.Serializable {
     @Column(name = "edad", nullable = false)
     private int edad;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el nombre del tutor")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ\\s]{2,}$", message="Verifique el nombre del tutor")
     @Column(name = "nombre_tutor", nullable = false, length = 100)
     private String nombreTutor;
 
-    @Email(message = "El correo no es valido")
+    @Email(message = "El correo no es válido")
     @Column(name = "Correo", nullable = false, length = 45)
     private String correo;
 

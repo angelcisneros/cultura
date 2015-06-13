@@ -6,15 +6,15 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title"><strong>Agregar Nueva CategoriaTaller</strong></h4>
+                <h4 class="modal-title"><strong>Agregar Nueva Categoría de Taller</strong></h4>
             </div>
             <div class="modal-body">
                 <form id="categoriaTallerAddForm">
                     <label>Nombre:</label>
-                    <input id="nombreTallerAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombreTaller de la CategoriaTaller">
+                    <input id="nombreTallerAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre del  la Categoría del Taller">
                     <br>
                     <label>Descripción:</label>
-                    <input id="descripcionTallerAdd" name="descripcion" class="form-control" type="text" placeholder="Ingrese el nombreTaller de la CategoriaTaller">
+                    <input id="descripcionTallerAdd" name="descripcion" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">
                     <br>
                 </form>
             </div>
@@ -36,16 +36,16 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title"><strong>Actualizar CategoriaTaller</strong></h4>
+                <h4 class="modal-title"><strong>Actualizar Categoría del Taller</strong></h4>
             </div>
             <div class="modal-body">
                 <form id="categoriaTallerUpdateForm">
                     <label>Nombre:</label>
-                    <input id="nombreTallerUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombreTaller de la CategoriaTaller">
+                    <input id="nombreTallerUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre  de la Categoría del Taller">
                     <br>
                     <label>Descripción:</label>
-                    <input id="descripcionTallerUpdate" name="descripcion" class="form-control" type="text" placeholder="Ingrese el nombreTaller de la CategoriaTaller">
-                    <input id="idTallerUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombreTaller del Grado">
+                    <input id="descripcionTallerUpdate" name="descripcion" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">
+                    <input id="idTallerUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el Nombre Taller ">
                 </form>
             </div>
             <div class="modal-footer amarillo">
@@ -66,7 +66,7 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title"><strong>Eliminar CategoriaTaller</strong></h4>
+                <h4 class="modal-title"><strong>Eliminar Categoría de Taller</strong></h4>
             </div>
             <div class="modal-body">
                 <form id="categoriaTallerDeleteForm">
@@ -74,7 +74,7 @@
                     <label id="nombreTallerDelete"></label>
                     <strong><label>Descripción:</label></strong>
                     <label id="descripcionTallerDelete"></label>
-                    <input id="idTallerDelete" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombreTaller del CategoriaTaller">
+                    <input id="idTallerDelete" name="id" class="form-control ocultar" type="text" placeholder="Ingrese la Descripción del Taller">
                 </form>
             </div>
             <div class="modal-footer amarillo">
@@ -95,7 +95,7 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title"><strong>Eliminar CategoriaTaller</strong></h4>
+                <h4 class="modal-title"><strong>Eliminar Categoría de Taller</strong></h4>
             </div>
             <div class="modal-body">
                 <%@ include file="/WEB-INF/pages/crud/imagen.jsp"%>

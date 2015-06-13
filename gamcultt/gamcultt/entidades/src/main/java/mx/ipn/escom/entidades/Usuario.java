@@ -36,7 +36,7 @@ public @Data class Usuario implements java.io.Serializable {
     @JoinColumn(name = "casa", nullable = false)
     private Casa casa;
     
-    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el Nombre")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ\\s]{2,}$", message="Verifique el Nombre")
     @Column(name = "nombre", nullable = false, length = 45)
     private String nombre;
 

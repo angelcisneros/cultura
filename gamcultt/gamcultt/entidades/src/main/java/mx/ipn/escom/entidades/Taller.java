@@ -33,16 +33,16 @@ public @Data class Taller implements java.io.Serializable {
     @Column(name = "id", unique = true, nullable = false)
     private Integer id;
     
-    @NotBlank(message = "Seleccione una Categoria del Taller")
+    @NotBlank(message = "Seleccione una Categoría del Taller")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoriaTaller", nullable = false)
     private CategoriaTaller categoriaTaller;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el nombre")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ\\s]{2,}$", message="Verifique el nombre")
     @Column(name = "nombre", nullable = false, length = 45)
     private String nombre;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ0-9]{2,}$", message="Verifique la Descripción")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ0-9\\s]{2,}$", message="Verifique la Descripción")
     @Column(name = "descripcion", nullable = false, length = 65535)
     private String descripcion;
 

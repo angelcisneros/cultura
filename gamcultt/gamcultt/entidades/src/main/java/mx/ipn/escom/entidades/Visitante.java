@@ -29,7 +29,7 @@ public @Data class Visitante implements java.io.Serializable {
     @Column(name = "id", unique = true, nullable = false)
     private Integer id;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el Nombre")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ\\s]{2,}$", message="Verifique el Nombre")
     @Column(name = "Nombre", nullable = false, length = 45)
     private String nombre;
 
@@ -58,7 +58,7 @@ public @Data class Visitante implements java.io.Serializable {
     @Column(name = "Correo", nullable = false, length = 45)
     private String correo;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ0-9]{2,}$", message="Verifique la Información")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ0-9\\s]{2,}$", message="Verifique la Información")
     @Column(name = "Informacion")
     private Boolean informacion;
 

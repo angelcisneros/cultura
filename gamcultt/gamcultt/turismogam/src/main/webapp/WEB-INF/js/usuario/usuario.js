@@ -73,7 +73,7 @@ $(document).on('ready', function() {
         var estado = $('#activadaAdd').prop('checked');
         var correo = $('#correoAdd').val();
 
-        if (nombre === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
             $('#nombreAdd').css("border", "1px solid red");
         } else {
@@ -82,7 +82,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (paterno === '') {
+        if (!validarPaterno( paterno )) {
             muestraPopUpCampoNoVacio($('#paternoAdd'));
             $('#paternoAdd').css("border", "1px solid red");
         } else {
@@ -90,7 +90,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#paternoAdd'));
             requisitos++;
         }
-        if (materno === '') {
+        if (!validarMaterno( materno )) {
             muestraPopUpCampoNoVacio($('#maternoAdd'));
             $('#maternoAdd').css("border", "1px solid red");
         } else {
@@ -98,7 +98,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#maternoAdd'));
             requisitos++;
         }
-        if (telefono === '') {
+        if (!validarTelefono( telefono )) {
             muestraPopUpCampoNoVacio($('#telefonoAdd'));
             $('#telefonoAdd').css("border", "1px solid red");
         } else {
@@ -128,7 +128,7 @@ $(document).on('ready', function() {
         } else {
             estado = 'desactivada';
         }
-        if (requisitos === 6) {
+        if (requisitos === 7) {
 
             $.ajax({
                 type: 'POST',
@@ -189,7 +189,7 @@ $(document).on('ready', function() {
         var estado = $('#activadaAdd').prop('checked');
         var correo = $('#correoAdd').val();
 
-        if (nombre === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
@@ -198,7 +198,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (paterno === '') {
+        if (!validarPaterno( paterno )) {
             muestraPopUpCampoNoVacio($('#paternoUpdate'));
             $('#paternoUpdate').css("border", "1px solid red");
         } else {
@@ -206,7 +206,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#paternoUpdate'));
             requisitos++;
         }
-        if (materno === '') {
+        if (!validarMaterno( materno )) {
             muestraPopUpCampoNoVacio($('#maternoUpdate'));
             $('#maternoUpdate').css("border", "1px solid red");
         } else {
@@ -214,7 +214,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#maternoUpdate'));
             requisitos++;
         }
-        if (telefono !== '') {
+        if (!validarTelefono( telefono )) {
             $('#telefonoUpdate').removeAttr('style');
             cierraPopUpChiquito($('#lefonoteUpdate'));
             requisitos++;
@@ -244,7 +244,7 @@ $(document).on('ready', function() {
         } else {
             estado = 'desactivada';
         }
-        if (requisitos === 6) {
+        if (requisitos === 7) {
             $.ajax({
                 type: 'POST',
                 url: "editarUsuario/",

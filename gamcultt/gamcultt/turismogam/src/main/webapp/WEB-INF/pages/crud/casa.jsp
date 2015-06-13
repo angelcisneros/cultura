@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-            <a id="addCasaButton" class="btn btn-primary btn-lg" role="button">Agregar Nuevo Casa +</a>
+            <a id="addCasaButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Casa +</a>
         </div>
     </div>
     <hr />
@@ -88,20 +88,20 @@
                     <label>Nombre de la Casa:</label>
                     <input id="nombreAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre del Casa">
                     <br>
-                    <label>Direccion:</label>
-                    <input id="direccionAdd" name="direccion" class="form-control" type="text" placeholder="Ingrese la direccion de la Casa">
+                    <label>Dirección:</label>
+                    <input id="direccionAdd" name="direccion" class="form-control" type="text" placeholder="Ingrese la dirección de la Casa">
                     <br>
-                    <label>Telefono:</label>
-                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el Telefono">
+                    <label>Teléfono:</label>
+                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono">
                     <br>
                     <label>Horario:</label>
                     <input id="horarioAdd" name="horario" class="form-control" type="email" placeholder="Ingrese el Horario de la Casa">
                     <br>
-                    <label>Informacion:</label>
-                    <input id="informacionAdd" name="informacion" class="form-control" type="text" placeholder="Ingrese informacion extra de la casa">
+                    <label>Información:</label>
+                    <input id="informacionAdd" name="informacion" class="form-control" type="text" placeholder="Ingrese información extra de la casa">
                     <br>
                     <label>Link:</label>
-                    <input id="liknMapsAdd" name="liknMaps" class="form-control" type="text" placeholder="Ingrese informacion extra de la casa">
+                    <input id="liknMapsAdd" name="liknMaps" class="form-control" type="text" placeholder="Ingrese el link del mapa">
                 </form>
             </div>
             <div class="modal-footer amarillo">
@@ -127,22 +127,22 @@
             <div class="modal-body">
                 <form id="casaUpdateForm">
                     <label>Nombre de la Casa:</label>
-                    <input id="nombreUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre del Casa">
+                    <input id="nombreUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre del Casa">
                     <br>
-                    <label>Direccion:</label>
-                    <input id="direccionUpdate" name="direccion" class="form-control" type="text" placeholder="Ingrese la direccion de la Casa">
+                    <label>Dirección:</label>
+                    <input id="direccionUpdate" name="direccion" class="form-control" type="text" placeholder="Ingrese la dirección de la Casa">
                     <br>
-                    <label>Telefono:</label>
-                    <input id="telefonoUpdate" name="telefono" class="form-control" type="text" placeholder="Ingrese el Telefono">
+                    <label>Teléfono:</label>
+                    <input id="telefonoUpdate" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono">
                     <br>
                     <label>Horario:</label>
                     <input id="horarioUpdate" name="horario" class="form-control" type="email" placeholder="Ingrese el Horario de la Casa">
                     <br>
-                    <label>Informacion:</label>
-                    <input id="informacionUpdate" name="informacion" class="form-control" type="text" placeholder="Ingrese informacion extra de la casa">
+                    <label>Información:</label>
+                    <input id="informacionUpdate" name="informacion" class="form-control" type="text" placeholder="Ingrese información extra de la casa">
                     <br>
                     <label>Link:</label>
-                    <input id="liknMapsUpdate" name="liknMaps" class="form-control" type="text" placeholder="Ingrese informacion extra de la casa">
+                    <input id="liknMapsUpdate" name="liknMaps" class="form-control" type="text" placeholder="Ingrese el link del mapa">
                     <input id="idUpdate" name="id" class="form-control ocultar">
                 </form>
             </div>
@@ -174,7 +174,7 @@
                     <strong><label>Dirección:</label></strong>
                     <label id="direccionDelete"></label>
                     <br>
-                    <strong><label>Télefono:</label></strong>
+                    <strong><label>Teléfono:</label></strong>
                     <label id="telefonoDelete"></label>
                     <br>
                     <strong><label>Horario:</label></strong>

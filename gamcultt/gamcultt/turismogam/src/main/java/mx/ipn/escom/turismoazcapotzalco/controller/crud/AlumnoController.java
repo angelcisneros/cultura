@@ -49,9 +49,7 @@ public class AlumnoController {
             return SESION_CADUCA;
         }
         if (bindingResult.hasErrors()) {
-            for (ObjectError col : bindingResult.getAllErrors()) {
-                System.out.println(col.getObjectName() + "   " + col.getDefaultMessage());
-            }
+            
             return ERROR_DATOS;
         }
         return alumnoServicio.agregar(alumno);
@@ -64,9 +62,7 @@ public class AlumnoController {
             return SESION_CADUCA;
         }
         if (bindingResult.hasErrors()) {
-            for (ObjectError col : bindingResult.getAllErrors()) {
-                System.out.println(col.getObjectName() + "   " + col.getDefaultMessage());
-            }
+            
             return ERROR_DATOS;
         }
         return alumnoServicio.actualizar(alumno);

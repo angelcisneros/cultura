@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 ">
-            <h2><strong>Profesors</strong></h2>
+            <h2><strong>Profesores</strong></h2>
         </div>
     </div>
     <hr />
@@ -87,13 +87,13 @@
                     <input id="maternoAdd" name="materno" class="form-control" type="text" placeholder="Ingrese el Apellino Materno del Profesor">
                     <br>
                     <label>Correo:</label>
-                    <input id="correoAdd" name="correo" class="form-control" type="email" placeholder="Ingrese el Correo">
+                    <input id="correoAdd" name="correo" class="form-control" type="email" placeholder="Ingrese el Correo del Profesor">
                     <br>
-                    <label>Telefono:</label>
-                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el Telefono">
+                    <label>Teléfono:</label>
+                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono del Profesor">
                     <br>
                     <label>Celular:</label>
-                    <input id="celularAdd" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular">
+                    <input id="celularAdd" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular del Profesor">
                 </form>
             </div>
             <div class="modal-footer amarillo">
@@ -130,8 +130,8 @@
                     <label>Correo:</label>
                     <input id="correoUpdate" name="correo" class="form-control" type="email" placeholder="Ingrese el Correo">
                     <br>
-                    <label>Telefono:</label>
-                    <input id="telefonoUpdate" name="telefono" class="form-control" type="text" placeholder="Ingrese el Telefono">
+                    <label>Teléfono:</label>
+                    <input id="telefonoUpdate" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono">
                     <br>
                     <label>Celular:</label>
                     <input id="celularUpdate" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular">
@@ -172,7 +172,7 @@
                     <strong><label>Correo:</label></strong>
                     <label id="correoDelete"></label>
                     <br>
-                    <strong><label>Télefono:</label></strong>
+                    <strong><label>Teléfono:</label></strong>
                     <label id="telefonoDelete"></label>
                     <br>
                     <strong><label>Celular:</label></strong>

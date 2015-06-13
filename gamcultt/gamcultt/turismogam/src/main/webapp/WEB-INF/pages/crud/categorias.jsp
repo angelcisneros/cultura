@@ -5,8 +5,8 @@
 <div id="contenido" class="container-fluid">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><h4>Categorias de Talleres</h4></a></li>
-        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><h4>Categorias de Eventos</h4></a></li>
+        <li role="presentation" class="active"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><h4>Categorías de Talleres</h4></a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><h4>Categorías de Eventos</h4></a></li>
     </ul>
 
     <!-- Tab panes -->
@@ -16,14 +16,14 @@
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
-                    <h2><strong>Categorias Talleres</strong></h2>
+                    <h2><strong>Categorías Talleres</strong></h2>
                 </div>
             </div>
             <hr />
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-                    <a id="addCategoriaTallerButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Categoria Taller</a>
+                    <a id="addCategoriaTallerButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Categoría Taller</a>
                 </div>
             </div>
             <hr />
@@ -76,7 +76,7 @@
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-                    <a id="addCategoriaEventoButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Categoria Evento</a>
+                    <a id="addCategoriaEventoButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Categoría de Evento</a>
                 </div>
             </div>
             <hr />

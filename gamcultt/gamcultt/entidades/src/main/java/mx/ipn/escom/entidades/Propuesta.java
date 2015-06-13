@@ -38,23 +38,23 @@ public @Data class Propuesta implements java.io.Serializable {
     @JoinColumn(name = "usuario", nullable = false)
     private Usuario usuario;
     
-    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el Representante")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ\\s]{2,}$", message="Verifique el Representante")
     @Column(name = "representante", nullable = false, length = 105)
     private String representante;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ0-9]{2,}$", message="Verifique el objetivo")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ0-9\\s]{2,}$", message="Verifique el Objetivo")
     @Column(name = "objetivo", nullable = false, length = 65535)
     private String objetivo;
 
-    @Min(value=25, message = "Verifica el número de personas")
+    @Min(value=25, message = "Verifique el número de personas")
     @Column(name = "personas")
     private Integer personas;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ0-9]{2,}$", message="Verifique la descripción")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ0-9\\s]{2,}$", message="Verifique la descripción")
     @Column(name = "descripcion", nullable = false, length = 65535)
     private String descripcion;
 
-    @Email(message = "El correo no es valido")
+    @Email(message = "El correo no es válido")
     @Column(name = "correo", nullable = false, length = 85)
     private String correo;
 
@@ -62,7 +62,7 @@ public @Data class Propuesta implements java.io.Serializable {
     @Column(name = "telefono", length = 20)
     private String telefono;
 
-    @Min(value=25, message = "Verifica la Asistencia Estimada")
+    @Min(value=25, message = "Verifique la Asistencia Estimada")
     @Column(name = "asistencia_estimada", nullable = false)
     private Integer asistenciaEstimada;
 

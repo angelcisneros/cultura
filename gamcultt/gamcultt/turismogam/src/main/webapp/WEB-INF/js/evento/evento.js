@@ -41,7 +41,7 @@ $(document).on('ready', function() {
         var telefono = $('#telefonoAdd').val();
         var celular = $('#celularAdd').val();
 
-        if (nombre === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
             $('#nombreAdd').css("border", "1px solid red");
         } else {
@@ -50,7 +50,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (paterno === '') {
+        if (!validarPaterno( paterno )) {
             muestraPopUpCampoNoVacio($('#paternoAdd'));
             $('#paternoAdd').css("border", "1px solid red");
         } else {
@@ -58,7 +58,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#paternoAdd'));
             requisitos++;
         }
-        if (materno === '') {
+        if (!validarMaterno( materno )) {
             muestraPopUpCampoNoVacio($('#maternoAdd'));
             $('#maternoAdd').css("border", "1px solid red");
         } else {
@@ -77,7 +77,7 @@ $(document).on('ready', function() {
         }
 
 
-        if (nombreTutor === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreTutorAdd'));
             $('#nombreTutorAdd').css("border", "1px solid red");
         } else {
@@ -158,7 +158,7 @@ $(document).on('ready', function() {
         var telefono = $('#telefonoUpdate').val();
         var celular = $('#celularUpdate').val();
 
-        if (nombre === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
@@ -167,7 +167,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (paterno === '') {
+        if (!validarPaterno( paterno )) {
             muestraPopUpCampoNoVacio($('#paternoUpdate'));
             $('#paternoUpdate').css("border", "1px solid red");
         } else {
@@ -175,7 +175,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#paternoUpdate'));
             requisitos++;
         }
-        if (materno === '') {
+        if (!validarMaterno( materno )) {
             muestraPopUpCampoNoVacio($('#maternoUpdate'));
             $('#maternoUpdate').css("border", "1px solid red");
         } else {
@@ -191,7 +191,7 @@ $(document).on('ready', function() {
             $('#edadUpdate').css("border", "1px solid red");
             muestraPopUpCampoNumerico($('#edadUpdate'));
         }
-        if (nombreTutor === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreTutorUpdate'));
             $('#nombreTutorUpdate').css("border", "1px solid red");
         } else {

@@ -36,7 +36,7 @@ $(document).on('ready', function() {
         var capacidad = $('#capacidadAdd').val();
 
 
-        if (nombre === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
             $('#nombreAdd').css("border", "1px solid red");
         } else {
@@ -122,7 +122,7 @@ $(document).on('ready', function() {
         var capacidad = $('#capacidadUpdate').val();
 
 
-        if (nombre === '') {
+        if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
