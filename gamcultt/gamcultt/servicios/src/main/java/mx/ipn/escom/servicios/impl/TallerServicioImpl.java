@@ -110,4 +110,9 @@ public class TallerServicioImpl implements TallerServicio{
         File file = new File(path);
         return file.listFiles()[i];
     }
+    // se implemento el metodo de TallerServicio
+    @Override
+    public List<Taller> buscarPorCasa(int idCasa) {
+        return tallerRepositorio.buscarPorCasa(idCasa);
+    }
 }

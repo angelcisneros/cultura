@@ -22,5 +22,9 @@ public interface TallerRepositorio {
     
     Taller buscarPorId(Integer id);
     List<Taller> buscarTodos();
+    // agregamos el metodo que nos solicito tellerservicioimpl 
+    List<Taller> buscarPorCasa(int idCasa);
+
+
     
 }

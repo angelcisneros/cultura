@@ -25,5 +25,12 @@ public class Validaciones {
     public static boolean esRfcValido(String cadena) {
         return patRFC.matcher(cadena).matches();
     }
-
+     public static boolean esEntero(String integer) {
+        try {
+            Integer.parseInt(integer);
+            return true;
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+    }
 }

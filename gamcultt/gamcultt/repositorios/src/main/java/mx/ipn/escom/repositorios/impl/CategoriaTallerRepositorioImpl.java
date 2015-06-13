@@ -84,4 +84,6 @@ public class CategoriaTallerRepositorioImpl implements CategoriaTallerRepositori
         return (List<CategoriaTaller>) sessionFactory.getCurrentSession().createCriteria(CategoriaTaller.class)
                 .list();
     }
+
+    
 }

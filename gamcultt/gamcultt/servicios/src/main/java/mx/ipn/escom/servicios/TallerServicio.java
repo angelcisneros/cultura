@@ -26,4 +26,7 @@ public interface TallerServicio {
     String subirImagen(MultipartFile contenido, Integer id);
     Integer cuentaImagenes(Integer id);
     File regresaArchivo(Integer id, Integer i);
+    //hacer el metodo abstract lo cual produce un error en donde se implemente esta
+    // interfaz 
+    List<Taller>buscarPorCasa(int idCasa);
 }

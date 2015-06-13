@@ -6,6 +6,7 @@
 package mx.ipn.escom.repositorios.impl;
 
 import java.util.List;
+import mx.ipn.escom.entidades.CategoriaTaller;
 import mx.ipn.escom.entidades.Taller;
 import mx.ipn.escom.repositorios.TallerRepositorio;
 import org.hibernate.HibernateException;
@@ -80,6 +81,14 @@ public class TallerRepositorioImpl implements TallerRepositorio{
     public List<Taller> buscarTodos() {
         return (List<Taller>) sessionFactory.getCurrentSession().createCriteria(Taller.class)
                 .createAlias("categoriaTaller", "c", JoinType.INNER_JOIN)
+                .list();
+    }
+// implementamos el metodo que viene de tallerRepositorio
+    @Override
+    public List<Taller> buscarPorCasa(int idCasa) {
+        String query="SELECT t.* FROM gamcultt.casa as c, gamcultt.sala s, gamcultt.clase as cl, gamcultt.taller as t, gamcultt.categoria_taller as cat where  c.id = s.casa and s.id = cl.sala and cl.taller= t.id and t.categoriaTaller = cat.id and c.id= "+idCasa;
+        return (List<Taller>)sessionFactory.getCurrentSession().createSQLQuery(query) 
+                .addEntity(Taller.class)
                 .list();
     }
     
