@@ -86,7 +86,7 @@ public class CasaController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "muestraImagen/{idCategoria}", produces = "image/png")
+    @RequestMapping(value = "muestraImagenCasa/{idCategoria}", produces = "image/png")
     public byte[] casaImagen(@PathVariable String idCategoria) {
         if (esEntero(idCategoria)) {
             String path = CASAS + idCategoria + "\\" + idCategoria + ".jpg";
@@ -95,10 +95,10 @@ public class CasaController {
         return null;
     }
 
-    @RequestMapping(value = "verImagen/{idCategoria}")
+    @RequestMapping(value = "verImagenCasa/{idCategoria}")
     public String muestraImagen(@PathVariable String idCategoria, Model model) {
         if (esEntero(idCategoria)) {
-            model.addAttribute("vista", "administrador/muestraImagen");
+            model.addAttribute("vista", "administrador/muestraImagenCasa");
             model.addAttribute("imagen", idCategoria);
             return "templates/imagen";
         }

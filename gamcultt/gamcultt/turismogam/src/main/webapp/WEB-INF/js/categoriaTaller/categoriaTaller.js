@@ -172,9 +172,40 @@ $(document).on('ready', function() {
 $('#categoriaTallerTbody').on('click', '.categoriaTallerUpdateButton', function() {
     rellenaPopUpUpdateTaller(this);
 });
-
 $('#categoriaTallerTbody').on('click', '.categoriaTallerDeleteButton', function() {
     rellenaPopUpsDeleteTaller(this);
+});
+$('#imagenPopUp').on('click', '#subirImagenTaller', function() {
+    var url ='subirImagenCategoriaTaller/' +  $(trClick).find('td.id label.ocultar').text();
+    var estatus = validaAndSubeImagen($('#seleccionadorImagen'), url);
+    if (estatus === '1') {
+        $('#tituloPopUp').text('Correcto....');
+        $('#contenidoPopUp').text('Se acyualizo la imagen.');
+        $('#imagenPopUp').modal('hide');
+        $('#popUpRespuesta').modal('show');
+    } else {
+        $('#tituloPopUp').text('Ups!....');
+        $('#contenidoPopUp').text('Ocurrio un problema Intente mas tarde.');
+        $('#imagenPopUp').modal('hide');
+        $('#popUpRespuesta').modal('show');
+    }
+});
+$('#categoriaTallerTbody').on('click', '.categoriaTallerImagenButton', function() {
+    var tr = $($($($(this).parent())).parent()).parent();
+    console.log('ahhh');
+    trClick = $(tr);
+    var id = $(tr).find('td.id label.ocultar').text();
+    $('#tituloImagenPopUp').text('Imagen de la Categoria');
+    $('#contenidoImagenPopUp').text('Cambiar Imagen');
+    $('#imagen').load("verImagenCategoriaTaller/" + id, function(response, status, xhr) {
+        if (status === "error") {
+            var msg = "Sorry but there was an error: ";
+            $("#info").html(msg + xhr.status + " " + xhr.statusText);
+        }
+    });
+    var button = $('#subirImagen');
+    $(button).attr('id', 'subirImagenTaller');
+    $('#imagenPopUp').modal('show');
 });
 
 function rellenaPopUpsDeleteTaller(selector) {

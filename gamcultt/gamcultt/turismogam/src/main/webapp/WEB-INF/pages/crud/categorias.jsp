@@ -102,6 +102,7 @@
                                             <div class="btn-group" role="group" aria-label="">
                                                 <button class="btn btn-primary categoriaEventoUpdateButton">Editar</button>
                                                 <button class="btn btn-danger categoriaEventoDeleteButton">Eliminar</button>
+                                                <button class="btn btn-warning categoriaEventoImagenButton">Imagen</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -119,7 +120,9 @@
 
 <%@ include file="/WEB-INF/pages/crud/categoriasEventoPopUps.jsp"%>
 <%@ include file="/WEB-INF/pages/crud/categoriasTallerPopUps.jsp"%>
-<%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>
+<%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>j
+<%@ include file="/WEB-INF/pages/templates/imagenPopUp.jsp"%>
+<script src="../js/cargarImagenes.js" charset="UTF-8"></script>
 <script src="../js/categoriaEvento/categoriaEvento.js" charset="UTF-8"></script>
 <script src="../js/categoriaTaller/categoriaTaller.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>

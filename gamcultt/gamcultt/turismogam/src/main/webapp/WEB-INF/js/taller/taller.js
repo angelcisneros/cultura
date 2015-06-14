@@ -38,35 +38,35 @@ $(document).on('ready', function() {
         var descripcion = $('#descripcionAdd').val();
 
 
-        if (!validarNombre( nombre )) {
-            muestraPopUpCampoNoVacio($('#nombreAdd'));
-            $('#nombreAdd').css("border", "1px solid red");
-        } else {
-            $('#nombreAdd').removeAttr('style');
-            cierraPopUpChiquito($('#nombreAdd'));
-            requisitos++;
-        }
-        if (categoria === '0' || categoria === 0) {
-            muestraPopUpCampoNoVacio($('#categoriaAdd'));
-            $('#categoriaAdd').css("border", "1px solid red");
-        } else {
-            $('#categoriaAdd').removeAttr('style');
-            cierraPopUpChiquito($('#categoriaAdd'));
-            requisitos++;
-        }
-
-        if (!validarDescripcion( descripcion )) {
-            muestraPopUpCampoNoVacio($('#descripcionAdd'));
-            $('#descripcionAdd').css("border", "1px solid red");
-        } else {
-            $('#descripcionAdd').removeAttr('style');
-            cierraPopUpChiquito($('#descripcionAdd'));
-            requisitos++;
-        }
-
-
-        if (requisitos === 3) {
-
+//        if (!validarNombre( nombre )) {
+//            muestraPopUpCampoNoVacio($('#nombreAdd'));
+//            $('#nombreAdd').css("border", "1px solid red");
+//        } else {
+//            $('#nombreAdd').removeAttr('style');
+//            cierraPopUpChiquito($('#nombreAdd'));
+//            requisitos++;
+//        }
+//        if (categoria === '0' || categoria === 0) {
+//            muestraPopUpCampoNoVacio($('#categoriaAdd'));
+//            $('#categoriaAdd').css("border", "1px solid red");
+//        } else {
+//            $('#categoriaAdd').removeAttr('style');
+//            cierraPopUpChiquito($('#categoriaAdd'));
+//            requisitos++;
+//        }
+//
+//        if (!validarDescripcion( descripcion )) {
+//            muestraPopUpCampoNoVacio($('#descripcionAdd'));
+//            $('#descripcionAdd').css("border", "1px solid red");
+//        } else {
+//            $('#descripcionAdd').removeAttr('style');
+//            cierraPopUpChiquito($('#descripcionAdd'));
+//            requisitos++;
+//        }
+//
+//
+//        if (requisitos === 3) {
+        if (true) {
             $.ajax({
                 type: 'POST',
                 url: "agregarTaller/",
@@ -122,7 +122,7 @@ $(document).on('ready', function() {
         var nombre = $('#nombreUpdate').val();
         var descripcion = $('#descripcionUpdate').val();
 
-        if (!validarNombre( nombre )) {
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
@@ -138,7 +138,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#categoriaUpdate'));
             requisitos++;
         }
-        if (!validarDescripcion( descripcion )) {
+        if (!validarDescripcion(descripcion)) {
             muestraPopUpCampoNoVacio($('#descripcionUpdate'));
             $('#descripcionUpdate').css("border", "1px solid red");
         } else {
@@ -238,11 +238,11 @@ $('#tallerTbody').on('click', '.galeriaButton', function() {
             $(fileDisplayArea).append('<object type="image/png" data="galeriaTaller/' + identificador + '/' + 0 + '"></object>');
             var row = $($(fileDisplayArea).parent()).parent();
             for (i = 1; i < parseInt(data); i++) {
-                if ((i+1) % 3 === 0) {
+                if ((i + 1) % 3 === 0) {
                     var renglonNuevo =
                             '<br/><div class="row">' +
                             '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 galerias" >' +
-                            '<div>' + '<object type="image/png" data="galeriaTaller/' + identificador +'/' + i + '"></object>' +'</div>' +
+                            '<div>' + '<object type="image/png" data="galeriaTaller/' + identificador + '/' + i + '"></object>' + '</div>' +
                             '<input type="file" class="filestyle form-control" data-buttonText=" Seleccione" data-buttonName="btn-primary" data-iconName="glyphicon-folder-open" />' +
                             '</div>' +
                             '</div>';
@@ -251,13 +251,13 @@ $('#tallerTbody').on('click', '.galeriaButton', function() {
                 } else {
                     $(row).append(
                             '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 galerias">' +
-                            '<div>' + '<object type="image/png" data="galeriaTaller/' + identificador +'/' + i + '"></object>' +'</div>' +
+                            '<div>' + '<object type="image/png" data="galeriaTaller/' + identificador + '/' + i + '"></object>' + '</div>' +
                             '<input type="file" class="filestyle form-control" data-buttonText=" Seleccione" data-buttonName="btn-primary" data-iconName="glyphicon-folder-open" />' +
                             '</div>'
                             );
                 }
             }
-            
+
         }
     });
     $('#popUpGaleriaTaller').modal('show');

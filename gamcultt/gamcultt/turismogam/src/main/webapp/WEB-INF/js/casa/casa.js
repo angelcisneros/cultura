@@ -316,7 +316,18 @@ $('#casaTbody').on('click', '.casaDeleteButton', function() {
 
 $('#subirImagen').on('click', function() {
     var url =' subirImagenCasa/' +  $(trClick).find('td.id label.ocultar').text();
-    validaAndSubeImagen($('#seleccionadorImagen'), url);
+    var estatus = validaAndSubeImagen($('#seleccionadorImagen'), url);
+    if (estatus === '1') {
+        $('#tituloPopUp').text('Correcto....');
+        $('#contenidoPopUp').text('Se acyualizo la imagen.');
+        $('#imagenPopUp').modal('hide');
+        $('#popUpRespuesta').modal('show');
+    } else {
+        $('#tituloPopUp').text('Ups!....');
+        $('#contenidoPopUp').text('Ocurrio un problema Intente mas tarde.');
+        $('#imagenPopUp').modal('hide');
+        $('#popUpRespuesta').modal('show');
+    }
 });
 
 $('#casaTbody').on('click', '.casaImagenButton', function() {
@@ -325,7 +336,7 @@ $('#casaTbody').on('click', '.casaImagenButton', function() {
     var id = $(tr).find('td.id label.ocultar').text();
     $('#tituloImagenPopUp').text('Imagen de Casa');
     $('#contenidoImagenPopUp').text('Cambiar Imagen');
-    $('#imagen').load("verImagen/" + id, function(response, status, xhr) {
+    $('#imagen').load("verImagenCasa/" + id, function(response, status, xhr) {
         if (status === "error") {
             var msg = "Sorry but there was an error: ";
             $("#info").html(msg + xhr.status + " " + xhr.statusText);

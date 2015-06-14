@@ -51,14 +51,23 @@ $('.imagenesSlider').on('change', function() {
 });
 $('#editarSliderPrincipal').on('click', function() {
     var imagenes = $('.imagenesSlider');
+    var contenido = 0;
+
     $.each(imagenes, function(indice, valor) {
         if ($(valor).val() === '') {
 
         } else {
             var id = $($($(this).parent())).attr('id');
-            subirImagen($(valor), 'subirImagenHome/'+id);
+            subirImagen($(valor), 'subirImagenHome/' + id);
+            contenido++;
         }
     });
+    if (contenido === 0) {
+        $('#tituloPopUp').text('Error...');
+        $('#contenidoPopUp').text('no se han detectado cambios');
+        $('#popUpRespuesta').modal('show');
+    }
+
 });
 function cambiarServidor(url, form) {
     $.ajax({

@@ -15,6 +15,7 @@ public class Rutas {
     public static final String SERVER = System.getProperty("user.dir") + "\\Cultura\\";
     public static final String CASAS = SERVER + "casas\\";
     public static final String CATEGORIA_TALLER = SERVER + "categoriaTaller\\";
+    public static final String CATEGORIA_EVENTO = SERVER + "categoriaEvento\\";
     public static final String TALLERES = SERVER + "talleres\\";
     public static final String EVENTOS = SERVER + "eventos\\";
     public static final String HOME_USUARIO = SERVER + "principal\\";
