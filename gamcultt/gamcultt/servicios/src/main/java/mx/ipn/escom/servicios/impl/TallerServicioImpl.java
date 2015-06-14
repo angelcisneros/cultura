@@ -24,20 +24,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-
 /**
  *
  * @author Lap_christo
  */
-
 @Service
-public class TallerServicioImpl implements TallerServicio{
-    
+public class TallerServicioImpl implements TallerServicio {
+
     @Autowired
     TallerRepositorio tallerRepositorio;
     private static final String TALLER = "un taller.#";
-    
-     @Override
+
+    @Override
     public String agregar(Taller taller) {
         if (tallerRepositorio.agregar(taller)) {
             File file = new File(TALLERES + taller.getId());
@@ -70,8 +68,8 @@ public class TallerServicioImpl implements TallerServicio{
 
     @Override
     public String eliminar(Integer id) {
-       Taller taller = tallerRepositorio.buscarPorId(id);
-       if (tallerRepositorio.eliminar(taller)) {
+        Taller taller = tallerRepositorio.buscarPorId(id);
+        if (tallerRepositorio.eliminar(taller)) {
             return DELETE_CORRECT + TALLER;
         }
         return ERROR_HIBERNATE;
@@ -79,14 +77,19 @@ public class TallerServicioImpl implements TallerServicio{
 
     @Override
     public Taller buscarPorId(Integer id) {
-       return tallerRepositorio.buscarPorId(id);
+        Taller taller = tallerRepositorio.buscarPorId(id);
+        taller.setCategoriaTaller(null);
+        taller.setGaleriaTallers(null);
+        taller.setCategoriaTaller(null);
+        taller.setClases(null);
+        return taller;
     }
 
     @Override
     public String subirImagen(MultipartFile contenido, Integer id) {
         try {
             Taller taller = tallerRepositorio.buscarPorId(id);
-            String path = TALLERES + taller.getId()+ "\\" + contenido.getOriginalFilename();
+            String path = TALLERES + taller.getId() + "\\" + contenido.getOriginalFilename();
             crearArchivoContenido(path, contenido.getBytes());
             return "1";
         } catch (IOException ex) {
@@ -110,7 +113,9 @@ public class TallerServicioImpl implements TallerServicio{
         File file = new File(path);
         return file.listFiles()[i];
     }
+
     // se implemento el metodo de TallerServicio
+
     @Override
     public List<Taller> buscarPorCasa(int idCasa) {
         return tallerRepositorio.buscarPorCasa(idCasa);

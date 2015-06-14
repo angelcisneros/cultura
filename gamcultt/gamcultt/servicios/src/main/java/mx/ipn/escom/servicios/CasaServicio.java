@@ -7,6 +7,7 @@ package mx.ipn.escom.servicios;
 
 import java.util.List;
 import mx.ipn.escom.entidades.Casa;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -17,6 +18,8 @@ public interface CasaServicio {
     String actualizar(Casa casa);
     String eliminar(Casa casa);
     String eliminar(Integer id);
+    
+    String agregarImagenPrincipal(Integer id, MultipartFile imagen);
     
     Casa buscarPorId(Integer id);
     List<Casa> buscarTodos();

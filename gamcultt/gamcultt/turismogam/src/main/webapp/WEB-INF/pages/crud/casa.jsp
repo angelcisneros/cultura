@@ -29,6 +29,7 @@
                             <th>Horario</th>
                             <th>Informacion</th>
                             <th>Link Maps</th>
+                            <th>Es Casa</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
@@ -56,11 +57,15 @@
                                 </td>                                    
                                 <td>
                                     <label class="liknMaps">${c.liknMaps}</label>
-                                </td>     
+                                </td>
+                                <td>
+                                    <label class="esCentro">${c.esCentro}</label>
+                                </td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="">
                                         <button class="btn btn-primary casaUpdateButton">Editar</button>
                                         <button class="btn btn-danger casaDeleteButton">Eliminar</button>
+                                        <button class="btn btn-warning casaImagenButton">Imagen</button>
                                     </div>
                                 </td>
                             </tr>
@@ -102,11 +107,14 @@
                     <br>
                     <label>Link:</label>
                     <input id="liknMapsAdd" name="liknMaps" class="form-control" type="text" placeholder="Ingrese el link del mapa">
+                    <label class="checkbox mischeckbox" >
+                        <input id="centroSocialAdd" name="esCentro" type="checkbox" class="mischeckbox cambioCheck" /><strong>Es Centro Social</strong>
+                    </label>
                 </form>
             </div>
             <div class="modal-footer amarillo">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button id="addCasa" type="button" class="btn btn-primary">Agregar</button>
+                <button id="addCasa" type="button" class="btn btn-primary">Siguiente</button>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -143,6 +151,9 @@
                     <br>
                     <label>Link:</label>
                     <input id="liknMapsUpdate" name="liknMaps" class="form-control" type="text" placeholder="Ingrese el link del mapa">
+                    <label class="checkbox mischeckbox" >
+                        <input id="centroSocialUpdate" name="esCentro" type="checkbox" class="mischeckbox cambioCheck" /><strong>Es Centro Social</strong>
+                    </label>
                     <input id="idUpdate" name="id" class="form-control ocultar">
                 </form>
             </div>
@@ -195,6 +206,8 @@
     <!-- /.modal-dialog -->
 </div>
 
+<%@ include file="/WEB-INF/pages/templates/imagenPopUp.jsp"%>
 <%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>
 <script src="../js/casa/casa.js" charset="UTF-8"></script>
+<script src="../js/cargarImagenes.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>

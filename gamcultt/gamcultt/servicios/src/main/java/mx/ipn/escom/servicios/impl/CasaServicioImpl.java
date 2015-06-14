@@ -5,16 +5,28 @@
  */
 package mx.ipn.escom.servicios.impl;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mx.ipn.escom.entidades.Casa;
 import mx.ipn.escom.repositorios.CasaRepositorio;
 import mx.ipn.escom.servicios.CasaServicio;
+import static mx.ipn.escom.servicios.util.ManejadorArchivos.borrarArchivosAndContenido;
+import static mx.ipn.escom.servicios.util.ManejadorArchivos.crearArchivoContenido;
 import static mx.ipn.escom.servicios.util.MensajesCrud.ADD_CORRECT;
+import static mx.ipn.escom.servicios.util.MensajesCrud.CORRECTO_IMAGEN;
 import static mx.ipn.escom.servicios.util.MensajesCrud.DELETE_CORRECT;
+import static mx.ipn.escom.servicios.util.MensajesCrud.ERROR_ALGO;
 import static mx.ipn.escom.servicios.util.MensajesCrud.ERROR_HIBERNATE;
+import static mx.ipn.escom.servicios.util.MensajesCrud.ERROR_IMAGEN;
+import static mx.ipn.escom.servicios.util.MensajesCrud.IMAGEN_INVALIDA;
 import static mx.ipn.escom.servicios.util.MensajesCrud.UPDATE_CORRECT;
+import static mx.ipn.escom.servicios.util.Rutas.CASAS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 
 /**
@@ -32,7 +44,14 @@ public class CasaServicioImpl implements CasaServicio{
      @Override
     public String agregar(Casa casa) {
         if (casaRepositorio.agregar(casa)) {
-            return ADD_CORRECT + CASA + casa.getId();
+            File carpeta = new File(CASAS + casa.getId());
+            if(carpeta.mkdirs()){
+                return ADD_CORRECT + CASA + casa.getId();
+            }else{
+                casaRepositorio.eliminar(casa);
+                return ERROR_ALGO;
+            }
+            
         }
         return ERROR_HIBERNATE;
     }
@@ -47,9 +66,9 @@ public class CasaServicioImpl implements CasaServicio{
 
     @Override
     public String eliminar(Casa casa) {
-        boolean a = casaRepositorio.eliminar(casa);
-        System.out.println(a);
-        if (a) {
+        if (casaRepositorio.eliminar(casa)) {
+            File carpeta = new File(CASAS + casa.getId());
+            borrarArchivosAndContenido(carpeta);
             return DELETE_CORRECT + CASA;
         }
         return ERROR_HIBERNATE;
@@ -77,5 +96,24 @@ public class CasaServicioImpl implements CasaServicio{
     @Override
     public List<Casa> buscarPorCategoriaTaller(Integer categoriaTaller) {
         return casaRepositorio.buscarPorCategoriaTaller(categoriaTaller);
+    }
+    @Override
+    public String agregarImagenPrincipal(Integer id, MultipartFile imagen) {
+        String path = CASAS + id + "\\" + id + ".png";
+        if(!esExtencionValida(imagen.getOriginalFilename(), ".png") || esExtencionValida(imagen.getOriginalFilename(), ".jpg")){
+            return IMAGEN_INVALIDA;
+        }
+        try {
+            if(crearArchivoContenido(path, imagen.getBytes())){
+                return CORRECTO_IMAGEN;
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(CasaServicioImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ERROR_IMAGEN;
+    }
+
+    private boolean esExtencionValida(String originalFilename, String png) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

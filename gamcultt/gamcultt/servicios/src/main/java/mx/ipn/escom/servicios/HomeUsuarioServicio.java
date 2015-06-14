@@ -15,4 +15,5 @@ import mx.ipn.escom.servicios.auxiliares.Home;
 public interface HomeUsuarioServicio {
  
     Home home();
+    String editaVista(Home home, boolean esRed);
 }

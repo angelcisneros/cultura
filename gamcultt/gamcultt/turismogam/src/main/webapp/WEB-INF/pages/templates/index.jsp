@@ -9,7 +9,7 @@
                 <div class="carousel-inner">
                     <c:forEach items="${home.slider}" var="s" varStatus="status">
                         <div class="item">
-                            <img src="${pageContext.request.contextPath}/sliderHome/${s.href}">
+                            <img src="${pageContext.request.contextPath}/muestraImagenHome/${s.href}">
                             <div class="carousel-caption">
                                 <h2>${s.alt}</h2>
                                 <p>${s.descripcion}</p>
@@ -31,7 +31,7 @@
         </div>
         <div class="col-md-6">
             <div class="embed-responsive embed-responsive-16by9">
-                <img src="${pageContext.request.contextPath}/sliderHome/${home.hrefRed}" class="img-responsive">
+                <img src="${pageContext.request.contextPath}/muestraImagenHome/${home.hrefRed}" class="img-responsive">
             </div>  
         </div>
     </div>
@@ -44,7 +44,7 @@
         </div>
         <div class="col-md-6">
             <div class="embed-responsive embed-responsive-16by9">
-                <img src="${pageContext.request.contextPath}/sliderHome/${home.hrefPrincipal}" class="img-responsive">
+                <img src="${pageContext.request.contextPath}/muestraImagenHome/${home.hrefPrincipal}" class="img-responsive">
             </div>
         </div>
     </div>

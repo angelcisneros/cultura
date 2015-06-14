@@ -38,57 +38,60 @@ $(document).on('ready', function() {
         var horario = $('#horarioAdd').val();
         var informacion = $('#informacionAdd').val();
         var link = $('#liknMapsAdd').val();
-
-        if (!validarNombre(nombre)) {
-            muestraPopUpCampoNoVacio($('#nombreAdd'));
-            $('#nombreAdd').css("border", "1px solid red");
-        } else {
-            $('#nombreAdd').removeAttr('style');
-            cierraPopUpChiquito($('#nombreAdd'));
-            requisitos++;
-        }
-        if (!validarDireccion( direccion )) {
-            muestraPopUpCampoNoVacio($('#direccionAdd'));
-            $('#direccionAdd').css("border", "1px solid red");
-        } else {
-            $('#direccionAdd').removeAttr('style');
-            cierraPopUpChiquito($('#direccionAdd'));
-            requisitos++;
-        }
-        if (!validarTelefono( telefono )) {
-            muestraPopUpCampoNoVacio($('#telefonoAdd'));
-            $('#telefonoAdd').css("border", "1px solid red");
-        } else {
-            $('#telefonoAdd').removeAttr('style');
-            cierraPopUpChiquito($('#telefonoAdd'));
-            requisitos++;
-        }
-        if (horario === '') {
-            muestraPopUpCampoNoVacio($('#horarioAdd'));
-            $('#horarioAdd').css("border", "1px solid red");
-        } else {
-            $('#horarioAdd').removeAttr('style');
-            cierraPopUpChiquito($('#horarioAdd'));
-            requisitos++;
-        }
-        if (!validarInformacion( informacion )) {
-            muestraPopUpCampoNoVacio($('#informacionAdd'));
-            $('#informacionAdd').css("border", "1px solid red");
-        } else {
-            $('#informacionAdd').removeAttr('style');
-            cierraPopUpChiquito($('#informacionAdd'));
-            requisitos++;
-        }
-        if (!validarLink(link )) {
-            muestraPopUpCampoNoVacio($('#liknMapsAdd'));
-            $('#liknMapsAdd').css("border", "1px solid red");
-        } else {
-            $('#liknMapsAdd').removeAttr('style');
-            cierraPopUpChiquito($('#liknMapsAdd'));
-            requisitos++;
-        }
-        if (requisitos === 6) {
-
+        var esCentro = $('#centroSocialAdd').prop('checked');
+        /*
+         if (!validarNombre(nombre)) {
+         muestraPopUpCampoNoVacio($('#nombreAdd'));
+         $('#nombreAdd').css("border", "1px solid red");
+         } else {
+         $('#nombreAdd').removeAttr('style');
+         cierraPopUpChiquito($('#nombreAdd'));
+         requisitos++;
+         }
+         if (!validarDireccion(direccion)) {
+         muestraPopUpCampoNoVacio($('#direccionAdd'));
+         $('#direccionAdd').css("border", "1px solid red");
+         } else {
+         $('#direccionAdd').removeAttr('style');
+         cierraPopUpChiquito($('#direccionAdd'));
+         requisitos++;
+         }
+         if (!validarTelefono(telefono)) {
+         muestraPopUpCampoNoVacio($('#telefonoAdd'));
+         $('#telefonoAdd').css("border", "1px solid red");
+         } else {
+         $('#telefonoAdd').removeAttr('style');
+         cierraPopUpChiquito($('#telefonoAdd'));
+         requisitos++;
+         }
+         if (horario === '') {
+         muestraPopUpCampoNoVacio($('#horarioAdd'));
+         $('#horarioAdd').css("border", "1px solid red");
+         } else {
+         $('#horarioAdd').removeAttr('style');
+         cierraPopUpChiquito($('#horarioAdd'));
+         requisitos++;
+         }
+         if (!validarInformacion(informacion)) {
+         muestraPopUpCampoNoVacio($('#informacionAdd'));
+         $('#informacionAdd').css("border", "1px solid red");
+         } else {
+         $('#informacionAdd').removeAttr('style');
+         cierraPopUpChiquito($('#informacionAdd'));
+         requisitos++;
+         }
+         if (!validarLink(link)) {
+         muestraPopUpCampoNoVacio($('#liknMapsAdd'));
+         $('#liknMapsAdd').css("border", "1px solid red");
+         } else {
+         $('#liknMapsAdd').removeAttr('style');
+         cierraPopUpChiquito($('#liknMapsAdd'));
+         requisitos++;
+         }
+         if (requisitos === 6) {
+         
+         */
+        if (true) {
             $.ajax({
                 type: 'POST',
                 url: "agregarCasa/",
@@ -96,11 +99,12 @@ $(document).on('ready', function() {
                 data: $('#casaAddForm').serialize(),
                 success: function(respuesta) {
                     var respuesta = respuesta.split('#');
+                    
                     if (respuesta[0] === 'Correcto...') {
-                        $('#tituloPopUp').text(respuesta[0]);
-                        $('#contenidoPopUp').text(respuesta[1]);
+                        $('#tituloImagenPopUp').text(respuesta[0]);
+                        $('#contenidoImagenPopUp').text(respuesta[1]);
                         $('#popUpCasaAdd').modal('hide');
-                        $('#popUpRespuesta').modal('show');
+                        $('#imagenPopUp').modal('show');
                         $('.nuevoCasa').removeClass();
                         $("#casaTbody").prepend(
                                 '<tr valign="top" class="nuevoCasa success">' +
@@ -124,14 +128,25 @@ $(document).on('ready', function() {
                                 '<label class="liknMaps">' + link + '</label>' +
                                 '</td> ' +
                                 '<td>' +
+                                    '<label class="esCentro">' + esCentro + '</label>' +
+                                '</td>' +
+                                '<td>' +
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary casaUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger casaDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-warning casaImagenButton">Imagen</button>' +
                                 '</div>' +
                                 '</td>' +
                                 '</tr>'
                                 );
-
+                        trClick = $("#casaTbody").children('tr:first');
+                    } else {
+                        if (respuesta[0] === 'Ups!...') {
+                            $('#tituloPopUp').text(respuesta[0]);
+                            $('#contenidoPopUp').text(respuesta[1]);
+                            $('#popUpCasaAdd').modal('hide');
+                            $('#popUpRespuesta').modal('show');
+                        }
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
@@ -151,7 +166,9 @@ $(document).on('ready', function() {
         var horario = $('#horarioUpdate').val();
         var informacion = $('#informacionUpdate').val();
         var link = $('#liknMapsUpdate').val();
-        if (!validarNombre( nombre )) {
+        var esCentro = $('#centroSocialUpdate');
+/*
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
@@ -159,7 +176,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#nombreUpdate'));
             requisitos++;
         }
-        if (!validarDireccion( direccion )) {
+        if (!validarDireccion(direccion)) {
             muestraPopUpCampoNoVacio($('#direccionUpdate'));
             $('#direccionUpdate').css("border", "1px solid red");
         } else {
@@ -167,7 +184,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#direccionUpdate'));
             requisitos++;
         }
-        if (!validarTelefono( telefono )) {
+        if (!validarTelefono(telefono)) {
             muestraPopUpCampoNoVacio($('#telefonoUpdate'));
             $('#telefonoUpdate').css("border", "1px solid red");
         } else {
@@ -183,7 +200,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#horarioUpdate'));
             requisitos++;
         }
-        if (!validarInformacion( informacion )) {
+        if (!validarInformacion(informacion)) {
             muestraPopUpCampoNoVacio($('#informacionUpdate'));
             $('#informacionUpdate').css("border", "1px solid red");
         } else {
@@ -191,7 +208,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#informacionUpdate'));
             requisitos++;
         }
-        if (!validarLink( link )) {
+        if (!validarLink(link)) {
             muestraPopUpCampoNoVacio($('#liknMapsUpdate'));
             $('#liknMapsUpdate').css("border", "1px solid red");
         } else {
@@ -200,6 +217,8 @@ $(document).on('ready', function() {
             requisitos++;
         }
         if (requisitos === 6) {
+*/
+        if(true){
             $.ajax({
                 type: 'POST',
                 url: "editarCasa/",
@@ -235,12 +254,23 @@ $(document).on('ready', function() {
                                 '<label class="liknMaps">' + link + '</label>' +
                                 '</td> ' +
                                 '<td>' +
+                                    '<label class="esCentro">' + esCentro + '</label>' +
+                                '</td>' +
+                                '<td>' +
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary casaUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger casaDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-warning casaImagenButton">Imagen</button>' +
                                 '</div>' +
                                 '</td>'
                                 );
+                    }else {
+                        if (respuesta[0] === 'Ups!...') {
+                            $('#tituloPopUp').text(respuesta[0]);
+                            $('#contenidoPopUp').text(respuesta[1]);
+                            $('#popUpCasaAdd').modal('hide');
+                            $('#popUpRespuesta').modal('show');
+                        }
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
@@ -282,6 +312,26 @@ $('#casaTbody').on('click', '.casaUpdateButton', function() {
 
 $('#casaTbody').on('click', '.casaDeleteButton', function() {
     rellenaPopUpsDelete(this);
+});
+
+$('#subirImagen').on('click', function() {
+    var url =' subirImagenCasa/' +  $(trClick).find('td.id label.ocultar').text();
+    validaAndSubeImagen($('#seleccionadorImagen'), url);
+});
+
+$('#casaTbody').on('click', '.casaImagenButton', function() {
+    var tr = $($($($(this).parent())).parent()).parent();
+    trClick = $(tr);
+    var id = $(tr).find('td.id label.ocultar').text();
+    $('#tituloImagenPopUp').text('Imagen de Casa');
+    $('#contenidoImagenPopUp').text('Cambiar Imagen');
+    $('#imagen').load("verImagen/" + id, function(response, status, xhr) {
+        if (status === "error") {
+            var msg = "Sorry but there was an error: ";
+            $("#info").html(msg + xhr.status + " " + xhr.statusText);
+        }
+    });
+    $('#imagenPopUp').modal('show');
 });
 
 function rellenaPopUpsDelete(selector) {

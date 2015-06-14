@@ -56,3 +56,30 @@ function addGaleria(row) {
     }
 
 }
+$('.modal-body').on('change', '#seleccionadorImagen', function() {
+    cambiaImagen(this);
+});
+function cambiaImagen(selector){
+    var fileInput = selector;
+    var fileDisplayArea = $(selector).siblings('div');
+    var file = fileInput.files[0];
+    var imageType = /image.*/;
+    if (file.type.match(imageType)) {
+        $(this).removeAttr('style');
+        cierraPopUpChiquito($(selector));
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $(fileDisplayArea).html('');
+            var img = new Image();
+            img.src = reader.result;
+            $(fileDisplayArea).append(img);
+            $(fileDisplayArea).children().attr('class', 'img-responsive img-rounded');
+        };
+        reader.readAsDataURL(file);
+        $(this).siblings('div.input-group').remove();
+    } else {
+        $(this).css("border", "1px solid red");
+        muestraPopUpExtencionNoValida($(selector), 'El archivo no es una imagen');
+    }
+
+}

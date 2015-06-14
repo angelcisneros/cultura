@@ -5,7 +5,9 @@
  */
 package mx.ipn.escom.servicios.impl;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +45,7 @@ public class HomeUsuarioServicioImpl implements HomeUsuarioServicio {
 
                 String hrf = properties.getProperty("href" + i);
                 String descripcion = properties.getProperty("descripcion" + i);
-                if(!isNullOrEmpty(hrf) && !isNullOrEmpty(descripcion)){
+                if (!isNullOrEmpty(hrf) && !isNullOrEmpty(descripcion)) {
                     slider.add(new Slider(hrf, descripcion, properties.getProperty("alt" + i)));
                 }
             }
@@ -51,7 +53,34 @@ public class HomeUsuarioServicioImpl implements HomeUsuarioServicio {
         } catch (IOException ex) {
             Logger.getLogger(HomeUsuarioServicioImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return home ;
+        return home;
+    }
+
+    @Override
+    public String editaVista(Home home, boolean esRed) {
+        Properties properties = new Properties();
+        String titulo = "red";
+        String tituloVal = home.getRed();
+        String descripcion = "descripcionRed";
+        String descripcionVal = home.getDescripcionRed();
+        if(!esRed){
+            titulo = "principal";
+            tituloVal = home.getPrincipal();
+            descripcion = "descripcionPrincipal";
+            descripcionVal = home.getDescripcionPrincipal();
+        }
+        try {
+            File file = new File(HOME_USUARIO + "home.properties");
+            properties.load(new FileInputStream(file));
+            properties.setProperty(titulo, tituloVal);
+            properties.setProperty(descripcion, descripcionVal);
+            FileOutputStream fos = new FileOutputStream(file.toString().replace("\\", "/"));
+            properties.store(fos, null);
+        } catch (IOException ex) {
+            Logger.getLogger(HomeUsuarioServicioImpl.class.getName()).log(Level.SEVERE, null, ex);
+            return "Error...#No se pudo cambiar la información";
+        }
+        return "Correcto...#Se actualizo la vista principal";
     }
 
 }

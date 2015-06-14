@@ -7,19 +7,14 @@ package mx.ipn.escom.turismoazcapotzalco.controller;
 
 import java.io.File;
 import javax.servlet.http.HttpSession;
-import mx.ipn.escom.entidades.Taller;
 import mx.ipn.escom.servicios.HomeUsuarioServicio;
-import mx.ipn.escom.servicios.TallerServicio;
-import mx.ipn.escom.servicios.auxiliares.NewClass;
 import static mx.ipn.escom.servicios.util.ManejadorArchivos.convierteArchivoToArregloBytes;
 import static mx.ipn.escom.servicios.util.Rutas.HOME_USUARIO;
-import static mx.ipn.escom.servicios.util.Validaciones.esEntero;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -38,14 +33,8 @@ public class HomeController {
         return "templates/index";
     }
 
-    @RequestMapping(value = "administrador/homeAdmin")
-    public String homeAdmin(Model model) {
-        model.addAttribute("home", hus.home());
-        return "crud/modificaHome";
-    }
-
     @ResponseBody
-    @RequestMapping(value = "sliderHome/{href}")
+    @RequestMapping(value = "muestraImagenHome/{href}")
     public byte[] sliderHome(@PathVariable String href) {
         String path = HOME_USUARIO + href + ".jpg";
         return convierteArchivoToArregloBytes(new File(path));
@@ -56,24 +45,4 @@ public class HomeController {
         return "templates/404";
     }
     
-    
-    @Autowired
-    // Esto es Una Interfaz Tiene los metodos a Utilizar
-    TallerServicio tallerServicio;
-    
-    @RequestMapping(value = "buscaTallerPorId/{idTaller}", method = {RequestMethod.GET, RequestMethod.POST})
-    public @ResponseBody Taller buscaTallerPorId(@PathVariable String idTaller, Model model) {
-        
-        if (esEntero(idTaller)) {
-            Taller taller = tallerServicio.buscarPorId(Integer.parseInt(idTaller));
-            taller.getCategoriaTaller().setTallers(null);
-            taller.setGaleriaTallers(null);
-            taller.setCategoriaTaller(null);
-            taller.setClases(null);
-            return taller;
-
-        }
-        return null;
-//    }
-    }
 }

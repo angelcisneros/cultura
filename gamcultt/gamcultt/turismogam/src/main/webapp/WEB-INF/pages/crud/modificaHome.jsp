@@ -17,50 +17,25 @@
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
-                    <h2><strong>Categorias Talleres</strong></h2>
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-                    <a id="addCategoriaTallerButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Categoria Taller</a>
+                    <h2><strong>Galeria de Imagenes</strong></h2>
+                    <button id="editarSliderPrincipal" type="button" class="btn btn-success pull-right">Aplicar Cambios</button>
                 </div>
             </div>
             <hr />
             <div class="row">
                 <div class="col-md-1 col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-                    <div class="row table-responsive">
-                        <table id="categoriaTallerTable" class="table table-striped table-bordered table-hover">
-                            <thead id="categoriaTallerThead" class="text-center">
-                                <tr>
-                                    <th>Nombre Taller</th>
-                                    <th>descripción</th>
-                                    <th>Opciones</th>
-                                </tr>
-                            </thead>
-                            <tbody id="categoriaTallerTbody">
-                                <c:forEach items="${categoriasTaller}" var="ct" varStatus="status">
-                                    <tr valign="top">
-                                        <td class="id">
-                                            <label class="nombreTaller">${ct.nombre}</label>
-                                            <label id="${ct.id}" class="ocultar">${ct.id}</label>
-                                        </td>
-                                        <td>
-                                            <label class="descripcionTaller">${ct.descripcion}</label>
-                                        </td>
-                                        <td>
-                                            <div class="btn-group" role="group" aria-label="">
-                                                <button class="btn btn-primary categoriaTallerUpdateButton">Editar</button>
-                                                <button class="btn btn-danger categoriaTallerDeleteButton">Eliminar</button>
-                                                <button class="btn btn-warning categoriaTallerImagenButton">Imagen</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                            </tbody>
-                        </table>
+                    <div class="row">
+                        <c:forEach items="${home.slider}" var="s" varStatus="status">
+                            <div id="${s.href}" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <br><br>
+                                <input id="seleccionadorImagen" type="file" class="filestyle form-control imagenesSlider" data-buttonText=" Seleccione" data-buttonName="btn-primary" data-iconName="glyphicon-folder-open" />
+                                <hr>
+                                <div>
+                                    <img src="${pageContext.request.contextPath}/muestraImagenHome/${s.href}" class="img-responsive img-rounded">
+                                </div>
+                            </div>
+                        </c:forEach>
                     </div>
                 </div>
                 <div class="col-md-1 col-lg-1"></div>
@@ -70,45 +45,35 @@
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
-                    <h2><strong>Categorias de Eventos</strong></h2>
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-                    <a id="addCategoriaEventoButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Categoria Evento</a>
+                    <h2><strong>Red Cultural</strong></h2>
                 </div>
             </div>
             <hr />
             <div class="row">
                 <div class="col-md-1 col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-                    <div class="row table-responsive">
-                        <table id="categoriaEventoTable" class="table table-striped table-bordered table-hover">
-                            <thead id="categoriaEventoThead" class="text-center">
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Opciones</th>
-                                </tr>
-                            </thead>
-                            <tbody id="categoriaEventoTbody">
-                                <c:forEach items="${categoriasEvento}" var="ce" varStatus="status">
-                                    <tr valign="top">
-                                        <td class="id">
-                                            <label class="nombre">${ce.nombre}</label>
-                                            <label id="${ce.id}" class="ocultar">${ce.id}</label>
-                                        </td>
-                                        <td>
-                                            <div class="btn-group" role="group" aria-label="">
-                                                <button class="btn btn-primary categoriaEventoUpdateButton">Editar</button>
-                                                <button class="btn btn-danger categoriaEventoDeleteButton">Eliminar</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                            </tbody>
-                        </table>
+
+                    <div class="row">
+                        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+                            <form role="form" method="post" id="redForm">
+                                <label>*Título:</label>
+                                <input id="tituloRed" name="red" class="form-control" type="text" placeholder="Título" value="${home.red}"/>
+                                <br>
+                                <label>*Descripción:</label>
+                                <textarea id="descripcionRed" name="descripcionRed" class="form-control" rows="11">${home.descripcionRed}</textarea>
+                                <br>
+                            </form>
+                            <button id="editarRed" type="button" class="btn btn-success pull-right">Editar</button>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+                            <label>Seleccione una imagen:</label>
+                            <input id="seleccionadorImagenRed" type="file" class="filestyle form-control" data-buttonText=" Seleccione" data-buttonName="btn-primary" data-iconName="glyphicon-folder-open" />
+                            <button id="editarImagenRed" type="button" class="btn btn-success pull-right">Editar Imagen</button>
+                            <br><hr>
+                            <div id="imagen">
+                                <img src="${pageContext.request.contextPath}/muestraImagenHome/${home.hrefRed}" class="img-responsive img-rounded">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-1 col-lg-1"></div>
@@ -125,18 +90,28 @@
             <div class="row">
                 <div class="col-md-1 col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-                    <form role="form" method="post" id="contratoAddForm">
-                        <div class="row">
-                            <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+                    <div class="row">
+                        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+                            <form role="form" method="post" id="principalForm">
                                 <label>*Título:</label>
-                                <input id="titulo" name="principal" class="form-control" type="date" placeholder="Ingrese la Fecha de Creación"/>
+                                <input id="tituloPrincipal" name="principal" class="form-control" type="text" placeholder="Título" value="${home.principal}"/>
+                                <br>
                                 <label>*Descripción:</label>
-                                <textarea id="descripcion" name="descripcionPrincipal" class="form-control"/>
-                            </div>
-                            <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
-
+                                <textarea id="descripcionPrincipal" name="descripcionPrincipal" class="form-control" rows="11">${home.descripcionPrincipal}</textarea>
+                                <br>
+                            </form>
+                            <button id="editarPrincipal" type="button" class="btn btn-success pull-right">Editar Información</button>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+                            <label>Seleccione una imagen:</label>
+                            <input id="seleccionadorImagenPrincipal" type="file" class="filestyle form-control" data-buttonText=" Seleccione" data-buttonName="btn-primary" data-iconName="glyphicon-folder-open" />
+                            <button id="editarImagenPrincipal" type="button" class="btn btn-success pull-right">Editar Imagen</button>
+                            <br><hr>
+                            <div id="imagen">
+                                <img src="${pageContext.request.contextPath}/muestraImagenHome/${home.hrefPrincipal}" class="img-responsive img-rounded">
                             </div>
                         </div>
+                    </div>
                     </form>
                 </div>
                 <div class="col-md-1 col-lg-1"></div>
@@ -145,4 +120,6 @@
     </div>
 </div>
 <%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>
+<script src="../js/vista/vista.js" charset="UTF-8"></script>
+<script src="../js/cargarImagenes.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>

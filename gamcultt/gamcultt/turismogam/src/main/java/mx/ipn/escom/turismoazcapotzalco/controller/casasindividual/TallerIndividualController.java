@@ -5,6 +5,7 @@
  */
 package mx.ipn.escom.turismoazcapotzalco.controller.casasindividual;
 
+import mx.ipn.escom.entidades.Taller;
 import mx.ipn.escom.servicios.TallerServicio;
 import static mx.ipn.escom.servicios.util.Validaciones.esEntero;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -35,13 +38,12 @@ public class TallerIndividualController {
         return "templates/404";
     }
 
-//    //@ResponseBody
-//    @RequestMapping(value = "buscaTallerPorId/{idTaller}", method = {RequestMethod.GET, RequestMethod.POST})
-//    public String buscaTallerPorId(@PathVariable String idTaller, Model model) {
-//        if (esEntero(idTaller)) {
-//            //return tallerServicio.buscarPorId(Integer.parseInt(idTaller));
-//            return "puto";
-//        }
-//        return "pedejo";
-//    }
+    @ResponseBody
+    @RequestMapping(value = "buscaTallerPorId/{idTaller}", method = {RequestMethod.GET, RequestMethod.POST})
+    public Taller buscaTallerPorId(@PathVariable String idTaller, Model model) {
+        if (esEntero(idTaller)) {
+            return tallerServicio.buscarPorId(Integer.parseInt(idTaller));
+        }
+        return null;
+    }
 }

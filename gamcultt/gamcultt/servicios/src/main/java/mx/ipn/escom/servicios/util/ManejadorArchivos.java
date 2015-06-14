@@ -23,6 +23,10 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import mx.ipn.escom.entidades.Taller;
+import mx.ipn.escom.servicios.impl.TallerServicioImpl;
+import static mx.ipn.escom.servicios.util.Rutas.TALLERES;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -187,5 +191,24 @@ public class ManejadorArchivos {
         //InputStream in = resource.openStream();
         return archivo;
     }
-
+    public static String subirImagen(MultipartFile imagen, String path) {
+       try {
+            crearArchivoContenido(path, imagen.getBytes());
+            return "1";
+        } catch (IOException ex) {
+            Logger.getLogger(TallerServicioImpl.class.getName()).log(Level.SEVERE, null, ex);
+            return "-1";
+        }
+    }
+    
+    public static void borrarArchivosAndContenido(File carpeta){
+        for(File archivo: carpeta.listFiles()){
+            if(archivo.isDirectory()){
+                borrarArchivosAndContenido(archivo);
+            }else{
+                archivo.delete();
+            }
+        }
+        carpeta.delete();
+    }
 }

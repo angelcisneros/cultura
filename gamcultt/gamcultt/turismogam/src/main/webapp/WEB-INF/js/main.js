@@ -30,7 +30,7 @@ function cierraPopUpChiquito(selector) {
     $(selector).removeAttr('data-trigger');
     $(selector).removeAttr('title');
     $(selector).removeAttr('data-content');
-    
+
 }
 
 function muestraPopUpExtencionNoValida(selector, mensaje) {
@@ -76,9 +76,9 @@ function validaRFC(rfcStr) {
     }
 }
 
-function setOption(options, texto){
-    $.each(options, function (indice, valor){
-        if($(valor).text() === texto){
+function setOption(options, texto) {
+    $.each(options, function(indice, valor) {
+        if ($(valor).text() === texto) {
             $(valor).prop('selected', true);
         }
     });
@@ -98,19 +98,80 @@ function esValidExtencion(name, ext1, ext2) {
     return ext === ext2;
 }
 
-function limpiarInputs(){
-    $.each($('input'), function (indice, valor){
-       $(valor) .val('');
-       cierraPopUpChiquito($(valor));
-       $(valor).removeAttr('style');
+function limpiarInputs() {
+    $.each($('input'), function(indice, valor) {
+        $(valor).val('');
+        cierraPopUpChiquito($(valor));
+        $(valor).removeAttr('style');
     });
-    $.each($('select'), function (indice, valor){
-       $(valor) .val('0');
-       cierraPopUpChiquito($(valor));
-       $(valor).removeAttr('style');
+    $.each($('select'), function(indice, valor) {
+        $(valor).val('0');
+        cierraPopUpChiquito($(valor));
+        $(valor).removeAttr('style');
     });
 }
 
-function validarEmail( email ) {
-    return /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email) ;
+function validarEmail(email) {
+    return /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email);
 }
+
+function validaAndSubeImagen(input, url) {
+    var file = $(input).val();
+
+    if (file === '') {
+        muestraPopUpCampoNoVacio($(input));
+        $(input).css("border", "1px solid red");
+    } else {
+        $(input).removeAttr('style');
+        cierraPopUpChiquito($(input));
+        if (esValidExtencion(file, '.png', '.jpg')) {
+            $(input).removeAttr('style');
+            cierraPopUpChiquito($(input));
+            return subirImagen($(input), url);
+        } else {
+            muestraPopUpExtencionNoValida($(input), 'Seleccione una imagen .png o .jpg');
+            $(input).css("border", "1px solid red");
+        }
+    }
+}
+
+function subirImagen(selector, url) {
+    var valor = $(selector);
+    var data = new FormData();
+    var estatus;
+    data.append('file' + 1, valor[0].files[0]);
+    $.ajax({
+        url: url,
+        data: data,
+        async: false,
+        dataType: 'text',
+        processData: false,
+        contentType: false,
+        type: 'POST',
+        success: function(state) {
+            if (state === '1') {
+                console.log('Si entre a sr opcaco');
+                estatus = "1";
+                var div = $(valor).siblings('div');
+                var estilo = $(div).attr('style') + ' opacity: 0.4; filter: alpha(opacity=40);';
+                $(div).attr('style', estilo);
+            }
+        }
+
+    });
+    return estatus;
+
+}
+
+$('.cambioCheck').on('change', function() {
+    console.log('cambie');
+    if ($(this).prop('checked')) {
+        console.log('me selccionaron');
+        $(this).prop('checked', true);
+        $(this).attr('value', true);
+    } else {
+        console.log('me deseleccionaron');
+        $(this).prop('checked', false);
+        $(this).attr('value', false);
+    }
+});
