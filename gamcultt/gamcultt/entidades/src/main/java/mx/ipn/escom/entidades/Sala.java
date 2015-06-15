@@ -33,7 +33,6 @@ public @Data class Sala implements java.io.Serializable {
     @Column(name = "id", unique = true, nullable = false)
     private Integer id;
 
-    @NotBlank(message = "Seleccione una Casa")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "casa", nullable = false)
     private Casa casa;

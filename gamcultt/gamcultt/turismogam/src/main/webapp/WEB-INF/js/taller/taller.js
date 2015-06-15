@@ -104,7 +104,7 @@ $(document).on('ready', function() {
                                 '<button class="btn btn-primary tallerUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger tallerDeleteButton">Eliminar</button>' +
                                 '<button class="btn btn-warning galeriaButton">Galeria</button>' +
-                                '<button class="btn btn-success reporteIndividualCasa">Reporte</button>' +
+                                '<button class="btn btn-success reporteIndividualTaller">Reporte</button>' +
                                 '</div>' +
                                 '</td>' +
                                 '</tr>'
@@ -191,7 +191,7 @@ $(document).on('ready', function() {
                                 '<button class="btn btn-primary tallerUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger tallerDeleteButton">Eliminar</button>' +
                                 '<button class="btn btn-warning galeriaButton">Galeria</button>' +
-                                '<button class="btn btn-success reporteIndividualCasa">Reporte</button>' +
+                                '<button class="btn btn-success reporteIndividualTaller">Reporte</button>' +
                                 '</div>' +
                                 '</td>'
                                 );

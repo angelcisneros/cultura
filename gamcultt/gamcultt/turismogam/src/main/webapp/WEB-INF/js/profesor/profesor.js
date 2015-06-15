@@ -130,6 +130,7 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary profesorUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger profesorDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-info profesorReporteIndividualButton">Reporte</button>'+
                                 '</div>' +
                                 '</td>' +
                                 '</tr>'
@@ -244,6 +245,7 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary profesorUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger profesorDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-info profesorReporteIndividualButton">Reporte</button>'+
                                 '</div>' +
                                 '</td>'
                                 );

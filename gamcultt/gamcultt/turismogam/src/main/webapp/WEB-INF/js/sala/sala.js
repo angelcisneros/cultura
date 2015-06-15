@@ -94,6 +94,7 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary salaUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger salaDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-info salaReporteIndividualButton">Reporte</button>'+
                                 '</div>' +
                                 '</td>' +
                                 '</tr>'
@@ -180,6 +181,7 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary salaUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger salaDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-info salaReporteIndividualButton">Reporte</button>'+
                                 '</div>' +
                                 '</td>'
                                 //'</tr>'

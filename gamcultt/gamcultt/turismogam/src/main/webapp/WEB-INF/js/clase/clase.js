@@ -41,7 +41,7 @@ $(document).on('ready', function() {
         var horario = $('#horarioAdd').val();
         var status = $('#statusAdd').val();
 
-        if (!validarNombre( nombre )) {
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
             $('#nombreAdd').css("border", "1px solid red");
         } else {
@@ -50,7 +50,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (!validarPaterno( paterno )) {
+        if (!validarPaterno(paterno)) {
             muestraPopUpCampoNoVacio($('#paternoAdd'));
             $('#paternoAdd').css("border", "1px solid red");
         } else {
@@ -58,7 +58,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#paternoAdd'));
             requisitos++;
         }
-        if (!validarMaterno( materno )) {
+        if (!validarMaterno(materno)) {
             muestraPopUpCampoNoVacio($('#maternoAdd'));
             $('#maternoAdd').css("border", "1px solid red");
         } else {
@@ -66,7 +66,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#maternoAdd'));
             requisitos++;
         }
-        if (!validarSala( sala )) {
+        if (!validarSala(sala)) {
             muestraPopUpCampoNoVacio($('#salaAdd'));
             $('#salaAdd').css("border", "1px solid red");
         } else {
@@ -74,7 +74,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#salaAdd'));
             requisitos++;
         }
-        if (!validarTaller( taller )) {
+        if (!validarTaller(taller)) {
             muestraPopUpCampoNoVacio($('#tallerAdd'));
             $('#tallerAdd').css("border", "1px solid red");
         } else {
@@ -82,11 +82,11 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#tallerAdd'));
             requisitos++;
         }
-        if($.isNumeric(costo)){
+        if ($.isNumeric(costo)) {
             $('#costoAdd').removeAttr('style');
             cierraPopUpChiquito($('#costoAdd'));
             requisitos++;
-        }else{
+        } else {
             $('#costoAdd').css("border", "1px solid red");
             muestraPopUpCampoNumerico($('#costoAdd'));
         }
@@ -98,9 +98,9 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#statusAdd'));
             requisitos++;
         }
-        
-        
-        
+
+
+
         if (requisitos === 8) {
 
             $.ajax({
@@ -117,35 +117,37 @@ $(document).on('ready', function() {
                         $('#popUpRespuesta').modal('show');
                         $('.nuevoClase').removeClass();
                         $("#claseTbody").prepend(
-                                '<tr valign="top" class="nuevoClase success">'+
-                                '<td class="id">'+
-                                    '<label class="nombre">' + nombre + '</label>&#32;'+
-                                    '<label class="paterno">' + paterno + '</label>&#32;'+
-                                    '<label class="materno">' + materno + '</label>'+
-                                    '<label id="' + respuesta[2] + '" class="ocultar">' + respuesta[2] + '</label>'+
-                                '</td>'+
-                                '<td>'+
-                                    '<label>' + sala + '</label>'+
-                                '</td>'+
-                                '<td>'+
-                                    '<label>' + taller + '</label>'+
-                                '</td>'+
-                                '<td>'+
-                                    '<label>' + costo + '</label>'+
-                                '</td>'+
-                                '<td>'+
-                                    '<label>' + horario + '</label>'+
-                                '</td>'+
-                                '<td>'+
-                                    '<label>' + status + '</label>'+
-                                '</td>'+
-                                '<td>'+
-                                    '<div class="btn-group" role="group" aria-label="">'+
-                                    '<button class="btn btn-primary claseUpdateButton">Editar</button>'+
-                                    '<button class="btn btn-danger claseDeleteButton">Eliminar</button>'+
-                                    '</div>'+
-                                '</td>'+
-                            '</tr>'
+                                '<tr valign="top" class="nuevoClase success">' +
+                                '<td class="id">' +
+                                '<label class="nombre">' + nombre + '</label>&#32;' +
+                                '<label class="paterno">' + paterno + '</label>&#32;' +
+                                '<label class="materno">' + materno + '</label>' +
+                                '<label id="' + respuesta[2] + '" class="ocultar">' + respuesta[2] + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label>' + sala + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label>' + taller + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label>' + costo + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label>' + horario + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label>' + status + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<div class="btn-group" role="group" aria-label="">' +
+                                '<button class="btn btn-primary claseUpdateButton">Editar</button>' +
+                                '<button class="btn btn-danger claseDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-warning listaAlumnosButton">Alumnos</button>' +
+                                '<button class="btn btn-info claseReporteIndividualButton">Reporte</button>' +
+                                '</div>' +
+                                '</td>' +
+                                '</tr>'
 
                                 );
 
@@ -172,7 +174,7 @@ $(document).on('ready', function() {
         var telefono2 = $('#telefono2Update').val();
         var direccion = $('#direccionUpdate').val();
 
-        if (!validarNombre( nombre )) {
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
@@ -180,21 +182,21 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (!validarPaterno( paterno )) {
+        if (!validarPaterno(paterno)) {
             muestraPopUpCampoNoVacio($('#paternoUpdate'));
             $('#paternoUpdate').css("border", "1px solid red");
         } else {
             $('#paternoUpdate').removeAttr('style');
             requisitos++;
         }
-        if (!validarMaterno( materno )) {
+        if (!validarMaterno(materno)) {
             muestraPopUpCampoNoVacio($('#maternoUpdate'));
             $('#maternoUpdate').css("border", "1px solid red");
         } else {
             $('#maternoUpdate').removeAttr('style');
             requisitos++;
         }
-        if (!validarEmail( email )) {
+        if (!validarEmail(email)) {
             muestraPopUpCampoNoVacio($('#correoUpdate'));
             $('#correoUpdate').css("border", "1px solid red");
         } else {
@@ -260,6 +262,8 @@ $(document).on('ready', function() {
                                 '<td>' +
                                 '<button class="btn btn-primary claseUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger claseDeleteButton">Eliminar</button>' +
+                                '<button class="btn btn-warning listaAlumnosButton">Alumnos</button>' +
+                                '<button class="btn btn-info claseReporteIndividualButton">Reporte</button>' +
                                 ' </td>'
                                 );
                     }

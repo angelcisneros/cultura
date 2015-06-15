@@ -135,6 +135,7 @@ $(document).on('ready', function() {
                                 '<button class="btn btn-primary casaUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger casaDeleteButton">Eliminar</button>' +
                                 '<button class="btn btn-warning casaImagenButton">Imagen</button>' +
+                                    '<button class="btn btn-info reporteIndividualCasa">Reporte</button>' +
                                 '</div>' +
                                 '</td>' +
                                 '</tr>'
@@ -261,6 +262,7 @@ $(document).on('ready', function() {
                                 '<button class="btn btn-primary casaUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger casaDeleteButton">Eliminar</button>' +
                                 '<button class="btn btn-warning casaImagenButton">Imagen</button>' +
+                                '<button class="btn btn-info reporteIndividualCasa">Reporte</button>'+
                                 '</div>' +
                                 '</td>'
                                 );
