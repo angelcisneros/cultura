@@ -33,13 +33,16 @@ $(document).on('ready', function() {
         $('#nombreAdd').removeAttr('style');
         var requisitos = 0;
         var nombre = $('#nombreAdd').val();
-        var paterno = $('#paternoAdd').val();
-        var materno = $('#maternoAdd').val();
-        var edad = $('#edadAdd').val();
-        var nombreTutor = $('#nombreTutorAdd').val();
-        var correo = $('#correoAdd').val();
-        var telefono = $('#telefonoAdd').val();
-        var celular = $('#celularAdd').val();
+        var sala = $('#salaAdd').val();
+        var categoria = $('#categoriaAdd').val();
+        var informacion = $('#informacionAdd').val();
+        var direccion = $('#direccionAdd').val();
+        var fecha_inicio = $('#fecha_inicioAdd').val();
+        var fecha_fin = $('#fecha_finAdd').val();
+        var asistencia_estimada = $('#asistencia_estimadaAdd').val();
+        var horario = $('#horarioAdd').val();
+        var link = $('#liknMapsAdd').val();
+        
 
         if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
@@ -50,44 +53,45 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (!validarPaterno( paterno )) {
-            muestraPopUpCampoNoVacio($('#paternoAdd'));
-            $('#paternoAdd').css("border", "1px solid red");
-        } else {
-            $('#paternoAdd').removeAttr('style');
-            cierraPopUpChiquito($('#paternoAdd'));
-            requisitos++;
-        }
-        if (!validarMaterno( materno )) {
-            muestraPopUpCampoNoVacio($('#maternoAdd'));
-            $('#maternoAdd').css("border", "1px solid red");
-        } else {
-            $('#maternoAdd').removeAttr('style');
-            cierraPopUpChiquito($('#maternoAdd'));
-            requisitos++;
-        }
-
-        if ($.isNumeric(edad)) {
-            $('#edadAdd').removeAttr('style');
-            cierraPopUpChiquito($('#edadAdd'));
-            requisitos++;
-        } else {
-            $('#edadAdd').css("border", "1px solid red");
-            muestraPopUpCampoNumerico($('#edadAdd'));
-        }
-
-
         if (!validarNombre( nombre )) {
-            muestraPopUpCampoNoVacio($('#nombreTutorAdd'));
-            $('#nombreTutorAdd').css("border", "1px solid red");
+            muestraPopUpCampoNoVacio($('#salaAdd'));
+            $('#salaAdd').css("border", "1px solid red");
         } else {
-            $('#nombreTutorAdd').removeAttr('style');
-            cierraPopUpChiquito($('#nombreTutorAdd'));
+            $('#salaAdd').removeAttr('style');
+            cierraPopUpChiquito($('#salaAdd'));
+            requisitos++;
+        }
+        if (!validarNombre( nombre )) {
+            muestraPopUpCampoNoVacio($('#categoriaAdd'));
+            $('#categoriaAdd').css("border", "1px solid red");
+        } else {
+            $('#categoriaAdd').removeAttr('style');
+            cierraPopUpChiquito($('#categoriaAdd'));
             requisitos++;
         }
 
-        requisitos += 2;
-        if (requisitos === 7) {
+        if (!validarInformacion(informacion)) {
+            muestraPopUpCampoNoVacio($('#informacionAdd'));
+            $('#informacionAdd').css("border", "1px solid red");
+            
+        } else {
+            $('#informacionAdd').removeAttr('style');
+            cierraPopUpChiquito($('#informacionAdd'));
+            requisitos++;
+        }
+
+        if (!validarInformacion(informacion)) {
+            muestraPopUpCampoNoVacio($('#direccionAdd'));
+            $('#direccionAdd').css("border", "1px solid red");
+        } else {
+            $('#direccionAdd').removeAttr('style');
+            cierraPopUpChiquito($('#direccionAdd'));
+            requisitos++;
+        }
+        
+
+        requisitos += 5;
+        if (requisitos === 10) {
 
             $.ajax({
                 type: 'POST',
@@ -106,24 +110,30 @@ $(document).on('ready', function() {
                                 '<tr valign="top" class="nuevoEvento success">' +
                                 '<td class="id">' +
                                 '<label class="nombre">' + nombre + '</label>&#32;' +
-                                '<label class="paterno">' + paterno + '</label>&#32;' +
-                                '<label class="materno">' + materno + '</label>' +
+                                '<label class="paterno">' + sala + '</label>&#32;' +
+                                '<label class="materno">' + categoria + '</label>' +
                                 '<label class="ocultar">' + respuesta[2] + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="edad">' + edad + '</label>' +
+                                '<label class="edad">' + informacion + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="nombreTutor">' + nombreTutor + '</label>' +
+                                '<label class="nombreTutor">' + direccion + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="correo">' + correo + '</label>' +
+                                '<label class="correo">' + fecha_inicio + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="telefono">' + telefono + '</label>' +
+                                '<label class="telefono">' + fecha_fin + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="celular">' + celular + '</label>' +
+                                '<label class="celular">' + asistencia_estimada + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label class="celular">' + horario + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label class="celular">' + link + '</label>' +
                                 '</td>' +
                                 '<td>' +
                                 '<div class="btn-group" role="group" aria-label="">' +
@@ -150,13 +160,15 @@ $(document).on('ready', function() {
     $('#updateEvento').on('click', function() {
         var requisitos = 0;
         var nombre = $('#nombreUpdate').val();
-        var paterno = $('#paternoUpdate').val();
-        var materno = $('#maternoUpdate').val();
-        var edad = $('#edadUpdate').val();
-        var nombreTutor = $('#nombreTutorUpdate').val();
-        var correo = $('#correoUpdate').val();
-        var telefono = $('#telefonoUpdate').val();
-        var celular = $('#celularUpdate').val();
+        var sala = $('#salaUpdate').val();
+        var categoria = $('#categoriaUpdate').val();
+        var informacion = $('#informacionUpdate').val();
+        var direccion = $('#direccionUpdate').val();
+        var fecha_inicio = $('#fecha_inicioUpdate').val();
+        var fecha_fin = $('#fecha_finUpdate').val();
+        var asistencia_estimada = $('#asistencia_estimadaUpdate').val();
+        var horario = $('#horarioUpdate').val();
+        var link = $('#liknMapsUpdate').val();
 
         if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
@@ -167,40 +179,50 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (!validarPaterno( paterno )) {
-            muestraPopUpCampoNoVacio($('#paternoUpdate'));
-            $('#paternoUpdate').css("border", "1px solid red");
+        if (!validarNombre( nombre )) {
+            muestraPopUpCampoNoVacio($('#salaUpdate'));
+            $('#salaUpdate').css("border", "1px solid red");
         } else {
-            $('#paternoUpdate').removeAttr('style');
-            cierraPopUpChiquito($('#paternoUpdate'));
+            $('#salaUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#salaUpdate'));
             requisitos++;
-        }
-        if (!validarMaterno( materno )) {
-            muestraPopUpCampoNoVacio($('#maternoUpdate'));
-            $('#maternoUpdate').css("border", "1px solid red");
-        } else {
-            $('#maternoUpdate').removeAttr('style');
-            cierraPopUpChiquito($('#maternoUpdate'));
-            requisitos++;
-        }
-        if ($.isNumeric(edad)) {
-            $('#edadUpdate').removeAttr('style');
-            cierraPopUpChiquito($('#edadUpdate'));
-            requisitos++;
-        } else {
-            $('#edadUpdate').css("border", "1px solid red");
-            muestraPopUpCampoNumerico($('#edadUpdate'));
         }
         if (!validarNombre( nombre )) {
-            muestraPopUpCampoNoVacio($('#nombreTutorUpdate'));
-            $('#nombreTutorUpdate').css("border", "1px solid red");
+            muestraPopUpCampoNoVacio($('#categoriaUpdate'));
+            $('#categoriaUpdate').css("border", "1px solid red");
         } else {
-            $('#nombreTutorUpdate').removeAttr('style');
-            cierraPopUpChiquito($('#nombreTutorUpdate'));
+            $('#categoriaUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#categoriaUpdate'));
             requisitos++;
         }
-        requisitos += 2;
-        if (requisitos === 7) {
+        
+        //if ($.isNumeric(edad)) {
+         //   $('#edadUpdate').removeAttr('style');
+          //  cierraPopUpChiquito($('#edadUpdate'));
+          //  requisitos++;
+       // } else {
+         //   $('#edadUpdate').css("border", "1px solid red");
+         //   muestraPopUpCampoNumerico($('#edadUpdate'));
+       // }
+        if (!validarInformacion( informacion )) {
+            muestraPopUpCampoNoVacio($('#informacionUpdate'));
+            $('#informacionUpdate').css("border", "1px solid red");
+        } else {
+            $('#informacionUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#informacionUpdate'));
+            requisitos++;
+        }
+        
+        if (!validarInformacion( informacion )) {
+            muestraPopUpCampoNoVacio($('#direccionUpdate'));
+            $('#direccionUpdate').css("border", "1px solid red");
+        } else {
+            $('#direccionUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#direccionUpdate'));
+            requisitos++;
+        }
+        requisitos += 5;
+        if (requisitos === 10) {
             $.ajax({
                 type: 'POST',
                 url: "editarEvento/",
@@ -218,24 +240,30 @@ $(document).on('ready', function() {
                         $(trClick).html(
                                 '<td class="id">' +
                                 '<label class="nombre">' + nombre + '</label>&#32;' +
-                                '<label class="paterno">' + paterno + '</label>&#32;' +
-                                '<label class="materno">' + materno + '</label>' +
+                                '<label class="paterno">' + sala + '</label>&#32;' +
+                                '<label class="materno">' + categoria + '</label>' +
                                 '<label class="ocultar">' + $('#idUpdate').val() + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="edad">' + edad + '</label>' +
+                                '<label class="edad">' + informacion + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="nombreTutor">' + nombreTutor + '</label>' +
+                                '<label class="nombreTutor">' + direccion + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="correo">' + correo + '</label>' +
+                                '<label class="correo">' + fecha_inicio + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="telefono">' + telefono + '</label>' +
+                                '<label class="telefono">' + fecha_fin + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="celular">' + celular + '</label>' +
+                                '<label class="celular">' + asistencia_estimada + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label class="celular">' + horario + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label class="celular">' + link + '</label>' +
                                 '</td>' +
                                 '<td>' +
                                 '<div class="btn-group" role="group" aria-label="">' +
@@ -291,18 +319,28 @@ function rellenaPopUpsDelete(selector) {
     var tr = $($($($(selector).parent())).parent()).parent();
     var id = $(tr).find('td.id label.ocultar').text();
     var nombre = $(tr).find('td.id label.nombre').text();
-    var paterno = $(tr).find('td.id label.paterno').text();
-    var materno = $(tr).find('td.id label.materno').text();
-    var edad = $(tr).find('td label.edad').text();
-    var nombreTutor = $(tr).find('td label.nombreTutor').text();
+    var sala = $(tr).find('td.id label.sala').text();
+    var categoria = $(tr).find('td.id label.categoria').text();
+    var informacion = $(tr).find('td label.informacion').text();
+    var direccion = $(tr).find('td label.direccion').text();
+    var fecha_inicio = $(tr).find('td label.fecha_inicio').text();
+    var fecha_fin = $(tr).find('td label.fecha_fin').text();
+    var asistencia_estimada = $(tr).find('td label.asistencia_estimada').text();
+    var horario = $(tr).find('td label.horario').text();
+    var link = $(tr).find('td label.liknMaps').text();
     trClick = $(tr);
 
     $('#idDelete').val(id);
     $('#nombreDelete').text(nombre);
-    $('#paternoDelete').text(paterno);
-    $('#maternoDelete').text(materno);
-    $('#edadDelete').text(edad);
-    $('#nombreTutorDelete').text(nombreTutor);
+    $('#salaDelete').text(sala);
+    $('#categoriaDelete').text(categoria);
+    $('#informacionDelete').text(informacion);
+    $('#direccionDelete').text(direccion);
+    $('#fecha_inicioDelete').text(fecha_inicio);
+    $('#fecha_finDelete').text(fecha_fin);
+    $('#asistencia_estimadaDelete').text(asistencia_estimada);
+    $('#horarioDelete').text(horario);
+    $('#liknMapsDelete').text(link);
 
     $('#popUpEventoDelete').modal('show');
 }
@@ -311,24 +349,29 @@ function rellenaPopUpUpdate(selector) {
     var tr = $($($($(selector).parent())).parent()).parent();
     var id = $(tr).find('td.id label.ocultar').text();
     var nombre = $(tr).find('td.id label.nombre').text();
-    var paterno = $(tr).find('td.id label.paterno').text();
-    var materno = $(tr).find('td.id label.materno').text();
-    var edad = $(tr).find('td label.edad').text();
-    var nombreTutor = $(tr).find('td label.nombreTutor').text();
-    var telefono = $(tr).find('td label.telefono').text();
-    var correo = $(tr).find('td label.correo').text();
-    var celular = $(tr).find('td label.celular').text();
+    var sala = $(tr).find('td.id label.sala').text();
+    var categoria = $(tr).find('td.id label.categoria').text();
+    var informacion = $(tr).find('td label.informacion').text();
+    var direccion = $(tr).find('td label.direccion').text();
+    var fecha_inicio = $(tr).find('td label.fecha_inicio').text();
+    var fecha_fin = $(tr).find('td label.fecha_fin').text();
+    var asistencia_estimada = $(tr).find('td label.asistencia_estimada').text();
+    var horario = $(tr).find('td label.horario').text();
+    var link = $(tr).find('td label.liknMaps').text();
+    
     trClick = $(tr);
 
     $('#idUpdate').val(id);
     $('#nombreUpdate').val(nombre);
-    $('#paternoUpdate').val(paterno);
-    $('#maternoUpdate').val(materno);
-    $('#edadUpdate').val(edad);
-    $('#nombreTutorUpdate').val(nombreTutor);
-    $('#correoUpdate').val(correo);
-    $('#telefonoUpdate').val(telefono);
-    $('#celularUpdate').val(celular);
+    $('#salaUpdate').val(sala);
+    $('#categoriaUpdate').val(categoria);
+    $('#informacionUpdate').val(informacion);
+    $('#direccionUpdate').val(direccion);
+    $('#fecha_inicioUpdate').val(fecha_inicio);
+    $('#fecha_finUpdate').val(fecha_fin);
+    $('#asistencia_estimadaUpdate').val(asistencia_estimada);
+    $('#horarioUpdate').val(horario);
+    $('#liknMapsUpdate').val(link);
 
     $('#popUpEventoUpdate').modal('show');
 }

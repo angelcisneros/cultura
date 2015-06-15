@@ -63,14 +63,14 @@ public @Data class Evento implements java.io.Serializable {
     @Column(name = "fecha_fin", nullable = false, length = 10)
     private Date fechaFin;
 
-    @NotBlank(message = "Ingrese la Información")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ\\s.,#&%$0-9]{2,}$", message="Verifique la Información")
     @Column(name = "informacion", nullable = false, length = 65535)
     private String informacion;
 
     @Column(name = "horario", nullable = false, length = 45)
     private String horario;
 
-    @NotBlank(message = "Debe Ingresar una Dirección")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ\\s.,#&%$0-9]{2,}$", message="Verifique la Dirección")
     @Column(name = "direccion", nullable = false, length = 105)
     private String direccion;
 
