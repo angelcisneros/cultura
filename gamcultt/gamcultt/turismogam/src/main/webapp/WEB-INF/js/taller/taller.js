@@ -35,6 +35,8 @@ $(document).on('ready', function() {
         var requisitos = 0;
         var categoria = $('#categoriaAdd').val();
         var nombre = $('#nombreAdd').val();
+        var costo = $('#costoAdd').val();
+        var horario = $('#horarioAdd').val();
         var descripcion = $('#descripcionAdd').val();
 
 
@@ -92,13 +94,20 @@ $(document).on('ready', function() {
                                 '<label class="categoria">' + $('#categoriaAdd :selected').text() + '</label>' +
                                 '</td>' +
                                 '<td>' +
+                                '<label class="costo">' + costo + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label class="horario">' + horario + '</label>' +
+                                '</td>' +
+                                '<td>' +
                                 '<label class="descripcion">' + descripcion + '</label>' +
                                 '</td>' +
                                 '<td>' +
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary tallerUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger tallerDeleteButton">Eliminar</button>' +
-                                '<button class="btn btn-success galeriaButton">Galeria</button>' +
+                                '<button class="btn btn-warning galeriaButton">Galeria</button>' +
+                                '<button class="btn btn-success reporteIndividualCasa">Reporte</button>' +
                                 '</div>' +
                                 '</td>' +
                                 '</tr>'
@@ -120,6 +129,7 @@ $(document).on('ready', function() {
         var requisitos = 0;
         var categoria = $('#categoriaUpdate').val();
         var nombre = $('#nombreUpdate').val();
+        var horario = $('#horarioUpdate').val();
         var descripcion = $('#descripcionUpdate').val();
 
         if (!validarNombre(nombre)) {
@@ -171,6 +181,11 @@ $(document).on('ready', function() {
                                 '<td>' +
                                 '<label class="categoria">' + $('#categoriaUpdate :selected').text() + '</label>' +
                                 '</td>' +
+                                '<label class="costo">' + costo + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label class="horario">' + horario + '</label>' +
+                                '</td>' +
                                 '<td>' +
                                 '<label class="descripcion">' + descripcion + '</label>' +
                                 '</td>' +
@@ -178,7 +193,8 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary tallerUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger tallerDeleteButton">Eliminar</button>' +
-                                '<button class="btn btn-success galeriaButton">Galeria</button>' +
+                                '<button class="btn btn-warning galeriaButton">Galeria</button>' +
+                                '<button class="btn btn-success reporteIndividualCasa">Reporte</button>' +
                                 '</div>' +
                                 '</td>'
                                 );

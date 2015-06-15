@@ -25,6 +25,8 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Categoria</th>
+                            <th>Costo</th>
+                            <th>Horario</th>
                             <th>Descripcion</th>
                             <th>Opciones</th>
                         </tr>
@@ -41,13 +43,20 @@
                                     <label class="categoria">${t.categoriaTaller.nombre}</label>
                                 </td>
                                 <td>
+                                    <label class="costo">${t.costo}</label>
+                                </td>
+                                <td>
+                                    <label class="horario">${t.horario}</label>
+                                </td>
+                                <td>
                                     <label class="descripcion">${t.descripcion}</label>
                                 </td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="">
                                         <button class="btn btn-primary tallerUpdateButton">Editar</button>
                                         <button class="btn btn-danger tallerDeleteButton">Eliminar</button>
-                                        <button class="btn btn-success galeriaButton">Galeria</button>
+                                        <button class="btn btn-warning galeriaButton">Galeria</button>
+                                        <button class="btn btn-success galeriaButton">Reporte</button>
                                     </div>
                                 </td>
                             </tr>
@@ -83,8 +92,15 @@
                         </c:forEach>
                     </select>
                     <br>
+                    <label>Costo:</label>
+                    <input id="costoAdd" name="costo" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">
+                    <br>
+                    <label>Horario</label>
+                    <input id="horarioAdd" name="horario" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">
+                    <br>
                     <label>Descripción:</label>
                     <input id="descripcionAdd" name="descripcion" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">
+                    
                     <br>
                 </form>
             </div>
@@ -120,6 +136,13 @@
                             <option value="${c.id}" label="${c.nombre}">${c.nombre}</option>
                         </c:forEach>
                     </select>
+                    <br>
+                    <label>Costo:</label>
+                    <input id="costoUpdate" name="costo" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">
+                    <br>
+                    <label>Horario</label>
+                    <input id="horarioUpdate" name="horario" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">
+                    <br>
                     <br>
                     <label>Descripción:</label>
                     <input id="descripcionUpdate" name="descripcion" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">

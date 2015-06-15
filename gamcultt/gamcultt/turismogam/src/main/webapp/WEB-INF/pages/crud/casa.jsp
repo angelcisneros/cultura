@@ -12,7 +12,11 @@
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-            <a id="addCasaButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Casa +</a>
+            <a class="btn btn-primary btn-lg" role="button">Agregar Nueva Casa +</a>
+            <div class="btn-group pull-right" role="group" aria-label="">                
+                <button id="reporteCasasPDF" class="btn btn-danger">Reporte PDF</button>
+                <button id="reporteCasasExcel" class="btn btn-success">Reporte Excel</button>
+            </div>
         </div>
     </div>
     <hr />
@@ -66,6 +70,7 @@
                                         <button class="btn btn-primary casaUpdateButton">Editar</button>
                                         <button class="btn btn-danger casaDeleteButton">Eliminar</button>
                                         <button class="btn btn-warning casaImagenButton">Imagen</button>
+                                        <button class="btn btn-success reporteIndividualCasa">Reporte</button>
                                     </div>
                                 </td>
                             </tr>
