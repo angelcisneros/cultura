@@ -119,27 +119,27 @@ function validarNombre(nombre) {
     return /^[a-zA-ZáéíóúÁÉÍÓÚñ\s]+$/.test(nombre);
 }
 
-function validarPaterno( paterno ){
+function validarPaterno(paterno) {
     return /^[a-zA-ZáéíóúÁÉÍÓÚñ]+$/.test(paterno);
 }
 
-function validarMaterno( materno ){
+function validarMaterno(materno) {
     return /^[a-zA-ZáéíóúÁÉÍÓÚñ]+$/.test(materno);
 }
 
-function validarTelefono(telefono){
+function validarTelefono(telefono) {
     return /^[1-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2} $/.test(telefono);
 }
 
-function validarCeleular(celular){
+function validarCeleular(celular) {
     return /^55-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2} $/.test(celular);
 }
 
-function validarInformacion(informacion){
+function validarInformacion(informacion) {
     return /^[a-zA-Zñáéíóú\s0-9]+$/.test(informacion);
 }
 
-function validarLink(link){
+function validarLink(link) {
     return /^(ht|f)tps?:\/\/\w+([\.\-\w]+)?\.([a-z]{2,4}|travel)(:\d{2,5})?(\/.*)?$/i.test(link);
 }
 
@@ -147,7 +147,7 @@ function validarNombreTaller(taller) {
     return /^[a-zA-ZáéíóúÁÉÍÓÚ\sñ]+$/.test(taller);
 }
 
-function validarDescripcion(descripcion){
+function validarDescripcion(descripcion) {
     return /^[a-zA-ZáéíóúÁÉÍÓÚ\s.#&%ñ0-9,]+$/.test(descripcion);
 }
 
@@ -212,3 +212,15 @@ $('.cambioCheck').on('change', function() {
         $(this).attr('value', false);
     }
 });
+//
+//function descargaReportes(url) {
+//    $.ajax({
+//        url: url,
+//        dataType: 'text',
+//        type: 'GET',
+//        success: function(state) {
+//            
+//        }
+//
+//    });
+//}

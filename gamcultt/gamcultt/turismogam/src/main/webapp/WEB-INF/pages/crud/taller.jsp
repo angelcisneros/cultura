@@ -214,4 +214,5 @@
 <script src="../js/taller/taller.js" charset="UTF-8"></script>
 <script src="../js/cargarImagenes.js" charset="UTF-8"></script>
 <script src="../js/taller/galeriaTaller.js" charset="UTF-8"></script>
+<script src="../js/sala/salaReporte.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>

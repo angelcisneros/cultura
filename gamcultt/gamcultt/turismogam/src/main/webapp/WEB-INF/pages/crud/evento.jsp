@@ -264,4 +264,5 @@
 
 <%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>
 <script src="../js/evento/evento.js" charset="UTF-8"></script>
+<script src="../js/evento/eventoReporte.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>

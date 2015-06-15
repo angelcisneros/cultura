@@ -228,4 +228,5 @@
 <%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>
 <script src="../js/casa/casa.js" charset="UTF-8"></script>
 <script src="../js/cargarImagenes.js" charset="UTF-8"></script>
+<script src="../js/casa/casaReporte.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>

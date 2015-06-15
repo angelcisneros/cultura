@@ -226,4 +226,5 @@
 
 <%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>
 <script src="../js/clase/clase.js" charset="UTF-8"></script>
+<script src="../js/clase/claseReporte.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>

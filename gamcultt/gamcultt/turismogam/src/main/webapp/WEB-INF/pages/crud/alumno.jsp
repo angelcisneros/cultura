@@ -221,6 +221,8 @@
     <!-- /.modal-dialog -->
 </div>
 
+<%@ include file="/WEB-INF/pages/busquedas/alumnoBusquedas.jsp"%>
 <%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>
 <script src="../js/alumno/alumno.js" charset="UTF-8"></script>
+<script src="../js/alumno/alumnoReporte.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>
