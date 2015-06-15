@@ -8,11 +8,29 @@
             <h2><strong>Clases</strong></h2>
         </div>
     </div>
-    <hr />
+    <hr>
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-            <a id="addClaseButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Clase +</a>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-inline">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Búsquedas:</span>
+                    <select id="busquedas" class="form-control" aria-describedby="basic-addon1">
+                        <option label="--TODOS--" value="0">--TODOS--</option>
+                        <option label="Por Taller" value="1" >Por Taller</option>
+                        <option label="Por Profesor" value="2" >Por Profesor</option>
+                        <option label="Por Sala" value="5" >Por Sala</option>
+                        <option label="Por Vigencia" value="5" >Por Vigencia</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 form-inline">
+                <div class="btn-group pull-right" role="group" aria-label="">
+                    <button id="addClaseButton" class="btn btn-primary">Agregar Clase</button>
+                    <button id="reporteClasesPDF" class="btn btn-danger">Reporte PDF</button>
+                    <button id="reporteClasesExcel" class="btn btn-success">Reporte Excel</button>
+                </div>
+            </div>
         </div>
     </div>
     <hr />
@@ -30,7 +48,6 @@
                             <th>Opciones</th>
                         </tr>
                     </thead>
-
                     <tbody id="claseTbody">
                         <c:forEach items="${clases}" var="c" varStatus="status">
                             <tr valign="top">
@@ -53,7 +70,8 @@
                                     <div class="btn-group" role="group" aria-label="">
                                         <button class="btn btn-primary claseUpdateButton">Editar</button>
                                         <button class="btn btn-danger claseDeleteButton">Eliminar</button>
-                                        <button class="btn btn-danger claseDeleteButton">Eliminar</button>
+                                        <button class="btn btn-warning listaAlumnosButton">Alumnos</button>
+                                        <button class="btn btn-info claseReporteIndividualButton">Reporte</button>
                                     </div>
                                 </td>
                             </tr>

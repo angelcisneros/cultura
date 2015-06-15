@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -33,7 +32,7 @@ public class AlumnoClaseController {
 
     @ResponseBody
     @RequestMapping(value = "agregarAlumnoClase", method = RequestMethod.POST)
-    public String agregarAlumnoClase(@Valid @ModelAttribute("alumnoClase") AlumnoClase alumnoClase, MultipartFile formato, BindingResult bindingResult, HttpSession session) {
+    public String agregarAlumnoClase(@Valid @ModelAttribute("alumnoClase") AlumnoClase alumnoClase, BindingResult bindingResult, HttpSession session) {
         if (session.getAttribute("usuario") == null){
             return SESION_CADUCA;
         }
