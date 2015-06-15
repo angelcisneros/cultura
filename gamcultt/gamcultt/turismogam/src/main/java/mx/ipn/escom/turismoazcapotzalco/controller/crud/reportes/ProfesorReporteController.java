@@ -13,8 +13,8 @@ import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import mx.ipn.escom.entidades.Alumno;
-import mx.ipn.escom.servicios.AlumnoServicio;
+import mx.ipn.escom.entidades.Profesor;
+import mx.ipn.escom.servicios.ProfesorServicio;
 import static mx.ipn.escom.servicios.util.Validaciones.esEntero;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,21 +28,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping("administrador/")
-public class AlumnoReporteController {
+public class ProfesorReporteController {
 
     @Autowired
-    AlumnoServicio alumnoServicio;
+    ProfesorServicio profesorServicio;
 
-    @RequestMapping(value = "reporteIndividualAlumno/{idAlumno}", method = RequestMethod.GET)
-    public void reporteIndividualAlumnoController(@PathVariable String idAlumno, HttpSession session,
+    @RequestMapping(value = "reporteIndividualProfesor/{idProfesor}", method = RequestMethod.GET)
+    public void reporteIndividualProfesorController(@PathVariable String idProfesor, HttpSession session,
             HttpServletRequest request, HttpServletResponse response) {
         if (session.getAttribute("usuario") == null) {
             return;
         }
-        if (esEntero(idAlumno)) {
-            Alumno alumno = alumnoServicio.buscarPorId(Integer.parseInt(idAlumno));
+        if (esEntero(idProfesor)) {
+            Profesor profesor = profesorServicio.buscarPorId(Integer.parseInt(idProfesor));
             response.setContentType("application/application/vnd.ms-excel");
-            response.setHeader("Content-Disposition", "attachment; filename=\"" + alumno.getNombre() + ".xls\"");
+            response.setHeader("Content-Disposition", "attachment; filename=\"" + profesor.getNombre() + ".xls\"");
             PrintWriter out;
             try {
                 out = response.getWriter();
@@ -52,25 +52,25 @@ public class AlumnoReporteController {
                 out.println("<title></title>");
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>Reporte de Alumno: " + alumno.getNombre() + alumno.getPaterno() + "</h1>");
+                out.println("<h1>Reporte de Profesor: " + profesor.getNombre() + profesor.getPaterno() + "</h1>");
                 out.println("</body>");
                 out.println("</html>");
             } catch (IOException ex) {
-                Logger.getLogger(AlumnoReporteController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ProfesorReporteController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
     }
 
-    @RequestMapping(value = "reporteAlumno", method = RequestMethod.GET)
-    public void reporteAlumnoController(HttpSession session,
+    @RequestMapping(value = "reporteProfesor", method = RequestMethod.GET)
+    public void reporteProfesorController(HttpSession session,
             HttpServletRequest request, HttpServletResponse response) {
         if (session.getAttribute("usuario") == null) {
             return;
         }
-        List<Alumno> alumnos = alumnoServicio.buscarTodos();
+        List<Profesor> profesors = profesorServicio.buscarTodos();
         response.setContentType("application/application/vnd.ms-excel");
-        response.setHeader("Content-Disposition", "attachment; filename=\"alumnos.xls\"");
+        response.setHeader("Content-Disposition", "attachment; filename=\"profesors.xls\"");
         PrintWriter out;
         try {
             out = response.getWriter();
@@ -80,15 +80,15 @@ public class AlumnoReporteController {
             out.println("<title></title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Reporte de Alumno Algo</h1>");
+            out.println("<h1>Reporte de Profesor Algo</h1>");
             out.println("<table>");
             out.println("<thead>");
             out.println("</thead>");
             out.println("<tbody>");
-            for (Alumno alumno : alumnos) {
+            for (Profesor profesor : profesors) {
                 out.println("<tr>");
-                out.println("<td>" + alumno.getNombre() + "</td>");
-                out.println("<td>" + alumno.getPaterno() + "</td>");
+                out.println("<td>" + profesor.getNombre() + "</td>");
+                out.println("<td>" + profesor.getPaterno() + "</td>");
                 out.println("</tr>");
             }
             out.println("</tbody>");
@@ -96,7 +96,7 @@ public class AlumnoReporteController {
             out.println("</body>");
             out.println("</html>");
         } catch (IOException ex) {
-            Logger.getLogger(AlumnoReporteController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProfesorReporteController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
