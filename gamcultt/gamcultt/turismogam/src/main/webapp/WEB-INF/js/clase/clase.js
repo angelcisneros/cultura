@@ -356,3 +356,5 @@ function rellenaPopUpUpdate(selector) {
 
     $('#popUpClaseUpdate').modal('show');
 }
+
+

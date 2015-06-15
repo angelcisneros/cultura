@@ -35,7 +35,7 @@ $(document).on('ready', function() {
        
         var nombreTaller = $('#nombreTallerAdd').val();
 
-        if (nombreTaller === '') {
+        if (!validarNombreTaller(taller)) {
             muestraPopUpCampoNoVacio($('#nombreTallerAdd'));
             $('#nombreTallerAdd').css("border", "1px solid red");
         } else {
@@ -95,7 +95,7 @@ $(document).on('ready', function() {
         var requisitos = 0;
         var nombreTaller = $('#nombreTallerUpdate').val();
 
-        if (nombreTaller === '') {
+        if (validarNombreTaller(taller)) {
             muestraPopUpCampoNoVacio($('#nombreTallerUpdate'));
             $('#nombreTallerUpdate').css("border", "1px solid red");
         } else {

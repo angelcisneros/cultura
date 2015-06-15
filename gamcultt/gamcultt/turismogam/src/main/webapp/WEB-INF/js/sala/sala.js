@@ -255,3 +255,5 @@ function rellenaPopUpUpdate(selector) {
     setOption($('#casaUpdate').children('option'), nombreCasa);
     $('#popUpSalaUpdate').modal('show');
 }
+
+

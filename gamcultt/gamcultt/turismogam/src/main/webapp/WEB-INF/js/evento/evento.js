@@ -332,3 +332,6 @@ function rellenaPopUpUpdate(selector) {
 
     $('#popUpEventoUpdate').modal('show');
 }
+
+
+

@@ -381,3 +381,5 @@ function rellenaPopUpUpdate(selector) {
 
     $('#popUpAlumnoUpdate').modal('show');
 }
+
+

@@ -39,7 +39,7 @@ $(document).on('ready', function() {
         var informacion = $('#informacionAdd').val();
         var link = $('#liknMapsAdd').val();
         var esCentro = $('#centroSocialAdd').prop('checked');
-        /*
+        
          if (!validarNombre(nombre)) {
          muestraPopUpCampoNoVacio($('#nombreAdd'));
          $('#nombreAdd').css("border", "1px solid red");
@@ -90,7 +90,7 @@ $(document).on('ready', function() {
          }
          if (requisitos === 6) {
          
-         */
+         
         if (true) {
             $.ajax({
                 type: 'POST',
@@ -154,7 +154,7 @@ $(document).on('ready', function() {
                 }
             });
         }
-
+        }
     });
 
     //ACTUALIZAR BASE

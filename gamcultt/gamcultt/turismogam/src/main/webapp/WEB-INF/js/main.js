@@ -111,9 +111,46 @@ function limpiarInputs() {
     });
 }
 
-function validarEmail(email) {
-    return /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email);
+function validarEmail(correo) {
+    return /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(correo);
 }
+
+function validarNombre(nombre) {
+    return /^[a-zA-ZáéíóúÁÉÍÓÚñ\s]+$/.test(nombre);
+}
+
+function validarPaterno( paterno ){
+    return /^[a-zA-ZáéíóúÁÉÍÓÚñ]+$/.test(paterno);
+}
+
+function validarMaterno( materno ){
+    return /^[a-zA-ZáéíóúÁÉÍÓÚñ]+$/.test(materno);
+}
+
+function validarTelefono(telefono){
+    return /^[1-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2} $/.test(telefono);
+}
+
+function validarCeleular(celular){
+    return /^55-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2} $/.test(celular);
+}
+
+function validarInformacion(informacion){
+    return /^ [[a-zA-ZñáéíóúÁÉÍÓÚ\s.#&$%]+$/.test(informacion);
+}
+
+function validarLink(link){
+    return /^(ht|f)tps?:\/\/\w+([\.\-\w]+)?\.([a-z]{2,4}|travel)(:\d{2,5})?(\/.*)?$/i.test(link);
+}
+
+function validarNombreTaller(taller) {
+    return /^[a-zA-ZáéíóúÁÉÍÓÚ\sñ]+$/.test(taller);
+}
+
+function validarDescripcion(descripcion){
+    return /^ [[a-zA-ZáéíóúÁÉÍÓÚ\s.#&$%ñ]+$/.test(descripcion);
+}
+
 
 function validaAndSubeImagen(input, url) {
     var file = $(input).val();

@@ -92,8 +92,6 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-
-
         if (requisitos >= 4 || requisitos <= 6) {
 
             $.ajax({

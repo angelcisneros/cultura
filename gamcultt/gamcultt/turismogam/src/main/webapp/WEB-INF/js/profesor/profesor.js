@@ -334,6 +334,3 @@ function rellenaPopUpUpdate(selector) {
     $('#popUpProfesorUpdate').modal('show');
 }
 
-
-
-

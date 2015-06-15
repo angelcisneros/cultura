@@ -40,35 +40,32 @@ $(document).on('ready', function() {
         var descripcion = $('#descripcionAdd').val();
 
 
-//        if (!validarNombre( nombre )) {
-//            muestraPopUpCampoNoVacio($('#nombreAdd'));
-//            $('#nombreAdd').css("border", "1px solid red");
-//        } else {
-//            $('#nombreAdd').removeAttr('style');
-//            cierraPopUpChiquito($('#nombreAdd'));
-//            requisitos++;
-//        }
-//        if (categoria === '0' || categoria === 0) {
-//            muestraPopUpCampoNoVacio($('#categoriaAdd'));
-//            $('#categoriaAdd').css("border", "1px solid red");
-//        } else {
-//            $('#categoriaAdd').removeAttr('style');
-//            cierraPopUpChiquito($('#categoriaAdd'));
-//            requisitos++;
-//        }
-//
-//        if (!validarDescripcion( descripcion )) {
-//            muestraPopUpCampoNoVacio($('#descripcionAdd'));
-//            $('#descripcionAdd').css("border", "1px solid red");
-//        } else {
-//            $('#descripcionAdd').removeAttr('style');
-//            cierraPopUpChiquito($('#descripcionAdd'));
-//            requisitos++;
-//        }
-//
-//
-//        if (requisitos === 3) {
-        if (true) {
+        if (!validarNombre( nombre )) {
+            muestraPopUpCampoNoVacio($('#nombreAdd'));
+            $('#nombreAdd').css("border", "1px solid red");
+        } else {
+            $('#nombreAdd').removeAttr('style');
+            cierraPopUpChiquito($('#nombreAdd'));
+            requisitos++;
+        }
+        if (categoria === '0' || categoria === 0) {
+            muestraPopUpCampoNoVacio($('#categoriaAdd'));
+            $('#categoriaAdd').css("border", "1px solid red");
+        } else {
+            $('#categoriaAdd').removeAttr('style');
+            cierraPopUpChiquito($('#categoriaAdd'));
+            requisitos++;
+        }
+
+        if (!validarDescripcion( descripcion )) {
+            muestraPopUpCampoNoVacio($('#descripcionAdd'));
+            $('#descripcionAdd').css("border", "1px solid red");
+        } else {
+            $('#descripcionAdd').removeAttr('style');          
+            cierraPopUpChiquito($('#descripcionAdd'));
+            requisitos++;
+                  }
+   if (true) {
             $.ajax({
                 type: 'POST',
                 url: "agregarTaller/",

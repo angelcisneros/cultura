@@ -35,6 +35,7 @@ $(document).on('ready', function() {
        
         var nombre = $('#nombreAdd').val();
 
+
         if (!validarNombre( nombre )) {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
             $('#nombreAdd').css("border", "1px solid red");

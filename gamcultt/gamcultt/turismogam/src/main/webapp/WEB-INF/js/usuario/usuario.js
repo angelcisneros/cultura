@@ -372,3 +372,4 @@ function radios(activar, desactivar) {
     $(desactivar).removeAttr('name');
     $(desactivar).prop('checked', false);
 }
+
