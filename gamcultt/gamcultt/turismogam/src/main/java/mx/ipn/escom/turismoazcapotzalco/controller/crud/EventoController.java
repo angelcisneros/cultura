@@ -7,10 +7,8 @@ package mx.ipn.escom.turismoazcapotzalco.controller.crud;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import mx.ipn.escom.entidades.CategoriaEvento;
 import mx.ipn.escom.entidades.Evento;
 import mx.ipn.escom.servicios.CategoriaEventoServicio;
-import mx.ipn.escom.servicios.CategoriaTallerServicio;
 import mx.ipn.escom.servicios.EventoServicio;
 import mx.ipn.escom.servicios.SalaServicio;
 import static mx.ipn.escom.servicios.util.MensajesCrud.ERROR_DATOS;
@@ -47,7 +45,6 @@ public class EventoController {
         model.addAttribute("eventos", eventoServicio.buscarTodos());
         model.addAttribute("salas", salaServicio.buscarTodos());
         model.addAttribute("categoriaEvento", CategoriaEventoServicio.buscarTodos());
-
         return "crud/evento";
     }
     

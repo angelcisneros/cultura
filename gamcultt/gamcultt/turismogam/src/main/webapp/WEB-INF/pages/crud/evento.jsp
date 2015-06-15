@@ -23,11 +23,10 @@
                 <table id="eventoTable" class="table table-striped table-bordered table-hover">
                     <thead id="eventoThead" class="text-center">
                         <tr>
+                            <th>Nombre</th>
                             <th>Sala</th>
                             <th>Categoría Evento</th>
-                            <th>Nombre</th>
-                            <th>Fecha Inicio</th>
-                            <th>Fecha Fin</th>
+                            <th>Fecha</th>
                             <th>Información</th>
                             <th>Horario</th>
                             <th>Dirección</th>
@@ -36,7 +35,6 @@
                             <th>Opciones</th>
                         </tr>
                     </thead>
-
                     <tbody id="eventoTbody">
                         <c:forEach items="${eventos}" var="e" varStatus="status">
                             <tr valign="top">
@@ -44,42 +42,31 @@
                                     <label class="nombre">${e.nombre}</label>
                                     <label class="ocultar">${e.id}</label>
                                 </td>
-                                
                                 <td>
-                                    <label class="sala">${e.sala}</label>
+                                    <label class="sala">${e.sala.nombre}</label>
                                 </td>
-                                
                                 <td>
-                                    <label class="categoria">${e.categoriaEvento.nombre}</label>
+                                    <label class="categoriaEvento">${e.categoriaEvento.nombre}</label>
+                                </td>
+                                <td>
+                                    Del <label class="fechaInicio">${e.fechaInicio}</label>
+                                    al <label class="fechaFin">${e.fechaFin}</label> 
                                 </td>
                                 <td>
                                     <label class="informacion">${e.informacion}</label>
                                 </td>
-                                
-                                <td>
-                                    <label class="fecha inicio">${e.fechaInicio}</label>
-                                </td>
-                                
-                                <td>
-                                    <label class="fecha fin">${e.fechaFin}</label>
-                                </td>
-                                
                                 <td>
                                     <label class="horario">${e.horario}</label>
                                 </td>
-                                
                                 <td>
                                     <label class="direccion">${e.direccion}</label>
                                 </td>
-                                
                                 <td>
-                                    <label class="asistencia">${e.asistencia}</label>
+                                    <label class="asistencia">${e.asistenciaEstimada}</label>
                                 </td>
-                                
                                 <td>
-                                    <label class="maps">${e.maps}</label>
+                                    <label class="maps">${e.linkMaps}</label>
                                 </td>
-                                
                                 <td>
                                     <div class="btn-group" role="group" aria-label="">
                                         <button class="btn btn-primary eventoUpdateButton">Editar</button>
@@ -111,17 +98,14 @@
                     <label>Nombre:</label>
                     <input id="nombreAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre del Evento">
                     <br>
-                    
-                    
                     <label>Sala:</label>
-                    <select id="salaAdd" name="categoriaEvento.id" class="form-control">
+                    <select id="salaAdd" name="sala.id" class="form-control">
                         <option value="0" label="Seleccione...">Seleccione...</option>
                         <c:forEach items="${salas}" var="s" varStatus="status">
                             <option value="${s.id}" label="${s.nombre}">${s.nombre}</option>
                         </c:forEach>
                     </select>
                     <br>
-                    
                     <label>Categoría:</label>
                     <select id="categoriaAdd" name="categoriaEvento.id" class="form-control">
                         <option value="0" label="Seleccione...">Seleccione...</option>
@@ -133,35 +117,33 @@
                     <label>Información:</label>
                     <input id="informacionAdd" name="informacion" class="form-control" type="text" placeholder="Ingrese Informacíón del Evento">
                     <br>
-                    
-                    <br>
                     <label>Dirección:</label>
                     <input id="direccionAdd" name="direccion" class="form-control" type="text" placeholder="Ingrese la Dirección del Evento">
                     <br>
-                    
+
                     <br>
                     <label>Fecha Inicio:</label>
-                    <input type="date" id="fechainicioAdd" name="fechaInicio" class="form-control" type="text" placeholder="Ingrese la Fecha de Inicio  del Evento">
+                    <input type="date" id="fechaInicioAdd" name="fechaInicio" class="form-control" type="text" placeholder="Ingrese la Fecha de Inicio  del Evento">
                     <br>
-                    
+
                     <br>
                     <label>Fecha Fin:</label>
-                    <input type="date" id="fechafinAdd" name="fechaFin" class="form-control" type="text" placeholder="Ingrese la Fecha de Fin del Evento">
+                    <input type="date" id="fechaFinAdd" name="fechaFin" class="form-control" type="text" placeholder="Ingrese la Fecha de Fin del Evento">
                     <br>
-                    
+
                     <br>
                     <label>Asistencia Estimada:</label>
-                    <input id="asistenciaAdd" name="asistencia" class="form-control" type="text" placeholder="Ingrese la Asistencia Estimada del Evento">
+                    <input id="asistenciaAdd" name="asistenciaEstimada" class="form-control" type="text" placeholder="Ingrese la Asistencia Estimada del Evento">
                     <br>
-                    
+
                     <br>
                     <label>Horario:</label>
                     <input id="horarioAdd" name="horario" class="form-control" type="text" placeholder="Ingrese Horario del Evento">
                     <br>
-                    
+
                     <br>
                     <label>Link:</label>
-                    <input id="linkAdd" name="link" class="form-control" type="text" placeholder="Ingrese Link del Mapa del Evento">
+                    <input id="linkAdd" name="linkMaps" class="form-control" type="text" placeholder="Ingrese Link del Mapa del Evento">
                     <br>
                 </form>
             </div>
@@ -190,6 +172,14 @@
                     <label>Nombre:</label>
                     <input id="nombreUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre del Evento">
                     <br>
+                    <label>Sala:</label>
+                    <select id="salaUpdate" name="sala.id" class="form-control">
+                        <option value="0" label="Seleccione...">Seleccione...</option>
+                        <c:forEach items="${salas}" var="s" varStatus="status">
+                            <option value="${s.id}" label="${s.nombre}">${s.nombre}</option>
+                        </c:forEach>
+                    </select>
+                    <br>
                     <label>Categoría:</label>
                     <select id="categoriaUpdate" name="categoriaEvento.id" class="form-control">
                         <option value="0" label="Seleccione...">Seleccione...</option>
@@ -197,9 +187,37 @@
                             <option value="${c.id}" label="${c.nombre}">${c.nombre}</option>
                         </c:forEach>
                     </select>
+                    <br><br>
+                    <label>Información:</label>
+                    <input id="informacionUpdate" name="informacion" class="form-control" type="text" placeholder="Ingrese Informacíón del Evento">
                     <br>
-                    <label>Descripción:</label>
-                    <input id="descripcionUpdate" name="descripcion" class="form-control" type="text" placeholder="Ingrese la Descripción del Evento">
+                    <label>Dirección:</label>
+                    <input id="direccionUpdate" name="direccion" class="form-control" type="text" placeholder="Ingrese la Dirección del Evento">
+                    <br>
+
+                    <br>
+                    <label>Fecha Inicio:</label>
+                    <input type="date" id="fechaInicioUpdate" name="fechaInicio" class="form-control" type="text" placeholder="Ingrese la Fecha de Inicio  del Evento">
+                    <br>
+
+                    <br>
+                    <label>Fecha Fin:</label>
+                    <input type="date" id="fechaFinUpdate" name="fechaFin" class="form-control" type="text" placeholder="Ingrese la Fecha de Fin del Evento">
+                    <br>
+
+                    <br>
+                    <label>Asistencia Estimada:</label>
+                    <input id="asistenciaUpdate" name="asistenciaEstimada" class="form-control" type="text" placeholder="Ingrese la Asistencia Estimada del Evento">
+                    <br>
+
+                    <br>
+                    <label>Horario:</label>
+                    <input id="horarioUpdate" name="horario" class="form-control" type="text" placeholder="Ingrese Horario del Evento">
+                    <br>
+
+                    <br>
+                    <label>Link:</label>
+                    <input id="linkUpdate" name="linkMaps" class="form-control" type="text" placeholder="Ingrese Link del Mapa del Evento">
                     <input id="idUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese la Descripción del Evento">
                 </form>
             </div>

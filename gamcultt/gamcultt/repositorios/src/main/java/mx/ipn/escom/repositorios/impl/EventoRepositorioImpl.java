@@ -11,6 +11,7 @@ import mx.ipn.escom.repositorios.EventoRepositorio;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.sql.JoinType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -78,6 +79,8 @@ public class EventoRepositorioImpl implements EventoRepositorio{
     @Override
     public List<Evento> buscarTodos() {
         return (List<Evento>) sessionFactory.getCurrentSession().createCriteria(Evento.class)
+                .createAlias("sala", "s", JoinType.INNER_JOIN)
+                .createAlias("categoriaEvento", "ce", JoinType.INNER_JOIN)
                 .list();
     }
     
