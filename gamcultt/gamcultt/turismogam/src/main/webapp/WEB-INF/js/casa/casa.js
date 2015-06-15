@@ -48,7 +48,7 @@ $(document).on('ready', function() {
          cierraPopUpChiquito($('#nombreAdd'));
          requisitos++;
          }
-         if (!validarDireccion(direccion)) {
+         if (direccion==='') {
          muestraPopUpCampoNoVacio($('#direccionAdd'));
          $('#direccionAdd').css("border", "1px solid red");
          } else {
@@ -56,7 +56,7 @@ $(document).on('ready', function() {
          cierraPopUpChiquito($('#direccionAdd'));
          requisitos++;
          }
-         if (!validarTelefono(telefono)) {
+         if (telefono==='') {
          muestraPopUpCampoNoVacio($('#telefonoAdd'));
          $('#telefonoAdd').css("border", "1px solid red");
          } else {
@@ -167,7 +167,7 @@ $(document).on('ready', function() {
         var informacion = $('#informacionUpdate').val();
         var link = $('#liknMapsUpdate').val();
         var esCentro = $('#centroSocialUpdate');
-/*
+
         if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
@@ -176,7 +176,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#nombreUpdate'));
             requisitos++;
         }
-        if (!validarDireccion(direccion)) {
+        if (direccion==='') {
             muestraPopUpCampoNoVacio($('#direccionUpdate'));
             $('#direccionUpdate').css("border", "1px solid red");
         } else {
@@ -184,7 +184,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#direccionUpdate'));
             requisitos++;
         }
-        if (!validarTelefono(telefono)) {
+        if (telefono==='') {
             muestraPopUpCampoNoVacio($('#telefonoUpdate'));
             $('#telefonoUpdate').css("border", "1px solid red");
         } else {
@@ -217,8 +217,8 @@ $(document).on('ready', function() {
             requisitos++;
         }
         if (requisitos === 6) {
-*/
-        if(true){
+
+        
             $.ajax({
                 type: 'POST',
                 url: "editarCasa/",

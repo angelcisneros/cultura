@@ -95,7 +95,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
         
-        if (!validarTelefono(telefono)) {
+        if (telefono==='') {
             muestraPopUpCampoNoVacio($('#telefonoAdd'));
             $('#telefonoAdd').css("border", "1px solid red");
         } else {
@@ -104,7 +104,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
         
-        if (!validarCeleular(celular)) {
+        if (celular==='') {
             muestraPopUpCampoNoVacio($('#celularAdd'));
             $('#celularAdd').css("border", "1px solid red");
         } else {
@@ -233,7 +233,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#correoUpdate'));
             requisitos++;
         }
-        if (!validarTelefono(telefono) ) {
+        if (telefono==='') {
             muestraPopUpCampoNoVacio($('#telefonoUpdate'));
             $('#telefonoUpdate').css("border", "1px solid red");
         } else {
@@ -241,7 +241,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#telefonoUpdate'));
             requisitos++;
         }
-         if (!validarCeleular(celular) ) {
+         if (celular==='' ) {
             muestraPopUpCampoNoVacio($('#celularUpdate'));
             $('#celularUpdate').css("border", "1px solid red");
         } else {
