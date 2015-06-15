@@ -9,7 +9,7 @@
         </div>
     </div>
     <hr />
-     <div class="row">
+    <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
             <a id="addClaseButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Clase +</a>
@@ -26,13 +26,11 @@
                             <th>Profesor</th>
                             <th>Sala</th>
                             <th>Taller</th>
-                            <th>Costo</th>
-                            <th>Horario</th>
                             <th>Status</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
-                    
+
                     <tbody id="claseTbody">
                         <c:forEach items="${clases}" var="c" varStatus="status">
                             <tr valign="top">
@@ -49,18 +47,13 @@
                                     <label>${c.taller.nombre}</label>
                                 </td>
                                 <td>
-                                    <label>${c.costo}</label>
-                                </td>
-                                 <td>
-                                    <label>${c.horario}</label>
-                                </td>
-                                <td>
                                     <label>${c.status}</label>
                                 </td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="">
-                                    <button class="btn btn-primary claseUpdateButton">Editar</button>
-                                    <button class="btn btn-danger claseDeleteButton">Eliminar</button>
+                                        <button class="btn btn-primary claseUpdateButton">Editar</button>
+                                        <button class="btn btn-danger claseDeleteButton">Eliminar</button>
+                                        <button class="btn btn-danger claseDeleteButton">Eliminar</button>
                                     </div>
                                 </td>
                             </tr>
@@ -86,35 +79,28 @@
             <div class="modal-body">
                 <form id="claseAddForm">
                     <label>Profesor:</label>
-                        <select id="profesorAdd" name="profesor.id" class="form-control">
-                            <option value="0" label="Seleccione...">Seleccione...</option>
-                            <c:forEach items="${profesores}" var="p" varStatus="status">
-                                <option value="${p.id}" label="${p.nombre} ${p.paterno} ${p.materno}">${p.nombre} ${p.paterno} ${p.materno}</option>
-                            </c:forEach>
-                        </select>
+                    <select id="profesorAdd" name="profesor.id" class="form-control">
+                        <option value="0" label="Seleccione...">Seleccione...</option>
+                        <c:forEach items="${profesores}" var="p" varStatus="status">
+                            <option value="${p.id}" label="${p.nombre} ${p.paterno} ${p.materno}">${p.nombre} ${p.paterno} ${p.materno}</option>
+                        </c:forEach>
+                    </select>
                     <br>
                     <label>Sala:</label>
-                        <select id="salaAdd" name="sala.id" class="form-control">
-                            <option value="0" label="Seleccione...">Seleccione...</option>
-                            <c:forEach items="${salas}" var="s" varStatus="status">
-                                <option value="${s.id}" label="${s.nombre}">${s.nombre}</option>
-                            </c:forEach>
-                        </select>
+                    <select id="salaAdd" name="sala.id" class="form-control">
+                        <option value="0" label="Seleccione...">Seleccione...</option>
+                        <c:forEach items="${salas}" var="s" varStatus="status">
+                            <option value="${s.id}" label="${s.nombre}">${s.nombre}</option>
+                        </c:forEach>
+                    </select>
                     <br>
                     <label>Taller:</label>
-                        <select id="tallerAdd" name="taller.id" class="form-control">
-                            <option value="0" label="Seleccione...">Seleccione...</option>
-                            <c:forEach items="${talleres}" var="t" varStatus="status">
-                                <option value="${t.id}" label="${t.nombre}">${t.nombre}</option>
-                            </c:forEach>
-                        </select>
-                    <br>
-                    <label>Costo:</label>
-                    <input id="costoAdd" name="costo" class="form-control" type="number" placeholder="Ingrese el Costo del Taller">
-                    <br>
-                    <label>Horario:</label>
-                    <input id="horarioAdd" name="horario" class="form-control" type="text" placeholder="Ingrese el Horario">
-                    <br>
+                    <select id="tallerAdd" name="taller.id" class="form-control">
+                        <option value="0" label="Seleccione...">Seleccione...</option>
+                        <c:forEach items="${talleres}" var="t" varStatus="status">
+                            <option value="${t.id}" label="${t.nombre}">${t.nombre}</option>
+                        </c:forEach>
+                    </select>
                     <label>Status:</label>
                     <input id="statusAdd" name="status" class="form-control" type="text" placeholder="Ingrese el Status">
                 </form>
@@ -142,41 +128,32 @@
             <div class="modal-body">
                 <form id="claseUpdateForm">
                     <label>Profesor:</label>
-                        <select id="profesorUpdate" name="profesor.id" class="form-control">
-                            <option value="0" label="Seleccione...">Seleccione...</option>
-                            <c:forEach items="${profesores}" var="p" varStatus="status">
-                                <option value="${p.id}" label="${p.nombre} ${p.paterno} ${p.materno}">${p.nombre} ${p.paterno} ${p.materno}</option>
-                            </c:forEach>
-                        </select>
+                    <select id="profesorUpdate" name="profesor.id" class="form-control">
+                        <option value="0" label="Seleccione...">Seleccione...</option>
+                        <c:forEach items="${profesores}" var="p" varStatus="status">
+                            <option value="${p.id}" label="${p.nombre} ${p.paterno} ${p.materno}">${p.nombre} ${p.paterno} ${p.materno}</option>
+                        </c:forEach>
+                    </select>
                     <br>
                     <label>Sala:</label>
-                        <select id="salaUpdate" name="sala.id" class="form-control">
-                            <option value="0" label="Seleccione...">Seleccione...</option>
-                            <c:forEach items="${salas}" var="s" varStatus="status">
-                                <option value="${s.id}" label="${s.nombre}">${s.nombre}</option>
-                            </c:forEach>
-                        </select>
+                    <select id="salaUpdate" name="sala.id" class="form-control">
+                        <option value="0" label="Seleccione...">Seleccione...</option>
+                        <c:forEach items="${salas}" var="s" varStatus="status">
+                            <option value="${s.id}" label="${s.nombre}">${s.nombre}</option>
+                        </c:forEach>
+                    </select>
                     <br>
                     <label>Taller:</label>
-                        <select id="talleUpdate" name="taller.id" class="form-control">
-                            <option value="0" label="Seleccione...">Seleccione...</option>
-                            <c:forEach items="${talleres}" var="t" varStatus="status">
-                                <option value="${t.id}" label="${t.nombre}">${t.nombre}</option>
-                            </c:forEach>
-                        </select>
-                    <br>
-                    <label>Costo:</label>
-                    <input id="costoUpdate" name="costo" class="form-control" type="number" placeholder="Ingrese el Costo de la Clase">
-                    <br>
-                    <label>Horario:</label>
-                    <input id="horarioUpdate" name="horario" class="form-control" type="text" placeholder="Ingrese el Horario de la Clase">
+                    <select id="talleUpdate" name="taller.id" class="form-control">
+                        <option value="0" label="Seleccione...">Seleccione...</option>
+                        <c:forEach items="${talleres}" var="t" varStatus="status">
+                            <option value="${t.id}" label="${t.nombre}">${t.nombre}</option>
+                        </c:forEach>
+                    </select>
                     <br>
                     <label>Status:</label>
                     <input id="statusUpdate" name="status" class="form-control" type="text" placeholder="Ingrese el Status de la Clase">
                     <br>
-                    
-                    
-                    
                     <input id="idUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombre del Grado">
                 </form>
             </div>

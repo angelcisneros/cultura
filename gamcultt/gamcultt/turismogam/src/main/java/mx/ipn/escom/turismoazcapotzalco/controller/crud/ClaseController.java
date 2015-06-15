@@ -37,8 +37,10 @@ public class ClaseController {
     
     @Autowired
     ProfesorServicio profesorServicio;
+    
     @Autowired
     SalaServicio salaServicio;
+    
     @Autowired
     TallerServicio tallerServicio;
     
@@ -54,7 +56,7 @@ public class ClaseController {
 
     @ResponseBody
     @RequestMapping(value = "agregarClase", method = RequestMethod.POST)
-    public String agregarClase(@Valid @ModelAttribute("clase") Clase clase, MultipartFile formato, BindingResult bindingResult, HttpSession session) {
+    public String agregarClase(@Valid @ModelAttribute("clase") Clase clase, BindingResult bindingResult, HttpSession session) {
         if (session.getAttribute("usuario") == null){
             return SESION_CADUCA;
         }
