@@ -43,10 +43,10 @@
                 <thead id="casaThead" class="text-center">
                     <tr>
                         <th>Nombre</th>
-                        <th>Direccion</th>
+                        <th>Dirección</th>
                         <th>Teléfono</th>
                         <th>Horario</th>
-                        <th>Informacion</th>
+                        <th>Información</th>
                         <th>Link Maps</th>
                         <th>Es Casa</th>
                         <th>Opciones</th>
