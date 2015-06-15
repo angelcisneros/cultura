@@ -32,15 +32,15 @@ public @Data class Casa implements java.io.Serializable {
     @Column(name = "id", unique = true, nullable = false)
     private Integer id;
 
-//    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el nombre")
+    @Pattern(regexp = "^[a-zA-Záéíóúñ]{2,}$", message="Verifique el nombre")
     @Column(name = "nombre", nullable = false, length = 85)
     private String nombre;
 
     @NotBlank(message = "Debe Ingresar una Dirección")
-//    @Column(name = "direccion", nullable = false, length = 105)
+    @Column(name = "direccion", nullable = false, length = 105)
     private String direccion;
 
-//    @Pattern(regexp = "^[1-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}$", message="Verifique el Teléfono")
+    @Pattern(regexp = "^[1-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}$", message="Verifique el Teléfono")
     @Column(name = "telefono", nullable = false, length = 20)
     private String telefono;
 
@@ -48,11 +48,11 @@ public @Data class Casa implements java.io.Serializable {
     @Column(name = "horario", nullable = false, length = 45)
     private String horario;
 
-//    @NotBlank(message = "Debe de Ingresar Información")
+    @NotBlank(message = "Debe de Ingresar Información")
     @Column(name = "informacion", nullable = false, length = 65535)
     private String informacion;
 
-//    @URL(message = "URL Invalida")
+    @URL(message = "URL Invalida")
     @Column(name = "likn_maps", length = 100)
     private String liknMaps;
     
