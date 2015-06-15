@@ -25,7 +25,7 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Correo</th>
-                            <th>Telefono</th>
+                            <th>Teléfono</th>
                             <th>Celular</th>
                             <th>Opciones</th>
                         </tr>
@@ -172,7 +172,7 @@
                     <strong><label>Correo:</label></strong>
                     <label id="correoDelete"></label>
                     <br>
-                    <strong><label>Télefono:</label></strong>
+                    <strong><label>Teléfono:</label></strong>
                     <label id="telefonoDelete"></label>
                     <br>
                     <strong><label>Celular:</label></strong>

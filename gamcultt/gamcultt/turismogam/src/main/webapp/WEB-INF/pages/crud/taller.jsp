@@ -42,10 +42,10 @@
                     <thead id="tallerThead" class="text-center">
                         <tr>
                             <th>Nombre</th>
-                            <th>Categoria</th>
+                            <th>Categoría</th>
                             <th>Costo</th>
                             <th>Horario</th>
-                            <th>Descripcion</th>
+                            <th>Descripción</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
@@ -73,7 +73,7 @@
                                     <div class="btn-group" role="group" aria-label="">
                                         <button class="btn btn-primary tallerUpdateButton">Editar</button>
                                         <button class="btn btn-danger tallerDeleteButton">Eliminar</button>
-                                        <button class="btn btn-warning galeriaButton">Galeria</button>
+                                        <button class="btn btn-warning galeriaButton">Galería</button>
                                         <button class="btn btn-info reporteIndividualTallerButton">Reporte</button>
                                     </div>
                                 </td>
@@ -95,7 +95,7 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title"><strong>Agregar Nueva Taller</strong></h4>
+                <h4 class="modal-title"><strong>Agregar Nuevo Taller</strong></h4>
             </div>
             <div class="modal-body">
                 <form id="tallerAddForm">
@@ -145,7 +145,7 @@
             <div class="modal-body">
                 <form id="tallerUpdateForm">
                     <label>Nombre:</label>
-                    <input id="nombreUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el nombre del Taller">
+                    <input id="nombreUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre del Taller">
                     <br>
                     <label>Categoría:</label>
                     <select id="categoriaUpdate" name="categoriaTaller.id" class="form-control">
@@ -156,10 +156,10 @@
                     </select>
                     <br>
                     <label>Costo:</label>
-                    <input id="costoUpdate" name="costo" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">
+                    <input id="costoUpdate" name="costo" class="form-control" type="text" placeholder="Ingrese el Costo del Taller">
                     <br>
                     <label>Horario</label>
-                    <input id="horarioUpdate" name="horario" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">
+                    <input id="horarioUpdate" name="horario" class="form-control" type="text" placeholder="Ingrese el Horario del Taller">
                     <br>
                     <br>
                     <label>Descripción:</label>
@@ -191,10 +191,10 @@
                 <form id="tallerDeleteForm">
                     <label>Nombre:</label><label id="nombreDelete"></label>
                     <br>
-                    <label>Categoria:</label><label id="categoriaDelete"></label>
+                    <label>Categoría:</label><label id="categoriaDelete"></label>
                     <br>
-                    <label>Descripcion:</label><label id="descripcionDelete"></label>
-                    <input id="idDelete" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombre del Taller">
+                    <label>Descripción:</label><label id="descripcionDelete"></label>
+                    <input id="idDelete" name="id" class="form-control ocultar" type="text" placeholder="Ingrese la Descripción del Taller">
                     <br>
                 </form>
             </div>

@@ -45,7 +45,7 @@
                             <th>Edad</th>
                             <th>Nombre Tutor</th>
                             <th>Correo</th>
-                            <th>Telefono</th>
+                            <th>Teléfono</th>
                             <th>Celular</th>
                             <th>Opciones</th>
                         </tr>
@@ -117,7 +117,7 @@
                     <input id="edadAdd" name="edad" class="form-control" type="email" placeholder="Ingrese el Edad">
                     <br>
                     <label>Nombre Tutor:</label>
-                    <input id="nombreTutorAdd" name="nombreTutor" class="form-control" type="text" placeholder="Ingrese el Nombre del tutor">
+                    <input id="nombreTutorAdd" name="nombreTutor" class="form-control" type="text" placeholder="Ingrese el Nombre del Tutor">
                     <br>
                     <label>Correo:</label>
                     <input id="correoAdd" name="correo" class="form-control" type="text" placeholder="Ingrese el Correo">
@@ -164,10 +164,10 @@
                     <input id="edadUpdate" name="edad" class="form-control" type="email" placeholder="Ingrese el Edad">
                     <br>
                     <label>Nombre Tutor:</label>
-                    <input id="nombreTutorUpdate" name="nombreTutor" class="form-control" type="text" placeholder="Ingrese el Nombre del tutor">
+                    <input id="nombreTutorUpdate" name="nombreTutor" class="form-control" type="text" placeholder="Ingrese el Nombre del Tutor">
                     <br>
                     <label>Correo:</label>
-                    <input id="correoUpdate" name="correo" class="form-control" type="text" placeholder="Ingrese el Nombre del tutor">
+                    <input id="correoUpdate" name="correo" class="form-control" type="text" placeholder="Ingrese el Nombre del Yutor">
                     <br>
                     <label>Teléfono:</label>
                     <input id="telefonoUpdate" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono">

@@ -43,7 +43,7 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Casa</th>
-                            <th>Télefono</th>
+                            <th>Teléfono</th>
                             <th>Correo</th>
                             <th>Opciones</th>
                         </tr>
@@ -114,7 +114,7 @@
                     <label>Teléfono:</label>
                     <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el teléfono">
                     <label>Correo:</label>
-                    <input id="correoAdd" name="correo" class="form-control" type="text" placeholder="Ingrese el Apellino Correo">
+                    <input id="correoAdd" name="correo" class="form-control" type="text" placeholder="Ingrese el  Correo">
                     <br>
                     <label>Cuenta:</label>
                     <br>

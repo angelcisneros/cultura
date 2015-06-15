@@ -11,7 +11,7 @@
             <div class="modal-body">
                 <form id="categoriaTallerAddForm">
                     <label>Nombre:</label>
-                    <input id="nombreTallerAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre del  la Categoría del Taller">
+                    <input id="nombreTallerAdd" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre del la Categoría del Taller">
                     <br>
                     <label>Descripción:</label>
                     <input id="descripcionTallerAdd" name="descripcion" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">
@@ -41,7 +41,7 @@
             <div class="modal-body">
                 <form id="categoriaTallerUpdateForm">
                     <label>Nombre:</label>
-                    <input id="nombreTallerUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre  de la Categoría del Taller">
+                    <input id="nombreTallerUpdate" name="nombre" class="form-control" type="text" placeholder="Ingrese el Nombre de la Categoría del Taller">
                     <br>
                     <label>Descripción:</label>
                     <input id="descripcionTallerUpdate" name="descripcion" class="form-control" type="text" placeholder="Ingrese la Descripción del Taller">

@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
-                    <h2><strong>Galeria de Imagenes</strong></h2>
+                    <h2><strong>Galería de Imágenes</strong></h2>
                     <button id="editarSliderPrincipal" type="button" class="btn btn-success pull-right">Aplicar Cambios</button>
                 </div>
             </div>

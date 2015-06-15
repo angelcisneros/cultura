@@ -110,13 +110,13 @@
                         </select>
                     <br>
                     <label>Costo:</label>
-                    <input id="costoAdd" name="costo" class="form-control" type="number" placeholder="Ingrese el costo del taller">
+                    <input id="costoAdd" name="costo" class="form-control" type="number" placeholder="Ingrese el Costo del Taller">
                     <br>
                     <label>Horario:</label>
-                    <input id="horarioAdd" name="horario" class="form-control" type="text" placeholder="Ingrese el horario">
+                    <input id="horarioAdd" name="horario" class="form-control" type="text" placeholder="Ingrese el Horario">
                     <br>
                     <label>Status:</label>
-                    <input id="statusAdd" name="status" class="form-control" type="text" placeholder="Ingrese el status">
+                    <input id="statusAdd" name="status" class="form-control" type="text" placeholder="Ingrese el Status">
                 </form>
             </div>
             <div class="modal-footer amarillo">

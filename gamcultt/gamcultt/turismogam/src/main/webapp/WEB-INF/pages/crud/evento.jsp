@@ -141,7 +141,7 @@
                     
                     <br>
                     <label>Fecha Inicio:</label>
-                    <input type="date" id="fechainicioAdd" name="fechaInicio" class="form-control" type="text" placeholder="Ingrese la fecha de Inicio  del Evento">
+                    <input type="date" id="fechainicioAdd" name="fechaInicio" class="form-control" type="text" placeholder="Ingrese la Fecha de Inicio  del Evento">
                     <br>
                     
                     <br>
@@ -161,7 +161,7 @@
                     
                     <br>
                     <label>Link:</label>
-                    <input id="linkAdd" name="link" class="form-control" type="text" placeholder="Ingrese link del Mapa del Evento">
+                    <input id="linkAdd" name="link" class="form-control" type="text" placeholder="Ingrese Link del Mapa del Evento">
                     <br>
                 </form>
             </div>

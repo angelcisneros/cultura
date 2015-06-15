@@ -25,7 +25,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-inline">
                         <div class="btn-group pull-right" role="group" aria-label="">
-                            <button id="addCategoriaTallerButton" class="btn btn-primary">Agregar Categoria Taller</button>
+                            <button id="addCategoriaTallerButton" class="btn btn-primary">Agregar CategorÍa Taller</button>
                             <button id="reporteCategoriasTallerPDF" class="btn btn-danger">Reporte PDF</button>
                             <button id="reporteCategoriasTallerExcel" class="btn btn-success">Reporte Excel</button>
                         </div>
@@ -41,7 +41,7 @@
                             <thead id="categoriaTallerThead" class="text-center">
                                 <tr>
                                     <th>Nombre Taller</th>
-                                    <th>descripción</th>
+                                    <th>Descripción</th>
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
@@ -84,7 +84,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-inline">
                         <div class="btn-group pull-right" role="group" aria-label="">
-                            <button id="addCategoriaEventoButton" class="btn btn-primary">Agregar Categoria Alumno</button>
+                            <button id="addCategoriaEventoButton" class="btn btn-primary">Agregar Categoría Alumno</button>
                             <button id="reporteCategoriasEventoPDF" class="btn btn-danger">Reporte PDF</button>
                             <button id="reporteCategoriasEventoExcel" class="btn btn-success">Reporte Excel</button>
                         </div>
