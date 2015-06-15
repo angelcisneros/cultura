@@ -98,7 +98,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#maternoAdd'));
             requisitos++;
         }
-        if (!validarTelefono( telefono )) {
+        if (telefono==='') {
             muestraPopUpCampoNoVacio($('#telefonoAdd'));
             $('#telefonoAdd').css("border", "1px solid red");
         } else {
@@ -214,7 +214,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#maternoUpdate'));
             requisitos++;
         }
-        if (!validarTelefono( telefono )) {
+        if (telefono==='') {
             $('#telefonoUpdate').removeAttr('style');
             cierraPopUpChiquito($('#lefonoteUpdate'));
             requisitos++;
