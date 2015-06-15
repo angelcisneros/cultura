@@ -12,7 +12,26 @@
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-            <a id="addSalaButton" class="btn btn-primary btn-lg" role="button">Agregar Nuevo Sala +</a>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-inline">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Búsquedas:</span>
+                    <select id="busquedas" class="form-control" aria-describedby="basic-addon1">
+                        <option label="--TODOS--" value="0">--TODOS--</option>
+                        <option label="Por Nombre" value="1" >Por Nombre</option>
+                        <option label="Por Capacidad" value="2" >Por Capacidad</option>
+                        <option label="Por Casa" value="5" >Por Casa</option>
+                        <option label="Por Clase" value="5" >Por Clase</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 form-inline">
+                <div class="btn-group pull-right" role="group" aria-label="">
+                    <button id="addSalaButton" class="btn btn-primary">Agregar Sala</button>
+                    <button id="reporteSalasPDF" class="btn btn-danger">Reporte PDF</button>
+                    <button id="reporteSalasExcel" class="btn btn-success">Reporte Excel</button>
+                    <button class="btn btn-info ProfesorReporteIndividualButton">Reporte</button>
+                </div>
+            </div>
         </div>
     </div>
     <hr />
@@ -47,6 +66,7 @@
                                     <div class="btn-group" role="group" aria-label="">
                                         <button class="btn btn-primary salaUpdateButton">Editar</button>
                                         <button class="btn btn-danger salaDeleteButton">Eliminar</button>
+                                        <button class="btn btn-info salaReporteIndividualButton">Reporte</button>
                                     </div>
                                 </td>
                             </tr>

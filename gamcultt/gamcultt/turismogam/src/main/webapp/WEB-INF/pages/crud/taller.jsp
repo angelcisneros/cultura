@@ -8,11 +8,29 @@
             <h2><strong>Talleres</strong></h2>
         </div>
     </div>
-    <hr />
+     <hr />
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-            <a id="addTallerButton" class="btn btn-primary btn-lg" role="button">Agregar Nuevo Taller +</a>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-inline">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Búsquedas:</span>
+                    <select id="busquedas" class="form-control" aria-describedby="basic-addon1">
+                        <option label="--TODOS--" value="0">--TODOS--</option>
+                        <option label="Por Nombre" value="1" >Por Nombre</option>
+                        <option label="Por Clase" value="2" >Por Clase</option>
+                        <option label="Por Sala" value="5" >Por Sala</option>
+                        <option label="Por Precio" value="5" >Por Precio</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 form-inline">
+                <div class="btn-group pull-right" role="group" aria-label="">
+                    <button id="addTallerButton" class="btn btn-primary">Agregar Taller</button>
+                    <button id="reporteTalleresPDF" class="btn btn-danger">Reporte PDF</button>
+                    <button id="reporteTalleresExcel" class="btn btn-success">Reporte Excel</button>
+                </div>
+            </div>
         </div>
     </div>
     <hr />
@@ -56,7 +74,7 @@
                                         <button class="btn btn-primary tallerUpdateButton">Editar</button>
                                         <button class="btn btn-danger tallerDeleteButton">Eliminar</button>
                                         <button class="btn btn-warning galeriaButton">Galeria</button>
-                                        <button class="btn btn-success galeriaButton">Reporte</button>
+                                        <button class="btn btn-info reporteIndividualTallerButton">Reporte</button>
                                     </div>
                                 </td>
                             </tr>

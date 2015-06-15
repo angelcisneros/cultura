@@ -5,14 +5,32 @@
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 ">
-            <h2><strong>Usuarios</strong></h2>
+            <h2><strong>Encargados</strong></h2>
         </div>
     </div>
-    <hr />
-    <div class="row">
+    <hr>
+     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-            <a id="addUsuarioButton" class="btn btn-primary btn-lg" role="button">Agregar Nuevo Usuario +</a>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-inline">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Búsquedas:</span>
+                    <select id="busquedas" class="form-control" aria-describedby="basic-addon1">
+                        <option label="--TODOS--" value="0">--TODOS--</option>
+                        <option label="Por Nombre" value="1" >Por Clase</option>
+                        <option label="Por Casa" value="2" >Por Casa</option>
+                        <option label="Por Correo" value="5" >Por Correo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 form-inline">
+                <div class="btn-group pull-right" role="group" aria-label="">
+                    <button id="addUsuarioButton" class="btn btn-primary">Agregar Encargado</button>
+                    <button id="reporteUsuariosPDF" class="btn btn-danger">Reporte PDF</button>
+                    <button id="reporteUsuariosExcel" class="btn btn-success">Reporte Excel</button>
+                    <button class="btn btn-info reporteIndividualUsuarioButton">Reporte</button>
+                </div>
+            </div>
         </div>
     </div>
     <hr />
@@ -25,7 +43,8 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Casa</th>
-                            <th>telefono</th>
+                            <th>Télefono</th>
+                            <th>Correo</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>

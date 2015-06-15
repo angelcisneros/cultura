@@ -8,11 +8,29 @@
             <h2><strong>Profesores</strong></h2>
         </div>
     </div>
-    <hr />
+     <hr />
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-            <a id="addProfesorButton" class="btn btn-primary btn-lg" role="button">Agregar Nuevo Profesor +</a>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-inline">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Búsquedas:</span>
+                    <select id="busquedas" class="form-control" aria-describedby="basic-addon1">
+                        <option label="--TODOS--" value="0">--TODOS--</option>
+                        <option label="Por Nombre" value="1" >Por Nombre</option>
+                        <option label="Por Taller" value="2" >Por Taller</option>
+                        <option label="Por Edad" value="5" >Por Edad</option>
+                        <option label="Por Correo" value="5" >Por Correo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 form-inline">
+                <div class="btn-group pull-right" role="group" aria-label="">
+                    <button id="addProfesorButton" class="btn btn-primary">Agregar Profesor</button>
+                    <button id="reporteProfesoresPDF" class="btn btn-danger">Reporte PDF</button>
+                    <button id="reporteProfesoresExcel" class="btn btn-success">Reporte Excel</button>
+                </div>
+            </div>
         </div>
     </div>
     <hr />
@@ -53,6 +71,7 @@
                                     <div class="btn-group" role="group" aria-label="">
                                         <button class="btn btn-primary profesorUpdateButton">Editar</button>
                                         <button class="btn btn-danger profesorDeleteButton">Eliminar</button>
+                                        <button class="btn btn-info profesorReporteIndividualButton">Reporte</button>
                                     </div>
                                 </td>
                             </tr>

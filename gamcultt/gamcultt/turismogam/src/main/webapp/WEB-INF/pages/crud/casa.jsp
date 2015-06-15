@@ -5,82 +5,95 @@
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 ">
-            <h2><strong>Casas</strong></h2>
+            <h2><strong>Casas y Centros Sociales</strong></h2>
         </div>
     </div>
     <hr />
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-            <a class="btn btn-primary btn-lg" role="button">Agregar Nueva Casa +</a>
-            <div class="btn-group pull-right" role="group" aria-label="">                
-                <button id="reporteCasasPDF" class="btn btn-danger">Reporte PDF</button>
-                <button id="reporteCasasExcel" class="btn btn-success">Reporte Excel</button>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-inline">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Búsquedas:</span>
+                    <select id="busquedas" class="form-control" aria-describedby="basic-addon1">
+                        <option label="--TODOS--" value="0">--TODOS--</option>
+                        <option label="Por Talleres" value="1" >Por Talleres</option>
+                        <option label="Por Salas" value="2" >Por Salas</option>
+                        <option label="Por Profesores" value="5" >Por Profesores</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 form-inline">
+                <div class="btn-group pull-right" role="group" aria-label="">
+                    <button id="addCasaButton" class="btn btn-primary">Agregar Casa</button>
+                    <button id="reporteCasasPDF" class="btn btn-danger">Reporte PDF</button>
+                    <button id="reporteCasasExcel" class="btn btn-success">Reporte Excel</button>
+                </div>
             </div>
         </div>
+
     </div>
-    <hr />
-    <div class="row">
-        <div class="col-md-1 col-lg-1"></div>
-        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-            <div class="row table-responsive">
-                <table id="casaTable" class="table table-striped table-bordered table-hover">
-                    <thead id="casaThead" class="text-center">
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Direccion</th>
-                            <th>Telefono</th>
-                            <th>Horario</th>
-                            <th>Informacion</th>
-                            <th>Link Maps</th>
-                            <th>Es Casa</th>
-                            <th>Opciones</th>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-1 col-lg-1"></div>
+    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+        <div class="row table-responsive">
+            <table id="casaTable" class="table table-striped table-bordered table-hover">
+                <thead id="casaThead" class="text-center">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Horario</th>
+                        <th>Informacion</th>
+                        <th>Link Maps</th>
+                        <th>Es Casa</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="casaTbody">
+                    <c:forEach items="${casas}" var="c" varStatus="status">
+                        <tr valign="top">
+                            <td class="id">
+                                <label class="nombre">${c.nombre}</label>&#32;
+                                <label class="ocultar">${c.id}</label>
+                            </td>
+                            <td>
+                                <label class="direccion">${c.direccion}</label>&#32;
+                            </td>
+                            <td>
+                                <label class="telefono">${c.telefono}</label>
+                            </td>
+                            <td>
+                                <label class="horario">${c.horario}</label>
+                            </td>                                    
+                            <td>
+                                <label class="informacion">${c.informacion}</label>
+                            </td>                                    
+                            <td>
+                                <label class="liknMaps">${c.liknMaps}</label>
+                            </td>
+                            <td>
+                                <label class="esCentro">${c.esCentro}</label>
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="">
+                                    <button class="btn btn-primary casaUpdateButton">Editar</button>
+                                    <button class="btn btn-danger casaDeleteButton">Eliminar</button>
+                                    <button class="btn btn-warning casaImagenButton">Imagen</button>
+                                    <button class="btn btn-info reporteIndividualCasa">Reporte</button>
+                                </div>
+                            </td>
                         </tr>
-                    </thead>
-
-                    <tbody id="casaTbody">
-                        <c:forEach items="${casas}" var="c" varStatus="status">
-                            <tr valign="top">
-                                <td class="id">
-                                    <label class="nombre">${c.nombre}</label>&#32;
-                                    <label class="ocultar">${c.id}</label>
-                                </td>
-                                <td>
-                                    <label class="direccion">${c.direccion}</label>&#32;
-                                </td>
-                                <td>
-                                    <label class="telefono">${c.telefono}</label>
-
-                                </td>
-                                <td>
-                                    <label class="horario">${c.horario}</label>
-
-                                </td>                                    
-                                <td>
-                                    <label class="informacion">${c.informacion}</label>
-                                </td>                                    
-                                <td>
-                                    <label class="liknMaps">${c.liknMaps}</label>
-                                </td>
-                                <td>
-                                    <label class="esCentro">${c.esCentro}</label>
-                                </td>
-                                <td>
-                                    <div class="btn-group" role="group" aria-label="">
-                                        <button class="btn btn-primary casaUpdateButton">Editar</button>
-                                        <button class="btn btn-danger casaDeleteButton">Eliminar</button>
-                                        <button class="btn btn-warning casaImagenButton">Imagen</button>
-                                        <button class="btn btn-success reporteIndividualCasa">Reporte</button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
-            </div>
+                    </c:forEach>
+                </tbody>
+            </table>
         </div>
-        <div class="col-md-1 col-lg-1"></div>
     </div>
+    <div class="col-md-1 col-lg-1"></div>
+</div>
 </div>
 
 <!-- POPUP AGREGAR ALUMNO -->

@@ -19,11 +19,17 @@
                     <h2><strong>Categorías Talleres</strong></h2>
                 </div>
             </div>
-            <hr />
+            <hr>
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-                    <a id="addCategoriaTallerButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Categoría Taller</a>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-inline">
+                        <div class="btn-group pull-right" role="group" aria-label="">
+                            <button id="addCategoriaTallerButton" class="btn btn-primary">Agregar Categoria Taller</button>
+                            <button id="reporteCategoriasTallerPDF" class="btn btn-danger">Reporte PDF</button>
+                            <button id="reporteCategoriasTallerExcel" class="btn btn-success">Reporte Excel</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr />
@@ -54,6 +60,7 @@
                                                 <button class="btn btn-primary categoriaTallerUpdateButton">Editar</button>
                                                 <button class="btn btn-danger categoriaTallerDeleteButton">Eliminar</button>
                                                 <button class="btn btn-warning categoriaTallerImagenButton">Imagen</button>
+                                                <button class="btn btn-info categoriaTallerReporteIndividualButton">Reporte</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -71,12 +78,17 @@
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
                     <h2><strong>Categorias de Eventos</strong></h2>
                 </div>
-            </div>
-            <hr />
+            </div><hr>
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 form-inline">
-                    <a id="addCategoriaEventoButton" class="btn btn-primary btn-lg" role="button">Agregar Nueva Categoría de Evento</a>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-inline">
+                        <div class="btn-group pull-right" role="group" aria-label="">
+                            <button id="addCategoriaEventoButton" class="btn btn-primary">Agregar Categoria Alumno</button>
+                            <button id="reporteCategoriasEventoPDF" class="btn btn-danger">Reporte PDF</button>
+                            <button id="reporteCategoriasEventoExcel" class="btn btn-success">Reporte Excel</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr />
@@ -88,6 +100,7 @@
                             <thead id="categoriaEventoThead" class="text-center">
                                 <tr>
                                     <th>Nombre</th>
+                                    <th>Descripión</th>
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
@@ -99,10 +112,14 @@
                                             <label id="${ce.id}" class="ocultar">${ce.id}</label>
                                         </td>
                                         <td>
+                                            <label class="descripcion">${ce.descripcion}</label>
+                                        </td>
+                                        <td>
                                             <div class="btn-group" role="group" aria-label="">
                                                 <button class="btn btn-primary categoriaEventoUpdateButton">Editar</button>
                                                 <button class="btn btn-danger categoriaEventoDeleteButton">Eliminar</button>
                                                 <button class="btn btn-warning categoriaEventoImagenButton">Imagen</button>
+                                                <button class="btn btn-info categoriaEventoReporteIndividualButton">Reporte</button>
                                             </div>
                                         </td>
                                     </tr>
