@@ -136,7 +136,7 @@ function validarCeleular(celular){
 }
 
 function validarInformacion(informacion){
-    return /^ [a-zA-Zñáéíóú\s0-9]+$/.test(informacion);
+    return /^[a-zA-Zñáéíóú\s0-9]+$/.test(informacion);
 }
 
 function validarLink(link){
@@ -148,7 +148,7 @@ function validarNombreTaller(taller) {
 }
 
 function validarDescripcion(descripcion){
-    return /^ [a-zA-ZáéíóúÁÉÍÓÚ\s.#&%ñ0-9,]+$/.test(descripcion);
+    return /^[a-zA-ZáéíóúÁÉÍÓÚ\s.#&%ñ0-9,]+$/.test(descripcion);
 }
 
 

@@ -33,16 +33,16 @@ public @Data class Sala implements java.io.Serializable {
     @Column(name = "id", unique = true, nullable = false)
     private Integer id;
 
-    @NotBlank(message = "Seleccione una Casa")
+    //@NotBlank(message = "Seleccione una Casa")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "casa", nullable = false)
     private Casa casa;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ\\s]{2,}$", message="Verifique el nombre")
+   // @Pattern(regexp = "^[a-zA-Záéíóúñ\\s]{2,}$", message="Verifique el nombre")
     @Column(name = "nombre", nullable = false, length = 95)
     private String nombre;
 
-    @Min(value=25, message = "Verifique la Capacidad")
+    //@Min(value=25, message = "Verifique la Capacidad")
     @Column(name = "capacidad", nullable = false)
     private int capacidad;
 

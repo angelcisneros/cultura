@@ -53,7 +53,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (!validarNombre( nombre )) {
+        if (sala === ' ') {
             muestraPopUpCampoNoVacio($('#salaAdd'));
             $('#salaAdd').css("border", "1px solid red");
         } else {
@@ -61,7 +61,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#salaAdd'));
             requisitos++;
         }
-        if (!validarNombre( nombre )) {
+        if (categoria === ' '  ) {
             muestraPopUpCampoNoVacio($('#categoriaAdd'));
             $('#categoriaAdd').css("border", "1px solid red");
         } else {
@@ -88,6 +88,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#direccionAdd'));
             requisitos++;
         }
+        
         
 
         requisitos += 5;
@@ -179,7 +180,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (!validarNombre( nombre )) {
+        if (sala === '0' || sala === 0) {
             muestraPopUpCampoNoVacio($('#salaUpdate'));
             $('#salaUpdate').css("border", "1px solid red");
         } else {
@@ -187,7 +188,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#salaUpdate'));
             requisitos++;
         }
-        if (!validarNombre( nombre )) {
+        if (categoria === '0' || categoria === 0) {
             muestraPopUpCampoNoVacio($('#categoriaUpdate'));
             $('#categoriaUpdate').css("border", "1px solid red");
         } else {
