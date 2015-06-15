@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="inicio">GAM
-               <!-- <img alt="GAM" src="../images/logo.png">-->
+               <!-- <img alt="GAM" src="../images/logo.png" class="">-->
             </a>
         </div>
 
@@ -21,6 +21,7 @@
                 <li><a href="profesors">Profesores</a></li>
                 <li><a href="salas">Salas</a></li>
                 <li><a href="tallers">Talleres</a></li>
+                <li><a href="clases">Clases</a></li>
                 <li><a href="eventos">Eventos</a></li>
                 <li><a href="usuarios">Usuarios</a></li>
                 <li><a href="categorias">Categorias</a></li>

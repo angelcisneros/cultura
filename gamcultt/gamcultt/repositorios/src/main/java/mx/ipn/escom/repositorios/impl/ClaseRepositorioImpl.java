@@ -11,6 +11,7 @@ import mx.ipn.escom.repositorios.ClaseRepositorio;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.sql.JoinType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -78,6 +79,9 @@ public class ClaseRepositorioImpl implements ClaseRepositorio{
     @Override
     public List<Clase> buscarTodos() {
         return (List<Clase>) sessionFactory.getCurrentSession().createCriteria(Clase.class)
+                .createAlias("profesor", "p",  JoinType.INNER_JOIN)
+                .createAlias("taller", "t",  JoinType.INNER_JOIN)
+                .createAlias("sala", "s",  JoinType.INNER_JOIN)
                 .list();
     }
     
