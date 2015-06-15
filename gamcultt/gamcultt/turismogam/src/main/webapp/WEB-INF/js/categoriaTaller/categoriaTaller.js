@@ -30,17 +30,17 @@ $(document).on('ready', function() {
 
     //AGREGAR EN BASE
     $('#addCategoriaTaller').on('click', function() {
-        $('#nombreTallerAdd').removeAttr('style');
+        $('#tallerAdd').removeAttr('style');
         var requisitos = 0;
-       
-        var nombreTaller = $('#nombreTallerAdd').val();
+      
+        var taller = $('#tallerAdd').val();
 
         if (!validarNombreTaller(taller)) {
-            muestraPopUpCampoNoVacio($('#nombreTallerAdd'));
-            $('#nombreTallerAdd').css("border", "1px solid red");
+            muestraPopUpCampoNoVacio($('#tallerAdd'));
+            $('#tallerAdd').css("border", "1px solid red");
         } else {
-            $('#nombreTallerAdd').removeAttr('style');
-            cierraPopUpChiquito($('#nombreTallerAdd'));
+            $('#tallerAdd').removeAttr('style');
+            cierraPopUpChiquito($('#tallerAdd'));
             requisitos++;
         }
 
@@ -62,7 +62,7 @@ $(document).on('ready', function() {
                         $("#categoriaTallerTbody").prepend(
                                 '<tr valign="top" class="success nuevoCategoriaTaller">' +
                                 '<td class="id">' +
-                                '<label class="nombreTaller">' + nombreTaller + '</label>' +
+                                '<label class="nombreTaller">' + taller + '</label>' +
                                 '<label class="ocultar">' + respuesta[2] + '</label>' +
                                 '</td>' +
                                 '<td>' +
@@ -91,16 +91,16 @@ $(document).on('ready', function() {
 //
     //ACTUALIZAR BASE
     $('#updateCategoriaTaller').on('click', function() {
-        $('#nombreTallerUpdate').removeAttr('style');
+        $('#tallerUpdate').removeAttr('style');
         var requisitos = 0;
-        var nombreTaller = $('#nombreTallerUpdate').val();
+        var taller = $('#tallerUpdate').val();
 
         if (validarNombreTaller(taller)) {
-            muestraPopUpCampoNoVacio($('#nombreTallerUpdate'));
-            $('#nombreTallerUpdate').css("border", "1px solid red");
+            muestraPopUpCampoNoVacio($('#tallerUpdate'));
+            $('#tallerUpdate').css("border", "1px solid red");
         } else {
-            $('#nombreTallerUpdate').removeAttr('style');
-            cierraPopUpChiquito($('#nombreTallerUpdate'));
+            $('#tallerUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#tallerUpdate'));
             requisitos++;
         }
 
@@ -122,7 +122,7 @@ $(document).on('ready', function() {
                         $(trClick).html(
                                 //'<tr valign="top" class="success nuevoCategoriaTaller">'+
                                 '<td class="id">' +
-                                '<label class="nombreTaller">' + nombreTaller + '</label>' +
+                                '<label class="nombreTaller">' + taller + '</label>' +
                                 '<label class="ocultar">' + $('#idTallerUpdate').val() + '</label>' +
                                 '</td>' +
                                 '<td>' +
