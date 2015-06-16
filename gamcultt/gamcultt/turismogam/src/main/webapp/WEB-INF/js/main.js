@@ -219,8 +219,19 @@ function intercambiaElementos(elemento){
     $(elemento).appendTo('#busquedasDivPrincipal');
 }
 
-function recargaTbody(){
-    
+function limpiarBusquedas(){
+    var elemento1 = $('#busquedasDivPrincipal').children('div.row');
+    $(elemento1).appendTo('#busquedasDivOculto');
+}
+
+function recargaTbody(selector, url, parametro){
+    $(selector).load(url, parametro, function(response, status, xhr) {
+        if (status === "error") {
+            var msg = "Sorry but there was an error: ";
+            console.log('no hice consulta: ' + msg);
+            //$("#info").html(msg + xhr.status + " " + xhr.statusText);
+        }
+    });
 }
 
 //
