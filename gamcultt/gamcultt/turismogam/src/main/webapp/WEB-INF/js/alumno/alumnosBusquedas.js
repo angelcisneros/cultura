@@ -37,13 +37,19 @@ $('#porTallerButton').on('click', function() {
 $('#porEdadButton').on('click', function() {
     var edadMin = $('#porEdadMin').val();
     var edadMax = $('#porEdadMax').val();
-    recargaTbody($(body), "", id);
+    edadMin = edadMin + ',' + edadMax;
+    recargaTbody($(body), "buscarAlumnoPorEdad", {'edadCompleta': edadMin});
 });
 
 $('#porNombreButton').on('click', function() {
-    recargaTbody($(body), "", id);
+    var nombre = $('#porNombre').val();
+    var paterno = $('#porPaterno').val();
+    var materno = $('#porMaterno').val();
+    nombre = nombre + ',' + paterno + ',' + materno;
+    recargaTbody($(body), "buscarAlumnoPorNombre", {'nombreCompleto': nombre});
 });
 
 $('#porCorreoButton').on('click', function() {
-    recargaTbody($(body), "", id);
+    var correo = $('#porCorreo').val();
+    recargaTbody($(body), "buscarAlumnoPorCorreo", {'correo': correo});
 });
