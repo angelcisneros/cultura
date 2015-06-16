@@ -12,6 +12,7 @@ $(document).on('ready', function() {
         switch (str) {
             case 0:
                 limpiarBusquedas();
+                recargaTbody($(body), "buscarTodasCasas");
             break;
             case 1:
                 intercambiaElementos($('#porNombreDiv'));
