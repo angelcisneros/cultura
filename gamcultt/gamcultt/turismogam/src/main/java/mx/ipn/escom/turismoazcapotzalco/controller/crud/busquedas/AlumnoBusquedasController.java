@@ -26,6 +26,15 @@ public class AlumnoBusquedasController {
     @Autowired
     AlumnoServicio alumnoServicio;
 
+    @RequestMapping(value = "buscarTodosAlumnos", method = RequestMethod.POST)
+    public String buscarTodasCasas(@RequestParam String nada, HttpSession session, Model model) {
+        if (session.getAttribute("usuario") == null) {
+            return SESION_CADUCA;
+        }
+        model.addAttribute("alumnos", alumnoServicio.buscarTodos());
+        return "crud/alumnoBody";
+    }
+    
     @RequestMapping(value = "buscarAlumnoPorCorreo", method = RequestMethod.POST)
     public String buscarAlumnoPorCorreo(@RequestParam String correo, HttpSession session, Model model) {
         if (session.getAttribute("usuario") == null) {

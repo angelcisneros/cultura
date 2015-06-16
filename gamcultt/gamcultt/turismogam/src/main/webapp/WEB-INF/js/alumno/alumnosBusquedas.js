@@ -12,6 +12,7 @@ $(document).on('ready', function() {
         switch (str) {
             case 0:
                 limpiarBusquedas();
+                recargaTbody($(body), "buscarTodosAlumnos", {'nada':''});
                 break;
             case 1:
                 intercambiaElementos($('#porTallerDiv'));
