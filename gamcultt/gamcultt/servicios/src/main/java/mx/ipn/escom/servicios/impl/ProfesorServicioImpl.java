@@ -27,6 +27,9 @@ public class ProfesorServicioImpl implements ProfesorServicio{
     
     @Autowired
     ProfesorRepositorio profesorRepositorio;
+    
+      
+        
     private static final String PROFESOR = "un profesor.#";
     
      @Override
@@ -70,6 +73,24 @@ public class ProfesorServicioImpl implements ProfesorServicio{
     @Override
     public Profesor buscarPorId(Integer id) {
        return profesorRepositorio.buscarPorId(id);
+    }
+
+    @Override
+    public List<Profesor> buscarPorCorreo(String correop) {
+        return profesorRepositorio.buscarPorCorreo(correop);
+    }
+
+   
+    @Override
+    public List<Profesor> buscarPorNombre(String nombre) {
+        String[] nombreCompletop = nombre.split(",");
+        return profesorRepositorio.buscarPorNombre(nombreCompletop[0] ,nombreCompletop[1],nombreCompletop[2]);
+    }
+
+    @Override
+    public List<Profesor> buscarPorEdad(String edadCompletap) {
+        String[] edad = edadCompletap.split(",");
+        return profesorRepositorio.buscarPorEdad(edad[0],edad[1]);
     }
 }
 

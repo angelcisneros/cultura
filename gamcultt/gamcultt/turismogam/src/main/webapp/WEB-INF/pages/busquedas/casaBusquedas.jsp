@@ -8,7 +8,7 @@
             
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Nombre(s):</span>
-                <input id="porNombre" class="form-control" type="text" placeholder="Edad Mínima" aria-describedby="basic-addon1"/>
+                <input id="porNombre" class="form-control" type="text" placeholder="Nombre Casa " aria-describedby="basic-addon1"/>
             </div>
             
             
@@ -18,21 +18,20 @@
         <button id="porNombreButton" type="button" class="btn btn-primary btn-large pull-right">Buscar</button>
     </div>
 
-    <%-- Por Sala
-    <div class="row" id="porEdadDiv">
+   <div class="row" id="poresCentroDiv">
         <div class="input-append date">
             <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Salas:</span>
-                <select id="porSalaId"  class="form-control" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1">Talleres:</span>
+                <select id="poresCentroId"  class="form-control" aria-describedby="basic-addon1">
                     <option label="Seleccione..." value="0"></option>
-                    <c:forEach items="${salas}" var="c" varStatus="status">
-                        <option label="${c.nombre}" value="${c.id}">${c.nombre}</option>
+                    <c:forEach items="${casas}" var="c" varStatus="status">
+                        <option label="${c.esCentro}" value="${c.id}">${c.esCentro}</option>
                     </c:forEach>
                 </select>
             </div>
         </div>
-        <button id="porSalaButton" type="button" class="btn btn-primary btn-large pull-right">Buscar</button>
-    </div> --%>
+        <button id="porTallerButton" type="button" class="btn btn-primary btn-large pull-right">Buscar</button>
+    </div>
 
     <%-- Por Profesor
     <div class="row" id="porProfesorDiv">

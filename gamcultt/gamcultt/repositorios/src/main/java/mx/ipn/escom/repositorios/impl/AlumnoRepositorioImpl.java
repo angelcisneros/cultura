@@ -7,7 +7,6 @@ package mx.ipn.escom.repositorios.impl;
 
 import java.util.List;
 import mx.ipn.escom.entidades.Alumno;
-import mx.ipn.escom.entidades.Clase;
 import mx.ipn.escom.repositorios.AlumnoRepositorio;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TodosLosTalleres" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d0211aa3-6840-4ef6-80f4-4af5ece9a09b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nombre_JUD" class="java.lang.String"/>
+	<field name="nombrec" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="nombrep" class="java.lang.String"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="costo" class="java.lang.String"/>
+	<field name="horario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="275" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9de9ddda-83da-466b-b30a-e8a5b2676d9d" x="0" y="180" width="112" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del JUD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="89db7f64-6cea-47d5-b0d4-1a7939ce3de9" x="0" y="235" width="98" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre de la Casa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e71b06d5-8be2-4f1e-9cef-d89f821daf3a" x="182" y="235" width="94" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Profesor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6f5b28ee-b47b-4d1f-b494-ddd6d77d1eba" x="362" y="235" width="72" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Costo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="21224061-8d93-48fd-9423-f3477d10119b" x="276" y="235" width="86" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3f1fcfe8-af22-4c2d-8014-5abb4a2a6134" x="98" y="235" width="84" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Taller]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5d995348-d416-4f1a-8975-cb4554123b00" x="434" y="235" width="121" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Horario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="baef5487-01dd-4991-b70d-6cf7187de2ea" x="0" y="111" width="555" height="32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Talleres Casas de Cultura]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="213c46bf-ebe6-4090-b244-a576ed9bca17" x="140" y="180" width="136" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombre_JUD}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="143">
+			<rectangle>
+				<reportElement uuid="9155a74e-795c-4a36-9a14-9f48fd0b1368" x="0" y="0" width="98" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="40abc5b3-0eb4-4e17-a24a-0ca84b9b2db5" x="98" y="0" width="84" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="d1d76acd-6615-4e7f-90e6-3419cc4bd0ab" x="182" y="0" width="94" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="9d418f28-1fd5-4afa-b94f-a5d2cf036652" x="276" y="0" width="86" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="31b2b370-5200-40bf-8333-d1323bdd349d" x="362" y="0" width="72" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="b096ce55-2e91-4686-b082-4e8a2cc9d9c0" x="434" y="0" width="121" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="d1a3d60b-01de-4640-9df0-ef8d790f536b" x="0" y="0" width="95" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombrec}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="74c88460-858e-4244-b87c-2577c873beed" x="98" y="0" width="82" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fdfe5106-a680-441a-b57a-df54b6e727d9" x="182" y="0" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombrep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8048d530-ab6a-4552-84ca-367a8d769734" x="276" y="0" width="83" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e8b6da23-38d4-4bb6-a1f0-b252d1933d35" x="362" y="0" width="70" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{costo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="de8a3486-3cc3-4559-9db9-c075df049e5b" x="434" y="0" width="120" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{horario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

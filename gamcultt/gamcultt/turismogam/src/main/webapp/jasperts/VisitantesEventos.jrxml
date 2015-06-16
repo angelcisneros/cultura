@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="VisitantesEventos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a2c4834c-89f4-450e-adeb-77ed7cbbf440">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nombre_casa" class="java.lang.String"/>
+	<parameter name="nombre_encargado" class="java.lang.String"/>
+	<parameter name="nombre_parametro" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="paterno" class="java.lang.String"/>
+	<field name="materno" class="java.lang.String"/>
+	<field name="edad" class="java.lang.String"/>
+	<field name="sexo" class="java.lang.String"/>
+	<field name="telefono" class="java.lang.String"/>
+	<title>
+		<band height="262" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="1d48ad71-6c6a-41dc-8a6e-dccf5ac40101" x="0" y="87" width="555" height="32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Visitantes Eventos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="67b51748-2897-4675-8bc6-868ec6c917fd" x="10" y="133" width="112" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nombre de la Casa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="65d2a832-ebe3-4eb8-a533-dda14436a902" x="10" y="164" width="125" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nombre del Encargado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="913ee38b-1521-4386-892c-795959118e57" x="10" y="199" width="125" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nombre del Evento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d556e228-5712-46dd-81b4-e29ef117d60c" x="227" y="242" width="96" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido Materno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8d53a133-26fa-4533-9589-ff49521aa68c" x="323" y="242" width="55" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Edad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="48b971d8-f097-43a6-bbc3-5c98991d4bff" x="114" y="242" width="113" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido Paterno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fbe28e30-572d-40fb-b9b6-dd7ff254f695" x="434" y="242" width="123" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="62ba529d-4b17-4752-8c8c-c6b79d58f889" x="2" y="242" width="112" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del visitante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="354a268a-cbd4-4649-9f90-5a301c07e97c" x="378" y="242" width="56" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sexo]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="df4dab58-d272-4898-92b7-1e576471be47" x="166" y="133" width="134" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombre_casa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c073b750-6010-4ec0-8091-0b529c9c3855" x="166" y="164" width="134" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombre_encargado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fb9fd757-8008-4262-9bd6-70bb6d3e13f0" x="166" y="199" width="134" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombre_parametro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="185">
+			<rectangle>
+				<reportElement uuid="a6243a85-bbef-4903-8b8c-1cf0beea07a6" x="0" y="0" width="112" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="f8ccdd93-8592-4b31-935b-70478573a25f" x="225" y="0" width="98" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="6fff741b-9265-4abd-b019-55d611f1acc8" x="434" y="0" width="121" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="50e3e3f6-4cf3-4895-82a4-a41f5ed10ee0" x="378" y="0" width="56" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="c2b86e55-8a6b-4039-ae97-0d35d9b46c6c" x="112" y="0" width="113" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="f33ab432-8900-4c09-9259-54cf5683e50c" x="323" y="0" width="55" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="ab2da0e6-b7c8-423f-ae04-8501cac77565" x="434" y="0" width="120" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9d88c8d5-b16f-43a0-b614-3fd3bf9e9d95" x="378" y="0" width="55" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0d331036-fd22-4f4e-bfc9-f04bff366cf6" x="323" y="0" width="52" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{edad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="85470de9-7e2b-4120-9295-28182f13b662" x="227" y="0" width="95" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{materno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="479024a3-2085-497a-88bd-a74efa34f464" x="112" y="0" width="110" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{paterno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="82a2f21f-49f0-4d87-889b-757bf4a75628" x="0" y="0" width="110" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

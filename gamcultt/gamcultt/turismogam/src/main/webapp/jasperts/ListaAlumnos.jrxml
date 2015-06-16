@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ListaAlumnos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb6b35d5-d1c4-41fa-92c6-3745b50e9a1c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="18"/>
+	<parameter name="casa_nombre" class="java.lang.String"/>
+	<parameter name="taller_nombre" class="java.lang.String"/>
+	<parameter name="profesor_nombre" class="java.lang.String"/>
+	<field name="numero" class="java.lang.String"/>
+	<field name="paterno" class="java.lang.String"/>
+	<field name="materno" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="53" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="215" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="07083077-47e4-4976-b060-40394576e9c6" x="0" y="0" width="555" height="41"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista de Alumnos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f0d56809-4b31-415e-a1de-e41d3feed82b" x="11" y="81" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Casa de Cultura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e6a4027a-0318-4cde-9e49-8edc075a580a" x="11" y="113" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Taller:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="0e71b461-3780-4a69-a618-0dd86e3d9e42" x="393" y="195" width="158" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="aafaaf17-6f50-4115-bb5e-feb4c74d1b30" x="393" y="195" width="158" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre(s)]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="0ce5cc72-c19f-472b-9527-cf5ded06b887" x="60" y="195" width="166" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="7885c06f-479f-445f-9560-ee086da3c89d" x="226" y="195" width="167" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="843b3bc0-d467-45ea-b304-1208ae009b64" x="61" y="195" width="166" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido Paterno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a04ef931-6448-4f80-9b32-b7b60fd06762" x="227" y="195" width="166" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido Materno]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="775fae9c-cde2-461f-a3ef-d4ef4c45e0f5" x="10" y="195" width="50" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="8cfeede7-f55e-4ad7-8ed5-349eb5ae72c4" x="11" y="195" width="50" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="af822f50-173c-4085-8fc1-3576a5e64372" x="11" y="145" width="114" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Profesor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="9c3614b0-5ca8-4529-85df-d02e7523e67b" x="164" y="81" width="391" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{casa_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f535668b-5a8e-43a7-a45e-efa182634b8e" x="164" y="113" width="391" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{taller_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5efa6fae-fa02-4b6d-8e8d-cec0ae6d87ef" x="164" y="145" width="391" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{profesor_nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="100">
+			<rectangle>
+				<reportElement uuid="d7a82f74-78bc-4129-abc2-4c6ceadbeae8" x="10" y="0" width="50" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="2cce41a7-8c67-4b03-af84-114e48957ab3" x="60" y="0" width="166" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="dd1fc6c1-a5ec-4313-aa68-5707f5074847" x="226" y="0" width="167" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="0d68dfe1-85b4-4f47-b367-a283e208503d" x="393" y="0" width="158" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="c6ba2f91-ee34-458e-83c9-e718b8d589df" x="11" y="0" width="50" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="64e11850-0293-469d-9a94-4c3aec507a00" x="61" y="0" width="165" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{paterno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c8cd3266-cabb-44ab-b613-318f8fb02611" x="227" y="0" width="166" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{materno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="29296f5b-8229-471a-808a-a7586a2f2a3d" x="393" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="199" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

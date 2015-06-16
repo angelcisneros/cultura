@@ -6,7 +6,7 @@
 package mx.ipn.escom.turismoazcapotzalco.controller.crud.busquedas;
 
 import javax.servlet.http.HttpSession;
-import mx.ipn.escom.servicios.CasaServicio;
+import mx.ipn.escom.servicios.ProfesorServicio;
 import static mx.ipn.escom.servicios.util.MensajesCrud.SESION_CADUCA;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,36 +21,36 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 @RequestMapping("administrador/")
-public class CasaBusquedasController {
+public class ProfesorBusquedasController {
 
     @Autowired
-    CasaServicio casaServicio;
-    
-    @RequestMapping(value = "buscarTodasCasas", method = RequestMethod.POST)
-    public String buscarTodasCasas(@RequestParam String nada, HttpSession session, Model model) {
-        if (session.getAttribute("usuario") == null) {
-            return SESION_CADUCA;
-        }
-        model.addAttribute("casas", casaServicio.buscarTodos());
-        return "crud/casaBody";
-    }
-    
+    ProfesorServicio profesorServicio;
 
-    @RequestMapping(value = "buscarCasaPorNombre", method = RequestMethod.POST)
-    public String buscarCasaPorNombre(@RequestParam String nombre, HttpSession session, Model model) {
+    @RequestMapping(value = "buscarProfesorPorCorreo", method = RequestMethod.POST)
+    public String buscarProfesorPorCorreo(@RequestParam String correop, HttpSession session, Model model) {
         if (session.getAttribute("usuario") == null) {
             return SESION_CADUCA;
         }
-        model.addAttribute("casas", casaServicio.buscarPorNombre(nombre));
-        return "crud/casaBody";
+        model.addAttribute("profesors", profesorServicio.buscarPorCorreo(correop));
+        return "crud/profesorBody";
     }
 
-    @RequestMapping(value = "buscarCasaCentro", method = RequestMethod.POST)
-    public String buscarCasaCentro(@RequestParam String esCentro, HttpSession session, Model model) {
+    @RequestMapping(value = "buscarProfesorPorNombre", method = RequestMethod.POST)
+    public String buscarProfesorPorNombre(@RequestParam String nombreCompletop, HttpSession session, Model model) {
         if (session.getAttribute("usuario") == null) {
             return SESION_CADUCA;
         }
-        model.addAttribute("casas", casaServicio.buscarPorCasaCentro(esCentro));
-        return "crud/casaBody";
+        model.addAttribute("profesors", profesorServicio.buscarPorNombre(nombreCompletop));
+        return "crud/profesorBody";
     }
+
+    @RequestMapping(value = "buscarProfesorPorEdad", method = RequestMethod.POST)
+    public String buscarProfesorPorEdad(@RequestParam String edadCompletap, HttpSession session, Model model) {
+        if (session.getAttribute("usuario") == null) {
+            return SESION_CADUCA;
+        }
+        model.addAttribute("profesors", profesorServicio.buscarPorEdad(edadCompletap));
+        return "crud/profesorBody";
+    }
+
 }

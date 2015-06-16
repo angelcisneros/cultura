@@ -19,7 +19,7 @@
                     <select id="busquedas" class="form-control" aria-describedby="basic-addon1">
                         <option label="--TODOS--" value="0">--TODOS--</option>
                         <option label="Por Nombre" value="1" >Por Nombre</option>
-                        
+                        <option label="Centro de Desarrollo" value="1" >Centro de Desarrollo</option>
                     </select>
                 </div>
             </div>

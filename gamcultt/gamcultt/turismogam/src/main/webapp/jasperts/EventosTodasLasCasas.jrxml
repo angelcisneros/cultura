@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EventosTodasLasCasas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7c8ed1d6-e588-4881-b8e9-1b8a4184c6a1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nombre_JUD" class="java.lang.String"/>
+	<field name="nombrec" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="horario" class="java.lang.String"/>
+	<field name="fecha_inicio" class="java.lang.String"/>
+	<field name="fecha_fin" class="java.lang.String"/>
+	<title>
+		<band height="281" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="0d579041-27b0-4b0b-9430-89950a01a206" x="0" y="88" width="555" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Eventos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5eafdb09-c1b7-4efb-9ce5-363b1b4d36b6" x="0" y="128" width="555" height="35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Casas de Cultura]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="f5a2a2cc-368c-4d26-9a0d-657fc32dd2e1" x="0" y="261" width="112" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="0df9b80b-999a-4c2c-a45b-2821fbc83a99" x="112" y="261" width="113" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="1723ff98-da93-4be3-9a70-efa921150e1f" x="225" y="261" width="96" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="00c7b54d-69a5-4b27-803d-21dfc0b6619f" x="434" y="261" width="121" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="a93dbb02-d862-4f3f-bf25-07848eb21813" x="321" y="261" width="113" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="6d0ef6aa-914c-44e3-bde8-b9b2a7c0f4b0" x="0" y="261" width="112" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre dela Casa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5408524c-5b0d-462b-8a92-f5c0c8433eeb" x="112" y="261" width="113" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Evento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5e92f36e-edf1-4b46-ad4a-487e1ecd2888" x="225" y="261" width="96" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Horario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a41d030c-6d47-4831-9539-9f4ae52a9115" x="321" y="261" width="113" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Feha Inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="538128ba-b2fa-4856-b44e-5ee405834912" x="434" y="261" width="121" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Fin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ab42ca05-2a7c-46fc-8eb8-bcb698875634" x="0" y="208" width="112" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del JUD:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="04c03ac9-80ff-4bbe-8fe0-3dd6e2ba6782" x="148" y="208" width="187" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombre_JUD}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="143">
+			<rectangle>
+				<reportElement uuid="a44f7481-3d8e-456a-9fd8-afa72bfe0bad" x="0" y="0" width="112" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="cec1d86f-0659-43e8-b501-a16d4f844a21" x="112" y="0" width="113" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="08c014b4-0569-47c6-8e3c-83081587a857" x="225" y="0" width="96" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="62817460-ca6d-4a75-90bc-cd2ea6f9a07e" x="321" y="0" width="113" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="0bd030fa-673d-4d0d-8357-21642f0b5f2f" x="432" y="0" width="121" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="c825f6e0-d4ec-4534-9de8-1ac457c5123b" x="434" y="0" width="120" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha_fin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7c06ea89-7a8b-4c2a-8563-6593fd6d9e37" x="321" y="0" width="110" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha_inicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f145085a-c8d2-4379-9e31-55d85632fab3" x="225" y="0" width="95" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{horario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7da0bc85-3639-40e7-8cbe-5ffaa709ddf4" x="112" y="0" width="110" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0fbc8cbf-ef09-45fe-8965-8109a33f1135" x="0" y="0" width="110" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombrec}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -77,9 +77,26 @@ public class ProfesorRepositorioImpl implements ProfesorRepositorio{
 
     @Override
     public List<Profesor> buscarTodos() {
-        return (List<Profesor>) sessionFactory.getCurrentSession().createCriteria(Profesor.class)
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Profesor> buscarPorCorreo(String correo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Profesor> buscarPorNombre(String nombre, String paterno, String materno) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+ 
+    @Override
+    public List<Profesor>  buscarPorEdad(String edadmin, String edadmax) {
+         return (List<Profesor> ) sessionFactory.getCurrentSession().createCriteria(Profesor.class)
+                .add(Restrictions.between("edad", edadmin, edadmax))
                 .list();
     }
+    
     
     
     

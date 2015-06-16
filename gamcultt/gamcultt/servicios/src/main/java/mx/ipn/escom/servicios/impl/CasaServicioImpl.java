@@ -121,4 +121,9 @@ public class CasaServicioImpl implements CasaServicio{
     public List<Casa> buscarPorNombre(String nombre) {
      return casaRepositorio.buscarPorNombre(nombre);
     }
+
+    @Override
+    public List<Casa> buscarPorCasaCentro(String esCentro) {
+        return casaRepositorio.buscarPorCasaCentro(esCentro);
+    }
 }

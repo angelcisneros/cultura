@@ -22,5 +22,7 @@ public interface ProfesorRepositorio {
     
     Profesor buscarPorId(Integer id);
     List<Profesor> buscarTodos();
-    
+    List<Profesor> buscarPorCorreo(String correo);
+    List<Profesor> buscarPorNombre(String nombre , String paterno , String materno);
+    List<Profesor> buscarPorEdad(String edadmin , String edadmax);
 }

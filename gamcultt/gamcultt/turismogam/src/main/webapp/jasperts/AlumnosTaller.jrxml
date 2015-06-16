@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AlumnosTaller" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5ad4566a-be84-4edc-8a67-949a252b96f6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nombre_encargado" class="java.lang.String"/>
+	<parameter name="nombre_taller" class="java.lang.String"/>
+	<parameter name="nombre_profesor" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="paterno" class="java.lang.String"/>
+	<field name="materno" class="java.lang.String"/>
+	<field name="edad" class="java.lang.String"/>
+	<field name="nombre_tutor" class="java.lang.String"/>
+	<field name="Telefono" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="323" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="cafab52f-8773-440f-a30e-fc13bab02f04" x="0" y="111" width="555" height="35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alumnos - Taller]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d20e2901-c973-437f-928b-1e1c7b43784f" x="11" y="236" width="125" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Profesor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a09cf705-0f04-4c1b-8c6c-a4eeec7d5fef" x="11" y="169" width="135" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Encargado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0a2e9945-29a2-4f64-87d7-b4bfb90050e5" x="11" y="201" width="112" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Taller:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c226d23e-256f-49f3-ba79-ceec01b2cbeb" x="192" y="169" width="135" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nombre_encargado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fa50aa23-4d62-479f-bdc3-d6b4ce7adffd" x="192" y="201" width="135" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nombre_taller}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d272ca0a-1325-4c53-a6ef-8bc5c35f03b0" x="192" y="236" width="135" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nombre_profesor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="367a6cd9-c0a1-4ff3-8ffb-f948fbaf5969" x="471" y="283" width="84" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="34a76220-3966-49d7-b74f-a7d196eae6b8" x="98" y="283" width="84" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido Paterno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b78c2142-3d29-40ab-8d0e-d610639203a6" x="276" y="283" width="86" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Edad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f4849d6e-c09e-46f7-af20-900a1079d6b7" x="0" y="283" width="98" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Alumno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cf12bc9e-8933-48b4-87b2-f268cc32eb04" x="362" y="283" width="109" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombr del Tutor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dd48e9ab-73ba-46d6-b705-e662db086867" x="182" y="283" width="94" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido Materno]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="49">
+			<rectangle>
+				<reportElement uuid="3fd12886-ac8d-496c-ba69-a2c1fe512ca2" x="98" y="0" width="84" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="d24348b4-1856-4465-9b3e-6785753210fb" x="0" y="0" width="98" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="84ffedc8-0f63-4d2a-9ebb-212755bae1d1" x="182" y="0" width="94" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="390f2a1b-8f07-4cc6-8bf4-85a2b1d56086" x="471" y="0" width="84" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="792ce8d6-2cfd-4bbf-bfc8-b6481484d2e7" x="362" y="0" width="109" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="862c8909-90aa-4413-8ec7-51eb92d20cae" x="276" y="0" width="86" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="389b0693-98d8-488a-a76b-fbdcd3f1f960" x="11" y="0" width="86" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4893eea3-3155-4a46-bb13-cb545ce8e00d" x="98" y="0" width="80" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{paterno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="403d76ea-0614-45ac-8e36-0f8c57644346" x="186" y="0" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{materno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9a403523-f802-428e-8010-bcbe48d5c27e" x="276" y="0" width="85" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{edad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7249fda9-f7ad-4351-9345-03bfa8ee6aca" x="362" y="0" width="105" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombre_tutor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="147f0341-fecd-4d9f-987b-054a5b43403a" x="471" y="0" width="83" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Telefono}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

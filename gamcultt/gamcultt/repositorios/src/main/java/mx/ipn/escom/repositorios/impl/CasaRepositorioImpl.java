@@ -8,6 +8,7 @@ package mx.ipn.escom.repositorios.impl;
 import java.util.List;
 import mx.ipn.escom.entidades.Casa;
 import mx.ipn.escom.repositorios.CasaRepositorio;
+import org.hibernate.FetchMode;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -94,6 +95,13 @@ public class CasaRepositorioImpl implements CasaRepositorio{
     public List<Casa> buscarPorNombre(String nombre) {
        return (List<Casa>) sessionFactory.getCurrentSession().createCriteria(Casa.class)
                 .add(Restrictions.like("nombre", "%" + nombre + "%"))
+                .list();
+    }
+
+    @Override
+    public List<Casa> buscarPorCasaCentro(String esCentro) {
+        return (List<Casa>) sessionFactory.getCurrentSession().createCriteria(Casa.class)
+                .setFetchMode(esCentro, FetchMode.LAZY)
                 .list();
     }
         
