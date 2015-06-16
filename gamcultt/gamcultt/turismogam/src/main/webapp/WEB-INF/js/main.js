@@ -213,8 +213,14 @@ $('.cambioCheck').on('change', function() {
     }
 });
 
-function intercambiaElementos(contenedor1, elemento1, contenedor2, elemeno2){
-    $(contenedor)
+function intercambiaElementos(elemento){
+    var elemento1 = $('#busquedasDivPrincipal').children('div.row');
+    $(elemento1).appendTo('#busquedasDivOculto');
+    $(elemento).appendTo('#busquedasDivPrincipal');
+}
+
+function recargaTbody(){
+    
 }
 
 //

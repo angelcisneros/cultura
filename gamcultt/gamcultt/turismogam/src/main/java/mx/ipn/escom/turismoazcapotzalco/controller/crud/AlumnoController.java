@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import mx.ipn.escom.entidades.Alumno;
 import mx.ipn.escom.servicios.AlumnoServicio;
+import mx.ipn.escom.servicios.ClaseServicio;
 import static mx.ipn.escom.servicios.util.Llave.USUARIO;
 import static mx.ipn.escom.servicios.util.MensajesCrud.ERROR_DATOS;
 import static mx.ipn.escom.servicios.util.MensajesCrud.SESION_CADUCA;
@@ -31,6 +32,9 @@ public class AlumnoController {
 
     @Autowired
     AlumnoServicio alumnoServicio;
+    
+    @Autowired
+    ClaseServicio claseServicio;
 
     @RequestMapping(value = "alumnos", method = RequestMethod.GET)
     public String alumnos(Model model, HttpSession session) {
@@ -38,6 +42,7 @@ public class AlumnoController {
             return "templates/login";
         }
         model.addAttribute("alumnos", alumnoServicio.buscarTodos());
+        model.addAttribute("casas", claseServicio.buscarTodos());
         return "crud/alumno";
     }
     
@@ -47,8 +52,7 @@ public class AlumnoController {
         if (session.getAttribute(USUARIO) == null){
             return SESION_CADUCA;
         }
-        if (bindingResult.hasErrors()) {
-            
+        if (bindingResult.hasErrors()) {      
             return ERROR_DATOS;
         }
         return alumnoServicio.agregar(alumno);
@@ -61,7 +65,6 @@ public class AlumnoController {
             return SESION_CADUCA;
         }
         if (bindingResult.hasErrors()) {
-            
             return ERROR_DATOS;
         }
         return alumnoServicio.actualizar(alumno);

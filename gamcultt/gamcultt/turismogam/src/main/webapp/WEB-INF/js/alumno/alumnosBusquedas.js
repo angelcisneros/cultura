@@ -13,14 +13,17 @@ $(document).on('ready', function() {
                 
                 break;
             case 1:
+                intercambiaElementos($('#porClaseDiv'));
                 break;
             case 2:
+                intercambiaElementos($('#porNombreDiv'));
                 break;
             case 3:
+                intercambiaElementos($('#porEdadDiv'));
                 break;
             case 4:
+                intercambiaElementos($('#porClaseDiv'));
                 break;
-
         }
     });
 
