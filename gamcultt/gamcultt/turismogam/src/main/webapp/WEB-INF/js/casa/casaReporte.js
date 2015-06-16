@@ -8,8 +8,7 @@ $('#reporteCasasExcel').on('click', function() {
     window.location.href = 'reporteCasa';
 });
 
-$('.casaReporteIndividualButton').on('click', function() {
-    
+ $('#casaTbody').on('click', '.casaReporteIndividualButton', function() {   
     var tr = $($($($(this).parent())).parent()).parent();
     var id = $(tr).find('td.id label.ocultar').text();
     window.location.href = 'reporteIndividualCasa/' + id;

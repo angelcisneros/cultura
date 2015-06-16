@@ -8,8 +8,7 @@ $('#reporteAlumnosExcel').on('click', function() {
     window.location.href = 'reporteAlumno';
 });
 
-$('.alumnoReporteIndividualButton').on('click', function() {
-    
+$('#alumnoTbody').on('click', '.alumnoReporteIndividualButton', function() {
     var tr = $($($($(this).parent())).parent()).parent();
     var id = $(tr).find('td.id label.ocultar').text();
     window.location.href = 'reporteIndividualAlumno/' + id;

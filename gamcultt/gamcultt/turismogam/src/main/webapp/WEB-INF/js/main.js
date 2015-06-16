@@ -212,6 +212,11 @@ $('.cambioCheck').on('change', function() {
         $(this).attr('value', false);
     }
 });
+
+function intercambiaElementos(contenedor1, elemento1, contenedor2, elemeno2){
+    $(contenedor)
+}
+
 //
 //function descargaReportes(url) {
 //    $.ajax({

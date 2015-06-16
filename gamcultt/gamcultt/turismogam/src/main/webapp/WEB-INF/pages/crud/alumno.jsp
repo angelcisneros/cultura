@@ -19,8 +19,8 @@
                         <option label="--TODOS--" value="0">--TODOS--</option>
                         <option label="Por Clase" value="1" >Por Clase</option>
                         <option label="Por Nombre" value="2" >Por Nombre</option>
-                        <option label="Por Edad" value="5" >Por Edad</option>
-                        <option label="Por Correo" value="5" >Por Correo</option>
+                        <option label="Por Edad" value="3" >Por Edad</option>
+                        <option label="Por Correo" value="4" >Por Correo</option>
                     </select>
                 </div>
             </div>
@@ -34,6 +34,9 @@
         </div>
     </div>
     <hr />
+    <div id="busquedasDivPrincipal" class="row">
+        
+    </div>
     <div class="row">
         <div class="col-md-1 col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
@@ -221,8 +224,10 @@
     <!-- /.modal-dialog -->
 </div>
 
-<%@ include file="/WEB-INF/pages/busquedas/alumnoBusquedas.jsp"%>
+
 <%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>
+<%@ include file="/WEB-INF/pages/busquedas/alumnoBusquedas.jsp"%>
 <script src="../js/alumno/alumno.js" charset="UTF-8"></script>
 <script src="../js/alumno/alumnoReporte.js" charset="UTF-8"></script>
+<script src="../js/alumno/alumnoBusquedas.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>
