@@ -18,9 +18,8 @@
                     <span class="input-group-addon" id="basic-addon1">Búsquedas:</span>
                     <select id="busquedas" class="form-control" aria-describedby="basic-addon1">
                         <option label="--TODOS--" value="0">--TODOS--</option>
-                        <option label="Por Talleres" value="1" >Por Talleres</option>
-                        <option label="Por Salas" value="2" >Por Salas</option>
-                        <option label="Por Profesores" value="3" >Por Profesores</option>
+                        <option label="Por Nombre" value="1" >Por Nombre</option>
+                        
                     </select>
                 </div>
             </div>
@@ -35,6 +34,13 @@
 
     </div>
     <hr />
+    <div class="row">
+        <div class="col-md-1 col-lg-1"></div>
+        <div id="busquedasDivPrincipal" class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+            
+        </div>
+    </div>
+    <hr>
     <div class="row">
         <div class="col-md-1 col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
@@ -67,6 +73,7 @@
 <%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>
 <%@ include file="/WEB-INF/pages/busquedas/casaBusquedas.jsp"%>
 <script src="../js/casa/casa.js" charset="UTF-8"></script>
+<script src="../js/casa/casaBusquedas.js" charset="UTF-8"></script>
 <script src="../js/cargarImagenes.js" charset="UTF-8"></script>
 <script src="../js/casa/casaReporte.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>

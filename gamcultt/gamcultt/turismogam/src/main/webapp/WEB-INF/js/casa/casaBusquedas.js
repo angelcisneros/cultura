@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+var body;
 $(document).on('ready', function() {
+    body = $('#casaTbody');
     $('#busquedas').change(function(e) {
         var str = $("#busquedas option:selected").attr('value');
         str = parseInt(str);
@@ -13,26 +14,15 @@ $(document).on('ready', function() {
                 limpiarBusquedas();
             break;
             case 1:
-                intercambiaElementos($('#porTallerDiv'));
+                intercambiaElementos($('#porNombreDiv'));
             break;
-            case 2:
-                intercambiaElementos($('#porEdadDiv'));
-            break;
-            case 3:
-                intercambiaElementos($('#porProfesorDiv'));
-            break;
+           
         }
     });
 });
 
-$('#porTallerButton').on('click', function() {
-
+$('#porNombreButton').on('click', function() {
+var nombre = $('#porNombre').val();
+recargaTbody($(body), "buscarCasaPorNombre", {'nombre': nombre});
 });
 
-$('#porEdadButton').on('click', function() {
-
-});
-
-$('#porProfesorButton').on('click', function() {
-
-});
