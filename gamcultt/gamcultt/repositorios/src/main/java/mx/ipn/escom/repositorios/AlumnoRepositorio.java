@@ -7,6 +7,7 @@ package mx.ipn.escom.repositorios;
 
 import java.util.List;
 import mx.ipn.escom.entidades.Alumno;
+import mx.ipn.escom.entidades.Clase;
 
 /**
  *
@@ -22,5 +23,7 @@ public interface AlumnoRepositorio {
     
     Alumno buscarPorId(Integer id);
     List<Alumno> buscarTodos();
-    
+    List<Alumno> buscarPorCorreo(String correo);
+    List<Alumno> buscarPorNombre(String nombre , String paterno , String materno);
+    List<Alumno> buscarPorEdad(String edadmin , String edadmax);
 }

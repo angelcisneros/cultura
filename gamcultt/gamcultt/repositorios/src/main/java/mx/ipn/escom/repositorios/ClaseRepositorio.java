@@ -21,6 +21,7 @@ public interface ClaseRepositorio {
     Boolean eliminar(Integer id);
     
     Clase buscarPorId(Integer id);
+    Clase buscarPorIdConAlumnos(Integer id);
     List<Clase> buscarTodos();
     
 }

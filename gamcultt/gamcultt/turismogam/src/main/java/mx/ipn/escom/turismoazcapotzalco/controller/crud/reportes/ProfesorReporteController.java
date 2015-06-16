@@ -33,7 +33,7 @@ public class ProfesorReporteController {
     @Autowired
     ProfesorServicio profesorServicio;
 
-    @RequestMapping(value = "reporteIndividualProfesor/{idProfesor}", method = RequestMethod.GET)
+     @RequestMapping(value = "reporteIndividualProfesor/{idProfesor}", method = RequestMethod.GET)
     public void reporteIndividualProfesorController(@PathVariable String idProfesor, HttpSession session,
             HttpServletRequest request, HttpServletResponse response) {
         if (session.getAttribute("usuario") == null) {
@@ -52,7 +52,20 @@ public class ProfesorReporteController {
                 out.println("<title></title>");
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>Reporte de Profesor: " + profesor.getNombre() + profesor.getPaterno() + "</h1>");
+                out.println("<h1>Reporte de Profesor: " + profesor.getNombre() + profesor.getPaterno()+ "</h1>");
+                out.println("<table>");
+                out.println("<thead>");
+                out.println("</thead>");
+                out.println("<tbody>");
+                out.println("<tr>");
+                out.println("<th>"+"Nombre Profesor" +"</th>"+"<th>"+"Apellido Paterno" +"</th>" +"<th>"+"Apellido Materno" +"</th>" + "<th>"+"Correo" +"</th>" + "<th>"+"Teléfono" +"</th>" );
+                out.println("</tr>");
+                out.println("<tr>");
+                out.println("<td>" + profesor.getNombre() + "</td>"+"<td>" + profesor.getPaterno()+"</td>" + "<td>"+ profesor.getMaterno()+ "</td>"+ "<td>"+ profesor.getCorreo()+"</td>"+ "<td>"+ profesor.getTelefono()+ "</td>");
+                out.println("</tr>");
+                out.println("</tbody>");
+                out.println("</table>");
+                out.println("<h3> Observaciones del Profesor " + profesor.getNombre() + profesor.getPaterno()+ "</h3>");
                 out.println("</body>");
                 out.println("</html>");
             } catch (IOException ex) {
@@ -80,15 +93,21 @@ public class ProfesorReporteController {
             out.println("<title></title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Reporte de Profesor Algo</h1>");
+            out.println("<h1>Reporte de Profesor de Casa de Cultura</h1>");
             out.println("<table>");
             out.println("<thead>");
             out.println("</thead>");
             out.println("<tbody>");
+            out.println("<tr>");
+            out.println("<th>"+"Nombre Profesor" +"</th>"+"<th>"+"Apellido Paterno" +"</th>" +"<th>"+"Apellido Materno" +"</th>" + "<th>"+"Correo" +"</th>" + "<th>"+"Teléfono" +"</th>"+ "<th>"+"Comentarios" +"</th>" );
+            out.println("</tr>");
             for (Profesor profesor : profesors) {
                 out.println("<tr>");
                 out.println("<td>" + profesor.getNombre() + "</td>");
                 out.println("<td>" + profesor.getPaterno() + "</td>");
+                out.println("<td>" + profesor.getMaterno() + "</td>");
+                out.println("<td>" + profesor.getCorreo() + "</td>");
+                out.println("<td>" + profesor.getTelefono() + "</td>");
                 out.println("</tr>");
             }
             out.println("</tbody>");

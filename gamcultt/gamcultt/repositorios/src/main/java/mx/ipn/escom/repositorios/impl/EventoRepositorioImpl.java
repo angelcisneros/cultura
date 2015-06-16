@@ -10,9 +10,14 @@ import mx.ipn.escom.entidades.Evento;
 import mx.ipn.escom.repositorios.EventoRepositorio;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Order;
+import static org.hibernate.criterion.Order.asc;
+import org.hibernate.criterion.Property;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.sql.JoinType;
 import org.springframework.beans.factory.annotation.Autowired;
+import static org.springframework.core.convert.TypeDescriptor.map;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -83,7 +88,14 @@ public class EventoRepositorioImpl implements EventoRepositorio{
                 .createAlias("categoriaEvento", "ce", JoinType.INNER_JOIN)
                 .list();
     }
+     @Override
+    public List<Evento> buscarFechai() {
+        return (List<Evento>) sessionFactory.getCurrentSession().createCriteria(Evento.class)
+                .addOrder(asc ("fecha_inicio"))
+                .list();
+                
+    }
     
     
-    
+   
 }

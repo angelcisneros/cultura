@@ -20,4 +20,8 @@ public interface AlumnoServicio {
     
     Alumno buscarPorId(Integer id);
     List<Alumno> buscarTodos();
+    List<Alumno> buscarPorCorreo(String correo);
+    List<Alumno> buscarPorTaller(Integer id);
+    List<Alumno> buscarPorNombre(String nombreCompleto);
+    List<Alumno> buscarPorEdad(String edadCompleta);
 }

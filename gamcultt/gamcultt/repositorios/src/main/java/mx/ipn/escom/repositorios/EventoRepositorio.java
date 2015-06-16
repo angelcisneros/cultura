@@ -22,5 +22,6 @@ public interface EventoRepositorio {
     
     Evento buscarPorId(Integer id);
     List<Evento> buscarTodos();
+    List<Evento> buscarFechai();
     
 }

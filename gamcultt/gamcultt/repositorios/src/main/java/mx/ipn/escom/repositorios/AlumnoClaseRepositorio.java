@@ -22,5 +22,6 @@ public interface AlumnoClaseRepositorio {
     
     AlumnoClase buscarPorId(Integer id);
     List<AlumnoClase> buscarTodos();
+    List<AlumnoClase> buscarPorTaller(Integer idTaller);
     
 }

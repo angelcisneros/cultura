@@ -8,6 +8,7 @@ package mx.ipn.escom.repositorios.impl;
 import java.util.List;
 import mx.ipn.escom.entidades.Clase;
 import mx.ipn.escom.repositorios.ClaseRepositorio;
+import org.hibernate.FetchMode;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -20,11 +21,10 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author Lap_christo
  */
-
 @Transactional
 @Repository
-public class ClaseRepositorioImpl implements ClaseRepositorio{
-    
+public class ClaseRepositorioImpl implements ClaseRepositorio {
+
     @Autowired
     SessionFactory sessionFactory;
 
@@ -79,12 +79,19 @@ public class ClaseRepositorioImpl implements ClaseRepositorio{
     @Override
     public List<Clase> buscarTodos() {
         return (List<Clase>) sessionFactory.getCurrentSession().createCriteria(Clase.class)
-                .createAlias("profesor", "p",  JoinType.INNER_JOIN)
-                .createAlias("taller", "t",  JoinType.INNER_JOIN)
-                .createAlias("sala", "s",  JoinType.INNER_JOIN)
+                .createAlias("profesor", "p", JoinType.INNER_JOIN)
+                .createAlias("taller", "t", JoinType.INNER_JOIN)
+                .createAlias("sala", "s", JoinType.INNER_JOIN)
                 .list();
     }
-    
-    
-    
+
+    @Override
+    public Clase buscarPorIdConAlumnos(Integer id) {
+        return (Clase) sessionFactory.getCurrentSession().createCriteria(Clase.class, "c")
+                .setFetchMode("c.alumnoClases", FetchMode.JOIN)
+                .createAlias("c.alumnoClases.alumno", "a", JoinType.INNER_JOIN)
+                .add(Restrictions.eq("id", id))
+                .uniqueResult();
+    }
+
 }

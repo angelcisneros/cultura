@@ -7,6 +7,7 @@ package mx.ipn.escom.repositorios.impl;
 
 import java.util.List;
 import mx.ipn.escom.entidades.Alumno;
+import mx.ipn.escom.entidades.Clase;
 import mx.ipn.escom.repositorios.AlumnoRepositorio;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
@@ -80,7 +81,30 @@ public class AlumnoRepositorioImpl implements AlumnoRepositorio{
         return (List<Alumno>) sessionFactory.getCurrentSession().createCriteria(Alumno.class)
                 .list();
     }
+
+    @Override
+    public List<Alumno> buscarPorCorreo(String correo) {
+        return (List<Alumno>) sessionFactory.getCurrentSession().createCriteria(Alumno.class)
+                .add(Restrictions.eq("correo", correo))
+                .list();
+    }
+
+    @Override
+    public List<Alumno> buscarPorNombre(String nombre, String paterno , String materno) {
+         return (List<Alumno>) sessionFactory.getCurrentSession().createCriteria(Alumno.class)
+                .add(Restrictions.like("nombre", "%" + nombre + "%"))
+                .add(Restrictions.like("paterno", "%"+ paterno + "%"))
+                .add(Restrictions.like("materno","%" +materno +"%"))
+                .list();
+    }
+
     
+    @Override
+    public List<Alumno> buscarPorEdad(String edadmin, String edadmax) {
+         return (List<Alumno>) sessionFactory.getCurrentSession().createCriteria(Alumno.class)
+                .add(Restrictions.between("edad", edadmin, edadmax))
+                .list();
+    }
     
     
 }

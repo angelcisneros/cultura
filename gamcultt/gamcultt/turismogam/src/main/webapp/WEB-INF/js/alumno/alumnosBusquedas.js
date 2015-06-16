@@ -14,7 +14,7 @@ $(document).on('ready', function() {
                 limpiarBusquedas();
                 break;
             case 1:
-                intercambiaElementos($('#porClaseDiv'));
+                intercambiaElementos($('#porTallerDiv'));
                 break;
             case 2:
                 intercambiaElementos($('#porNombreDiv'));
@@ -29,9 +29,9 @@ $(document).on('ready', function() {
     });
 });
 
-$('#porClaseButton').on('click', function() {
-    var id = $("#busquedas option:selected").attr('value');
-    recargaTbody($(body), "buscarAlumnoPorClase", id);
+$('#porTallerButton').on('click', function() {
+    var id = $("#porTallerId option:selected").attr('value');
+    recargaTbody($(body), "buscarAlumnoPorTaller", id);
 });
 
 $('#porEdadButton').on('click', function() {

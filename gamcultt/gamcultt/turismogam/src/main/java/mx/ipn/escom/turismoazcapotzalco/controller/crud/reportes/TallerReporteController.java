@@ -13,8 +13,8 @@ import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import mx.ipn.escom.entidades.Alumno;
-import mx.ipn.escom.servicios.AlumnoServicio;
+import mx.ipn.escom.entidades.Taller;
+import mx.ipn.escom.servicios.TallerServicio;
 import static mx.ipn.escom.servicios.util.Validaciones.esEntero;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,21 +28,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping("administrador/")
-public class AlumnoReporteController {
+public class TallerReporteController {
 
     @Autowired
-    AlumnoServicio alumnoServicio;
+    TallerServicio tallerServicio;
 
-    @RequestMapping(value = "reporteIndividualAlumno/{idAlumno}", method = RequestMethod.GET)
-    public void reporteIndividualAlumnoController(@PathVariable String idAlumno, HttpSession session,
+     @RequestMapping(value = "reporteIndividualTaller/{idTaller}", method = RequestMethod.GET)
+    public void reporteIndividualTallerController(@PathVariable String idTaller, HttpSession session,
             HttpServletRequest request, HttpServletResponse response) {
         if (session.getAttribute("usuario") == null) {
             return;
         }
-        if (esEntero(idAlumno)) {
-            Alumno alumno = alumnoServicio.buscarPorId(Integer.parseInt(idAlumno));
+        if (esEntero(idTaller)) {
+            Taller taller = tallerServicio.buscarPorId(Integer.parseInt(idTaller));
             response.setContentType("application/application/vnd.ms-excel");
-            response.setHeader("Content-Disposition", "attachment; filename=\"" + alumno.getNombre() + ".xls\"");
+            response.setHeader("Content-Disposition", "attachment; filename=\"" + taller.getNombre() + ".xls\"");
             PrintWriter out;
             try {
                 out = response.getWriter();
@@ -52,38 +52,38 @@ public class AlumnoReporteController {
                 out.println("<title></title>");
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>Reporte de Alumno: " + alumno.getNombre() + alumno.getPaterno()+ "</h1>");
+                out.println("<h1>Reporte de Taller: " + taller.getNombre() + taller.getDescripcion() + "</h1>");
                 out.println("<table>");
                 out.println("<thead>");
                 out.println("</thead>");
                 out.println("<tbody>");
                 out.println("<tr>");
-                out.println("<th>"+"Nombre Alumno" +"</th>"+"<th>"+"Apellido Paterno" +"</th>" +"<th>"+"Apellido Materno" +"</th>" + "<th>"+"TUTOR" +"</th>" + "<th>"+"Teléfono" +"</th>" );
+                out.println("<th>"+"Nombre Taller" +"</th>"+"<th>"+"Descripcion" +"</th>" +"<th>"+"Horario" +"</th>" + "<th>"+"Costo" +"</th>" + "<th>"+"categoria" +"</th>" );
                 out.println("</tr>");
                 out.println("<tr>");
-                out.println("<td>" + alumno.getNombre() + "</td>"+"<td>" + alumno.getPaterno()+"</td>" + "<td>"+ alumno.getMaterno()+ "</td>"+ "<td>"+ alumno.getNombreTutor()+"</td>"+ "<td>"+ alumno.getTelefono()+ "</td>");
+                out.println("<td>" + taller.getNombre() + "</td>"+"<td>" + taller.getDescripcion()+"</td>" +"<td>" + taller.getHorario()+"</td>" + "<td>"+ taller.getCosto()+ "</td>"+ "<td>"+ taller.getCategoriaTaller()+"</td>"+ "<td>");
                 out.println("</tr>");
                 out.println("</tbody>");
                 out.println("</table>");
-                out.println("<h3> Observaciones del Alumno " + alumno.getNombre() + alumno.getPaterno()+ "</h3>");
+                out.println("<h3> Observaciones del Taller " + taller.getNombre()+ "</h3>");
                 out.println("</body>");
                 out.println("</html>");
             } catch (IOException ex) {
-                Logger.getLogger(AlumnoReporteController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(TallerReporteController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
     }
 
-    @RequestMapping(value = "reporteAlumno", method = RequestMethod.GET)
-    public void reporteAlumnoController(HttpSession session,
+    @RequestMapping(value = "reporteTaller", method = RequestMethod.GET)
+    public void reporteTallerController(HttpSession session,
             HttpServletRequest request, HttpServletResponse response) {
         if (session.getAttribute("usuario") == null) {
             return;
         }
-        List<Alumno> alumnos = alumnoServicio.buscarTodos();
+        List<Taller> tallers = tallerServicio.buscarTodos();
         response.setContentType("application/application/vnd.ms-excel");
-        response.setHeader("Content-Disposition", "attachment; filename=\"alumnos.xls\"");
+        response.setHeader("Content-Disposition", "attachment; filename=\"tallers.xls\"");
         PrintWriter out;
         try {
             out = response.getWriter();
@@ -93,21 +93,20 @@ public class AlumnoReporteController {
             out.println("<title></title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Reporte de Alumno de Casa de Cultura</h1>");
+            out.println("<h1>Reporte de Taller de Casa de Cultura</h1>");
             out.println("<table>");
             out.println("<thead>");
             out.println("</thead>");
             out.println("<tbody>");
             out.println("<tr>");
-            out.println("<th>"+"Nombre Alumno" +"</th>"+"<th>"+"Apellido Paterno" +"</th>" +"<th>"+"Apellido Materno" +"</th>" + "<th>"+"TUTOR" +"</th>" + "<th>"+"Teléfono" +"</th>" );
+            out.println("<th>"+"Nombre Taller" +"</th>"+"<th>"+"Descripcion" +"</th>" +"<th>"+"Horario" +"</th>" + "<th>"+"Costo" +"</th>" + "<th>"+"Comentarios" +"</th>" );
             out.println("</tr>");
-            for (Alumno alumno : alumnos) {
+            for (Taller taller : tallers) {
                 out.println("<tr>");
-                out.println("<td>" + alumno.getNombre() + "</td>");
-                out.println("<td>" + alumno.getPaterno() + "</td>");
-                out.println("<td>" + alumno.getMaterno() + "</td>");
-                out.println("<td>" + alumno.getNombreTutor() + "</td>");
-                out.println("<td>" + alumno.getTelefono() + "</td>");
+                out.println("<td>" + taller.getNombre() + "</td>");
+                out.println("<td>" + taller.getDescripcion() + "</td>");
+                out.println("<td>" + taller.getHorario() + "</td>");
+                out.println("<td>" + taller.getCosto() + "</td>");
                 out.println("</tr>");
             }
             out.println("</tbody>");
@@ -115,7 +114,7 @@ public class AlumnoReporteController {
             out.println("</body>");
             out.println("</html>");
         } catch (IOException ex) {
-            Logger.getLogger(AlumnoReporteController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TallerReporteController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

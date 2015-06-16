@@ -19,42 +19,6 @@ ument   : pruebachristo
     </head>
     <body>
         <h1>Mis pruebas de Facebook</h1>
-        /* Esta es la Autentificacion de Facebook */
-        <script>
-            window.fbAsyncInit = function () {
-                FB.init({
-                    appId: '361152520750261',
-                    xfbml: true,
-                    version: 'v2.3'
-                });
-            };
-
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) {
-                    return;
-                }
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-            /*  Esta Aqui Autentificacion de Facebook*/
-            < div
-                    class = "fb-like"
-                    data - share = "true"
-                    data - width = "450"
-                    data - show - faces = "true" >
-                    < /div>
-
-                    FB.login(function () {
-                        FB.api('/me/feed', 'post', {message: 'Hello, world!'});
-                    }, {scope: 'publish_actions'});
-        </script> 
-        Por Favor da Megusta ala Pagina 
-
-        /*  Esta Aqui Boton de Megusta y Compartir de Facebook*/
-
 
         <div id="fb-root"></div>
         <script>(function (d, s, id) {
@@ -65,47 +29,89 @@ ument   : pruebachristo
                 js.id = id;
                 js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.3&appId=361152520750261";
                 fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
-
-        <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-
-        /*  Esta Aqui Boton de Megusta y Compartir de Facebook*/
-        /*  Aqui Idioma de persona que utiliza Facebook*/
-        <script>
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id))
-                    return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "https://youtu.be/yAkk3MqxOY8";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        </script> 
-
-        <a href="#" id="login-btn">Log in with Facebook</a>
+            }(document, 'script', 'facebook-jssdk'));</script> 
 
         <script>
-            document.getElementById('login-btn').onclick = function () {
-                FB.login(function (response) {
-                    Log.info('FB.login response', response);
-                }, {scope: 'user_friends, publish_actions'});
-                return false;
+            FB.getLoginStatus(function (response) {
+                if (response.status === 'connected') {
+                    console.log('Logged in.');
+                }
+                else {
+                    FB.login();
+                }
+
+            });
+        </script>
+        <div class="fb-like" data-href="https://www.facebook.com/profile.php?id=100009414354120&amp;fref=ts" data-width="1200" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+
+
+        <%-- <script>
+         // Only works after `FB.init` is called
+             function myFacebookLogin() {
+                 FB.login(function () {
+                 }, {scope: 'publish_actions'});
+             }
+          </script>
+         <button onclick="myFacebookLogin()">Login with Facebook</button>
+         <script>
+             FB.login(function () {
+                 // Note: The call will only work if you accept the permission request
+                 FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+             }, {scope: 'publish_actions'});
+         </script>
+         <button onclick="function()">Publicar</button>--%>
+
+
+        <script>
+            // Only works after `FB.init` is called
+            function myFacebookLogin() {
+                FB.login(function () {
+                }, {scope: 'publish_actions'});
             }
         </script>
+        <button onclick="myFacebookLogin()">Login with Facebook</button>
+
         <a href="#" id="publicar-btn">Publicar  Facebook</a>
-        
+
         <script>
-        var hola = "Este es la Prueba convariable"
+            var nombre = "Taller"
+            var descripcion = "Explicacion de Taller"
+            var horario = "horario de  10:00am"
+            var fecha = "27-89-9999"
             document.getElementById('publicar-btn').onclick = function () {
-            FB.login(function (response) {
-            }, {scope: 'publish_actions'});
-            FB.login(function () {
-                FB.api('/me/feed', 'post', {message: hola});
-            }, {scope: 'publish_actions'});
-        }
+                FB.login(function (response) {
+                }, {scope: 'publish_actions'});
+                FB.login(function () {
+                    FB.api('/me/feed', 'post', {message: "Nombre de Nuestro taller" + nombre + "sobre que trata:" + descripcion + "Horario:" + horario + "Fecha" + fecha});
+                }, {scope: 'publish_actions'});
+            }
         </script> 
-        
-        
-    </body>
-</html>
+
+        Prueba de Imagenes 
+
+        GET graph.facebook.com
+        /{node-id}?
+        fields=<first-level>{<second-level>}
+                
+                
+            <script>
+                var publish = function () {
+                    fb.publish({
+                        message: "Probando IMAGEN",
+                        picture: "C:\Users\Lap_christo\Desktop\imagenes gam\190.png",
+                        link: "",
+                        name: "Simple Facebook Graph Javascript SDK",
+                        description: "Facebook Graph es una nueva forma de conectar tu web Facebook"
+                    }, function (published) {
+                        if (published)
+                            alert("SUCCEES ");
+                        else
+                            alert("MAL OTRO INTENTO ");
+                    });
+                }
+
+            </script>
+
+            </body>
+            </html>

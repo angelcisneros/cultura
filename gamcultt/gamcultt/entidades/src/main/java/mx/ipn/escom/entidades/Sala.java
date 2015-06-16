@@ -57,4 +57,8 @@ public @Data class Sala implements java.io.Serializable {
         this.capacidad = capacidad;
     }
 
+    public String getCasa(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

@@ -19,7 +19,7 @@
                         <option label="--TODOS--" value="0">--TODOS--</option>
                         <option label="Por Nombre" value="1" >Por Nombre</option>
                         <option label="Por Taller" value="2" >Por Taller</option>
-                        <option label="Por Edad" value="5" >Por Edad</option>
+                        <option label="Por Edad" value="3" >Por Edad</option>
                         <option label="Por Correo" value="5" >Por Correo</option>
                     </select>
                 </div>
