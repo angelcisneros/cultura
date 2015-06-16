@@ -89,7 +89,12 @@ public class CasaRepositorioImpl implements CasaRepositorio{
                 
                 
     }
-    
-    
-    
+
+    @Override
+    public List<Casa> buscarPorNombre(String nombre) {
+       return (List<Casa>) sessionFactory.getCurrentSession().createCriteria(Casa.class)
+                .add(Restrictions.like("nombre", "%" + nombre + "%"))
+                .list();
+    }
+        
 }

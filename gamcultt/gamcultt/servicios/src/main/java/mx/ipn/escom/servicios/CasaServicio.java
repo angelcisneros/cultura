@@ -25,4 +25,5 @@ public interface CasaServicio {
     List<Casa> buscarTodos();
     
     List<Casa> buscarPorCategoriaTaller(Integer categoriaTaller);
+    List<Casa> buscarPorNombre (String nombre);
 }

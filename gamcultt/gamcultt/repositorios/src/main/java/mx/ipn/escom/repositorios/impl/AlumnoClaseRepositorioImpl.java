@@ -89,7 +89,5 @@ public class AlumnoClaseRepositorioImpl implements AlumnoClaseRepositorio{
                 .createAlias("alumno", "a", JoinType.INNER_JOIN)
                 .list();
     }
-    
-    
-    
+            
 }

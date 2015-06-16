@@ -116,4 +116,9 @@ public class CasaServicioImpl implements CasaServicio{
     private boolean esExtencionValida(String originalFilename, String png) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public List<Casa> buscarPorNombre(String nombre) {
+     return casaRepositorio.buscarPorNombre(nombre);
+    }
 }
