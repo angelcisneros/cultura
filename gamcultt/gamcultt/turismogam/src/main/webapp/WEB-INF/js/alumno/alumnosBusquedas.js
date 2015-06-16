@@ -31,7 +31,7 @@ $(document).on('ready', function() {
 
 $('#porTallerButton').on('click', function() {
     var id = $("#porTallerId option:selected").attr('value');
-    recargaTbody($(body), "buscarAlumnoPorTaller", id);
+    recargaTbody($(body), "buscarAlumnoPorTaller", {'idTaller': id});
 });
 
 $('#porEdadButton').on('click', function() {

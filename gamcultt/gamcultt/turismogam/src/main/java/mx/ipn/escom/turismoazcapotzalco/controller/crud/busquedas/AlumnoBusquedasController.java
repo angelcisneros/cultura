@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -52,8 +53,8 @@ public class AlumnoBusquedasController {
         model.addAttribute("alumnos", alumnoServicio.buscarPorEdad(edadCompleta));
         return "crud/alumnoBody";
     }
-  @RequestMapping(value = "buscarAlumnoPorTaller/{idTaller}", method = {RequestMethod.GET, RequestMethod.POST} )
-    public String buscarAlumnoPorTaller(@PathVariable String idTaller, HttpSession session, Model model){
+  @RequestMapping(value = "buscarAlumnoPorTaller", method = {RequestMethod.GET, RequestMethod.POST} )
+    public String buscarAlumnoPorTaller(@RequestParam String idTaller, HttpSession session, Model model){
         System.out.println("ENTREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
         if (session.getAttribute("usuario") == null){
             return SESION_CADUCA;
