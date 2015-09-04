@@ -10,7 +10,7 @@
             </div>
             <div class="col-lg-1"></div>
         </div>
-        <div id="footer" class="row text-center">Derechos reservados bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+        <div id="footer" class="row text-center">2015 Derechos reservados GAM
             <br><br>
         </div>
     </div>

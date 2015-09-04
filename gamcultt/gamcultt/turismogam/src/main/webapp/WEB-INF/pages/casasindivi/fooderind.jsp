@@ -3,7 +3,7 @@
         <div class="row">
           <div class="col-sm-6">
             <h1 class="text-inverse"></h1>
-            <p class="text-inverse">Derechos reservados y consulte nuestro aviso de privacidad.</p>
+            <p class="text-inverse">2015. Derechos reservados y consulte nuestro aviso de privacidad.</p>
           </div>
           <div class="col-sm-6">
             <p class="text-info text-right">

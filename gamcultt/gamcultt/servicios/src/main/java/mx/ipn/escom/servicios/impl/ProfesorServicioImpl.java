@@ -76,8 +76,8 @@ public class ProfesorServicioImpl implements ProfesorServicio{
     }
 
     @Override
-    public List<Profesor> buscarPorCorreo(String correop) {
-        return profesorRepositorio.buscarPorCorreo(correop);
+    public List<Profesor> buscarPorCorreo(String correo) {
+        return profesorRepositorio.buscarPorCorreo(correo);
     }
 
    
@@ -88,9 +88,8 @@ public class ProfesorServicioImpl implements ProfesorServicio{
     }
 
     @Override
-    public List<Profesor> buscarPorEdad(String edadCompletap) {
-        String[] edad = edadCompletap.split(",");
-        return profesorRepositorio.buscarPorEdad(edad[0],edad[1]);
+    public List<Profesor> buscarPorEdad(String edad) {
+        return profesorRepositorio. buscarPorEdad(edad);
     }
 }
 

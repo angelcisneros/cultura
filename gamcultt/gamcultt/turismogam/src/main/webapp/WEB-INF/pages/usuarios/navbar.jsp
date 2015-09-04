@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand"><img height="40" src="../../images/gam.png" class="img-circle" alt="Brand"></a>
+            <a class="navbar-brand"><img height="40" src="images/gam.png" class="img-circle" alt="Brand"></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -24,7 +24,7 @@
                     <a href="eventoprincipal">Eventos</a>
                 </li>
                 <li>
-                    <a href="misionvision">Quienes Somos</a>
+                    <a href="misionvision">¿Quiénes Somos?</a>
                 </li>
                 <li>
                     <a href="contacto">Contacto</a>

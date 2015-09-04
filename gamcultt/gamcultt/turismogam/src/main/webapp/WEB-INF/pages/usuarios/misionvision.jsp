@@ -15,26 +15,19 @@
 <div class="section">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <hr>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="section">
-    <div class="container">
-        <div class="row">
             <div class="col-md-6">
-                <h1 class="text-danger">Mision</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
-                    <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-                    <br>Ut enim ad minim veniam, quis nostrud</p>
+                <h1 class="text-danger">Misión</h1>
+                <p>Promover la riqueza histórica, cultural, patrimonial, arquitectónica y natural de la
+                    <br>Delegación Gustavo A. Madero, tanto a la comunidad maderense como a turistas
+                    <br>nacionales y extranjeros, exaltando los valores históricos, culturales,
+                    <br> arquitectónicos, promoviendo la diversidad de servicios turísticos que se ofrecen.</p>
+                
             </div>
             <div class="col-md-6">
-                <h1 class="text-danger">Vision</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
-                    <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-                    <br>Ut enim ad minim veniam, quis nostrud</p>
+                <h1 class="text-danger">Visión</h1>
+                <p>Programar actividades turísticas, promocionando entre los habitantes de la
+                    <br>Delegación, la visita de los sitios de interés y de los Monumentos Históricos de
+                    <br>esta Demarcación y de la Ciudad de México.</p>
             </div>
         </div>
     </div>
@@ -48,17 +41,17 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png"
+                <img src="images/user_placeholder.png"
                      class="center-block img-circle img-responsive">
-                <h3 class="text-center">Nombre Representante</h3>
-                <p class="text-center text-danger">Cargo</p>
+                <h3 class="text-center">Leticia Bravo</h3>
+                <p class="text-center text-danger">JUD de Centros Culturales</p>
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png"
+                <img src="images/user_placeholder.png"
                      class="center-block img-circle img-responsive">
                 <h3 class="text-center">Nombre Representante</h3>
-                <p class="text-center text-danger">cargo</p>
+                <p class="text-center text-danger">Encargado de la Casa</p>
             </div>
         </div>
     </div>

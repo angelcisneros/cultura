@@ -11,19 +11,12 @@
         </div>
     </div>
 </div>
+
 <div class="section">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-danger">Bienvenido a Nuestras Red Cultural</h1>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+                <h1 class="text-danger">Bienvenido a Nuestra Red Cultural</h1>
                 <h2 class="text-danger">Nuestros Eventos del Mes &nbsp;
                     <br>
                 </h2>
@@ -39,24 +32,24 @@
                      data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img src="..\..\..\imagenes gam\ARISTEGUI.JPG">
+                            <img src="images/baile.jpg">
                             <div class="carousel-caption">
-                                <h2>Title</h2>
-                                <p>Description</p>
+                                <h2></h2>
+                                <p></p>
                             </div>
                         </div>
                         <div class="item">
-                            <img src="..\..\..\imagenes gam\ALI CHUMACERO.JPG">
+                            <img src="images/imagen4.jpg">
                             <div class="carousel-caption">
-                                <h2>Title</h2>
-                                <p>Description</p>
+                                <h2></h2>
+                                <p></p>
                             </div>
                         </div>
                         <div class="item">
-                            <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png">
+                            <img src="images/fut3.jpg">
                             <div class="carousel-caption">
-                                <h2>Title</h2>
-                                <p>Description</p>
+                                <h2></h2>
+                                <p></p>
                             </div>
                         </div>
                     </div>

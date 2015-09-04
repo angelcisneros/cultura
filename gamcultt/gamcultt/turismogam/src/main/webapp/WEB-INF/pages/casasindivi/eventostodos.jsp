@@ -38,8 +38,8 @@
                     <div class="col-md-8">
                         <h1 class="text-danger">Nombre</h1>
                         <h2 class="text-center">NombreBase</h2>
-                        <h1 class="text-danger">Descripcion</h1>
-                        <h2 class="text-center">DescripcionBase</h2>
+                        <h1 class="text-danger">Descripción</h1>
+                        <h2 class="text-center">DescripciónBase</h2>
                         <h1 class="text-danger">Fecha del Evento</h1>
                         <h2 class="text-center">FechaBase</h2>
                         <h1 class="text-danger">Horario del Evento</h1>

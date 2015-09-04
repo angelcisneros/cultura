@@ -18,9 +18,8 @@
                     <select id="busquedas" class="form-control" aria-describedby="basic-addon1">
                         <option label="--TODOS--" value="0">--TODOS--</option>
                         <option label="Por Nombre" value="1" >Por Nombre</option>
-                        <option label="Por Taller" value="2" >Por Taller</option>
-                        <option label="Por Edad" value="3" >Por Edad</option>
-                        <option label="Por Correo" value="5" >Por Correo</option>
+                        <option label="Por Edad" value="2" >Por Edad</option>
+                        <option label="Por Correo" value="3" >Por Correo</option>
                     </select>
                 </div>
             </div>
@@ -70,4 +69,5 @@
 <%@ include file="/WEB-INF/pages/templates/popUpRespuesta.jsp"%>
 <script src="../js/profesor/profesor.js" charset="UTF-8"></script>
 <script src="../js/profesor/profesorReporte.js" charset="UTF-8"></script>
+<script src="../js/profesor/profesorBusquedas.js" charset="UTF-8"></script>
 <%@ include file="/WEB-INF/pages/templates/footer.jsp"%>

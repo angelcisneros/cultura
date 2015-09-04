@@ -191,3 +191,20 @@ body{
 .modal-body .row .galerias div{
     overflow-y: hidden;
 }
+#navbar-admin{
+        //background-color: #9C440C;
+        color: #fff;
+}
+#navbar-admin a{
+        color: #fff;
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.5em;
+}
+
+#navbar-admin .a-nav{
+        color: #fff;
+}
+#navbar-admin .a-nav:hover{
+        color: #000;
+        //background-color: #B25901;
+}

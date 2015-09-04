@@ -36,15 +36,15 @@
         <div class="input-append date">
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Nombre(s):</span>
-                <input id="porNombre" class="form-control" type="text" placeholder="Edad Mínima" aria-describedby="basic-addon1"/>
+                <input id="porNombre" class="form-control" type="text" placeholder="Nombre" aria-describedby="basic-addon1"/>
             </div>
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon2">Paterno</span>
-                <input id="porPaterno" class="form-control" type="text" placeholder="Edad Máxima" aria-describedby="basic-addon2"/>
+                <input id="porPaterno" class="form-control" type="text" placeholder="Paterno" aria-describedby="basic-addon2"/>
             </div>
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon3">Materno:</span>
-                <input id="porMaterno" class="form-control" type="text" placeholder="Edad Máxima" aria-describedby="basic-addon3"/>
+                <input id="porMaterno" class="form-control" type="text" placeholder="Materno" aria-describedby="basic-addon3"/>
             </div>
         </div>
         <button id="porNombreButton" type="button" class="btn btn-primary btn-large pull-right">Buscar</button>
@@ -55,7 +55,7 @@
         <div class="input-append date">
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Correo:</span>
-                <input id="porCorreo" class="form-control" type="text" placeholder="Edad Mínima" aria-describedby="basic-addon1"/>
+                <input id="porCorreo" class="form-control" type="text" placeholder="Correo" aria-describedby="basic-addon1"/>
             </div>
         </div>
         <button id="porCorreoButton" type="button" class="btn btn-primary btn-large pull-right">Buscar</button>

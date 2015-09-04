@@ -25,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-danger">Contactanos</h1>
+                <h1 class="text-danger">Contáctanos</h1>
             </div>
         </div>
         <div class="row">
@@ -37,11 +37,11 @@
                                type="email">
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="exampleInputPassword1">Correo Electronico</label>
+                        <label class="control-label" for="exampleInputPassword1">Correo Electrónico</label>
                         <input class="form-control" id="exampleInputEmail1"
                                placeholder="Enter email" type="email">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-default">Enviar</button>
                 </form>
             </div>
             <div class="col-md-6">
@@ -59,11 +59,11 @@
         <div class="row">
             <div class="col-md-6">
                 <h2 class="text-danger">Dirección</h2>
-                <h2 class="text-center">base</h2>
-                <h2 class="text-danger">Telefono</h2>
-                <h2 class="text-center">Base</h2>
+                <h2 class="text-center">Av. IPN esq. Otavalo 7 Lindavista</h2>
+                <h2 class="text-danger">Teléfono</h2>
+                <h2 class="text-center">55-52-41-97</h2>
                 <h2 class="text-danger">Correo&nbsp;</h2>
-                <h2 class="text-center">Base</h2>
+                <h2 class="text-center">Juventudfuturama@gmail.com</h2>
             </div>
             <div class="col-md-6">
                 <div class="responsive">

@@ -38,7 +38,7 @@
                             <button contenteditable="false" type="button" class="close" data-dismiss="alert"
                             aria-hidden="true">×</button>
                             <b>Si ya te has Regisrado en uno de Nuestro Eventos solo ingresa tu correo
-                                de Favor</b>
+                                </b>
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-4">
-                                    <label for="inputEmail3" class="control-label">Telefono</label>
+                                    <label for="inputEmail3" class="control-label">Teléfono</label>
                                 </div>
                                 <div class="col-sm-8">
                                     <input type="search" class="form-control" id="inputEmail3" placeholder="Telefono">
@@ -147,7 +147,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-4">
-                                    <label for="inputEmail3" class="control-label">Correo Electronico</label>
+                                    <label for="inputEmail3" class="control-label">Correo Electrónico</label>
                                 </div>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" id="inputEmail3" placeholder="Correo Electronico">
@@ -155,7 +155,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-4">
-                                    <label for="inputEmail3" class="control-label">Desea Recibir Informacion de Evento Similares</label>
+                                    <label for="inputEmail3" class="control-label">Desea Recibir Información de Evento Similares</label>
                                 </div>
                                 <div class="col-sm-8">
                                     <select name="OS">

@@ -44,7 +44,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <h2 class="text-danger">Informacion de la Casa</h2>
+                        <h2 class="text-danger">Información de la Casa</h2>
                         <p class="text-danger text-left">${casa.informacion}</p>
                         <h2 class="text-danger">Horarios de Atención</h2>
                         <h3 class="text-danger">${casa.horario}</h3>
@@ -54,24 +54,24 @@
                         data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png">
+                                    <img src="../images/fut1.jpg">
                                     <div class="carousel-caption">
-                                        <h2>Title</h2>
-                                        <p>Description</p>
+                                        <h2></h2>
+                                        <p></p>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png">
+                                    <img src="../images/fut2.jpg">
                                     <div class="carousel-caption">
-                                        <h2>Title</h2>
-                                        <p>Description</p>
+                                        <h2></h2>
+                                        <p></p>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png">
+                                    <img src="../images/fut3.jpg">
                                     <div class="carousel-caption">
-                                        <h2>Title</h2>
-                                        <p>Description</p>
+                                        <h2></h2>
+                                        <p></p>
                                     </div>
                                 </div>
                             </div>

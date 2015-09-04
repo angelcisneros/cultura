@@ -35,8 +35,8 @@
 
                     <div class="col-md-8">
                         <h1 class="text-danger">Nombre del Taller</h1>
-                        <h2 id="nombre" class="text-danger"></h2>
-                        <h1 class="text-danger">descripción</h1>
+                        <h2 id="nombre" class="text-center"></h2>
+                        <h1 class="text-danger">Descripción</h1>
                         <h2 id="descripcion" class="text-center"></h2>
                         <h1 class="text-danger">Costo del Taller</h1>
                         <h2 id="costo" class="text-center"></h2>
@@ -47,7 +47,7 @@
                              data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png">
+                                    <img src="../../images/guita1.jpg">
                                     <div class="carousel-caption">
                                         <h2>Title</h2>
                                         <p>Description</p>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="row text-right">
                             <div class="col-md-8 text-right">
-                                <a class="btn btn-danger btn-lg">Registrarme a Evento</a>
+                                <a class="btn btn-danger btn-lg">Registrarse a Taller</a>
                             </div>
                         </div> 
                     </div>

@@ -40,8 +40,8 @@
                                 <div class="item active">
                                     <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png">
                                     <div class="carousel-caption">
-                                        <h2>Title</h2>
-                                        <p>Description</p>
+                                        <h2></h2>
+                                        <p></p>
                                     </div>
                                 </div>
                             </div>
@@ -64,10 +64,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h1 class="text-danger">Informacion del Evento</h1>
-                        <h3>Informacion del Evento Base</h3>
-                        <h1 class="text-danger">Direccion del Evento</h1>
-                        <h3>Direccion del Evento Base</h3>
+                        <h1 class="text-danger">Información del Evento</h1>
+                        <h3>Información del Evento Base</h3>
+                        <h1 class="text-danger">Dirección del Evento</h1>
+                        <h3>Dirección del Evento Base</h3>
                     </div>
                     <div class="col-md-6">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3760.7833269565795!2d-99.13537064999998!3d19.50795565!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9c890b7d2af%3A0x8814dc9f4076398f!2sFuturama%2C+07320+Ciudad+de+M%C3%A9xico%2C+D.F.!5e0!3m2!1ses!2smx!4v1432273232629"

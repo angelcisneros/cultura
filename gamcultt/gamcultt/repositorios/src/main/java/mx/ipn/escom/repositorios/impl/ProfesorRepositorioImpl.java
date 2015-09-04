@@ -77,29 +77,33 @@ public class ProfesorRepositorioImpl implements ProfesorRepositorio{
 
     @Override
     public List<Profesor> buscarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (List<Profesor>) sessionFactory.getCurrentSession().createCriteria(Profesor.class)
+                .list();
     }
 
     @Override
     public List<Profesor> buscarPorCorreo(String correo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (List<Profesor>) sessionFactory.getCurrentSession().createCriteria(Profesor.class)
+                .add(Restrictions.eq("correo", correo))
+                .list();
     }
 
     @Override
     public List<Profesor> buscarPorNombre(String nombre, String paterno, String materno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (List<Profesor>) sessionFactory.getCurrentSession().createCriteria(Profesor.class)
+                .add(Restrictions.like("nombre", "%" + nombre + "%"))
+                .add(Restrictions.like("paterno", "%"+ paterno + "%"))
+                .add(Restrictions.like("materno","%" +materno +"%"))
+                .list();
     }
  
     @Override
-    public List<Profesor>  buscarPorEdad(String edadmin, String edadmax) {
+    public List<Profesor>  buscarPorEdad(String edad) {
          return (List<Profesor> ) sessionFactory.getCurrentSession().createCriteria(Profesor.class)
-                .add(Restrictions.between("edad", edadmin, edadmax))
-                .list();
+                 .add(Restrictions.eq("edad", edad))
+                 .list();
     }
-    
-    
-    
-    
+       
 }
 
 

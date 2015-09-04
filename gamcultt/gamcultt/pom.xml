@@ -9,7 +9,6 @@
         <module>entidades</module>
         <module>repositorios</module>
         <module>servicios</module>
-        <module>turismogam</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

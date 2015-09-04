@@ -43,19 +43,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="text-danger">Contactanos</h1>
+                        <h1 class="text-danger">Contáctanos</h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <form role="form">
                             <div class="form-group">
-                                <label class="control-label" for="exampleInputEmail1">Nombre</label>
+                                <label class="control-label" for="exampleInputEmail1">Nombre:</label>
                                 <input class="form-control" id="exampleInputEmail1" placeholder="Nombre"
                                 type="email">
                             </div>
                             <div class="form-group">
-                                <label class="control-label" for="exampleInputPassword1">Correo Electronico</label>
+                                <label class="control-label" for="exampleInputPassword1">Correo Electrónico</label>
                                 <input class="form-control" id="exampleInputEmail1"
                                 placeholder="Enter email" type="email">
                             </div>
@@ -78,7 +78,7 @@
                     <div class="col-md-6">
                         <h2 class="text-danger">Dirección</h2>
                         <h2 class="text-center">base</h2>
-                        <h2 class="text-danger">Telefono</h2>
+                        <h2 class="text-danger">Teléfono</h2>
                         <h2 class="text-center">Base</h2>
                         <h2 class="text-danger">Correo&nbsp;</h2>
                         <h2 class="text-center">Base</h2>

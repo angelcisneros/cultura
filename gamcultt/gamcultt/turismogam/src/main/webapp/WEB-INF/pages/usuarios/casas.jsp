@@ -4,10 +4,6 @@
 
 <div class="container">
     <h1 class="text-danger">Bienvenido a Nuestras Casas de Cultura&nbsp;</h1>
-    <hr>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
-        <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-        <br>Ut enim ad minim veniam, quis nostrud</p>
 </div>
 <div class="section">
     <div class="container">

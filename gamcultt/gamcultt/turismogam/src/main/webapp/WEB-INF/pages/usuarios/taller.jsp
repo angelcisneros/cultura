@@ -13,7 +13,7 @@
                         <div class="col-md-6">
                             <h1 class="text-danger">${ct.nombre}</h1>
                             <p class="text-danger">${ct.descripcion}</p>
-                            <a class="btn btn-danger verMas" alt="${ct.id}">Ver mas ....</a>
+                            <a class="btn btn-danger verMas" alt="${ct.id}">Ver más ....</a>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                         <div class="col-md-6">
                             <h1 class="text-inverse">${ct.nombre}</h1>
                             <p class="text-inverse text-justify">${ct.descripcion}</p>
-                            <a class="btn btn-danger verMas" alt="${ct.id}">Ver mas ....</a>
+                            <a class="btn btn-danger verMas" alt="${ct.id}">Ver más ....</a>
                         </div>
                         <div class="col-md-6">
                             <img src="${pageContext.request.contextPath}/categoriaTaller/${ct.id}" class="img-responsive img-thumbnail">
@@ -45,7 +45,7 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h2 class="modal-title"><strong id="tituloPopUp">Casas donde se imparte</strong></h2>
+                <h2 class="modal-title"><strong id="tituloPopUp">Casas en que se imparte</strong></h2>
             </div>
             <div class="modal-body" id="contenidoCasasImpartenTaller">
                 <%@ include file="/WEB-INF/pages/usuarios/casasImpartenTaller.jsp"%>

@@ -25,7 +25,15 @@ public class ProfesorBusquedasController {
 
     @Autowired
     ProfesorServicio profesorServicio;
-
+    
+    @RequestMapping(value = "buscarTodosProfesor", method = RequestMethod.POST)
+    public String buscarTodosProfesor(@RequestParam String nada, HttpSession session, Model model) {
+        if (session.getAttribute("usuario") == null) {
+            return SESION_CADUCA;
+        }
+        model.addAttribute("alumnos", profesorServicio.buscarTodos());
+        return "crud/profesorBody";
+    }
     @RequestMapping(value = "buscarProfesorPorCorreo", method = RequestMethod.POST)
     public String buscarProfesorPorCorreo(@RequestParam String correop, HttpSession session, Model model) {
         if (session.getAttribute("usuario") == null) {
@@ -45,11 +53,11 @@ public class ProfesorBusquedasController {
     }
 
     @RequestMapping(value = "buscarProfesorPorEdad", method = RequestMethod.POST)
-    public String buscarProfesorPorEdad(@RequestParam String edadCompletap, HttpSession session, Model model) {
+    public String buscarProfesorPorEdad(@RequestParam String edad, HttpSession session, Model model) {
         if (session.getAttribute("usuario") == null) {
             return SESION_CADUCA;
         }
-        model.addAttribute("profesors", profesorServicio.buscarPorEdad(edadCompletap));
+        model.addAttribute("profesors", profesorServicio.buscarPorEdad(edad));
         return "crud/profesorBody";
     }
 

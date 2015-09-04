@@ -37,7 +37,7 @@
                         <div class="alert alert-dismissable alert-warning text-center">
                             <button contenteditable="false" type="button" class="close" data-dismiss="alert"
                             aria-hidden="true">×</button>
-                            <strong>Bienvenido a Nuestra RED CULTURAL Inscribete Tu Propuesta</strong>
+                            <strong>Bienvenido a Nuestra RED CULTURAL Inscribe Tu Propuesta</strong>
                         </div>
                     </div>
                 </div>
@@ -74,42 +74,42 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-4">
-                                    <label for="inputEmail3" class="control-label">Descripcion de la Propuesta Cultural</label>
+                                    <label for="inputEmail3" class="control-label">Descripción de la Propuesta Cultural</label>
                                 </div>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Descripcion de la Propuesta">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Descripción de la Propuesta">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-4">
-                                    <label for="inputEmail3" class="control-label">Telefono</label>
+                                    <label for="inputEmail3" class="control-label">Teléfono</label>
                                 </div>
                                 <div class="col-sm-8">
-                                    <input type="search" class="form-control" id="inputEmail3" placeholder="Telefono">
+                                    <input type="search" class="form-control" id="inputEmail3" placeholder="Teléfono">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-4">
-                                    <label for="inputEmail3" class="control-label">Correo Electronico</label>
+                                    <label for="inputEmail3" class="control-label">Correo Electrónico</label>
                                 </div>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Correo Electronico">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Correo Electrónico">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-4">
-                                    <label for="inputEmail3" class="control-label">Personas que Participan</label>
+                                    <label for="inputEmail3" class="control-label">Personas que participan</label>
                                 </div>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Cantidad de Personas">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Cantidad de personas">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-4">
-                                    <label for="inputEmail3" class="control-label">Cantidad de Personas que se Estima beneficiar</label>
+                                    <label for="inputEmail3" class="control-label">Cantidad de personas que se estima beneficiar</label>
                                 </div>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Cantidad de Personas que se Estima beneficiar">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Cantidad de personas que se estima beneficiar">
                                 </div>
                             </div>
                         </form>
@@ -119,7 +119,7 @@
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox">
-                                    <a href="#">ACEPTA TERMINOS Y A VER LEIDO EL AVISO DE PRIVACIDAD </a>
+                                    <a href="#">He leído y acepto las condiciones de uso </a>
                                 </label>
                             </div>
                         </div>
