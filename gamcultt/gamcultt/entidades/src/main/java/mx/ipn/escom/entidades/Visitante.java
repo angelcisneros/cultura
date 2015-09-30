@@ -58,8 +58,7 @@ public @Data class Visitante implements java.io.Serializable {
     @Column(name = "Correo", nullable = false, length = 45)
     private String correo;
 
-    @Pattern(regexp = "^[a-zA-Záéíóúñ0-9\\s]{2,}$", message="Verifique la Información")
-    @Column(name = "Informacion")
+  
     private Boolean informacion;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "visitante")

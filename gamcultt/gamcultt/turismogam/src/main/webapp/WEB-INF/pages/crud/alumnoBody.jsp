@@ -26,7 +26,6 @@
             <div class="btn-group" role="group" aria-label="">
                 <button class="btn btn-primary alumnoUpdateButton">Editar</button>
                 <button class="btn btn-danger alumnoDeleteButton">Eliminar</button>
-                <button class="btn btn-info alumnoReporteIndividualButton">Reporte</button>
             </div>
         </td>
     </tr>

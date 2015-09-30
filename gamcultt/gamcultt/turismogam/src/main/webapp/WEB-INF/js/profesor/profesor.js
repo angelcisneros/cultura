@@ -5,34 +5,34 @@
  */
 var trClick;
 //MUESTRA LOS POPUPS CON SUS VALORES
-$(document).on('ready', function() {
+$(document).on('ready', function () {
 
     //POPUP AGREGAR
-    $('#addProfesorButton').on('click', function() {
+    $('#addProfesorButton').on('click', function () {
         limpiarInputs();
         $('#popUpProfesorAdd').modal('show');
     });
 
     //POPUP EDITAR
-    $('.profesorUpdateButton').on('click', function() {
+    $('.profesorUpdateButton').on('click', function () {
         limpiarInputs();
         rellenaPopUpUpdate(this);
     });
 
     //POPUP ELIMINAR
-    $('.profesorDeleteButton').on('click', function() {
+    $('.profesorDeleteButton').on('click', function () {
         rellenaPopUpsDelete(this);
     });
 });
 
 //PETICIONES AJAX AL SERVIDOR
-$(document).on('ready', function() {
+$(document).on('ready', function () {
 
     //AGREGAR EN BASE
 
     //FALTA VALIDAR TELEFONO Y CELULAR PARA NUMEROS
 
-    $('#addProfesor').on('click', function() {
+    $('#addProfesor').on('click', function () {
         var requisitos = 0;
         var nombre = $('#nombreAdd').val();
         var paterno = $('#paternoAdd').val();
@@ -41,7 +41,7 @@ $(document).on('ready', function() {
         var telefono = $('#telefonoAdd').val();
         var celular = $('#celularAdd').val();
 
-        if (!validarNombre( nombre )) {
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
             $('#nombreAdd').css("border", "1px solid red");
         } else {
@@ -50,7 +50,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (!validarPaterno( paterno )) {
+        if (!validarPaterno(paterno)) {
             muestraPopUpCampoNoVacio($('#paternoAdd'));
             $('#paternoAdd').css("border", "1px solid red");
         } else {
@@ -58,7 +58,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#paternoAdd'));
             requisitos++;
         }
-        if (!validarMaterno( materno )) {
+        if (!validarMaterno(materno)) {
             muestraPopUpCampoNoVacio($('#maternoAdd'));
             $('#maternoAdd').css("border", "1px solid red");
         } else {
@@ -75,16 +75,16 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#correoAdd'));
             requisitos++;
         }
-        if (!validarTelefono(telefono)) {
-            muestraPopUpCampoNoVacio($('#telefonoAdd'));
+        if (telefono == '') {
+            muestraPopUpCampoTelefono($('#telefonoAdd'));
             $('#telefonoAdd').css("border", "1px solid red");
         } else {
             $('#telefonoAdd').removeAttr('style');
             cierraPopUpChiquito($('#telefonoAdd'));
             requisitos++;
         }
-         if (!validarCeleular(celular)) {
-            muestraPopUpCampoNoVacio($('#celularAdd'));
+        if (celular == '') {
+            muestraPopUpCampoCelular($('#celularAdd'));
             $('#celularAdd').css("border", "1px solid red");
         } else {
             $('#celularAdd').removeAttr('style');
@@ -101,7 +101,7 @@ $(document).on('ready', function() {
                 url: "agregarProfesor/",
                 dataType: 'text',
                 data: $('#profesorAddForm').serialize(),
-                success: function(respuesta) {
+                success: function (respuesta) {
                     var respuesta = respuesta.split('#');
                     if (respuesta[0] === 'Correcto...') {
                         $('#tituloPopUp').text(respuesta[0]);
@@ -130,7 +130,6 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary profesorUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger profesorDeleteButton">Eliminar</button>' +
-                                '<button class="btn btn-info profesorReporteIndividualButton">Reporte</button>'+
                                 '</div>' +
                                 '</td>' +
                                 '</tr>'
@@ -139,7 +138,7 @@ $(document).on('ready', function() {
 
                     }
                 },
-                error: function(jqXHR, textStatus, errorThrown) {
+                error: function (jqXHR, textStatus, errorThrown) {
                     alert('error');
                 }
             });
@@ -148,7 +147,7 @@ $(document).on('ready', function() {
     });
 
     //ACTUALIZAR BASE
-    $('#updateProfesor').on('click', function() {
+    $('#updateProfesor').on('click', function () {
         var requisitos = 0;
         var nombre = $('#nombreUpdate').val();
         var paterno = $('#paternoUpdate').val();
@@ -157,7 +156,7 @@ $(document).on('ready', function() {
         var telefono = $('#telefonoUpdate').val();
         var celular = $('#celularUpdate').val();
 
-        if (!validarNombre( nombre )) {
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
@@ -166,7 +165,7 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (!validarPaterno( paterno )) {
+        if (!validarPaterno(paterno)) {
             muestraPopUpCampoNoVacio($('#paternoUpdate'));
             $('#paternoUpdate').css("border", "1px solid red");
         } else {
@@ -174,7 +173,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#paternoUpdate'));
             requisitos++;
         }
-        if (!validarMaterno( materno )) {
+        if (!validarMaterno(materno)) {
             muestraPopUpCampoNoVacio($('#maternoUpdate'));
             $('#maternoUpdate').css("border", "1px solid red");
         } else {
@@ -191,16 +190,16 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#correoUpdate'));
             requisitos++;
         }
-         if (!validarTelefono(telefono)) {
-            muestraPopUpCampoNoVacio($('#telefonoUpdate'));
+        if (telefono == '') {
+            muestraPopUpCampoTelefono($('#telefonoUpdate'));
             $('#telefonoUpdate').css("border", "1px solid red");
         } else {
             $('#telefonoUpdate').removeAttr('style');
             cierraPopUpChiquito($('#telefonoUpdate'));
             requisitos++;
         }
-         if (!validarCeleular(celular)) {
-            muestraPopUpCampoNoVacio($('#celularUpdate'));
+        if (celular == '') {
+            muestraPopUpCampoCelular($('#celularUpdate'));
             $('#celularUpdate').css("border", "1px solid red");
         } else {
             $('#celularUpdate').removeAttr('style');
@@ -216,7 +215,7 @@ $(document).on('ready', function() {
                 url: "editarProfesor/",
                 dataType: 'text',
                 data: $('#profesorUpdateForm').serialize(),
-                success: function(respuesta) {
+                success: function (respuesta) {
                     var respuesta = respuesta.split('#');
                     if (respuesta[0] === 'Correcto...') {
                         $('#tituloPopUp').text(respuesta[0]);
@@ -245,13 +244,12 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary profesorUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger profesorDeleteButton">Eliminar</button>' +
-                                '<button class="btn btn-info profesorReporteIndividualButton">Reporte</button>'+
                                 '</div>' +
                                 '</td>'
                                 );
                     }
                 },
-                error: function(jqXHR, textStatus, errorThrown) {
+                error: function (jqXHR, textStatus, errorThrown) {
                     alert('error');
                 }
             });
@@ -259,13 +257,13 @@ $(document).on('ready', function() {
 
     });
 
-    $('#deleteProfesor').on('click', function() {
+    $('#deleteProfesor').on('click', function () {
         $.ajax({
             type: 'POST',
             url: "eliminarProfesor/",
             dataType: 'text',
             data: $('#profesorDeleteForm').serialize(),
-            success: function(respuesta) {
+            success: function (respuesta) {
                 var respuesta = respuesta.split('#');
                 if (respuesta[0] === 'Correcto...') {
                     $('#tituloPopUp').text(respuesta[0]);
@@ -275,7 +273,7 @@ $(document).on('ready', function() {
                     $(trClick).remove();
                 }
             },
-            error: function(jqXHR, textStatus, errorThrown) {
+            error: function (jqXHR, textStatus, errorThrown) {
                 alert('error');
             }
         });
@@ -284,11 +282,11 @@ $(document).on('ready', function() {
 });
 
 
-$('#profesorTbody').on('click', '.profesorUpdateButton', function() {
+$('#profesorTbody').on('click', '.profesorUpdateButton', function () {
     rellenaPopUpUpdate(this);
 });
 
-$('#profesorTbody').on('click', '.profesorDeleteButton', function() {
+$('#profesorTbody').on('click', '.profesorDeleteButton', function () {
     rellenaPopUpsDelete(this);
 });
 
@@ -318,8 +316,8 @@ function rellenaPopUpUpdate(selector) {
     var tr = $($($($(selector).parent())).parent()).parent();
     var id = $(tr).find('td.id label.ocultar').text();
     var nombre = $(tr).find('td.id label.nombre').text();
-    var paterno = $(tr).find('td.id label.nombre').text();
-    var materno = $(tr).find('td.id label.nombre').text();
+    var paterno = $(tr).find('td.id label.paterno').text();
+    var materno = $(tr).find('td.id label.materno').text();
     var correo = $(tr).find('td label.correo').text();
     var telefono = $(tr).find('td label.telefono').text();
     var celular = $(tr).find('td label.celular').text();

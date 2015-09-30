@@ -25,23 +25,24 @@ $(document).on('ready', function() {
     });
 });
 
+
 //PETICIONES AJAX AL SERVIDOR
 $(document).on('ready', function() {
 
     //AGREGAR EN BASE
-
-    //FALTA VALIDAR TELEFONO Y CELULAR PARA NUMEROS
-
     $('#addVisitante').on('click', function() {
+        $('#nombreAdd').removeAttr('style');
         var requisitos = 0;
         var nombre = $('#nombreAdd').val();
-        var paterno = $('#paternoAdd').val();
-        var materno = $('#maternoAdd').val();
+        var apellidoPaterno = $('#apellidoPaternoAdd').val();
+        var apellidoMaterno = $('#apellidoMaternoAdd').val();
+        var edad = $('#edadAdd').val();
+        var sexo = $('#sexoAdd').val();
         var correo = $('#correoAdd').val();
         var telefono = $('#telefonoAdd').val();
-        var celular = $('#celularAdd').val();
+        var informacion = $('#informacionAdd').val();
 
-        if (!validarNombre( nombre )) {
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreAdd'));
             $('#nombreAdd').css("border", "1px solid red");
         } else {
@@ -50,49 +51,63 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (!validarPaterno( paterno )) {
-            muestraPopUpCampoNoVacio($('#paternoAdd'));
-            $('#paternoAdd').css("border", "1px solid red");
+        if (!validarPaterno(apellidoPaterno)) {
+            muestraPopUpCampoNoVacio($('#apellidoPaternoAdd'));
+            $('#apellidoPaternoAdd').css("border", "1px solid red");
         } else {
-            $('#paternoAdd').removeAttr('style');
-            cierraPopUpChiquito($('#paternoAdd'));
+            $('#apellidoPaternoAdd').removeAttr('style');
+            cierraPopUpChiquito($('#apellidoPaternoAdd'));
             requisitos++;
         }
-        if (!validarMaterno( materno )) {
-            muestraPopUpCampoNoVacio($('#maternoAdd'));
-            $('#maternoAdd').css("border", "1px solid red");
+        if (!validarMaterno( apellidoMaterno )) {
+            muestraPopUpCampoNoVacio($('#apellidoMaternoAdd'));
+            $('#apellidoMaternoAdd').css("border", "1px solid red");
         } else {
-            $('#maternoAdd').removeAttr('style');
-            cierraPopUpChiquito($('#maternoAdd'));
+            $('#apellidoMaternoAdd').removeAttr('style');
+            cierraPopUpChiquito($('#apellidoMaternoAdd'));
             requisitos++;
         }
 
-        if (!validarEmail(correo)) {
-            muestraPopUpCampoNoVacio($('#correoAdd'));
+        if ($.isNumeric(edad)) {
+            $('#edadAdd').removeAttr('style');
+            cierraPopUpChiquito($('#edadAdd'));
+            requisitos++;
+        } else {
+            $('#edadAdd').css("border", "1px solid red");
+            muestraPopUpCampoNumerico($('#edadAdd'));
+        }
+
+
+        if (!validarNombre(sexo)) {
+            muestraPopUpCampoNoVacio($('#sexoAdd'));
+            $('#sexoAdd').css("border", "1px solid red");
+        } else {
+            $('#sexoAdd').removeAttr('style');
+            cierraPopUpChiquito($('#sexoAdd'));
+            requisitos++;
+        }
+        
+        if (!validarEmail( correo ) ) {
+            muestraPopUpCampoNoVacioConMensaje($('#correoAdd'));
             $('#correoAdd').css("border", "1px solid red");
         } else {
             $('#correoAdd').removeAttr('style');
             cierraPopUpChiquito($('#correoAdd'));
             requisitos++;
         }
-        if (!validarTelefono(telefono)) {
-            muestraPopUpCampoNoVacio($('#telefonoAdd'));
+        
+        if (telefono=='') {
+            muestraPopUpCampoNumericoTelefono($('#telefonoAdd'));
             $('#telefonoAdd').css("border", "1px solid red");
         } else {
             $('#telefonoAdd').removeAttr('style');
             cierraPopUpChiquito($('#telefonoAdd'));
             requisitos++;
         }
-        if (!validarCeleular(celular)) {
-            muestraPopUpCampoNoVacio($('#celularAdd'));
-            $('#celularAdd').css("border", "1px solid red");
-        } else {
-            $('#celularAdd').removeAttr('style');
-            cierraPopUpChiquito($('#celularAdd'));
-            requisitos++;
-        }
+        // Tenemos que hacer la vallidacion de True o False
+        
 
-        if (requisitos >= 4 || requisitos <= 6) {
+        if (requisitos === 7) {
 
             $.ajax({
                 type: 'POST',
@@ -110,10 +125,16 @@ $(document).on('ready', function() {
                         $("#visitanteTbody").prepend(
                                 '<tr valign="top" class="nuevoVisitante success">' +
                                 '<td class="id">' +
-                                '<label class="nombre">' + nombre + '</label>&#32;   ' +
-                                '<label class="paterno">' + paterno + '</label>&#32;' +
-                                '<label class="materno">' + materno + '</label>' +
+                                '<label class="nombre">' + nombre + '</label>&#32;' +
+                                '<label class="apellidoPaterno">' + apellidoPaterno + '</label>&#32;' +
+                                '<label class="apellidoMaterno">' + apellidoMaterno + '</label>' +
                                 '<label class="ocultar">' + respuesta[2] + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label class="edad">' + edad + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label class="sexo">' + sexo + '</label>' +
                                 '</td>' +
                                 '<td>' +
                                 '<label class="correo">' + correo + '</label>' +
@@ -122,7 +143,7 @@ $(document).on('ready', function() {
                                 '<label class="telefono">' + telefono + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="celular">' + celular + '</label>' +
+                                '<label class="información">' + informacion + '</label>' +
                                 '</td>' +
                                 '<td>' +
                                 '<div class="btn-group" role="group" aria-label="">' +
@@ -133,6 +154,7 @@ $(document).on('ready', function() {
                                 '</tr>'
 
                                 );
+
 
                     }
                 },
@@ -148,13 +170,15 @@ $(document).on('ready', function() {
     $('#updateVisitante').on('click', function() {
         var requisitos = 0;
         var nombre = $('#nombreUpdate').val();
-        var paterno = $('#paternoUpdate').val();
-        var materno = $('#maternoUpdate').val();
+        var apellidoPaterno = $('#apellidoPaternoUpdate').val();
+        var apellidoMaterno = $('#apellidoMaternoUpdate').val();
+        var edad = $('#edadUpdate').val();
+        var sexo = $('#sexoUpdate').val();
         var correo = $('#correoUpdate').val();
         var telefono = $('#telefonoUpdate').val();
-        var celular = $('#celularUpdate').val();
+        var informacion = $('#informacionUpdate').val();
 
-        if (!validarNombre( nombre )) {
+        if (!validarNombre(nombre)) {
             muestraPopUpCampoNoVacio($('#nombreUpdate'));
             $('#nombreUpdate').css("border", "1px solid red");
         } else {
@@ -163,24 +187,39 @@ $(document).on('ready', function() {
             requisitos++;
         }
 
-        if (!validarPaterno( paterno )) {
-            muestraPopUpCampoNoVacio($('#paternoUpdate'));
-            $('#paternoUpdate').css("border", "1px solid red");
+        if (!validarPaterno( apellidoPaterno )) {
+            muestraPopUpCampoNoVacio($('#apellidoPaternoUpdate'));
+            $('#apellidoPaternoUpdate').css("border", "1px solid red");
         } else {
-            $('#paternoUpdate').removeAttr('style');
-            cierraPopUpChiquito($('#paternoUpdate'));
+            $('#apellidoPaternoUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#apellidoPaternoUpdate'));
             requisitos++;
         }
-        if (!validarMaterno( materno )) {
-            muestraPopUpCampoNoVacio($('#maternoUpdate'));
-            $('#maternoUpdate').css("border", "1px solid red");
+        if (!validarMaterno( apellidoMaterno )) {
+            muestraPopUpCampoNoVacio($('#apellidoMaternoUpdate'));
+            $('#apellidoMaternoUpdate').css("border", "1px solid red");
         } else {
-            $('#maternoUpdate').removeAttr('style');
-            cierraPopUpChiquito($('#maternoUpdate'));
+            $('#apellidoMaternoUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#apellidoMaternoUpdate'));
             requisitos++;
         }
-
-        if (!validarEmail(correo)) {
+        if ($.isNumeric(edad)) {
+            $('#edadUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#edadUpdate'));
+            requisitos++;
+        } else {
+            $('#edadUpdate').css("border", "1px solid red");
+            muestraPopUpCampoNumerico($('#edadUpdate'));
+        }
+        if (!validarNombre(sexo)) {
+            muestraPopUpCampoNoVacio($('#sexoUpdate'));
+            $('#sexoUpdate').css("border", "1px solid red");
+        } else {
+            $('#sexoUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#sexoUpdate'));
+            requisitos++;
+        }
+         if (!validarEmail(correo) ) {
             muestraPopUpCampoNoVacio($('#correoUpdate'));
             $('#correoUpdate').css("border", "1px solid red");
         } else {
@@ -188,7 +227,7 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#correoUpdate'));
             requisitos++;
         }
-        if (!validarTelefono(telefono)) {
+        if (telefono==='') {
             muestraPopUpCampoNoVacio($('#telefonoUpdate'));
             $('#telefonoUpdate').css("border", "1px solid red");
         } else {
@@ -196,18 +235,15 @@ $(document).on('ready', function() {
             cierraPopUpChiquito($('#telefonoUpdate'));
             requisitos++;
         }
-        if (!validarCeleular(celular)) {
-            muestraPopUpCampoNoVacio($('#celularUpdate'));
-            $('#celularUpdate').css("border", "1px solid red");
+         if (informacion==='' ) {
+            muestraPopUpCampoNoVacio($('#informacionUpdate'));
+            $('#informacionUpdate').css("border", "1px solid red");
         } else {
-            $('#celularUpdate').removeAttr('style');
-            cierraPopUpChiquito($('#celularUpdate'));
+            $('#informacionUpdate').removeAttr('style');
+            cierraPopUpChiquito($('#informacionUpdate'));
             requisitos++;
         }
-
-
-
-        if (requisitos >= 4 || requisitos <= 6) {
+        if (requisitos === 8) {
             $.ajax({
                 type: 'POST',
                 url: "editarVisitante/",
@@ -224,10 +260,16 @@ $(document).on('ready', function() {
                         $(trClick).attr('class', 'success nuevoVisitante');
                         $(trClick).html(
                                 '<td class="id">' +
-                                '<label class="nombre">' + nombre + '</label>&#32;   ' +
-                                '<label class="paterno">' + paterno + '</label>&#32;' +
-                                '<label class="materno">' + materno + '</label>' +
+                                '<label class="nombre">' + nombre + '</label>&#32;' +
+                                '<label class="apellidoPaterno">' + apellidoPaterno + '</label>&#32;' +
+                                '<label class="apellidoMaterno">' + apellidoMaterno + '</label>' +
                                 '<label class="ocultar">' + $('#idUpdate').val() + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label class="edad">' + edad + '</label>' +
+                                '</td>' +
+                                '<td>' +
+                                '<label class="sexo">' + sexo + '</label>' +
                                 '</td>' +
                                 '<td>' +
                                 '<label class="correo">' + correo + '</label>' +
@@ -236,7 +278,7 @@ $(document).on('ready', function() {
                                 '<label class="telefono">' + telefono + '</label>' +
                                 '</td>' +
                                 '<td>' +
-                                '<label class="celular">' + celular + '</label>' +
+                                '<label class="información">' + informacion + '</label>' +
                                 '</td>' +
                                 '<td>' +
                                 '<div class="btn-group" role="group" aria-label="">' +
@@ -292,21 +334,19 @@ function rellenaPopUpsDelete(selector) {
     var tr = $($($($(selector).parent())).parent()).parent();
     var id = $(tr).find('td.id label.ocultar').text();
     var nombre = $(tr).find('td.id label.nombre').text();
-    var paterno = $(tr).find('td.id label.paterno').text();
-    var materno = $(tr).find('td.id label.materno').text();
-    var correo = $(tr).find('td label.correo').text();
-    var telefono = $(tr).find('td label.telefono').text();
-    var celular = $(tr).find('td label.celular').text();
-
+    var apellidoPaterno = $(tr).find('td.id label.apellidoPaterno').text();
+    var apellidoMaterno = $(tr).find('td.id label.apellidoMaterno').text();
+    var edad = $(tr).find('td label.edad').text();
+    var sexo = $(tr).find('td label.sexo').text();
     trClick = $(tr);
 
     $('#idDelete').val(id);
     $('#nombreDelete').text(nombre);
-    $('#paternoDelete').text(paterno);
-    $('#maternoDelete').text(materno);
-    $('#correoDelete').text(correo);
-    $('#telefonoDelete').text(telefono);
-    $('#celularDelete').text(celular);
+    $('#apellidoPaternoDelete').text(apellidoPaterno);
+    $('#apellidoMaternoDelete').text(apellidoMaterno);
+    $('#edadDelete').text(edad);
+    $('#sexoDelete').text(sexo);
+
     $('#popUpVisitanteDelete').modal('show');
 }
 
@@ -314,24 +354,26 @@ function rellenaPopUpUpdate(selector) {
     var tr = $($($($(selector).parent())).parent()).parent();
     var id = $(tr).find('td.id label.ocultar').text();
     var nombre = $(tr).find('td.id label.nombre').text();
-    var paterno = $(tr).find('td.id label.nombre').text();
-    var materno = $(tr).find('td.id label.nombre').text();
-    var correo = $(tr).find('td label.correo').text();
+    var apellidoPaterno = $(tr).find('td.id label.apellidoPaterno').text();
+    var apellidoMaterno = $(tr).find('td.id label.apellidoMaterno').text();
+    var edad = $(tr).find('td label.edad').text();
+    var sexo = $(tr).find('td label.sexo').text();
     var telefono = $(tr).find('td label.telefono').text();
-    var celular = $(tr).find('td label.celular').text();
-
+    var correo = $(tr).find('td label.correo').text();
+    var informacion = $(tr).find('td label.informacion').text();
     trClick = $(tr);
 
     $('#idUpdate').val(id);
     $('#nombreUpdate').val(nombre);
-    $('#paternoUpdate').val(paterno);
-    $('#maternoUpdate').val(materno);
+    $('#apellidoPaternoUpdate').val(apellidoPaterno);
+    $('#apellidoMaternoUpdate').val(apellidoMaterno);
+    $('#edadUpdate').val(edad);
+    $('#sexoUpdate').val(sexo);
     $('#correoUpdate').val(correo);
     $('#telefonoUpdate').val(telefono);
-    $('#celularUpdate').val(celular);
+    $('#informacionUpdate').val(informacion);
+
     $('#popUpVisitanteUpdate').modal('show');
 }
-
-
 
 

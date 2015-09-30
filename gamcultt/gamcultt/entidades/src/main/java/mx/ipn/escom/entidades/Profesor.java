@@ -50,7 +50,7 @@ public @Data class Profesor implements java.io.Serializable {
     @Column(name = "telefono", length = 20)
     private String telefono;
 
-    @Pattern(regexp = "^55-[1-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}$", message="Verifique el Celular")
+    @Pattern(regexp = "^[0-9]{3}-[1-9]{2}-[1-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}$", message="Verifique el Celular")
     @Column(name = "celular", length = 20)
     private String celular;
 

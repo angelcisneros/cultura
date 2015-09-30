@@ -1,4 +1,4 @@
-<!-- POPUP AGREGAR ALUMNO -->
+<!-- POPUP AGREGAR CASA -->
 <div class="modal fade" id="popUpCasaAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -28,7 +28,7 @@
                     <label>Link:</label>
                     <input id="liknMapsAdd" name="liknMaps" class="form-control" type="text" placeholder="Ingrese el Link del Mapa">
                     <label class="checkbox mischeckbox" >
-                        <input id="centroSocialAdd" name="esCentro" type="checkbox" class="mischeckbox cambioCheck" /><strong>Es Centro Social</strong>
+                        <input id="centroSocialAdd" name="esCentro" type="checkbox" class="mischeckbox cambioCheck" /><strong> Es Centro Social</strong>
                     </label>
                 </form>
             </div>
@@ -42,7 +42,7 @@
     <!-- /.modal-dialog -->
 </div>
 
-<!-- POPUP ACTUALIZAR ALUMNO -->
+<!-- POPUP ACTUALIZAR CASA -->
 <div class="modal fade" id="popUpCasaUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -87,7 +87,7 @@
     <!-- /.modal-dialog -->
 </div>
 
-<!-- POPUP ELIMINAR ALUMNO -->
+<!-- POPUP ELIMINAR CASA -->
 <div class="modal fade" id="popUpCasaDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

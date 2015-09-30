@@ -7,7 +7,6 @@ package mx.ipn.escom.repositorios;
 
 import java.util.List;
 import mx.ipn.escom.entidades.Alumno;
-import mx.ipn.escom.entidades.Clase;
 
 /**
  *

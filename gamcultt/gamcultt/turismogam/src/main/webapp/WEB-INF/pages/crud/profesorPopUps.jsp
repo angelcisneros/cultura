@@ -23,10 +23,10 @@
                     <input id="correoAdd" name="correo" class="form-control" type="email" placeholder="Ingrese el Correo del Profesor">
                     <br>
                     <label>Teléfono:</label>
-                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono del Profesor">
+                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono ejemplo 55-XX-XX-XX">
                     <br>
                     <label>Celular:</label>
-                    <input id="celularAdd" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular del Profesor">
+                    <input id="celularAdd" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular ejemplo 044-55-XX-XX-XX-XX">
                 </form>
             </div>
             <div class="modal-footer amarillo">
@@ -39,7 +39,7 @@
     <!-- /.modal-dialog -->
 </div>
 
-<!-- POPUP ACTUALIZAR ALUMNO -->
+<!-- POPUP ACTUALIZAR Profesor -->
 <div class="modal fade" id="popUpProfesorUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -64,10 +64,10 @@
                     <input id="correoUpdate" name="correo" class="form-control" type="email" placeholder="Ingrese el Correo">
                     <br>
                     <label>Teléfono:</label>
-                    <input id="telefonoUpdate" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono">
+                    <input id="telefonoUpdate" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono  ejemplo 55-XX-XX-XX">
                     <br>
                     <label>Celular:</label>
-                    <input id="celularUpdate" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular">
+                    <input id="celularUpdate" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular ejemplo 044-55-XX-XX-XX-XX">
                     <input id="idUpdate" name="id" class="form-control ocultar" type="text" placeholder="Ingrese el nombre del Profesor">
                 </form>
             </div>

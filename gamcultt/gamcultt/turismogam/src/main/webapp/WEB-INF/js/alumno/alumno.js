@@ -87,7 +87,7 @@ $(document).on('ready', function() {
         }
         
         if (!validarEmail( correo ) ) {
-            muestraPopUpCampoNoVacio($('#correoAdd'));
+            muestraPopUpCampoNoVacioConMensaje($('#correoAdd'));
             $('#correoAdd').css("border", "1px solid red");
         } else {
             $('#correoAdd').removeAttr('style');
@@ -96,7 +96,7 @@ $(document).on('ready', function() {
         }
         
         if (telefono==='') {
-            muestraPopUpCampoNoVacio($('#telefonoAdd'));
+            muestraPopUpCampoNumericoTelefono($('#telefonoAdd'));
             $('#telefonoAdd').css("border", "1px solid red");
         } else {
             $('#telefonoAdd').removeAttr('style');
@@ -105,7 +105,7 @@ $(document).on('ready', function() {
         }
         
         if (celular==='') {
-            muestraPopUpCampoNoVacio($('#celularAdd'));
+            muestraPopUpCampoNumericoCelular($('#celularAdd'));
             $('#celularAdd').css("border", "1px solid red");
         } else {
             $('#celularAdd').removeAttr('style');
@@ -155,7 +155,6 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary alumnoUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger alumnoDeleteButton">Eliminar</button>' +
-                                '<button class="btn btn-info alumnoReporteIndividualButton">Reporte</button>' +
                                 '</div>' +
                                 '</td>' +
                                 '</tr>'
@@ -291,7 +290,6 @@ $(document).on('ready', function() {
                                 '<div class="btn-group" role="group" aria-label="">' +
                                 '<button class="btn btn-primary alumnoUpdateButton">Editar</button>' +
                                 '<button class="btn btn-danger alumnoDeleteButton">Eliminar</button>' +
-                                '<button class="btn btn-info alumnoReporteIndividualButton">Reporte</button>' +
                                 '</div>' +
                                 '</td>'
                                 );

@@ -17,8 +17,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="alumnos">Alumnos</a></li>
-                <li><a href="casas">Casas</a></li>
+                <li><a href="visitantes">Visitantes</a></li>
                 <li><a href="profesors">Profesores</a></li>
+                <li><a href="casas">Casas</a></li>
                 <li><a href="salas">Salas</a></li>
                 <li><a href="tallers">Talleres</a></li>
                 <li><a href="clases">Clases</a></li>

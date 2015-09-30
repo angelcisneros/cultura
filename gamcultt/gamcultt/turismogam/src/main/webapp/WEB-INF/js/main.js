@@ -8,6 +8,29 @@ function muestraPopUpCampoNoVacio(selector) {
     $(selector).popover('show');
 }
 
+function muestraPopUpCampolink(selector) {
+    $(selector).attr('data-toggle', 'popover');
+    $(selector).attr('data-trigger', 'focus');
+    $(selector).attr('title', 'Campo Requerido');
+    $(selector).attr('data-content', 'Este campo necesita un Link');
+    $(selector).popover('show');
+}
+
+function muestraPopUpCampoTelefono(selector) {
+    $(selector).attr('data-toggle', 'popover');
+    $(selector).attr('data-trigger', 'focus');
+    $(selector).attr('title', 'Campo Requerido');
+    $(selector).attr('data-content', 'Ingrese su Teléfono XX-XX-XX-XX');
+    $(selector).popover('show');
+}
+function muestraPopUpCampoCelular(selector) {
+    $(selector).attr('data-toggle', 'popover');
+    $(selector).attr('data-trigger', 'focus');
+    $(selector).attr('title', 'Campo Requerido');
+    $(selector).attr('data-content', 'Ingrese su Celular XXX-XX-XX-XX-XX');
+    $(selector).popover('show');
+}
+
 function muestraPopUpCampoNoVacioConMensaje(selector, mensaje) {
     $(selector).attr('data-toggle', 'popover');
     $(selector).attr('data-trigger', 'focus');
@@ -23,7 +46,21 @@ function muestraPopUpCampoNumerico(selector) {
     $(selector).attr('data-content', 'Ingrese un número');
     $(selector).popover('show');
 }
+function muestraPopUpCampoNumericoTelefono(selector) {
+    $(selector).attr('data-toggle', 'popover');
+    $(selector).attr('data-trigger', 'focus');
+    $(selector).attr('title', 'Campo Inválido');
+    $(selector).attr('data-content', 'Ingrese solo números ');
+    $(selector).popover('show');
+}
 
+function muestraPopUpCampoNumericoCelular(selector) {
+    $(selector).attr('data-toggle', 'popover');
+    $(selector).attr('data-trigger', 'focus');
+    $(selector).attr('title', 'Campo Inválido');
+    $(selector).attr('data-content', 'Ingrese solo números ');
+    $(selector).popover('show');
+}
 function cierraPopUpChiquito(selector) {
     $(selector).popover('hide');
     $(selector).removeAttr('data-toggle');
@@ -130,11 +167,16 @@ function validarMaterno(materno) {
 function validarTelefono(telefono) {
     return /^[1-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2} $/.test(telefono);
 }
-
-function validarCeleular(celular) {
-    return /^55-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2} $/.test(celular);
+function validarTelefono2(telefono) {
+    return /^[1-9]{8}$/.test(telefono);
 }
 
+function validarCelular(celular) {
+    return /^[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2} $/.test(celular);
+}
+function validarCelular2(celular) {
+    return /^[0-9]{10} $/.test(celular);
+}
 function validarInformacion(informacion) {
     return /^[a-zA-Zñáéíóú\s0-9]+$/.test(informacion);
 }

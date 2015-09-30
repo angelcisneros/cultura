@@ -17,10 +17,9 @@
                     <span class="input-group-addon" id="basic-addon1">Búsquedas:</span>
                     <select id="busquedas" class="form-control" aria-describedby="basic-addon1">
                         <option label="--TODOS--" value="0">--TODOS--</option>
-                        <option label="Por Clase" value="1" >Por Clase</option>
-                        <option label="Por Nombre" value="2" >Por Nombre</option>
+                        <option label="Por Nombre Alumno" value="1" >Por Nombre Alumno</option>
+                        <option label="Por Nombre Tutor" value="2" >Por Nombre Tutor</option>
                         <option label="Por Edad" value="3" >Por Edad</option>
-                        <option label="Por Correo" value="4" >Por Correo</option>
                     </select>
                 </div>
             </div>

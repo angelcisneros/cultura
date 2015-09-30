@@ -41,7 +41,7 @@ public @Data class Sala implements java.io.Serializable {
     @Column(name = "nombre", nullable = false, length = 95)
     private String nombre;
 
-    @Min(value=25, message = "Verifique la Capacidad")
+    @Min(value=10, message = "Verifique la Capacidad")
     @Column(name = "capacidad", nullable = false)
     private int capacidad;
 

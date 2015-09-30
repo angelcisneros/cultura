@@ -57,7 +57,7 @@ $(document).on('ready', function() {
          requisitos++;
          }
          if (telefono==='') {
-         muestraPopUpCampoNoVacio($('#telefonoAdd'));
+         muestraPopUpCampoNumericoTelfono($('#telefonoAdd'));
          $('#telefonoAdd').css("border", "1px solid red");
          } else {
          $('#telefonoAdd').removeAttr('style');
@@ -81,14 +81,15 @@ $(document).on('ready', function() {
          requisitos++;
          }
          if (!validarLink(link)) {
-         muestraPopUpCampoNoVacio($('#liknMapsAdd'));
+         muestraPopUpCampolink($('#liknMapsAdd'));
          $('#liknMapsAdd').css("border", "1px solid red");
          } else {
          $('#liknMapsAdd').removeAttr('style');
          cierraPopUpChiquito($('#liknMapsAdd'));
          requisitos++;
          }
-         if (requisitos === 6) {
+         
+        if (requisitos === 6) {
          
          
         if (true) {
@@ -147,6 +148,7 @@ $(document).on('ready', function() {
                             $('#contenidoPopUp').text(respuesta[1]);
                             $('#popUpCasaAdd').modal('hide');
                             $('#popUpRespuesta').modal('show');
+                            
                         }
                     }
                 },

@@ -23,17 +23,17 @@
                     <label>Edad:</label>
                     <input id="edadAdd" name="edad" class="form-control" type="email" placeholder="Ingrese el Edad">
                     <br>
-                    <label>Nombre Tutor:</label>
-                    <input id="nombreTutorAdd" name="nombreTutor" class="form-control" type="text" placeholder="Ingrese el Nombre del Tutor">
+                    <label>Nombre Completo del Tutor:</label>
+                    <input id="nombreTutorAdd" name="nombreTutor" class="form-control" type="text" placeholder="Ingrese el Nombre Completo del Tutor">
                     <br>
                     <label>Correo:</label>
-                    <input id="correoAdd" name="correo" class="form-control" type="text" placeholder="Ingrese el Correo">
+                    <input id="correoAdd" name="correo" class="form-control" type="text" placeholder="Ingrese el Correo * Tutor">
                     <br>
                     <label>Teléfono:</label>
-                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono">
+                    <input id="telefonoAdd" name="telefono" class="form-control" type="text" placeholder="Ingrese el Teléfono ejemplo 55-XX-XX-XX">
                     <br>
                     <label>Celular:</label>
-                    <input id="celularAdd" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular">                    
+                    <input id="celularAdd" name="celular" class="form-control" type="text" placeholder="Ingrese el Celular ejemplo 044-55-XX-XX-XX-XX">                    
                 </form>
             </div>
             <div class="modal-footer amarillo">
